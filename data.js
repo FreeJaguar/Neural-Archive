@@ -15,7 +15,7 @@ window.TOOLS = [
     free: "תוכנית Beginner חינמית לתמיד: 5 פרויקטים אישיים, 3 תצוגות מסנן ושבוע אחד של היסטוריית פעילות.",
     limits: "לוח שנה מתקדם, היסטוריה מלאה, תזכורות מותאמות ויותר פרויקטים נמצאים בתוכניות בתשלום.",
     pros: ["מהיר וקל ללמידה", "אפליקציות לכל הפלטפורמות", "אינטגרציות רבות"], cons: ["רק 5 פרויקטים אישיים בחינם", "היסטוריה מוגבלת לשבוע"],
-    alternatives: ["Trello", "Obsidian"], url: "https://www.todoist.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Trello", "Obsidian"], url: "https://www.todoist.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.todoist.com/pricing/" }]
   },
   {
@@ -26,7 +26,7 @@ window.TOOLS = [
     free: "עד 10 משתפי פעולה בכל Workspace, עד 10 לוחות, כרטיסים ו־Power-Ups ללא הגבלה ו־250 ריצות אוטומציה בחודש.",
     limits: "קבצים עד 10MB; לוחות ללא הגבלה, AI ותצוגות מתקדמות דורשים שדרוג.",
     pros: ["ממשק חזותי מוכר", "כרטיסים ללא הגבלה", "אוטומציות בסיסיות"], cons: ["מגבלת 10 לוחות", "פחות מתאים לתכנון מורכב"],
-    alternatives: ["Todoist", "Make"], url: "https://trello.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Todoist", "Make"], url: "https://trello.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://trello.com/en/pricing" }]
   },
   {
@@ -37,7 +37,7 @@ window.TOOLS = [
     free: "מסלול ללא הגבלת זמן עם 1,000 קרדיטים בחודש, בונה חזותי, נתבים ומסננים ויותר מ־3,000 אפליקציות.",
     limits: "עד 2 תרחישים פעילים, מרווח מינימלי של 15 דקות בין ריצות, זמן ריצה מרבי 5 דקות וקובץ עד 5MB.",
     pros: ["כיסוי אפליקציות רחב", "בונה תהליכים חזותי", "אין מגבלת זמן"], cons: ["קרדיט נצרך בכל פעולת מודול", "תזמון איטי במסלול החינמי"],
-    alternatives: ["Trello", "Circleback"], url: "https://www.make.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Trello", "Circleback"], url: "https://www.make.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.make.com/en/pricing" }]
   },
   {
@@ -48,7 +48,7 @@ window.TOOLS = [
     free: "AI לסיכומים ומשימות, פגישות מקוונות ופיזיות, תמלול, API/MCP/CLI ועד 2 צוותים ב־$0 למשתמש.",
     limits: "היסטוריית פגישות והקלטות נשמרת 30 יום בלבד; האוטומציות מוגבלות.",
     pros: ["כולל פגישות פיזיות", "גישה דרך API ו־MCP", "תמלול עם דוברים"], cons: ["שמירה ל־30 יום", "אינטגרציות מלאות בתשלום"],
-    alternatives: ["Make", "NotebookLM"], url: "https://circleback.ai/", verified: "2026-10-01", recent: true,
+    alternatives: ["Make", "NotebookLM"], url: "https://circleback.ai/", added: "2026-09-28", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://run.circleback.ai/pricing" }, { label: "מגבלות API", url: "https://circleback.ai/docs/api" }]
   },
   {
@@ -59,7 +59,7 @@ window.TOOLS = [
     free: "מאגרים ציבוריים ופרטיים ללא הגבלה. לחשבון אישי: 2,000 דקות Actions בחודש ו־500MB אחסון Packages.",
     limits: "מכסות Actions, Codespaces, Packages ו־LFS מוגבלות; יכולות ארגוניות מתקדמות בתשלום.",
     pros: ["תקן דה־פקטו לשיתוף קוד", "אקוסיסטם עצום", "CI/CD מובנה"], cons: ["מכסות מחשוב ואחסון", "חלק מכלי האבטחה מתקדמים בתשלום"],
-    alternatives: ["Kilo Code", "Vercel"], url: "https://github.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Kilo Code", "Vercel"], url: "https://github.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://github.com/pricing" }, { label: "מכסות שימוש", url: "https://docs.github.com/en/billing/reference/product-usage-included" }]
   },
   {
@@ -70,7 +70,7 @@ window.TOOLS = [
     free: "שני פרויקטים חינמיים, מכסת egress של 5GB ושירותי Database, Auth, Storage, Functions ו־Realtime.",
     limits: "המכסות משותפות לארגון; פרויקטים לא פעילים עשויים להיעצר, ומשאבים כמו דומיין מותאם אינם כלולים.",
     pros: ["PostgreSQL אמיתי", "שירותים מחוברים היטב", "אפשרות קוד פתוח ואירוח עצמי"], cons: ["השהיית פרויקטים לא פעילים", "מכסות ארגוניות משותפות"],
-    alternatives: ["Vercel", "GitHub"], url: "https://supabase.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Vercel", "GitHub"], url: "https://supabase.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://supabase.com/pricing" }, { label: "מסלולים וחיוב", url: "https://supabase.com/docs/guides/platform/billing-on-supabase" }]
   },
   {
@@ -81,7 +81,7 @@ window.TOOLS = [
     free: "Hobby חינמי עם CI/CD, HTTPS, תצוגות מקדימות, עד 200 פרויקטים ומכסות חודשיות לשימוש.",
     limits: "מיועד לשימוש אישי ולא־מסחרי בלבד. חריגה ממכסות עשויה להשהות את היישום עד להתחדשות התקופה.",
     pros: ["פריסה פשוטה מ־Git", "Preview לכל שינוי", "ביצועים ותשתית מובנים"], cons: ["איסור שימוש מסחרי ב־Hobby", "השירות עלול להיעצר בחריגה"],
-    alternatives: ["GitHub", "Supabase"], url: "https://vercel.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["GitHub", "Supabase"], url: "https://vercel.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "מסלול Hobby", url: "https://vercel.com/docs/plans/hobby" }, { label: "תמחור רשמי", url: "https://vercel.com/pricing" }]
   },
   {
@@ -92,7 +92,7 @@ window.TOOLS = [
     free: "תוכנית יחיד חינמית וקוד פתוח. אפשר להשתמש ב־Auto Free כשהוא זמין, במודל מקומי או ב־BYOK ללא תוכנית inference בתשלום.",
     limits: "זמינות מודלים חינמיים מתארחים משתנה; ספקי מודלים, מפתחות ויכולות מחשוב ענן עשויים לעלות כסף.",
     pros: ["קוד פתוח", "בחירת מודל וספק", "עובד בכמה סביבות פיתוח"], cons: ["עלויות inference נפרדות", "Auto Free אינו רשימת מודלים קבועה"],
-    alternatives: ["GitHub", "Obsidian"], url: "https://kilo.ai/", verified: "2026-10-01", recent: true,
+    alternatives: ["GitHub", "Obsidian"], url: "https://kilo.ai/", added: "2026-09-29", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://kilo.ai/pricing" }, { label: "המאגר הרשמי", url: "https://github.com/Kilo-Org/kilocode" }]
   },
   {
@@ -103,7 +103,7 @@ window.TOOLS = [
     free: "Canva Free זמין לכל אחד עם עורך, תבניות ונכסים חינמיים; נכון לבדיקה, עד 20 שימושי AI חודשיים מהסוגים הזמינים למסלול.",
     limits: "נכסי Premium, כלי מותג מתקדמים, יותר שימושי AI ופיצ'רים מקצועיים דורשים תוכנית בתשלום.",
     pros: ["קל מאוד להתחיל", "מגוון פורמטים ותבניות", "שיתוף ועבודה בדפדפן"], cons: ["נכסים רבים נעולים", "מכסת AI מוגבלת ומשתנה לפי מורכבות"],
-    alternatives: ["Napkin AI", "GIMP"], url: "https://www.canva.com/", verified: "2026-10-01", recent: false,
+    alternatives: ["Napkin AI", "GIMP"], url: "https://www.canva.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.canva.com/pricing/" }]
   },
   {
@@ -114,7 +114,7 @@ window.TOOLS = [
     free: "Free Forever עם 500 קרדיטי AI בשבוע, עריכה וייבוא ללא הגבלה וייצוא PNG/PDF ללא הגבלה.",
     limits: "ויזואלים נושאים מיתוג Napkin; סגנונות והתאמות מתקדמות בתשלום. יצירת שקף עולה 100 קרדיטים.",
     pros: ["מתחיל מטקסט", "תוצרים ניתנים לעריכה", "מכסה שבועית מתחדשת"], cons: ["מיתוג בתוצר החינמי", "קרדיטים נגמרים מהר ביצירת שקפים"],
-    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", verified: "2026-10-01", recent: true,
+    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.napkin.ai/pricing/" }, { label: "הסבר קרדיטים", url: "https://help.napkin.ai/en/articles/15955724-credits-plans" }]
   },
   {
@@ -125,7 +125,7 @@ window.TOOLS = [
     free: "התוכנה כולה חופשית תחת GPLv3+ וללא מסלול בתשלום; מותר להשתמש בה גם לעבודה מסחרית.",
     limits: "יישום Desktop ללא שיתוף ענן מובנה; אין גרסת Android או iOS רשמית והממשק דורש הסתגלות.",
     pros: ["חינם ללא מכסות", "פועל מקומית וללא מעקב", "תוספים וקהילה ותיקה"], cons: ["עקומת למידה", "ללא שיתוף ענן מובנה"],
-    alternatives: ["Canva", "Cavalry"], url: "https://www.gimp.org/", verified: "2026-10-01", recent: false,
+    alternatives: ["Canva", "Cavalry"], url: "https://www.gimp.org/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "אודות ורישיון", url: "https://www.gimp.org/about/" }, { label: "שאלות נפוצות", url: "https://www.gimp.org/docs/userfaq.html" }]
   },
   {
@@ -136,7 +136,7 @@ window.TOOLS = [
     free: "מאז גרסה 2.7, יכולות Professional שהיו בתשלום זמינות בחינם במסגרת Cavalry by Canva.",
     limits: "דורש חשבון Canva; מיועד ל־Mac ול־Windows ואינו תחליף מלא לעריכת וידאו מבוססת ציר זמן.",
     pros: ["יכולות Professional ללא תשלום", "אנימציה פרוצדורלית חזקה", "עובד מקומית"], cons: ["אין Linux", "דורש חשבון Canva"],
-    alternatives: ["GIMP", "Canva"], url: "https://cavalry.studio/en/", verified: "2026-10-01", recent: true,
+    alternatives: ["GIMP", "Canva"], url: "https://cavalry.studio/en/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "האתר הרשמי", url: "https://cavalry.studio/en/" }, { label: "הודעת גרסה 2.7", url: "https://cavalry.studio/docs/tech-info/release-notes/2.7/2-7-0-release-notes/" }]
   },
   {
@@ -147,7 +147,7 @@ window.TOOLS = [
     free: "גישה רגילה כוללת 100 מחברות, עד 50 מקורות למחברת, 50 שאילתות צ'אט ביום ו־3 יצירות אודיו ביום.",
     limits: "המגבלות עשויות להשתנות לפי חשבון או אזור; יכולות Premium ומכסות גבוהות יותר דורשות שדרוג.",
     pros: ["תשובות עם ציטוטים", "מגוון סוגי מקורות", "תוצרי אודיו וסיכום"], cons: ["מכסות יומיות", "תלוי בחשבון Google ובזמינות אזורית"],
-    alternatives: ["Zotero", "ResearchRabbit"], url: "https://notebooklm.google.com/", verified: "2026-10-01", recent: true,
+    alternatives: ["Zotero", "ResearchRabbit"], url: "https://notebooklm.google.com/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "מגבלות רשמיות", url: "https://support.google.com/notebooklm/answer/16206866?hl=iw" }]
   },
   {
@@ -158,7 +158,7 @@ window.TOOLS = [
     free: "היישום פתוח וחינמי; ספריית הפריטים המקומית אינה מוגבלת. סנכרון הקבצים הרשמי כולל 300MB בחינם.",
     limits: "אחסון קבצים מעבר ל־300MB בתשלום; אפשר להשתמש ב־WebDAV לסנכרון קבצים בספרייה האישית.",
     pros: ["ציטוטים באלפי סגנונות", "קוד פתוח", "תוספים לדפדפן ולמעבדי תמלילים"], cons: ["רק 300MB בענן הרשמי", "ניהול קבצים גדול דורש פתרון נוסף"],
-    alternatives: ["ResearchRabbit", "NotebookLM"], url: "https://www.zotero.org/", verified: "2026-10-01", recent: false,
+    alternatives: ["ResearchRabbit", "NotebookLM"], url: "https://www.zotero.org/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "האתר הרשמי", url: "https://www.zotero.org/" }, { label: "אחסון קבצים", url: "https://www.zotero.org/support/individual_storage" }]
   },
   {
@@ -169,7 +169,7 @@ window.TOOLS = [
     free: "יישום הליבה חינם ללא מגבלות לשימוש אישי, מסחרי, חינוכי וארגוני, ללא הרשמה נדרשת.",
     limits: "שירותי Sync ו־Publish הרשמיים בתשלום; שיתוף בזמן אמת אינו חלק מליבת השימוש המקומית.",
     pros: ["קבצים מקומיים ופתוחים", "ללא מגבלת שימוש", "אקוסיסטם תוספים גדול"], cons: ["סנכרון רשמי בתשלום", "הגמישות עלולה להכביד בתחילת הדרך"],
-    alternatives: ["Zotero", "NotebookLM"], url: "https://obsidian.md/", verified: "2026-10-01", recent: false,
+    alternatives: ["Zotero", "NotebookLM"], url: "https://obsidian.md/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://obsidian.md/pricing" }, { label: "חינם לעבודה", url: "https://obsidian.md/blog/free-for-work/" }]
   },
   {
@@ -180,7 +180,194 @@ window.TOOLS = [
     free: "Free Forever עם חיפושים, ספרייה ואוספים ללא הגבלה, שיתוף אוספים ועד 50 מאמרי seed לחיפוש.",
     limits: "חיפוש מ־300 מאמרי seed, בקרות חיפוש מתקדמות ומספר פרויקטים זמינים ב־RR+.",
     pros: ["מיפוי ציטוט חזותי", "חיפוש ואוספים ללא הגבלה", "ייבוא Zotero ו־BibTeX"], cons: ["רק 50 מאמרי seed בחינם", "מסננים מתקדמים בתשלום"],
-    alternatives: ["Zotero", "NotebookLM"], url: "https://www.researchrabbit.ai/", verified: "2026-10-01", recent: true,
+    alternatives: ["Zotero", "NotebookLM"], url: "https://www.researchrabbit.ai/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.researchrabbit.ai/pricing" }, { label: "מדריך המסלול החינמי", url: "https://learn.researchrabbit.ai/en/articles/12865509-researchrabbit-free-tier" }]
+  },
+  {
+    slug: "orbit", name: "Orbit", mark: "Or", category: "productivity", subcategories: ["ניהול משימות", "Realtime", "קוד פתוח"],
+    tagline: "מנהל משימות ופרויקטים מהיר עם מסמכים, ספרינטים ו־MCP.",
+    solves: "מאחד משימות, לוחות, פרויקטים, מסמכים ואנליטיקה בסביבת צוות שמתעדכנת בזמן אמת.",
+    uses: ["ניהול פרויקטים", "ניהול משימות", "שיתוף"], audience: "צוותי מוצר ופיתוח שמחפשים חלופה פתוחה למערכות ניהול עבודה בתשלום.",
+    free: "השירות המתארח והקוד זמינים ללא תמחור או מסלול בתשלום; הפרויקט כולו Apache-2.0.",
+    limits: "אירוח עצמי עדיין מוגדר Preview ודורש Bun, Docker, PostgreSQL, Redis ו־MinIO.",
+    pros: ["ללא תמחור או חיוב", "Realtime ו־MCP מובנים", "קוד פתוח ברישיון Apache-2.0"], cons: ["אירוח עצמי עדיין Preview", "פרויקט צעיר יחסית"],
+    alternatives: ["Trello", "Paperclip"], url: "https://orbit.noveum.ai/", added: "2026-10-01", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/Noveum/orbit" }, { label: "גרסאות", url: "https://github.com/Noveum/orbit/releases" }]
+  },
+  {
+    slug: "whiteboard", name: "Whiteboard", mark: "W", category: "development", subcategories: ["ארכיטקטורה", "סקירת קוד", "Desktop"],
+    tagline: "קנבס מקומי לתכנון תוכנה ולסקירת קוד עם סוכני פיתוח.",
+    solves: "מציג מבנה, החלטות ו־diffs על קנבס משותף כדי להבין שינויי קוד לפני ואחרי ביצועם.",
+    uses: ["פיתוח", "סקירת קוד", "תכנון"], audience: "מפתחים וצוותים שרוצים שכבה חזותית מעל עבודת סוכני קוד.",
+    free: "יישום Desktop מקומי וחינמי בקוד פתוח תחת MIT; אין מסלול שימוש בתשלום לתוכנה עצמה.",
+    limits: "עדיין אינו עורך קבצים, עבודה עם כמה מאגרים מוגבלת, וסוכן הקוד המחובר עשוי לעלות כסף.",
+    pros: ["מקומי וקוד פתוח", "diff סמנטי ותיעוד החלטות", "קנבס חזותי לתכנון"], cons: ["לא עורך קבצים", "תמיכה חלשה בכמה מאגרים"],
+    alternatives: ["Kilo Code", "Diagram Design"], url: "https://dev.fast/", added: "2026-10-01", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/devdotfast/whiteboard" }, { label: "האתר הרשמי", url: "https://dev.fast/" }]
+  },
+  {
+    slug: "hindsight", name: "Hindsight", mark: "H", category: "research", subcategories: ["זיכרון לסוכנים", "MCP", "קוד פתוח"],
+    tagline: "זיכרון ארוך טווח לסוכני AI עם retain, recall ו־reflect.",
+    solves: "מוסיף לסוכנים שכבת זיכרון מבנית שמאחסנת חוויות, מאחזרת הקשר ומסיקה דפוסים לאורך זמן.",
+    uses: ["AI", "ניהול ידע", "פיתוח"], audience: "מפתחי סוכנים ומערכות AI שצריכים זיכרון מתמשך ואינטגרציות.",
+    free: "אירוח עצמי מלא וחינמי תחת MIT, ללא מגבלת שימוש או טלמטריה; כולל MCP ו־PostgreSQL משובץ.",
+    limits: "הענן המנוהל מציע קרדיטי התחלה בלבד וממשיך בתמחור לפי שימוש; מודלים ותשתית באירוח עצמי עשויים לעלות כסף.",
+    pros: ["MIT ללא מגבלות", "MCP ויותר מ־60 אינטגרציות", "אפשר לעבוד עם מודלים מקומיים"], cons: ["דורש תשתית לאירוח עצמי", "הענן אינו מסלול חינמי מתמשך"],
+    alternatives: ["OpenResearch", "NotebookLM"], url: "https://hindsight.vectorize.io/", added: "2026-10-01", verified: "2026-10-01",
+    sources: [{ label: "תמחור רשמי", url: "https://vectorize.io/pricing" }, { label: "המאגר הרשמי", url: "https://github.com/vectorize-io/hindsight" }]
+  },
+  {
+    slug: "yue2-studio", name: "YuE2 Studio", mark: "Y2", category: "design", subcategories: ["מוזיקה", "AI מקומי", "Desktop"],
+    tagline: "אפליקציית Windows מקומית ליצירת שירים ועריכת תווים עם AI.",
+    solves: "מריצה מודלים ליצירת מוזיקה באופן מקומי ומאפשרת לערוך את התוצאה ברמת תווים ומבנה.",
+    uses: ["מוזיקה", "AI", "יצירת תוכן"], audience: "יוצרי מוזיקה עם מחשב Windows וכרטיס גרפי מתאים שרוצים עבודה מקומית.",
+    free: "האפליקציה חינמית וקוד פתוח תחת MIT ויכולה לעבוד במצב מקומי ללא מנוי.",
+    limits: "דורשת Windows, הורדות מודל גדולות וכ־5.5GB VRAM לפחות; רישיונות המודלים מגבילים שימוש מסחרי לחברות ועטיפות SheetSage2 אינן מסחריות.",
+    pros: ["יצירה מקומית", "עריכת תווים", "MCP מובנה"], cons: ["דרישות חומרה גבוהות", "רישוי המודלים מורכב יותר מרישיון האפליקציה"],
+    alternatives: ["Cavalry", "OpenResearch"], url: "https://github.com/timoncool/YuE2-Studio", added: "2026-10-01", verified: "2026-10-01",
+    sources: [{ label: "המאגר והרישיון", url: "https://github.com/timoncool/YuE2-Studio" }, { label: "גרסאות", url: "https://github.com/timoncool/YuE2-Studio/releases" }]
+  },
+  {
+    slug: "kiwidesk", name: "KiwiDesk", mark: "KD", category: "productivity", subcategories: ["חלונות", "macOS", "Desktop"],
+    tagline: "מנהל חלונות tiling מקורי ל־macOS עם שליטה מהירה במקלדת.",
+    solves: "מסדר חלונות אוטומטית ומקצר מעבר בין פריסות, מסכים וסביבות עבודה.",
+    uses: ["פרודוקטיביות", "חלונות", "macOS"], audience: "משתמשי Mac שרוצים סביבת עבודה צפופה ויעילה יותר.",
+    free: "חינם לשימוש בבית ובעבודה תחת BSL 1.1; כל גרסה עוברת לרישיון MIT לאחר ארבע שנים.",
+    limits: "דורש macOS 14 ומעלה, Apple silicon והרשאת Accessibility; אינו זמין ל־Windows או Linux.",
+    pros: ["אפליקציה מקורית ומהירה", "חינם גם לעבודה", "כל גרסה הופכת MIT"], cons: ["Apple silicon בלבד", "דורש הרשאת נגישות"],
+    alternatives: ["Tinycast", "Todoist"], url: "https://kiwidesk.kiwicanopy.com/", added: "2026-09-30", verified: "2026-10-01",
+    sources: [{ label: "האתר הרשמי", url: "https://kiwidesk.kiwicanopy.com/" }, { label: "המאגר הרשמי", url: "https://github.com/KiwiCanopy/KiwiDesk" }]
+  },
+  {
+    slug: "graphify", name: "Graphify", mark: "Gr", category: "development", subcategories: ["Knowledge graph", "קוד", "סוכנים"],
+    tagline: "ממפה קוד ומסמכים לגרף ידע מקומי עבור סוכני פיתוח.",
+    solves: "יוצר ייצוג גרפי של קשרים בקוד ובתיעוד כדי לשפר ניווט, הקשר ותשובות של סוכנים.",
+    uses: ["פיתוח", "ניהול ידע", "AI"], audience: "מפתחים וצוותים שמחברים סוכני קוד למאגרים גדולים.",
+    free: "מיפוי הקוד המקומי חינמי; רכיבי המאגר מפורסמים ברישיונות Apache-2.0 ו־MIT.",
+    limits: "השירות המתארח נפרד ומציע ניסיון של 14 יום בלבד; הרצה מקומית דורשת הקמה ומשאבים.",
+    pros: ["עיבוד מקומי", "ייצוג קשרים עשיר", "רכיבי קוד פתוח"], cons: ["הענן אינו חינמי מתמשך", "התקנה מקומית טכנית"],
+    alternatives: ["Whiteboard", "OpenResearch"], url: "https://github.com/Graphify-Labs/graphify", added: "2026-09-30", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/Graphify-Labs/graphify" }]
+  },
+  {
+    slug: "hyperframes", name: "HyperFrames", mark: "HF", category: "design", subcategories: ["וידאו בקוד", "HTML", "קוד פתוח"],
+    tagline: "Framework מבוסס HTML ליצירת וידאו ואנימציות בקוד.",
+    solves: "הופך קומפוזיציות HTML, CSS ו־JavaScript לווידאו שניתן לשחזר ולייצר אוטומטית.",
+    uses: ["וידאו", "פיתוח", "יצירת תוכן"], audience: "מפתחים ויוצרי תוכן שרוצים לבנות וידאו דינמי מתבניות וקוד.",
+    free: "ה־framework כולו Apache-2.0 וללא תשלום לפי רינדור או מגבלה על שימוש מסחרי.",
+    limits: "רינדור מקומי דורש Node.js, Chrome ללא ממשק ו־FFmpeg; רינדור אופציונלי ב־AWS Lambda כרוך בעלות ספק.",
+    pros: ["ללא עלות לרינדור מקומי", "וידאו ניתן לתכנות", "רישיון מסחרי פתוח"], cons: ["דורש סביבת פיתוח", "ענן חיצוני עשוי לעלות כסף"],
+    alternatives: ["Cavalry", "Diagram Design"], url: "https://hyperframes.app/", added: "2026-09-30", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/heygen-com/hyperframes" }, { label: "התיעוד הרשמי", url: "https://hyperframes.app/docs" }]
+  },
+  {
+    slug: "memor-more", name: "Memor More", mark: "MM", category: "research", subcategories: ["כרטיסיות", "למידה", "Apple"],
+    tagline: "כרטיסיות וחזרות מרווחות ללמידה במכשירי Apple.",
+    solves: "מארגן חומר לימוד בכרטיסיות ומתזמן חזרות לפי ביצועים כדי לשפר זכירה לטווח ארוך.",
+    uses: ["למידה", "כרטיסיות", "ניהול ידע"], audience: "סטודנטים ולומדים באקוסיסטם של Apple.",
+    free: "יישום הליבה אינו פג וכולל כרטיסיות וחזרות יומיות ללא הגבלה, מדיה, חפיסות ציבוריות, שיתוף וסנכרון iCloud.",
+    limits: "אין אפליקציית Android; גרסת הווב המוקדמת חסרה סנכרון, AI והפעלה לא מקוונת.",
+    pros: ["כרטיסיות ללא הגבלה", "סנכרון iCloud", "חזרות מרווחות"], cons: ["Apple בלבד", "גרסת ווב מוגבלת"],
+    alternatives: ["Obsidian", "NotebookLM"], url: "https://memormore.app/", added: "2026-09-30", verified: "2026-10-01",
+    sources: [{ label: "תמחור רשמי", url: "https://memormore.app/pricing" }, { label: "אודות", url: "https://memormore.app/about" }]
+  },
+  {
+    slug: "paperclip", name: "Paperclip", mark: "P", category: "development", subcategories: ["סוכני AI", "Orchestration", "Self-hosted"],
+    tagline: "לוח בקרה פתוח לניהול צוותים של סוכני AI.",
+    solves: "מארגן סוכנים במבנה ארגוני עם מטרות, תקציבים, ממשל ומעקב עבודה ועלויות.",
+    uses: ["AI", "אוטומציה", "ניהול פרויקטים"], audience: "צוותים שבונים תהליכי עבודה עם כמה סוכנים וספקי מודלים.",
+    free: "השרת והממשק חינמיים באירוח עצמי תחת MIT וללא צורך בחשבון Paperclip.",
+    limits: "הסוכנים, המודלים והתשתית שמחברים למערכת עשויים לעלות כסף; טלמטריה אנונימית פעילה כברירת מחדל וניתנת לביטול.",
+    pros: ["ניהול כמה סוכנים", "תקציבים וממשל מובנים", "MIT ואירוח עצמי"], cons: ["לא כולל מודלים חינמיים", "דורש תפעול שרת"],
+    alternatives: ["Orbit", "Hindsight"], url: "https://paperclip.app/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/PaperclipAI/paperclip" }, { label: "אודות", url: "https://paperclip.app/about/" }]
+  },
+  {
+    slug: "minutes", name: "Minutes", mark: "Mi", category: "productivity", subcategories: ["פגישות", "תמלול מקומי", "MCP"],
+    tagline: "תמלול פגישות מקומי שהופך שיחות לזיכרון נגיש דרך MCP.",
+    solves: "מקליט ומתמלל שיחות באופן מקומי ומאפשר לסוכנים לחפש בהחלטות ובהקשר מפגישות קודמות.",
+    uses: ["פגישות", "תמלול", "AI"], audience: "צוותים ויחידים שרוצים ארכיון פגישות מקומי שנגיש לסוכנים.",
+    free: "התוכנה המקומית חינמית וקוד פתוח תחת MIT, כולל תמלול ושכבת MCP.",
+    limits: "שירותי סיכום ענן הם אופציונליים ועשויים לעלות כסף; איכות התמלול תלויה בחומרה ובמודל.",
+    pros: ["עיבוד מקומי", "MCP מובנה", "קוד פתוח"], cons: ["סיכום ענן עשוי לעלות", "דורש משאבי מחשב"],
+    alternatives: ["Circleback", "Hindsight"], url: "https://github.com/silverstein/minutes", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/silverstein/minutes" }]
+  },
+  {
+    slug: "paper2agent", name: "Paper2Agent", mark: "P2", category: "research", subcategories: ["מאמרים", "MCP", "קוד פתוח"],
+    tagline: "הופך מאמרים וקוד נלווה לכלי MCP בדוקים לשימוש סוכנים.",
+    solves: "מתרגם שיטות ממאמר מחקר לממשק תפעולי שסוכן יכול להפעיל, לבדוק ולשחזר.",
+    uses: ["מחקר", "AI", "פיתוח"], audience: "חוקרים ומפתחים שרוצים להפוך פרסום מדעי לכלי שימושי לסוכן.",
+    free: "הפרויקט חינמי וקוד פתוח תחת MIT וניתן להרצה מקומית.",
+    limits: "הסוכן המארח, קריאות API, מודלים ומשאבי חישוב אינם כלולים ועלולים לעלות כסף.",
+    pros: ["מגשר בין מאמר לקוד", "בדיקות וכלי MCP", "MIT"], cons: ["דורש יכולת טכנית", "עלויות מודל וחישוב נפרדות"],
+    alternatives: ["OpenResearch", "Hindsight"], url: "https://github.com/jmiao24/Paper2Agent", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/jmiao24/Paper2Agent" }]
+  },
+  {
+    slug: "everfern", name: "EverFern", mark: "EF", category: "productivity", subcategories: ["Computer use", "סוכן מקומי", "Desktop"],
+    tagline: "סוכן Desktop פתוח שמבצע משימות במחשב מקומי.",
+    solves: "מאפשר לסוכן לראות את שולחן העבודה, לתפעל יישומים ולבצע רצפי פעולות על Windows, macOS ו־Linux.",
+    uses: ["אוטומציה", "AI", "Desktop"], audience: "משתמשים טכניים שרוצים סוכן computer-use מקומי ופתוח.",
+    free: "האפליקציה חינמית וקוד פתוח תחת MIT, עם גרסאות ל־Windows, macOS ו־Linux.",
+    limits: "נדרש מודל מקומי או ספק ענן שעשוי לעלות כסף; זהו פרויקט מוקדם ויש לבחון הרשאות ופעולות בזהירות.",
+    pros: ["שלוש מערכות הפעלה", "קוד פתוח", "אפשרות למודלים מקומיים"], cons: ["פרויקט צעיר", "ספקי מודל עשויים לעלות כסף"],
+    alternatives: ["Paperclip", "Tinycast"], url: "https://everfern.app/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "האתר הרשמי", url: "https://everfern.app/" }, { label: "המאגר הרשמי", url: "https://github.com/Everfern-AI/Everfern" }]
+  },
+  {
+    slug: "chit", name: "Chit", mark: "Ch", category: "productivity", subcategories: ["Claude Code", "סיכום עבודה", "macOS"],
+    tagline: "סיכום יומי מקומי של העבודה שנעשתה ב־Claude Code.",
+    solves: "קורא את היסטוריית Claude Code המקומית ומפיק קבלה יומית שמסכמת משימות ושינויים.",
+    uses: ["פרודוקטיביות", "פיתוח", "דוחות"], audience: "משתמשי Claude Code ב־Mac שרוצים תיעוד עבודה אוטומטי.",
+    free: "הקבלה של היום הקודם זמינה בחינם בכל יום וללא תקופת ניסיון.",
+    limits: "היסטוריה שבועית וחודשית דורשת רכישת Pro חד־פעמית; macOS 13 ומעלה בלבד והאפליקציה עדיין אינה notarized.",
+    pros: ["פועל על היסטוריה מקומית", "סיכום יומי פשוט", "אין מנוי למסלול החינמי"], cons: ["Mac בלבד", "היסטוריה ארוכה בתשלום"],
+    alternatives: ["Minutes", "Kilo Code"], url: "https://chit.zopcloud.zop.dev/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "האתר הרשמי", url: "https://chit.zopcloud.zop.dev/" }]
+  },
+  {
+    slug: "tinycast", name: "Tinycast", mark: "Ti", category: "productivity", subcategories: ["Launcher", "macOS", "קוד פתוח"],
+    tagline: "Launcher מקורי ל־macOS עם clipboard, snippets וניהול חלונות.",
+    solves: "מרכז פקודות, חיפוש, טקסטים שמורים וכלי חלונות בממשק מקלדת מהיר.",
+    uses: ["פרודוקטיביות", "חלונות", "אוטומציה"], audience: "משתמשי Mac שרוצים חלופה פתוחה ל־Raycast.",
+    free: "האפליקציה כולה חינמית וקוד פתוח תחת AGPL-3.0, כולל תמיכה בחלק מהרחבות Raycast.",
+    limits: "דורשת macOS 26 ומעלה; יכולות AI אופציונליות דורשות חשבון או מפתח משל המשתמש.",
+    pros: ["קוד פתוח", "כלי מערכת רבים", "תמיכה בהרחבות"], cons: ["דרישת macOS חדשה מאוד", "AI אינו כלול בחינם"],
+    alternatives: ["KiwiDesk", "Chit"], url: "https://tinycast.dev/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "האתר הרשמי", url: "https://tinycast.dev/" }, { label: "המאגר הרשמי", url: "https://github.com/abue-ammar/tinycast" }]
+  },
+  {
+    slug: "open-code-review", name: "Open Code Review", mark: "OCR", category: "development", subcategories: ["סקירת קוד", "CLI", "אבטחה"],
+    tagline: "CLI פתוח לסקירת קוד עם pipelines דטרמיניסטיים וסוכן LLM.",
+    solves: "משלב כללי אבטחה ושגיאות קבועים עם ניתוח מודל כדי לייצר ממצאים מדויקים ברמת שורה.",
+    uses: ["פיתוח", "סקירת קוד", "אבטחה"], audience: "צוותי פיתוח שרוצים סקירה אוטומטית שניתנת להרצה בתהליך CI.",
+    free: "התוכנה חינמית וקוד פתוח תחת Apache-2.0 וניתנת להרצה עם ספק תואם OpenAI או Anthropic.",
+    limits: "השימוש במודל הנבחר עשוי לעלות כסף; יש להשתמש בגרסה עדכנית כדי לקבל תיקוני אבטחה.",
+    pros: ["כללים דטרמיניסטיים ו־LLM", "הערות ברמת שורה", "מתאים ל־CI"], cons: ["עלות המודל נפרדת", "דורש הגדרה טכנית"],
+    alternatives: ["Whiteboard", "Kilo Code"], url: "https://github.com/alibaba/open-code-review", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/alibaba/open-code-review" }, { label: "הנחיות אבטחה", url: "https://github.com/alibaba/open-code-review/security" }]
+  },
+  {
+    slug: "diagram-design", name: "Diagram Design", mark: "DD", category: "design", subcategories: ["דיאגרמות", "Agent skill", "HTML/SVG"],
+    tagline: "מיומנות סוכן שיוצרת 39 סוגי דיאגרמות כ־HTML/SVG עצמאי.",
+    solves: "מייצרת דיאגרמות מקצועיות מתוך תיאור ומייבאת Mermaid, draw.io ו־Excalidraw.",
+    uses: ["עיצוב", "דיאגרמות", "פיתוח"], audience: "מפתחים, אדריכלים וכותבי מסמכים שעובדים עם סוכני AI.",
+    free: "המיומנות חינמית וקוד פתוח תחת MIT וכל פלט נשמר כקובץ HTML/SVG עצמאי.",
+    limits: "נדרש סוכן מארח ומודל, שעשויים להיות בתשלום; איכות התוצאה תלויה בהוראות ובמודל.",
+    pros: ["39 סוגי דיאגרמות", "קבצים עצמאיים", "ייבוא פורמטים קיימים"], cons: ["לא יישום עצמאי", "הסוכן המארח עשוי לעלות"],
+    alternatives: ["Napkin AI", "Whiteboard"], url: "https://cathrynlavery.github.io/diagram-design/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/cathrynlavery/diagram-design" }, { label: "האתר הרשמי", url: "https://cathrynlavery.github.io/diagram-design/" }]
+  },
+  {
+    slug: "openresearch", name: "OpenResearch", mark: "OR", category: "research", subcategories: ["מחקר מקומי", "ניסויים", "קוד פתוח"],
+    tagline: "סביבת מחקר local-first עם lineage מלא לניסויים ותוצרים.",
+    solves: "מארגנת שאלות, ניסויים, נתונים ומסקנות כך שאפשר לשחזר את הדרך מהמקור לתוצאה.",
+    uses: ["מחקר", "AI", "ניהול ידע"], audience: "חוקרים ומהנדסים שרוצים סביבת עבודה מקומית ורפרודוצבילית.",
+    free: "היישום חינמי וקוד פתוח תחת MIT ויכול לעבוד עם מודלים מקומיים.",
+    limits: "מחשוב מנוהל, סוכנים מסחריים ומודלי ענן נפרדים; גרסאות רשמיות כוללות טלמטריה גסה שניתן לבטל.",
+    pros: ["Local-first", "lineage ורפרודוצביליות", "תמיכה במודלים מקומיים"], cons: ["שירותים מנוהלים עשויים לעלות", "תמיכת Windows עדיין מוקדמת"],
+    alternatives: ["Paper2Agent", "Hindsight"], url: "https://openresearch.sh/", added: "2026-09-29", verified: "2026-10-01",
+    sources: [{ label: "המאגר הרשמי", url: "https://github.com/alphaXiv/OpenResearch" }, { label: "האתר הרשמי", url: "https://openresearch.sh/" }]
   }
 ];
