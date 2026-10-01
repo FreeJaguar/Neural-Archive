@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="מפת כלים דיגיטליים חינמיים, מאומתים ומסודרים לפי שימוש." />
+    <meta name="theme-color" content="#f4f1ea" />
+    <title>מפת הכלים החינמיים</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">דלגו לקטלוג</a>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="מפת הכלים החינמיים - דף הבית">
+        <span class="brand-mark" aria-hidden="true">מ</span>
+        <span>מפת הכלים החינמיים</span>
+      </a>
+      <div class="verification">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>אומת לאחרונה: <time datetime="2026-10-01">1.10.2026</time></span>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <aside class="category-rail" aria-label="קטגוריות">
+        <p class="rail-label">מפת הקטגוריות</p>
+        <nav id="categoryNav"></nav>
+        <div class="rail-note">
+          <span id="toolCount">16</span>
+          <small>כלים מאומתים</small>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">קטלוג חי · חינם באמת</p>
+            <h1 id="page-title">כלי טוב, בדיוק כשצריך.</h1>
+            <p class="intro-copy">מפה שימושית של כלים עם מסלול חינמי מתמשך, מגבלות ברורות ומקורות רשמיים.</p>
+          </div>
+          <div class="category-key" id="categoryKey" aria-label="מקרא קטגוריות"></div>
+        </section>
+
+        <section class="controls" aria-label="חיפוש וסינון">
+          <label class="search-box">
+            <span class="sr-only">חיפוש בכלים</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <input id="searchInput" type="search" placeholder="חיפוש לפי כלי, צורך או מגבלה…" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <label class="select-wrap">
+            <span>שימוש</span>
+            <select id="useFilter"><option value="all">כל השימושים</option></select>
+          </label>
+          <label class="toggle-wrap">
+            <input id="recentFilter" type="checkbox" />
+            <span class="toggle" aria-hidden="true"></span>
+            <span>נוספו לאחרונה</span>
+          </label>
+        </section>
+
+        <section class="recent-section" aria-labelledby="recent-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">בחירה מהעדכון הראשון</p>
+              <h2 id="recent-title">נוספו לאחרונה</h2>
+            </div>
+            <button class="text-button" type="button" id="showRecent">הציגו את כולם <span aria-hidden="true">←</span></button>
+          </div>
+          <div class="recent-strip" id="recentStrip"></div>
+        </section>
+
+        <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+          <div class="section-heading catalog-heading">
+            <div>
+              <p class="section-kicker">כל הקטלוג</p>
+              <h2 id="catalog-title">הכלים</h2>
+            </div>
+            <p id="resultCount" aria-live="polite"></p>
+          </div>
+          <div id="toolGrid" class="tool-grid"></div>
+          <div id="emptyState" class="empty-state" hidden>
+            <span aria-hidden="true">⌕</span>
+            <h3>לא נמצאו כלים מתאימים</h3>
+            <p>נסו ניסוח אחר או נקו את הסינון.</p>
+            <button type="button" id="clearFilters">ניקוי סינון</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>רק מסלולים חינמיים מתמשכים · המחירים והמגבלות עשויים להשתנות</p>
+      <a href="https://github.com/FreeJaguar/Neural-Archive" target="_blank" rel="noreferrer">המאגר ב־GitHub</a>
+    </footer>
+
+    <dialog id="toolDialog" class="tool-dialog" aria-labelledby="dialogTitle">
+      <div class="dialog-shell">
+        <button class="icon-button close-button" type="button" id="closeDialog" aria-label="סגירת פרטים">×</button>
+        <div id="dialogContent"></div>
+      </div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
