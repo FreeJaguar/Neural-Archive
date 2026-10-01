@@ -65,8 +65,8 @@ a { color: inherit; }
 .select-wrap select { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); cursor: pointer; }
 .toggle-wrap { min-width: 176px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border: 1px solid var(--line); background: var(--white); cursor: pointer; }
 .toggle-wrap input { position: absolute; opacity: 0; }
-.toggle { width: 34px; height: 19px; padding: 3px; border: 1px solid var(--muted); border-radius: 12px; transition: .2s ease; }
-.toggle::after { content: ""; display: block; width: 11px; height: 11px; border-radius: 50%; background: var(--muted); transition: .2s ease; }
+.toggle { position: relative; width: 34px; height: 19px; border: 1px solid var(--muted); border-radius: 12px; transition: .2s ease; }
+.toggle::after { content: ""; position: absolute; top: 3px; right: 3px; width: 11px; height: 11px; border-radius: 50%; background: var(--muted); transition: .2s ease; }
 .toggle-wrap input:checked + .toggle { border-color: var(--ink); background: var(--ink); }
 .toggle-wrap input:checked + .toggle::after { transform: translateX(-15px); background: white; }
 .toggle-wrap input:focus-visible + .toggle { outline: 3px solid var(--focus); outline-offset: 3px; }
