@@ -369,5 +369,38 @@ window.TOOLS = [
     pros: ["Local-first", "lineage ורפרודוצביליות", "תמיכה במודלים מקומיים"], cons: ["שירותים מנוהלים עשויים לעלות", "תמיכת Windows עדיין מוקדמת"],
     alternatives: ["Paper2Agent", "Hindsight"], url: "https://openresearch.sh/", added: "2026-09-29", verified: "2026-10-01",
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/alphaXiv/OpenResearch" }, { label: "האתר הרשמי", url: "https://openresearch.sh/" }]
+  },
+  {
+    slug: "ledge", name: "Ledge", mark: "L", category: "research", subcategories: ["Markdown", "מחברות קוד", "Local-first"],
+    tagline: "מחברת Markdown שמריצה קוד, פקודות ושאילתות מתוך ההערות.",
+    solves: "מחברת תיעוד ופקודות במקום אחד, כך שאפשר להריץ shell, Python, Node, SQL ועוד בלי להעתיק למסוף.",
+    uses: ["ניהול ידע", "פיתוח", "אוטומציה"], audience: "מפתחים, אנשי DevOps וחוקרים שמתעדים תהליכים ניתנים להרצה.",
+    free: "האפליקציה כולה חינמית וקוד פתוח תחת Apache-2.0, ללא חשבון או שירות ענן נדרש.",
+    limits: "ב-Windows נדרש WSL; המובייל מתחבר ב-SSH לשרת Ledge ואינו מחזיק מחברות מקומיות; בלוקי AI דורשים סוכן נפרד.",
+    pros: ["קובצי Markdown רגילים", "הרצה מקומית או דרך SSH", "תמיכה במחשב ובמובייל"], cons: ["דורש אמון בקוד שמריצים", "Windows תלוי ב-WSL"],
+    alternatives: ["Obsidian", "OpenResearch"], url: "https://ledge.sh/", added: "2026-10-02", verified: "2026-10-02",
+    sources: [{ label: "האתר הרשמי", url: "https://ledge.sh/" }, { label: "המאגר והרישיון", url: "https://github.com/ledgesh/ledge" }]
+  },
+  {
+    slug: "perspica", name: "Perspica", mark: "P", category: "development", subcategories: ["סקירת קוד", "Diff סמנטי", "Local-first"],
+    tagline: "מציג שינויי קוד לפי משמעות וכוונה במקום רק לפי שורות.",
+    solves: "מסנן רעש מכני, מזהה העברות ושינויי חתימה ומסדר את סדר הקריאה של PR גדול או קוד שנוצר בסוכן.",
+    uses: ["סקירת קוד", "פיתוח", "אבטחה"], audience: "מפתחים וסוקרי קוד שמתמודדים עם שינויים גדולים, במיוחד מעוזרי AI.",
+    free: "כלי מקומי חינמי וקוד פתוח תחת MIT; הניתוח הדטרמיניסטי עובד ללא מודל, חשבון או מפתח API.",
+    limits: "ניתוח כוונה ודירוג סיכון בעזרת LLM הם אופציונליים ודורשים ספק שעשוי לעלות; שפות לא נתמכות מוצגות כ-diff רגיל.",
+    pros: ["עובד ללא מודל", "מזהה שינויי מבנה ורעש", "CLI וממשק דפדפן"], cons: ["פרויקט חדש", "כיסוי שפות עדיין מוגבל"],
+    alternatives: ["Open Code Review", "GitHub"], url: "https://github.com/sshah03/perspica", added: "2026-10-02", verified: "2026-10-02",
+    sources: [{ label: "המאגר והרישיון", url: "https://github.com/sshah03/perspica" }, { label: "חבילת Rust", url: "https://crates.io/crates/perspica" }]
+  },
+  {
+    slug: "concat", name: "Concat", mark: "Co", category: "design", subcategories: ["עריכת וידאו", "AI מקומי", "Desktop"],
+    tagline: "עורך וידאו מקומי וחוצה פלטפורמות כחלופה פתוחה ל-CapCut.",
+    solves: "מרכז חיתוך רב-ערוצי, כתוביות אוטומטיות, הסרת רקע, אפקטים וייצוא 4K ללא העלאת חומר לענן.",
+    uses: ["וידאו", "עריכת תוכן", "AI"], audience: "יוצרי סרטונים, מדריכים ותוכן לרשתות שרוצים עורך מקומי ללא מנוי.",
+    free: "האפליקציה כולה חינמית וקוד פתוח תחת AGPL-3.0-or-later, ללא חשבון, סימן מים, מנוי או העלאה; מודלי AI יורדים למחשב ופועלים מקומית.",
+    limits: "המוצר עדיין בגרסת beta; חלק מהמתקינים אינם חתומים ועלולים לדרוש אישור ידני, ויכולות AI מקומיות צורכות אחסון ומשאבי GPU/CPU.",
+    pros: ["ללא סימן מים", "כתוביות והסרת רקע מקומיות", "Windows, macOS, Linux ו-Android"], cons: ["עדיין beta", "התקנה לא חתומה בחלק מהמערכות"],
+    alternatives: ["Cavalry", "Canva"], url: "https://concatenate.pages.dev/", added: "2026-10-02", verified: "2026-10-02",
+    sources: [{ label: "האתר הרשמי", url: "https://concatenate.pages.dev/" }, { label: "המאגר והרישיון", url: "https://github.com/jub0t/Concat" }, { label: "גרסאות", url: "https://github.com/jub0t/Concat/releases" }]
   }
 ];
