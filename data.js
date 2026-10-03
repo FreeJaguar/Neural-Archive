@@ -402,5 +402,56 @@ window.TOOLS = [
     pros: ["ללא סימן מים", "כתוביות והסרת רקע מקומיות", "Windows, macOS, Linux ו-Android"], cons: ["עדיין beta", "התקנה לא חתומה בחלק מהמערכות"],
     alternatives: ["Cavalry", "Canva"], url: "https://concatenate.pages.dev/", added: "2026-10-02", verified: "2026-10-02",
     sources: [{ label: "האתר הרשמי", url: "https://concatenate.pages.dev/" }, { label: "המאגר והרישיון", url: "https://github.com/jub0t/Concat" }, { label: "גרסאות", url: "https://github.com/jub0t/Concat/releases" }]
+  },
+  {
+    slug: "workscribe", name: "Workscribe", mark: "W", category: "productivity", subcategories: ["יומן עבודה", "טרמינל", "Local-first"],
+    tagline: "מתעד פעילות בטרמינל והופך אותה לסיכומי עבודה יומיים ושבועיים.",
+    solves: "אוסף פקודות ואירועי פיתוח למסד מקומי, מקבץ אותם למקטעי עבודה ומפיק עדכון מוכן לסטנדאפ או לייצוא.",
+    uses: ["פרודוקטיביות", "תיעוד", "אוטומציה"], audience: "מפתחים ואנשי DevOps שרוצים לתעד התקדמות בלי לכתוב יומן ידני.",
+    free: "ה-CLI חינמי וקוד פתוח תחת MIT; אפשר להפיק סיכומים בחינם ובאופן מקומי עם Ollama.",
+    limits: "דורש Node.js 22 ו-zsh או bash; אין תמיכה ישירה ב-Windows מחוץ ל-WSL2. שימוש ב-OpenAI, Anthropic או ספק מתארח עשוי לעלות.",
+    pros: ["נתונים נשמרים מקומית", "סינון סודות לפני שמירה", "סיכום יומי ושבועי וייצוא Markdown"], cons: ["דורש מודל נפרד לסיכום", "מנטר פקודות ולכן דורש בדיקת הגדרות פרטיות"],
+    alternatives: ["Minutes", "Circleback"], url: "https://www.npmjs.com/package/@workscribe/cli", added: "2026-10-03", verified: "2026-10-03",
+    sources: [{ label: "חבילת npm, רישיון ותיעוד", url: "https://www.npmjs.com/package/@workscribe/cli" }]
+  },
+  {
+    slug: "nsl", name: "nsl", mark: "nsl", category: "development", subcategories: ["Linux", "מכונות מבודדות", "CLI"],
+    tagline: "מכונות Linux קלות בסגנון WSL, מתוך מערכת Linux קיימת.",
+    solves: "יוצר סביבת Linux מבודדת עם init, systemd, משתמשים, רשת ותיקיות משותפות בלי לנהל VM מסורתי ידנית.",
+    uses: ["פיתוח", "בדיקות", "סביבות מבודדות"], audience: "מפתחי Linux שרוצים סביבות הפצה נקיות, זמניות ונוחות לפרויקטים ולבדיקות.",
+    free: "הכלי כולו חינמי וקוד פתוח תחת MIT, עם קבצי התקנה חתומים ותמונות מכונה המתעדכנות בקביעות.",
+    limits: "פועל על Linux בלבד ודורש systemd, KVM והגדרות מארח מתאימות; התמיכה כרגע ב-linux_amd64.",
+    pros: ["CLI פשוט", "מכונות עם systemd מלא", "תמונות רשמיות נבנות לפחות מדי שבוע"], cons: ["Linux בלבד", "פרויקט צעיר ותלויות מערכת משמעותיות"],
+    alternatives: ["Vercel", "Supabase"], url: "https://frostyard.github.io/nsl/", added: "2026-10-03", verified: "2026-10-03",
+    sources: [{ label: "תיעוד רשמי", url: "https://frostyard.github.io/nsl/" }, { label: "המאגר והרישיון", url: "https://github.com/frostyard/nsl" }]
+  },
+  {
+    slug: "zero-slop", name: "Zero Slop", mark: "ZS", category: "design", subcategories: ["כתיבה", "עריכה", "Agent Skill"],
+    tagline: "בודק ניסוחים גנריים של AI ועורך אותם תוך שמירה על עובדות ומבנה.",
+    solves: "מסמן קלישאות, קצב מכני וטענות עמומות, ואז מפעיל עוזר קיים לשכתוב עם בדיקות מקומיות לשמות, מספרים, ציטוטים וקישורים.",
+    uses: ["כתיבה", "עריכת תוכן", "AI"], audience: "כותבים, משווקים, חוקרים וצוותי מוצר שעורכים טקסט שנוצר בעזרת AI.",
+    free: "ה-skill, כלי הניקוד המקומי ועורך הדפדפן חינמיים; הקוד תחת MIT והניקוד המקומי עובד ללא חשבון או שרת.",
+    limits: "השכתוב עצמו משתמש במודל של העוזר הקיים ועשוי להיות כפוף למנוי או לעלות שלו; הציון בוחן דפוסי כתיבה ואינו גלאי מחבר.",
+    pros: ["ניקוד מקומי ושקוף", "בדיקת שימור עובדות", "תמיכה ב-Codex, Claude Code, Cursor ועוד"], cons: ["איכות השכתוב תלויה במודל", "בדיקות סגנון אינן מדד אוניברסלי לאיכות"],
+    alternatives: ["Canva", "Napkin AI"], url: "https://zero-slop.ai/", added: "2026-10-03", verified: "2026-10-03",
+    sources: [{ label: "האתר ותנאי החינם", url: "https://zero-slop.ai/" }, { label: "המאגר והרישיון", url: "https://github.com/manavmishra/ZeroSlop" }]
+  },
+  {
+    slug: "graphene-data", name: "Graphene", mark: "Gr", category: "research", subcategories: ["ניתוח נתונים", "SQL", "דשבורדים"],
+    tagline: "מסגרת analytics-as-code שמאפשרת לסוכני קוד לשאול נתונים ולבנות דשבורדים.",
+    solves: "מגדירה שכבה סמנטית ב-SQL ודפי דוח ב-Markdown כדי שסוכן יוכל לנתח נתונים, להציגם ולשמור הכול ב-Git.",
+    uses: ["ניתוח נתונים", "מחקר", "ויזואליזציה"], audience: "אנליסטים, מהנדסי נתונים וצוותים שעובדים עם סוכני קוד ומסדי SQL.",
+    free: "ה-CLI והמסגרת המקומית חינמיים לתמיד לשימוש פנימי תחת Elastic License 2.0, כולל DuckDB מקומי וחיבור למסדי נתונים נתמכים.",
+    limits: "אסור להציע את התוכנה כשירות מנוהל מתחרה; שימוש מסחרי מוטמע דורש בדיקת רישוי. שירות Graphene Cloud נפרד.",
+    pros: ["קבצים מקומיים בבעלות המשתמש", "שכבה סמנטית ודשבורדים באותו פרויקט", "תמיכה ב-Postgres, BigQuery, Snowflake, ClickHouse ו-DuckDB"], cons: ["מכוון למשתמשי Git וסוכני קוד", "רישיון source-available ולא רישיון קוד פתוח מאושר OSI"],
+    alternatives: ["OpenResearch", "NotebookLM"], url: "https://graphenedata.com/", added: "2026-10-03", verified: "2026-10-03",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/graphene-data/graphene" }, { label: "חבילת CLI", url: "https://www.npmjs.com/package/@graphenedata/cli" }]
   }
+];
+
+window.WATCHLIST = [
+  { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI.", reason: "המאגר פעיל וברישיון MIT, אך כולל רק שני commits ללא גרסה מתויגת או מתקינים רשמיים; נדרש להמתין לבשלות ולבדיקת שרשרת הבנייה.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-03" },
+  { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
+  { name: "Breadcrumb", mark: "B", category: "productivity", signal: "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.", reason: "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.", url: "https://innerloop.works/", checked: "2026-10-03" },
+  { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" }
 ];
