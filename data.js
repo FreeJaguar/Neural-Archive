@@ -446,10 +446,55 @@ window.TOOLS = [
     pros: ["קבצים מקומיים בבעלות המשתמש", "שכבה סמנטית ודשבורדים באותו פרויקט", "תמיכה ב-Postgres, BigQuery, Snowflake, ClickHouse ו-DuckDB"], cons: ["מכוון למשתמשי Git וסוכני קוד", "רישיון source-available ולא רישיון קוד פתוח מאושר OSI"],
     alternatives: ["OpenResearch", "NotebookLM"], url: "https://graphenedata.com/", added: "2026-10-03", verified: "2026-10-03",
     sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/graphene-data/graphene" }, { label: "חבילת CLI", url: "https://www.npmjs.com/package/@graphenedata/cli" }]
+  },
+  {
+    slug: "takt", name: "TAKT", mark: "TK", category: "development", subcategories: ["תזמור סוכנים", "Workflows", "CLI"],
+    tagline: "מגדיר תהליכי פיתוח חוזרים לסוכני קוד באמצעות YAML ובקרות אנושיות.",
+    solves: "מפריד תכנון, מימוש, סקירה ותיקון לשלבים אכיפים עם הרשאות, חוזי פלט, worktrees מבודדים ולוגים שניתנים לבדיקה.",
+    uses: ["פיתוח", "אוטומציה", "AI"], audience: "מפתחים וצוותים שרוצים תהליך עקבי ומבוקר סביב Claude Code, Codex, OpenCode וסוכני קוד נוספים.",
+    free: "ה-CLI כולו חינמי וקוד פתוח תחת MIT; אפשר להריץ אותו מקומית עם ספק או סוכן שכבר מותקן.",
+    limits: "דורש Node.js וסוכן קוד נתמך; שימוש במודלים, מנויים או API חיצוניים כפוף לעלות ולמגבלות של הספק הנבחר.",
+    pros: ["Workflows מוצהרים ב-YAML", "שלבי סקירה ותיקון אכיפים", "worktrees ולוגים מבודדים"], cons: ["מוסיף שכבת תצורה לתהליך", "עלות ההסקה אינה כלולה"],
+    alternatives: ["Paperclip", "Kilo Code"], url: "https://github.com/nrslib/takt", added: "2026-10-04", verified: "2026-10-04",
+    sources: [{ label: "המאגר, התיעוד והרישיון", url: "https://github.com/nrslib/takt" }, { label: "חבילת npm", url: "https://www.npmjs.com/package/takt" }]
+  },
+  {
+    slug: "wu", name: "Wu", mark: "Wu", category: "development", subcategories: ["עורך קוד", "Rust", "Desktop"],
+    tagline: "עורך קוד מקומי ומהיר ב-Rust עם תחושה מוכרת למשתמשי VS Code.",
+    solves: "מספק סביבת עריכה קלה ומהירה המבוססת על ליבת Zed, בלי חשבון, טלמטריה או עוזר AI מובנה.",
+    uses: ["פיתוח", "עריכת קוד", "פרטיות"], audience: "מפתחים שמעדיפים עורך native מהיר ורוצים לחבר בנפרד את הסוכן או ה-harness שלהם.",
+    free: "האפליקציה חינמית וקוד פתוח תחת GPL-3.0-or-later, עם רכיבי Apache-2.0 מסומנים; אין חשבון או טלמטריה.",
+    limits: "המתקינים עדיין אינם חתומים ועלולים להציג אזהרות מערכת; הפרויקט צעיר, מבוסס על Zed ואינו כולל AI מובנה.",
+    pros: ["מהיר ו-native", "ללא חשבון או טלמטריה", "מתקינים ל-macOS, Linux ו-Windows"], cons: ["מתקינים לא חתומים", "פרויקט צעיר ושינויים מהירים"],
+    alternatives: ["Kilo Code", "GitHub"], url: "https://wu.farshed.me/", added: "2026-10-04", verified: "2026-10-04",
+    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/farshed/wu" }, { label: "דף ההשקה", url: "https://www.producthunt.com/products/wu" }]
+  },
+  {
+    slug: "open-design", name: "OpenDesign", mark: "OD", category: "design", subcategories: ["עיצוב בעזרת AI", "Local-first", "Design systems"],
+    tagline: "סביבת עיצוב פתוחה שמפעילה סוכני קוד על מערכות עיצוב ומייצאת תוצרים אמיתיים.",
+    solves: "מחברת brief, מערכת עיצוב, skills ותבניות כדי ליצור ולרענן אבטיפוסים, דפים, מצגות, תמונות ווידאו מתוך סוכן מקומי.",
+    uses: ["עיצוב", "יצירת תוכן", "בניית מוצרים"], audience: "מעצבים, מפתחים וצוותי מוצר שרוצים workflow מקומי ומבוסס קבצים במקום כלי AI סגור.",
+    free: "היישום והקוד חינמיים תחת Apache-2.0, עם הרצה מקומית, Desktop או self-host; אין דמי שימוש מינימליים בתוכנה עצמה.",
+    limits: "המודל או סוכן הקוד מגיעים בנפרד ועשויים לדרוש מנוי או API; Linux דורש כרגע הרצה מהמקור, וב-builds רשמיים קיימת טלמטריית אמינות מצומצמת שאינה ניתנת לכיבוי.",
+    pros: ["Local-first ו-BYOK", "מבחר גדול של skills ומערכות עיצוב", "ייצוא HTML, PDF, PPTX, ZIP ו-MP4"], cons: ["תלוי בסוכן חיצוני", "מורכב יותר מכלי עיצוב ממוקד"],
+    alternatives: ["Diagram Design", "HyperFrames"], url: "https://open-design.ai/", added: "2026-10-04", verified: "2026-10-04",
+    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/nexu-io/open-design" }, { label: "רישיון Apache-2.0", url: "https://github.com/nexu-io/open-design/blob/main/LICENSE" }, { label: "מדיניות פרטיות", url: "https://github.com/nexu-io/open-design/blob/main/PRIVACY.md" }]
+  },
+  {
+    slug: "astabrief", name: "AstaBrief", mark: "AB", category: "research", subcategories: ["סינתזת מחקר", "דוחות מצוטטים", "מודל פתוח"],
+    tagline: "מודל פתוח ליצירת דוחות מחקר מצוטטים מתוך שאלה ומקטעי ספרות.",
+    solves: "מסנתז אוסף מקורות מדעיים לדוח מובנה עם ציטוטים, וניתן להרצה מקומית או כחלק מצינור ScholarQA מותאם.",
+    uses: ["מחקר", "סיכום", "למידה"], audience: "חוקרים, מוסדות ומפתחים שבונים תהליכי סקירת ספרות עם שליטה מקומית במודל.",
+    free: "משקלי AstaBrief-8B והדוגמה להרצה מקומית זמינים בחינם תחת Apache-2.0, ללא תשלום רישוי למודל.",
+    limits: "המודל אינו כולל אחזור מקורות ודורש קטעי ספרות מוכנים, סביבת Transformers או vLLM וחומרה מתאימה; אין ספק inference מתארח פעיל בדף המודל.",
+    pros: ["ציטוטים כחלק מהפלט", "משקלים ונתוני אימון פתוחים", "ניתן להרצה מאחורי חומת הארגון"], cons: ["דורש צינור אחזור נפרד", "מודל 8B דורש משאבי חישוב"],
+    alternatives: ["NotebookLM", "Paper2Agent"], url: "https://huggingface.co/allenai/AstaBrief_8B", added: "2026-10-04", verified: "2026-10-04",
+    sources: [{ label: "דף המודל והרישיון", url: "https://huggingface.co/allenai/AstaBrief_8B" }, { label: "הכרזה רשמית", url: "https://huggingface.co/blog/allenai/astabrief" }, { label: "דוגמת workflow", url: "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite" }]
   }
 ];
 
 window.WATCHLIST = [
+  { name: "Bracket", mark: "Br", category: "productivity", signal: "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.", reason: "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.", url: "https://www.use-bracket.com/", checked: "2026-10-04" },
   { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI.", reason: "המאגר פעיל וברישיון MIT, אך כולל רק שני commits ללא גרסה מתויגת או מתקינים רשמיים; נדרש להמתין לבשלות ולבדיקת שרשרת הבנייה.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-03" },
   { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
   { name: "Breadcrumb", mark: "B", category: "productivity", signal: "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.", reason: "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.", url: "https://innerloop.works/", checked: "2026-10-03" },
