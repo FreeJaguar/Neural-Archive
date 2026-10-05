@@ -490,10 +490,55 @@ window.TOOLS = [
     pros: ["ציטוטים כחלק מהפלט", "משקלים ונתוני אימון פתוחים", "ניתן להרצה מאחורי חומת הארגון"], cons: ["דורש צינור אחזור נפרד", "מודל 8B דורש משאבי חישוב"],
     alternatives: ["NotebookLM", "Paper2Agent"], url: "https://huggingface.co/allenai/AstaBrief_8B", added: "2026-10-04", verified: "2026-10-04",
     sources: [{ label: "דף המודל והרישיון", url: "https://huggingface.co/allenai/AstaBrief_8B" }, { label: "הכרזה רשמית", url: "https://huggingface.co/blog/allenai/astabrief" }, { label: "דוגמת workflow", url: "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite" }]
+  },
+  {
+    slug: "scallopbot", name: "ScallopBot", mark: "SB", category: "productivity", subcategories: ["עוזר אישי", "אוטומציה", "Self-hosted"],
+    tagline: "עוזר AI באירוח עצמי עם זיכרון מתמשך, ערוצים מרובים ותקציבי שימוש.",
+    solves: "מאחד שיחות, משימות, כלים וזיכרון מקומי בסוכן אישי שפועל דרך דפדפן, CLI וערוצי מסרים.",
+    uses: ["פרודוקטיביות", "אוטומציה", "AI"], audience: "משתמשים טכניים שרוצים עוזר אישי בשליטה עצמית עם זיכרון, MCP וכלים מקומיים.",
+    free: "הקוד והשרת חינמיים תחת MIT; אפשר להריץ את הסוכן באירוח עצמי עם Ollama או endpoint מקומי ללא עלות רישוי לתוכנה.",
+    limits: "דורש Node.js 24 ותשתית מקומית או שרת; ברירות המחדל משתמשות בספקי מודלים בתשלום, ותפעול ענן, חיפוש או יצירת תמונות עשויים לעלות כסף.",
+    pros: ["זיכרון SQLite מקומי", "MCP וערוצי מסרים רבים", "ניתוב מודלים ומגבלות תקציב"], cons: ["התקנה ותפעול טכניים", "יכולות רבות תלויות במודל או בשירות חיצוני"],
+    alternatives: ["Hindsight", "Paperclip"], url: "https://scallopbot.com/", added: "2026-10-05", verified: "2026-10-05",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/tashfeenahmed/scallopbot" }, { label: "האתר הרשמי", url: "https://scallopbot.com/" }]
+  },
+  {
+    slug: "agenthatch", name: "AgentHatch", mark: "AH", category: "development", subcategories: ["סוכני AI", "Skills", "Python"],
+    tagline: "מהדר קובצי SKILL.md לסוכנים עצמאיים שניתנים להרצה, לייבוא או לחשיפה דרך MCP.",
+    solves: "הופך הוראות skill וחומרי עזר לחבילת Python עם אחזור RAG, תצורה, בדיקות וממשק CLI עצמאי.",
+    uses: ["פיתוח", "AI", "אוטומציה"], audience: "מפתחי סוכנים ומתחזקי skills שרוצים להפוך הוראות Markdown לכלי תוכנה עצמאי.",
+    free: "החבילה והקוד חינמיים תחת MIT ומופצים ב-PyPI עם attestations של GitHub Actions; תומך גם ב-Ollama וב-endpoints תואמי OpenAI.",
+    limits: "הפרויקט מסומן Alpha ודורש Python 3.11 ומעלה; יצירה והרצה עם ספקי ענן או harnesses חיצוניים עשויות לצרוך API בתשלום.",
+    pros: ["פלט כחבילת Python עצמאית", "RAG ו-MCP מובנים", "תמיכה ב-macOS, Linux ו-Windows"], cons: ["בשלות Alpha", "איכות ועלות תלויות בספק המודל"],
+    alternatives: ["TAKT", "Diagram Design"], url: "https://pypi.org/project/agenthatch/", added: "2026-10-05", verified: "2026-10-05",
+    sources: [{ label: "PyPI, גרסה ו-provenance", url: "https://pypi.org/project/agenthatch/" }, { label: "המאגר והרישיון", url: "https://github.com/agenthatch/agenthatch" }]
+  },
+  {
+    slug: "audionaut", name: "Audionaut", mark: "Au", category: "design", subcategories: ["עריכת אודיו", "הקלטה", "MCP"],
+    tagline: "עורך אודיו רב-ערוצי פתוח למוזיקה ופודקאסטים, עם שליטה דרך MCP.",
+    solves: "מספק חיתוך, הקלטה, ערוצים, playlists וייצוא נקי ביישום מקומי קל יותר מ-DAW מלא.",
+    uses: ["אודיו", "פודקאסטים", "יצירת תוכן"], audience: "יוצרי מוזיקה ופודקאסטים שרוצים עורך מקומי פתוח או עריכה בעזרת סוכן.",
+    free: "היישום חינמי תחת GPL-3.0-or-later ופועל מקומית ב-Windows, macOS ו-Linux; עריכת הליבה אינה דורשת חשבון או מנוי.",
+    limits: "בניית חלק מיכולות הניתוח דורשת תלויות וכלי build; משקלי htdemucs להפרדת ערוצים מורדים בנפרד ומוגדרים למחקר בלבד, ושימוש בסוכן עשוי לדרוש שירות חיצוני.",
+    pros: ["עריכה והקלטה רב-ערוצית", "MCP עם פעולות undo", "יישום native חוצה פלטפורמות"], cons: ["התקנה מהמקור מורכבת יחסית", "רישוי נפרד ומגביל למשקלי הפרדת ערוצים"],
+    alternatives: ["Cavalry", "YuE2 Studio"], url: "https://audionaut.app/", added: "2026-10-05", verified: "2026-10-05",
+    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/kvoltmer/Audionaut" }, { label: "רישיון ותלויות", url: "https://github.com/kvoltmer/Audionaut/blob/main/LICENSE.md" }, { label: "האתר הרשמי", url: "https://audionaut.app/" }]
+  },
+  {
+    slug: "scm-screen-memories", name: "SCM", mark: "SCM", category: "research", subcategories: ["חיפוש מדיה", "AI מקומי", "macOS"],
+    tagline: "חיפוש מקומי עמוק בתמונות ובכל פריים של וידאו, כולל OCR ודיבור.",
+    solves: "מאנדקס תיקיות מדיה ומאפשר למצוא קבצים ורגעים בווידאו לפי משמעות, טקסט נראה או משפט שנאמר.",
+    uses: ["חיפוש", "ניהול ידע", "וידאו"], audience: "יוצרי תוכן, חוקרים ומשתמשי Mac עם ארכיון גדול של תמונות וסרטונים.",
+    free: "האפליקציה חינמית תחת MIT, ללא חשבון, ענן, העלאה או טלמטריה; המודלים יורדים פעם אחת וההסקה מתבצעת מקומית.",
+    limits: "דורש macOS 12 ומעלה על Apple silicon; ההורדה הראשונית כוללת מאות MB עד כמה GB, ואינדוקס וידאו עשוי לצרוך זמן, CPU ואחסון.",
+    pros: ["פרטיות ועבודה לא מקוונת", "חיפוש סצנות, OCR ותמלול", "תוצאות עם הסבר וציטוטים מקומיים"], cons: ["macOS ו-Apple silicon בלבד", "פרויקט חדש עם מעט commits"],
+    alternatives: ["NotebookLM", "OpenResearch"], url: "https://github.com/allenv0/SCM", added: "2026-10-05", verified: "2026-10-05",
+    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/allenv0/SCM" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/show" }]
   }
 ];
 
 window.WATCHLIST = [
+  { name: "hob", mark: "hob", category: "development", signal: "סביבת עבודה מקומית לסוכני קוד עם 73 עוקבים ו-90 נקודות בהשקת Product Hunt, ותמיכה ב-macOS, Windows ו-Linux.", reason: "המחירון הרשמי מאשר חודש ראשון חינם בלבד ולאחריו מסלול Personal Pro בתשלום; אין מסלול חינמי מתמשך ולכן הכלי נשאר מחוץ לקטלוג הפעיל.", url: "https://hob.dev/", checked: "2026-10-05" },
   { name: "Bracket", mark: "Br", category: "productivity", signal: "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.", reason: "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.", url: "https://www.use-bracket.com/", checked: "2026-10-04" },
   { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI.", reason: "המאגר פעיל וברישיון MIT, אך כולל רק שני commits ללא גרסה מתויגת או מתקינים רשמיים; נדרש להמתין לבשלות ולבדיקת שרשרת הבנייה.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-03" },
   { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
