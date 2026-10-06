@@ -534,13 +534,58 @@ window.TOOLS = [
     pros: ["פרטיות ועבודה לא מקוונת", "חיפוש סצנות, OCR ותמלול", "תוצאות עם הסבר וציטוטים מקומיים"], cons: ["macOS ו-Apple silicon בלבד", "פרויקט חדש עם מעט commits"],
     alternatives: ["NotebookLM", "OpenResearch"], url: "https://github.com/allenv0/SCM", added: "2026-10-05", verified: "2026-10-05",
     sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/allenv0/SCM" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "grimoire-memory", name: "Grimoire", mark: "Gm", category: "research", subcategories: ["ניהול ידע", "MCP", "Self-hosted"],
+    tagline: "מחבר סוכני AI לכספת Markdown קריאה עם זיכרון מתמשך וכספת סודות.",
+    solves: "מאנדקס תיקיית Markdown, מחזיר הקשר מצוטט לסוכנים ושומר ידע חדש בקבצים רגילים שבשליטת המשתמש.",
+    uses: ["ניהול ידע", "מחקר", "AI"], audience: "משתמשי Obsidian, Logseq ותיקיות Markdown שרוצים זיכרון סוכן מקומי ושקוף.",
+    free: "השרת, ה-CLI וה-MCP חינמיים תחת MIT, פועלים באירוח עצמי וללא חשבון; זמינים בינארים ל-Windows, macOS ו-Linux וגם Docker.",
+    limits: "דורש תפעול מקומי ואחסון; שאלות AI, חיפוש ופעולות דרך ספק חיצוני עשויים לעלות כסף. חיבור מרחוק דורש TLS, אסימון או OAuth והגדרה זהירה.",
+    pros: ["הידע נשאר בקובצי Markdown", "אחזור מצוטט ותיקונים אנושיים", "כספת הרשאות מוצפנת לסודות"], cons: ["התקנה ותפעול טכניים", "אבטחת גישה מרחוק באחריות המשתמש"],
+    alternatives: ["Obsidian", "Hindsight"], url: "https://github.com/JeremiahM37/grimoire", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/JeremiahM37/grimoire" }, { label: "חבילת Go רשמית", url: "https://pkg.go.dev/github.com/JeremiahM37/grimoire/go" }]
+  },
+  {
+    slug: "motif-memory", name: "Motif", mark: "Mo", category: "development", subcategories: ["זיכרון סוכנים", "MCP", "Self-hosted"],
+    tagline: "זיכרון עבודה משותף לסשנים של Claude Code, Codex ו-Cursor.",
+    solves: "אוסף החלטות, ניסיונות ותיקונים מסשני קוד לגרף שאפשר לחפש, לאמת ולהעביר בין סוכנים וצוותים.",
+    uses: ["פיתוח", "ניהול ידע", "AI"], audience: "מפתחים וצוותים שעובדים עם כמה סוכני קוד ורוצים לשמר החלטות והקשר בין סשנים.",
+    free: "כל המאגר חינמי תחת Apache-2.0, ללא מפתחות רישוי, מגבלות חברים, סשנים או פרויקטים; אפשר להריץ לבד עם npm ו-SQLite.",
+    limits: "דורש Node.js 22 ותשתית עצמית לצוות; התמיכה ממוקדת כרגע ב-Claude Code, Codex ו-Cursor, ותוכן רגיש דורש מדיניות שיתוף והחרגות.",
+    pros: ["ללא חשבון או ענן חובה", "זיכרון עם מקור, ביטחון ותיקון אנושי", "העברת הקשר בין סוכנים"], cons: ["פרויקט צעיר עם מעט משתמשים", "מחברי סשנים מוגבלים למספר כלים"],
+    alternatives: ["Hindsight", "Paperclip"], url: "https://www.getmotif.dev/", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר והרישיון", url: "https://github.com/motif-Labs/motif" }, { label: "חבילת npm", url: "https://www.npmjs.com/package/getmotif" }]
+  },
+  {
+    slug: "ai-maestro", name: "AI Maestro", mark: "AM", category: "development", subcategories: ["תזמור סוכנים", "קנבן", "Workflows"],
+    tagline: "לוח עבודה ותהליך מסירה מנוהל לצוותים של סוכני קוד.",
+    solves: "מפרק פיתוח לכרטיסים ותפקידים, מנתב עבודה לסוכנים מבודדים ומוסיף שערי איכות, סקירה ומעקב.",
+    uses: ["פיתוח", "ניהול פרויקטים", "AI"], audience: "מפתחים שרוצים לנהל כמה סוכני קוד כתהליך מסירה נראה ומבוקר.",
+    free: "ערכת ה-CLI, הלוח, ה-workflows וה-dashboard חינמיים תחת MIT; חבילת npm ציבורית פועלת מקומית וללא תלות runtime.",
+    limits: "הפרויקט מוגדר מוקדם ומתפתח ודורש Node.js 18 ומעלה; סוכני הקוד, המנויים והמודלים שמבצעים את העבודה מגיעים בנפרד ועלולים לעלות כסף.",
+    pros: ["לוח עבודה ויזואלי", "בידוד worktrees ושערי איכות", "תמיכה ב-Codex וב-Claude Code"], cons: ["אריזה צעירה ומשתנה", "עלות הסוכנים והמודלים אינה כלולה"],
+    alternatives: ["TAKT", "Paperclip"], url: "https://github.com/my-chiefmind/ai-maestro", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/my-chiefmind/ai-maestro" }, { label: "חבילת npm וגרסה", url: "https://www.npmjs.com/package/@mychiefmind/ai-maestro" }]
+  },
+  {
+    slug: "omnicam-webcam", name: "OmniCam", mark: "OC", category: "design", subcategories: ["וידאו", "Webcam", "יצירת תוכן"],
+    tagline: "הופך טלפון למצלמת Windows דרך QR ודפדפן, בלי להתקין אפליקציה בטלפון.",
+    solves: "מעביר וידאו מהטלפון ישירות למחשב ברשת המקומית ומציג אותו כמצלמה רגילה ב-Zoom, Meet, Discord ו-OBS.",
+    uses: ["וידאו", "שידור", "יצירת תוכן"], audience: "יוצרי תוכן, מרצים ומשתמשי Windows שרוצים לנצל את מצלמת הטלפון כ-webcam.",
+    free: "האפליקציה כולה חינמית תחת MIT, ללא חשבון, ענן, פרסומות או סימן מים; הווידאו עובר מקומית ב-WebRTC.",
+    limits: "Windows 10 או 11 ב-64-bit בלבד; אין עדיין מיקרופון או USB, הטלפון חייב להישאר עם המסך דולק, וחיבור ראשון מציג אזהרת אבטחה בדפדפן.",
+    pros: ["אין אפליקציה בצד הטלפון", "720p עד 4K ב-H.264", "פועל מקומית ללא ענן"], cons: ["Windows בלבד", "צריכת סוללה וללא מיקרופון"],
+    alternatives: ["Tinycast", "Cavalry"], url: "https://orest-z.github.io/OmniCam/", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/Orest-Z/OmniCam" }, { label: "האתר הרשמי", url: "https://orest-z.github.io/OmniCam/" }]
   }
+
 ];
 
 window.WATCHLIST = [
   { name: "hob", mark: "hob", category: "development", signal: "סביבת עבודה מקומית לסוכני קוד עם 73 עוקבים ו-90 נקודות בהשקת Product Hunt, ותמיכה ב-macOS, Windows ו-Linux.", reason: "המחירון הרשמי מאשר חודש ראשון חינם בלבד ולאחריו מסלול Personal Pro בתשלום; אין מסלול חינמי מתמשך ולכן הכלי נשאר מחוץ לקטלוג הפעיל.", url: "https://hob.dev/", checked: "2026-10-05" },
   { name: "Bracket", mark: "Br", category: "productivity", signal: "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.", reason: "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.", url: "https://www.use-bracket.com/", checked: "2026-10-04" },
-  { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI.", reason: "המאגר פעיל וברישיון MIT, אך כולל רק שני commits ללא גרסה מתויגת או מתקינים רשמיים; נדרש להמתין לבשלות ולבדיקת שרשרת הבנייה.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-03" },
+  { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI; הגיע ל-106 נקודות ו-19 תגובות ב-Show HN.", reason: "הפרויקט עדיין צעיר מאוד, והדיון הטכני מצביע על חפיפה משמעותית עם llama-server ללא בנצ’מרקים שמבססים ערך מוסף; נדרש להמתין לגרסאות, אימוץ ובדיקות ביצועים.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-06" },
   { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
   { name: "Breadcrumb", mark: "B", category: "productivity", signal: "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.", reason: "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.", url: "https://innerloop.works/", checked: "2026-10-03" },
   { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" }
