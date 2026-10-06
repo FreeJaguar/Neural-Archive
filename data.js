@@ -3,7 +3,8 @@ window.CATEGORIES = [
   { id: "productivity", name: "פרודוקטיביות ואוטומציה", short: "פרודוקטיביות", color: "#1f7a5a" },
   { id: "development", name: "פיתוח ובניית מוצרים", short: "פיתוח", color: "#3568b8" },
   { id: "design", name: "עיצוב ויצירת תוכן", short: "עיצוב", color: "#c44f3d" },
-  { id: "research", name: "מחקר, למידה וידע", short: "מחקר", color: "#7757a6" }
+  { id: "research", name: "מחקר, למידה וידע", short: "מחקר", color: "#7757a6" },
+  { id: "skills", name: "סקילים לסוכני AI", short: "סקילים", color: "#087f85" }
 ];
 
 window.TOOLS = [
@@ -349,14 +350,14 @@ window.TOOLS = [
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/alibaba/open-code-review" }, { label: "הנחיות אבטחה", url: "https://github.com/alibaba/open-code-review/security" }]
   },
   {
-    slug: "diagram-design", name: "Diagram Design", mark: "DD", category: "design", subcategories: ["דיאגרמות", "Agent skill", "HTML/SVG"],
-    tagline: "מיומנות סוכן שיוצרת 39 סוגי דיאגרמות כ־HTML/SVG עצמאי.",
+    slug: "diagram-design", name: "Diagram Design", mark: "DD", category: "skills", subcategories: ["דיאגרמות", "Agent skill", "HTML/SVG"],
+    tagline: "מיומנות סוכן שיוצרת דיאגרמות עריכתיות כ־HTML/SVG עצמאי.",
     solves: "מייצרת דיאגרמות מקצועיות מתוך תיאור ומייבאת Mermaid, draw.io ו־Excalidraw.",
     uses: ["עיצוב", "דיאגרמות", "פיתוח"], audience: "מפתחים, אדריכלים וכותבי מסמכים שעובדים עם סוכני AI.",
     free: "המיומנות חינמית וקוד פתוח תחת MIT וכל פלט נשמר כקובץ HTML/SVG עצמאי.",
     limits: "נדרש סוכן מארח ומודל, שעשויים להיות בתשלום; איכות התוצאה תלויה בהוראות ובמודל.",
     pros: ["39 סוגי דיאגרמות", "קבצים עצמאיים", "ייבוא פורמטים קיימים"], cons: ["לא יישום עצמאי", "הסוכן המארח עשוי לעלות"],
-    alternatives: ["Napkin AI", "Whiteboard"], url: "https://cathrynlavery.github.io/diagram-design/", added: "2026-09-29", verified: "2026-10-01",
+    alternatives: ["Napkin AI", "Whiteboard"], url: "https://diagramdesign.dev/", added: "2026-09-29", verified: "2026-10-06",
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/cathrynlavery/diagram-design" }, { label: "האתר הרשמי", url: "https://cathrynlavery.github.io/diagram-design/" }]
   },
   {
@@ -426,14 +427,14 @@ window.TOOLS = [
     sources: [{ label: "תיעוד רשמי", url: "https://frostyard.github.io/nsl/" }, { label: "המאגר והרישיון", url: "https://github.com/frostyard/nsl" }]
   },
   {
-    slug: "zero-slop", name: "Zero Slop", mark: "ZS", category: "design", subcategories: ["כתיבה", "עריכה", "Agent Skill"],
+    slug: "zero-slop", name: "Zero Slop", mark: "ZS", category: "skills", subcategories: ["כתיבה", "עריכה", "Agent Skill"],
     tagline: "בודק ניסוחים גנריים של AI ועורך אותם תוך שמירה על עובדות ומבנה.",
     solves: "מסמן קלישאות, קצב מכני וטענות עמומות, ואז מפעיל עוזר קיים לשכתוב עם בדיקות מקומיות לשמות, מספרים, ציטוטים וקישורים.",
     uses: ["כתיבה", "עריכת תוכן", "AI"], audience: "כותבים, משווקים, חוקרים וצוותי מוצר שעורכים טקסט שנוצר בעזרת AI.",
     free: "ה-skill, כלי הניקוד המקומי ועורך הדפדפן חינמיים; הקוד תחת MIT והניקוד המקומי עובד ללא חשבון או שרת.",
     limits: "השכתוב עצמו משתמש במודל של העוזר הקיים ועשוי להיות כפוף למנוי או לעלות שלו; הציון בוחן דפוסי כתיבה ואינו גלאי מחבר.",
     pros: ["ניקוד מקומי ושקוף", "בדיקת שימור עובדות", "תמיכה ב-Codex, Claude Code, Cursor ועוד"], cons: ["איכות השכתוב תלויה במודל", "בדיקות סגנון אינן מדד אוניברסלי לאיכות"],
-    alternatives: ["Canva", "Napkin AI"], url: "https://zero-slop.ai/", added: "2026-10-03", verified: "2026-10-03",
+    alternatives: ["Anthropic Skills", "Vercel Agent Skills"], url: "https://zero-slop.ai/", added: "2026-10-03", verified: "2026-10-06",
     sources: [{ label: "האתר ותנאי החינם", url: "https://zero-slop.ai/" }, { label: "המאגר והרישיון", url: "https://github.com/manavmishra/ZeroSlop" }]
   },
   {
@@ -578,7 +579,52 @@ window.TOOLS = [
     pros: ["אין אפליקציה בצד הטלפון", "720p עד 4K ב-H.264", "פועל מקומית ללא ענן"], cons: ["Windows בלבד", "צריכת סוללה וללא מיקרופון"],
     alternatives: ["Tinycast", "Cavalry"], url: "https://orest-z.github.io/OmniCam/", added: "2026-10-06", verified: "2026-10-06",
     sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/Orest-Z/OmniCam" }, { label: "האתר הרשמי", url: "https://orest-z.github.io/OmniCam/" }]
+  },
+  {
+    slug: "anthropic-skills", name: "Anthropic Skills", mark: "An", category: "skills", subcategories: ["אוסף סקילים", "Claude", "Agent Skills"],
+    tagline: "אוסף רשמי של סקילים לדוגמא ליצירה, פיתוח, תקשורת ומסמכים.",
+    solves: "מספק סקילים מוכנים ודפוסי ייחוס לבניית יכולות חוזרות לסוכנים, כולל יצירת מסמכים, בדיקות יישומי ווב, עיצוב ויצירת MCP.",
+    uses: ["AI", "מסמכים", "פיתוח"], audience: "משתמשי Claude Code ומפתחי סוכנים שרוצים סקילים רשמיים ודוגמאות מורכבות.",
+    free: "המאגר והסקילים לדוגמה זמינים בחינם; רבים מהם בקוד פתוח תחת Apache 2.0 וניתן להתקינם כתוספים ב-Claude Code.",
+    limits: "רישיונות מעורבים: סקילי DOCX, PDF, PPTX ו-XLSX הם source-available ולא קוד פתוח. שימוש ב-Claude.ai או ב-API כפוף למסלול ולעלות נפרדים.",
+    pros: ["מקור רשמי של Anthropic", "כיסוי רחב ודוגמאות production", "כולל תבנית ומפרט Agent Skills"], cons: ["חלק מהסקילים אינם בקוד פתוח", "חלק מדרכי ההתקנה ייעודיות ל-Claude"],
+    alternatives: ["Vercel Agent Skills", "Find Skills"], url: "https://github.com/anthropics/skills", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר, התקנה ורישיונות", url: "https://github.com/anthropics/skills" }, { label: "מפרט Agent Skills", url: "https://agentskills.io/" }]
+  },
+  {
+    slug: "vercel-agent-skills", name: "Vercel Agent Skills", mark: "V", category: "skills", subcategories: ["React", "Next.js", "Web"],
+    tagline: "אוסף רשמי של סקילים לפיתוח, ביצועים, עיצוב וכתיבה למוצרי ווב.",
+    solves: "מוסיף לסוכן הנחיות ממוקדות ל-React ו-Next.js, ביקורת ממשק ונגישות, כתיבה, React Native, פריסה ואופטימיזציית Vercel.",
+    uses: ["פיתוח", "עיצוב", "AI"], audience: "מפתחי ווב שעובדים עם Codex, Claude Code, Cursor או סוכנים תואמי Agent Skills.",
+    free: "כל האוסף חינמי וקוד פתוח תחת MIT, וניתן להתקין את כולו או סקיל יחיד באמצעות Skills CLI.",
+    limits: "נדרש סוכן מארח; סקילים הקשורים לפריסה או למדדים עשויים לדרוש חשבון Vercel, והרצת המודל או תשתית היעד אינן כלולות.",
+    pros: ["מקור רשמי של Vercel", "כללים מעשיים וממוקדים", "התקנה מודולרית ותמיכה בסוכנים רבים"], cons: ["חלק מהתוכן ממוקד בסטאק של Vercel", "יכולות רשת ותשתית תלויות בסוכן המארח"],
+    alternatives: ["Anthropic Skills", "Superpowers"], url: "https://github.com/vercel-labs/agent-skills", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר ורשימת הסקילים", url: "https://github.com/vercel-labs/agent-skills" }, { label: "רישיון MIT", url: "https://github.com/vercel-labs/agent-skills/blob/main/LICENSE" }]
+  },
+  {
+    slug: "superpowers-skills", name: "Superpowers", mark: "SP", category: "skills", subcategories: ["תהליך פיתוח", "TDD", "Debugging"],
+    tagline: "מתודולוגיית פיתוח לסוכני קוד שמחברת תכנון, TDD, דיבוג וביקורת.",
+    solves: "מכוונת סוכן מתהליך הבנת הדרישה ועד תכנון, יישום מונחה בדיקות, סקירה וסיום ענף באמצעות סקילים שמופעלים לפי ההקשר.",
+    uses: ["פיתוח", "בדיקות", "AI"], audience: "מפתחים שרוצים תהליך עבודה עקבי ומבוקר לסוכני קוד אוטונומיים.",
+    free: "הפלאגין והסקילים חינמיים וקוד פתוח תחת MIT, עם נתיבי התקנה ל-Codex, Claude Code, Cursor, Gemini CLI וסוכנים נוספים.",
+    limits: "ההתנהגות וה-hooks משתנים בין סוכנים; הסוכן והמודל עצמם נפרדים. רכיב חזותי אופציונלי טוען לוגו מרחוק עם מספר גרסה, וניתן לבטל זאת במשתנה סביבה.",
+    pros: ["תהליך פיתוח מקצה לקצה", "תמיכה רחבה בסוכנים", "דגש על בדיקות וסקירה"], cons: ["תהליך דעתני שאינו מתאים לכל צוות", "התקנה ועדכון שונים בין פלטפורמות"],
+    alternatives: ["Vercel Agent Skills", "AI Maestro"], url: "https://github.com/obra/superpowers", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "המאגר והתקנה", url: "https://github.com/obra/superpowers" }, { label: "רישיון MIT", url: "https://github.com/obra/superpowers/blob/main/LICENSE" }]
+  },
+  {
+    slug: "find-skills", name: "Find Skills", mark: "FS", category: "skills", subcategories: ["גילוי סקילים", "התקנה", "Skills CLI"],
+    tagline: "סקיל שמאתר, בודק ומתקין סקילים נוספים לפי המשימה המבוקשת.",
+    solves: "מתרגם צורך של המשתמש לחיפוש ב-skills.sh וב-Skills CLI, בודק מקור ואימוץ ומציג פקודת התקנה מתאימה.",
+    uses: ["AI", "חיפוש", "אוטומציה"], audience: "משתמשי סוכנים שרוצים להרחיב יכולות בלי לחפש ידנית בין מאגרים.",
+    free: "הסקיל ו-Skills CLI חינמיים וקוד פתוח תחת MIT; החיפוש, ההתקנה והעדכון אינם דורשים מסלול בתשלום.",
+    limits: "נדרשים Node.js, npm וגישה לרשת. תוצאות החיפוש כוללות תוכן צד שלישי, ולכן צריך לבדוק מקור, רישיון וקוד לפני התקנה.",
+    pros: ["מקצר גילוי והתקנה", "תומך בעשרות סוכנים", "כולל הנחיות לבדיקת איכות"], cons: ["איכות התוצאות תלויה במאגר הציבורי", "התקנת סקיל צד שלישי מוסיפה סיכון שרשרת אספקה"],
+    alternatives: ["Anthropic Skills", "Vercel Agent Skills"], url: "https://github.com/vercel-labs/skills/tree/main/skills/find-skills", added: "2026-10-06", verified: "2026-10-06",
+    sources: [{ label: "ה-SKILL.md הרשמי", url: "https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md" }, { label: "Skills CLI ורישיון", url: "https://github.com/vercel-labs/skills" }]
   }
+
 
 ];
 
