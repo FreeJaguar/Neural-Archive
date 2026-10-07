@@ -623,6 +623,50 @@ window.TOOLS = [
     pros: ["מקצר גילוי והתקנה", "תומך בעשרות סוכנים", "כולל הנחיות לבדיקת איכות"], cons: ["איכות התוצאות תלויה במאגר הציבורי", "התקנת סקיל צד שלישי מוסיפה סיכון שרשרת אספקה"],
     alternatives: ["Anthropic Skills", "Vercel Agent Skills"], url: "https://github.com/vercel-labs/skills/tree/main/skills/find-skills", added: "2026-10-06", verified: "2026-10-06",
     sources: [{ label: "ה-SKILL.md הרשמי", url: "https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md" }, { label: "Skills CLI ורישיון", url: "https://github.com/vercel-labs/skills" }]
+  },
+  {
+    slug: "photoc", name: "Photoc", mark: "Ph", category: "design", subcategories: ["צילום", "CLI", "ניהול מדיה"],
+    tagline: "ארגז כלי שורת פקודה לסינון, ארגון והכנת תמונות בלי לשנות מקור כברירת מחדל.",
+    solves: "מרכז בדיקת חדות וכפילויות, קריאת EXIF, שינוי שמות, מיון, דפי מגע, דחיסה והסרת GPS ב-workflow שניתן לתסרוט.",
+    uses: ["צילום", "אוטומציה", "יצירת תוכן"], audience: "צלמים ומשתמשים טכניים שמנהלים צילומים ב-macOS או Linux ורוצים תהליך מקומי ובטוח.",
+    free: "כל הכלי חינמי וקוד פתוח תחת MIT, ללא חשבון או שירות ענן; זמין דרך Homebrew ובינארים חתומי checksum ל-macOS ול-Linux.",
+    limits: "תומך כעת ב-JPEG ובמטא-דאטה של Sony ARW בלבד; אין Windows, פיתוח RAW, HEIC או קטלוג ספרייה, והבינארים ל-macOS אינם notarized.",
+    pros: ["ברירת מחדל לא הרסנית", "JSON ותסרוט מלא", "בדיקת חדות, פרטיות וכפילויות"], cons: ["כיסוי פורמטים צר", "דורש עבודה בטרמינל"],
+    alternatives: ["GIMP", "SCM"], url: "https://github.com/ahmetomerv/photoc", added: "2026-10-07", verified: "2026-10-07",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/ahmetomerv/photoc" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49944196" }]
+  },
+  {
+    slug: "vectory", name: "Vectory", mark: "Ve", category: "development", subcategories: ["Observability", "ניהול תצורה", "Self-hosted"],
+    tagline: "לוח בקרה חזותי לבנייה, פריסה ו-rollback של צינורות Vector על צי שרתים.",
+    solves: "מחליף עריכה והפצה ידנית של תצורות Vector בעורך סכמטי, גרסאות immutable, canary, תזמון ואימות בכל יעד.",
+    uses: ["פיתוח", "DevOps", "אוטומציה"], audience: "צוותי פלטפורמה ו-DevOps שמפעילים Vector לאיסוף לוגים, metrics ואירועים בכמה מכונות.",
+    free: "השרת, הסוכן וה-dashboard חינמיים בקוד פתוח תחת Apache-2.0; האירוח העצמי משתמש ב-Docker Compose ו-SQLite ללא חשבון, אנליטיקה או CDN חיצוני.",
+    limits: "דורש תשתית עצמית, HTTPS ו-Vector 0.58.x ביעדים; תמונת השרת היא x86-64, וב-Apple silicon היא פועלת דרך אמולציית amd64.",
+    pros: ["עורך לכל 128 רכיבי Vector", "canary ו-rollback", "סוכנים יוצאים בלבד ו-mTLS"], cons: ["מוצר חדש עם אימוץ מוקדם", "ממוקד בגרסה מסוימת של Vector"],
+    alternatives: ["Graphene", "GitHub"], url: "https://vectory.ahmadz.ai/", added: "2026-10-07", verified: "2026-10-07",
+    sources: [{ label: "המאגר, ארכיטקטורה ורישיון", url: "https://github.com/416rehman/Vectory" }, { label: "תיעוד ההתקנה הרשמי", url: "https://vectory.ahmadz.ai/help/quickstart/" }]
+  },
+  {
+    slug: "openbot", name: "OpenBot", mark: "OB", category: "development", subcategories: ["סוכני AI", "תזמור", "Self-hosted"],
+    tagline: "סביבת עבודה מקומית לצוות סוכנים מתמשכים עם תיבות דואר, כלים וזיכרון.",
+    solves: "מאפשר לסוכנים בעלי תפקידים להעביר משימות זה לזה בשרשורים, להשתמש ב-MCP ובכלים, לעצור לאישור אנושי ולשמור זיכרון ארוך טווח.",
+    uses: ["פיתוח", "AI", "אוטומציה"], audience: "מפתחים שרוצים להריץ workflows רב-סוכניים בשליטה עצמית דרך דפדפן או אפליקציית desktop.",
+    free: "הפלטפורמה חינמית תחת MIT ופועלת באירוח עצמי עם SQLite; Ollama נתמך לצ'אט ול-embeddings ולכן קיים נתיב שימוש מקומי ללא עלות ספק מודל.",
+    limits: "הגרסה 0.1.3 צעירה והבינארים אינם חתומים; נדרשים uv ותשתית מקומית, כלי shell אינם sandboxed, וספקי ענן חלופיים עולים כסף.",
+    pros: ["העברת עבודה בין סוכנים", "MCP, אישורים וזיכרון מובנים", "מעקב עלות והרצה מקומית"], cons: ["בשלות מוקדמת", "מודל אמון רחב לכלי shell"],
+    alternatives: ["ScallopBot", "AI Maestro"], url: "https://github.com/regnull/openbot", added: "2026-10-07", verified: "2026-10-07",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/regnull/openbot" }, { label: "גרסת 0.1.3 ובינארים", url: "https://github.com/regnull/openbot/releases/tag/v0.1.3" }]
+  },
+  {
+    slug: "vokalu", name: "Vokalu", mark: "Vo", category: "productivity", subcategories: ["הכתבה", "נגישות", "AI מקומי"],
+    tagline: "הכתבה מערכתית ל-Windows ול-Mac עם מצב מקומי חינמי שפועל גם ללא אינטרנט.",
+    solves: "מכניס דיבור כטקסט בכל שדה כתיבה באמצעות קיצור מקשים, בלי תלות בתוסף לדפדפן או באינטגרציה ייעודית לכל אפליקציה.",
+    uses: ["כתיבה", "פרודוקטיביות", "נגישות"], audience: "אנשים שמעדיפים לדבר במקום להקליד ורוצים אפשרות פרטית ומקומית ב-Windows או macOS.",
+    free: "Private mode עם מודל דיבור מקומי והכתבה ללא עיצוב AI חינמי ללא מכסת דקות; בנוסף המסלול המקוון מעניק 25¢ בכל שבוע ללא כרטיס.",
+    limits: "זהו יישום קנייני ללא רישיון קוד פתוח; עיצוב AI מקומי עולה 0.5¢ לדקה, תמלול ענן ופגישות עולים 1.5–2¢ לדקה, ואין אפליקציית מובייל.",
+    pros: ["הכתבה חינמית ולא מקוונת", "עובד בכל שדה טקסט", "Windows ו-macOS"], cons: ["קוד סגור", "עיצוב, פגישות וסנכרון מתקדמים בתשלום"],
+    alternatives: ["Minutes", "Circleback"], url: "https://vokalu.com/", added: "2026-10-07", verified: "2026-10-07",
+    sources: [{ label: "תמחור ומגבלות רשמיים", url: "https://vokalu.com/pricing/" }, { label: "תנאי השימוש", url: "https://vokalu.com/terms/" }]
   }
 
 
@@ -634,5 +678,8 @@ window.WATCHLIST = [
   { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI; הגיע ל-106 נקודות ו-19 תגובות ב-Show HN.", reason: "הפרויקט עדיין צעיר מאוד, והדיון הטכני מצביע על חפיפה משמעותית עם llama-server ללא בנצ’מרקים שמבססים ערך מוסף; נדרש להמתין לגרסאות, אימוץ ובדיקות ביצועים.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-06" },
   { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
   { name: "Breadcrumb", mark: "B", category: "productivity", signal: "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.", reason: "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.", url: "https://innerloop.works/", checked: "2026-10-03" },
-  { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" }
+  { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" },
+  { name: "Jotbus", mark: "JB", category: "development", signal: "scratchpad מוצפן מקצה לקצה להעברת הקשר וקבצים בין Codex, Claude Code וסוכנים נוספים; 22 נקודות ו-13 תגובות ב-Show HN.", reason: "המסלול החינמי הוא workspace זמני של 60 דקות וקבצים עד 2MB; היסטוריה מתמשכת דורשת $7 לחודש, ולכן אינו עומד כרגע ברף שימוש חינמי מתמשך לקטלוג הפעיל.", url: "https://jotbus.com/", checked: "2026-10-07" },
+  { name: "TAP Runtime", mark: "TAP", category: "development", signal: "runtime מקומי תחת MIT לכלים שסוכני קוד בונים ומשתפים, עם release חתום ותמיכה ב-Linux וב-WSL.", reason: "הפרויקט חדש מאוד וטרם הצטברו אימוץ, תיעוד שימוש עצמאי ובדיקות קהילה שמצדיקים רשומה פעילה; החינמיות מאומתת אך הבשלות תיבדק שוב.", url: "https://github.com/Telara-Labs/TAP-Runtime", checked: "2026-10-07" },
+  { name: "OpenChart", mark: "OC", category: "research", signal: "חלופת TradingView מקומית עם סוכן AI, 95 כוכבים וגרסאות desktop פעילות בתוך יומיים מההשקה.", reason: "GitHub מסמן את הרישיון כ-NOASSERTION והגרסה מציגה נעילות ל-OpenChart Cloud בחלק מבחירות הנתונים; תנאי השימוש החינמי והרישיון דורשים אימות נוסף.", url: "https://github.com/longsurf-ai/openchart", checked: "2026-10-07" }
 ];
