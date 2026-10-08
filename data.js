@@ -668,7 +668,73 @@ window.TOOLS = [
     alternatives: ["Minutes", "Circleback"], url: "https://vokalu.com/", added: "2026-10-07", verified: "2026-10-07",
     sources: [{ label: "תמחור ומגבלות רשמיים", url: "https://vokalu.com/pricing/" }, { label: "תנאי השימוש", url: "https://vokalu.com/terms/" }]
   }
-
+,
+  {
+    slug: "velozity", name: "Velozity", mark: "Ve", category: "productivity", subcategories: ["שיתוף פעולה", "סוכני AI", "פגישות"],
+    tagline: "משרד דיגיטלי משותף שבו צוותים וסוכני AI עובדים באותו הקשר.",
+    solves: "מאחד צ'אט, שיחות, תמלול, משימות, לוחות שנה וסוכנים במרחב אחד כדי לצמצם מעבר בין אפליקציות והסברים חוזרים.",
+    uses: ["שיתוף", "פגישות", "אוטומציה"], audience: "צוותים מרוחקים ויחידים שרוצים לרכז עבודה אנושית וסוכני AI באותו workspace.",
+    free: "Workspace חינמי לתמיד לכל הצוות; AI Space כולל 15 משימות פעולה בשבוע ו-200 דקות תמלול אישיות בחודש, ו-Co-Worker כולל 150 קרדיטי AI ומשימת AI אחת בחודש.",
+    limits: "מקורות מחוברים חוזרים, תדריכים אוטומטיים, תמלול ומשימות ללא הגבלה ומודלים מתקדמים דורשים שדרוג; חיבור Claude Code או Codex עשוי לדרוש מנוי נפרד.",
+    pros: ["מסלול צוות חינמי מפורש", "צ'אט, וידאו, משימות וסוכנים יחד", "אפשר להביא מנוי AI קיים"], cons: ["מוצר חדש עם מעט היסטוריית שימוש", "מכסות AI ותמלול מוגבלות"],
+    alternatives: ["Trello", "Make", "Circleback"], url: "https://www.velozity.ai/", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "תמחור ומכסות רשמיים", url: "https://www.velozity.ai/pricing-us" }, { label: "אתר ההשקה הרשמי", url: "https://getvelozity.com/" }, { label: "אות השקה ב-Product Hunt", url: "https://www.producthunt.com/leaderboard/weekly/2026/41" }]
+  },
+  {
+    slug: "nanomuse", name: "nanoMuse", mark: "nM", category: "productivity", subcategories: ["סוכן אישי", "אוטומציה", "קוד פתוח"],
+    tagline: "סוכן אישי פתוח שחוצה טלפון, מחשב ודפדפן ושומר זיכרון מתמשך.",
+    solves: "מחבר שיחה אחת לפעולות במכשירים, קבצים, דפדפן, shell, MCP וסקילים, עם עצירה לאישור לפני פעולה בלתי הפיכה.",
+    uses: ["אוטומציה", "AI", "ניהול ידע"], audience: "משתמשים טכניים שרוצים סוכן אישי רב-מכשירי שניתן לאירוח עצמי ולחיבור למודל לבחירתם.",
+    free: "כל המערכת חינמית וקוד פתוח תחת GPL-3.0-or-later. ה-relay הקהילתי מעניק מכסת מודל התחלתית, ולאחריה ניתן להשתמש במפתח אישי או לארח relay עצמי.",
+    limits: "המכסה הקהילתית אינה קבועה; מפתח או שרת אישיים עשויים לעלות כסף. הפרויקט צעיר, פעולות מערכת דורשות הרשאות רחבות ו-iOS עדיין מתפתח.",
+    pros: ["Android, iOS, Windows, macOS, Linux ודפדפן", "אירוח עצמי ובחירת מודל", "אישורים וזיכרון קריא בקבצים"], cons: ["דורש מודל או מפתח לאחר המכסה", "משטח הרשאות רחב ופרויקט חדש"],
+    alternatives: ["ScallopBot", "OpenBot", "Hindsight"], url: "https://nanomuse.cn/", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "המאגר, רישיון ותנאי החינם", url: "https://github.com/nano-muse/nanoMuse" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49980743" }, { label: "המאמר הרשמי", url: "https://arxiv.org/abs/2610.08699" }]
+  },
+  {
+    slug: "penguin-mail", name: "Penguin Mail", mark: "PM", category: "productivity", subcategories: ["דואר אלקטרוני", "לוח שנה", "Linux"],
+    tagline: "לקוח דואר ולוח שנה native ל-Linux עם הצפנה ועוזר AI אופציונלי.",
+    solves: "מרכז Gmail, Microsoft וחשבונות IMAP או POP3, יומנים ואנשי קשר ביישום מקומי אחד ללא שרת תיווך של המפתח.",
+    uses: ["דואר", "לוח שנה", "פרודוקטיביות"], audience: "משתמשי Linux שרוצים חלופה מקומית וקלה ללקוחות דואר ותיקים.",
+    free: "היישום חינמי וקוד פתוח תחת GPL-3.0, ללא חשבון Penguin או מנוי. עוזר AI יכול לפעול עם Ollama או LM Studio מקומיים.",
+    limits: "Linux בלבד; Send Later פועל רק כשהיישום רץ. שימוש ב-Anthropic או במודל ענן עולה בנפרד, והפרויקט החדש עדיין צובר בדיקות אבטחה ושימוש.",
+    pros: ["תמיכה רחבה בספקי דואר", "OpenPGP ו-S/MIME", "AI מקומי אופציונלי וכבוי כברירת מחדל"], cons: ["Linux בלבד", "גרסה צעירה עם סיכוני בשלות ואחסון מקומי"],
+    alternatives: ["Vokalu", "Minutes", "Obsidian"], url: "https://penguin-mail.com/", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "המאגר, תכונות ורישיון", url: "https://github.com/c9dev/penguin-mail" }, { label: "גרסאות רשמיות", url: "https://github.com/c9dev/penguin-mail/releases" }, { label: "דיון ההשקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49980770" }]
+  },
+  {
+    slug: "pinrail", name: "Pinrail", mark: "Pi", category: "development", subcategories: ["Human-in-the-loop", "סוכני קוד", "Desktop"],
+    tagline: "תיבת אישורים מקומית שבה סוכני קוד ממתינים להחלטה אנושית מובנית.",
+    solves: "הופך נקודות עצירה של סוכן לסקירת diff, רשימה, Markdown או תמונה, ומחזיר החלטה מובנית כדי שה-workflow ימשיך.",
+    uses: ["פיתוח", "סקירת קוד", "AI"], audience: "מפתחים שמפעילים Claude Code, Codex, Cursor, OpenCode או כל סוכן שיכול להריץ פקודה.",
+    free: "האפליקציה, ה-CLI, ה-SDK וה-plugin system חינמיים וקוד פתוח תחת Apache-2.0; הכול נשמר מקומית ומוגש רק דרך loopback.",
+    limits: "גרסה 0.1.2 ובשלות מוקדמת; כרגע macOS ו-Linux בלבד ו-Windows עדיין בפיתוח. הסוכן והמודל עצמם אינם כלולים.",
+    pros: ["החלטות מובנות ולא תשובת צ'אט", "נתונים מקומיים ו-API על loopback", "תוספים לסוגי סקירה שונים"], cons: ["פרויקט חדש מאוד", "אין Windows עדיין"],
+    alternatives: ["Open Code Review", "Perspica", "AI Maestro"], url: "https://pinrail.dev/", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/forgeplane/pinrail" }, { label: "גרסה 0.1.2", url: "https://github.com/forgeplane/pinrail/releases/tag/v0.1.2" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49981549" }]
+  },
+  {
+    slug: "convkit", name: "Convkit", mark: "Cv", category: "design", subcategories: ["המרת קבצים", "מדיה", "CLI"],
+    tagline: "פקודה אחת להמרה מקומית של וידאו, אודיו, תמונות ומסמכים.",
+    solves: "ממפה מקור ויעד לפקודה מותאמת של FFmpeg, ImageMagick, LibreOffice, Pandoc או Typst, כולל batch ודחיסה לגודל יעד.",
+    uses: ["המרת קבצים", "וידאו", "אוטומציה"], audience: "יוצרי תוכן ומפתחים שרוצים workflow מקומי, עקבי וניתן לתסרוט להמרות מדיה ומסמכים.",
+    free: "ה-CLI חינמי בקוד פתוח תחת Apache-2.0 או MIT, פועל ללא חשבון ומבצע המרות offline; רק התקנה ועדכון ניגשים לרשת.",
+    limits: "דורש התקנת כלי backend לפי סוג ההמרה; בינארי Windows אינו חתום, ובנייה מהמקור דורשת Rust וכלי C. הפרויקט צעיר.",
+    pros: ["115 זוגות המרה ב-27 פורמטים", "Windows, macOS ו-Linux", "dry-run, JSON ויציאות מתאימות לסקריפטים"], cons: ["תלוי בכלים חיצוניים", "מעט משתמשים ואימוץ מוקדם"],
+    alternatives: ["GIMP", "Concat", "Cavalry"], url: "https://github.com/shdwfruit/convkit", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "המאגר, התקנה ורישיונות", url: "https://github.com/shdwfruit/convkit" }, { label: "גרסה 0.3.1", url: "https://github.com/shdwfruit/convkit/releases/tag/v0.3.1" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49981175" }]
+  },
+  {
+    slug: "insightarxiv", name: "InsightArxiv", mark: "IA", category: "research", subcategories: ["arXiv", "סיכומי מחקר", "אוטומציה"],
+    tagline: "תקציר יומי פתוח של מאמרי arXiv עם ניתוח מובנה בעזרת AI.",
+    solves: "סורק עשרות קטגוריות arXiv, מסנן כפילויות ומפיק לכל מאמר TL;DR, מוטיבציה, שיטה, תוצאות, מסקנות ומילות מפתח.",
+    uses: ["מחקר", "למידה", "ניהול ידע"], audience: "חוקרים, סטודנטים ומהנדסים שרוצים לסרוק במהירות ספרות חדשה או להפעיל digest מותאם.",
+    free: "ה-digest הציבורי פתוח ללא חשבון, והקוד ניתן לשימוש עצמי תחת Apache-2.0 לפי קובץ LICENSE; ה-pipeline פועל ב-Python ומפרסם Markdown.",
+    limits: "אירוח עצמי של שכבת ה-AI דורש מפתחות Google Gemini ומכסה שעשויה לעלות; סיכומי AI עלולים לטעות ודורשים קריאת המקור. ה-README עדיין מציין MIT בניגוד לקובץ LICENSE הרשמי.",
+    pros: ["כיסוי רחב של קטגוריות arXiv", "ארכיון יומי וניווט לפי תחום", "pipeline ניתן להתאמה"], cons: ["תלות ב-Gemini ליצירה עצמית", "סתירת תיעוד רישיון והצורך לאמת סיכומים"],
+    alternatives: ["ResearchRabbit", "AstaBrief", "Paper2Agent"], url: "https://xmkxabc.github.io/insightarxiv/", added: "2026-10-08", verified: "2026-10-08",
+    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/xmkxabc/InsightArxiv" }, { label: "רישיון Apache-2.0 בפועל", url: "https://github.com/xmkxabc/InsightArxiv/blob/main/LICENSE" }, { label: "ה-digest החי", url: "https://xmkxabc.github.io/insightarxiv/" }]
+  }
 
 ];
 
