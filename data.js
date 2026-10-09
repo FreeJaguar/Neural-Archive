@@ -734,6 +734,50 @@ window.TOOLS = [
     pros: ["כיסוי רחב של קטגוריות arXiv", "ארכיון יומי וניווט לפי תחום", "pipeline ניתן להתאמה"], cons: ["תלות ב-Gemini ליצירה עצמית", "סתירת תיעוד רישיון והצורך לאמת סיכומים"],
     alternatives: ["ResearchRabbit", "AstaBrief", "Paper2Agent"], url: "https://xmkxabc.github.io/insightarxiv/", added: "2026-10-08", verified: "2026-10-08",
     sources: [{ label: "המאגר והתיעוד", url: "https://github.com/xmkxabc/InsightArxiv" }, { label: "רישיון Apache-2.0 בפועל", url: "https://github.com/xmkxabc/InsightArxiv/blob/main/LICENSE" }, { label: "ה-digest החי", url: "https://xmkxabc.github.io/insightarxiv/" }]
+  },
+  {
+    slug: "edi-life-os", name: "Edi Life OS", mark: "EL", category: "productivity", subcategories: ["ניהול אישי", "הרגלים", "Self-hosted"],
+    tagline: "לוח חיים באירוח עצמי שמחבר הרגלים, מטרות, קנבן, מיקוד וכספים.",
+    solves: "מרכז משימות, יעדים, הרגלים, לוח שנה, הערות, Pomodoro ומעקב כספי במסד נתונים אחד, עם MCP אופציונלי לעוזרי AI.",
+    uses: ["תכנון", "ניהול משימות", "אוטומציה"], audience: "משתמשים טכניים שרוצים סביבת פרודוקטיביות אישית בבעלות מלאה ובאירוח עצמי.",
+    free: "המערכת כולה חינמית תחת MIT, ללא מנוי, מעקב או נעילת ספק; אפשר להריץ ב-Docker או על PHP 8.1+ עם MySQL או MariaDB.",
+    limits: "מיועדת לבעלים יחיד ודורשת תחזוקת שרת ומסד נתונים. אסימון ה-API מעניק גישת קריאה וכתיבה רחבה ללא scopes או rate limiting מובנים, ולכן נדרשים HTTPS והגבלת גישה חיצונית.",
+    pros: ["עשרה אזורי עבודה מחוברים", "נתונים בבעלות המשתמש", "API ו-MCP מובנים"], cons: ["אירוח עצמי ותחזוקה", "מודל הרשאות לבעלים יחיד"],
+    alternatives: ["Todoist", "Trello", "Obsidian"], url: "https://github.com/edrisranjbar/lifeos", added: "2026-10-09", verified: "2026-10-09",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/edrisranjbar/lifeos" }, { label: "גרסה 1.0.0", url: "https://github.com/edrisranjbar/lifeos/releases/tag/v1.0.0" }]
+  },
+  {
+    slug: "k10s", name: "K10s", mark: "K10", category: "development", subcategories: ["Kubernetes", "TUI", "DevOps"],
+    tagline: "ממשק טרמינל לחיץ ומהיר לניהול Kubernetes, עם חיפוש ומצב קריאה בלבד.",
+    solves: "מאפשר לסרוק משאבי cluster, לצפות בלוגים וב-YAML, להריץ exec ו-port-forward ולבצע פעולות נפוצות דרך מקלדת או עכבר.",
+    uses: ["DevOps", "תצפית", "ניהול תשתיות"], audience: "מפתחי Backend, אנשי SRE ומפעילי Kubernetes שמעדיפים כלי TUI יחיד.",
+    free: "הכלי חינמי תחת Apache-2.0, פועל כבינארי יחיד ומציע גרסאות עם checksums ל-macOS, Linux ו-Windows. תכונות הליבה אינן דורשות חשבון או מודל AI.",
+    limits: "יכולת ה-AI דורשת ספק ומפתח API נפרדים, והמפתח נשמר בקובץ ההגדרות כטקסט רגיל בהרשאות 0600. יש להשתמש בגרסה 0.1.7 ומעלה, משום שבינארים קודמים נבנו עם toolchain שכלל חולשות שתוקנו מאז.",
+    pros: ["חיפוש מיידי וממשק לחיץ", "מצב read-only כפול UI ותעבורה", "הפצות רב-פלטפורמיות מאומתות checksum"], cons: ["מיועד רק ל-Kubernetes", "אחסון מקומי של מפתח AI כטקסט"],
+    alternatives: ["Vectory", "GitHub", "nsl"], url: "https://github.com/p10node/k10s", added: "2026-10-09", verified: "2026-10-09",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/p10node/k10s" }, { label: "גרסה 0.1.7 והנחיית אבטחה", url: "https://github.com/p10node/k10s/releases/tag/v0.1.7" }, { label: "הגדרות AI ומגבלות מפתח", url: "https://github.com/p10node/k10s/blob/main/docs/config.md" }]
+  },
+  {
+    slug: "rembrandt-photo", name: "Rembrandt", mark: "Re", category: "design", subcategories: ["עריכת תמונה", "RAW", "AI מקומי"],
+    tagline: "עורך RAW מקומי וחוצה פלטפורמות עם ספרייה, מסכות וכלי AI במכשיר.",
+    solves: "מספק workflow לא-הרסני דמוי Lightroom לעריכה, מיון, batch, HDR, פנורמות וייצוא, בלי להעלות תמונות לענן.",
+    uses: ["צילום", "עריכת תמונה", "ניהול מדיה"], audience: "צלמים ויוצרי תוכן שרוצים עורך RAW מקומי עם ספרייה וכלי GPU.",
+    free: "כל העריכה המקומית חינמית תחת GPL-3.0, ללא חשבון או מנוי; רק סנכרון ענן אופציונלי עולה כסף. קיימים מתקינים ו-SHA256SUMS ל-macOS, Windows ו-Linux.",
+    limits: "הפרויקט צעיר והממשק מציע פחות שליטה מ-darktable. המתקינים עדיין אינם חתומים ולכן SmartScreen ו-Gatekeeper עשויים להזהיר; מומלץ להוריד רק מ-GitHub Releases ולאמת checksum ו-attestation.",
+    pros: ["RAW מיותר מ-1,000 מצלמות", "מסכות ו-AI מקומיים", "עריכות XMP לא-הרסניות"], cons: ["מתקינים לא חתומים", "פחות מודולים ושליטה מכלים ותיקים"],
+    alternatives: ["GIMP", "Photoc", "Concat"], url: "https://github.com/thesnarkitecht/rembrandt", added: "2026-10-09", verified: "2026-10-09",
+    sources: [{ label: "המאגר, תכונות ורישיון", url: "https://github.com/thesnarkitecht/rembrandt" }, { label: "גרסה 0.3.9 והפצות", url: "https://github.com/thesnarkitecht/rembrandt/releases/tag/v0.3.9" }, { label: "אימות הורדות ומגבלות חתימה", url: "https://github.com/thesnarkitecht/rembrandt/blob/main/SECURITY.md" }]
+  },
+  {
+    slug: "agentwares-agentguard", name: "AgentGuard", mark: "AG", category: "development", subcategories: ["אבטחת סוכנים", "MCP", "Policy"],
+    tagline: "שכבת מדיניות מקומית שמגבילה פעולות, עלויות ולולאות של סוכני AI.",
+    solves: "מציבה proxy לפני כלי MCP או hooks של סוכן קוד, מסווגת כתיבות ומחיקות, דורשת אישור לפעולות מסוכנות ומתעדת audit log משורשר.",
+    uses: ["אבטחה", "פיתוח", "אוטומציה"], audience: "מפתחים וצוותים שמחברים סוכנים לכלים בעלי הרשאות כתיבה או עלות כספית.",
+    free: "ה-CLI, ה-proxy וה-SDK חינמיים תחת MIT, ללא חשבון, telemetry או קריאות LLM. אפשר להתחיל ב-dry-run שמדמה כתיבות ומציג mutation diff.",
+    limits: "גרסה 0.1.9 צעירה עם אימוץ מוגבל; הסיווג הדטרמיניסטי אינו תחליף ל-sandbox או לבקרת הרשאות של השירות עצמו. תמיכת hooks משתנה בין Claude Code, Codex ו-Gemini CLI, ויש לבדוק policy ב-dry-run לפני enforce.",
+    pros: ["אישורים, kill switch ומכסות", "audit log עם אימות שרשרת", "MCP, SDK ו-hooks לסוכני קוד"], cons: ["פרויקט חדש", "דורש הגדרה ובדיקה לכל סביבת כלים"],
+    alternatives: ["Pinrail", "Open Code Review", "AI Maestro"], url: "https://github.com/agentwares/agentguard", added: "2026-10-09", verified: "2026-10-09",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/agentwares/agentguard" }, { label: "חבילת npm וגרסה 0.1.9", url: "https://www.npmjs.com/package/@agentwares/agentguard" }]
   }
 
 ];
@@ -747,5 +791,8 @@ window.WATCHLIST = [
   { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" },
   { name: "Jotbus", mark: "JB", category: "development", signal: "scratchpad מוצפן מקצה לקצה להעברת הקשר וקבצים בין Codex, Claude Code וסוכנים נוספים; 22 נקודות ו-13 תגובות ב-Show HN.", reason: "המסלול החינמי הוא workspace זמני של 60 דקות וקבצים עד 2MB; היסטוריה מתמשכת דורשת $7 לחודש, ולכן אינו עומד כרגע ברף שימוש חינמי מתמשך לקטלוג הפעיל.", url: "https://jotbus.com/", checked: "2026-10-07" },
   { name: "TAP Runtime", mark: "TAP", category: "development", signal: "runtime מקומי תחת MIT לכלים שסוכני קוד בונים ומשתפים, עם release חתום ותמיכה ב-Linux וב-WSL.", reason: "הפרויקט חדש מאוד וטרם הצטברו אימוץ, תיעוד שימוש עצמאי ובדיקות קהילה שמצדיקים רשומה פעילה; החינמיות מאומתת אך הבשלות תיבדק שוב.", url: "https://github.com/Telara-Labs/TAP-Runtime", checked: "2026-10-07" },
-  { name: "OpenChart", mark: "OC", category: "research", signal: "חלופת TradingView מקומית עם סוכן AI, 95 כוכבים וגרסאות desktop פעילות בתוך יומיים מההשקה.", reason: "GitHub מסמן את הרישיון כ-NOASSERTION והגרסה מציגה נעילות ל-OpenChart Cloud בחלק מבחירות הנתונים; תנאי השימוש החינמי והרישיון דורשים אימות נוסף.", url: "https://github.com/longsurf-ai/openchart", checked: "2026-10-07" }
+  { name: "OpenChart", mark: "OC", category: "research", signal: "חלופת TradingView מקומית עם סוכן AI, 95 כוכבים וגרסאות desktop פעילות בתוך יומיים מההשקה.", reason: "GitHub מסמן את הרישיון כ-NOASSERTION והגרסה מציגה נעילות ל-OpenChart Cloud בחלק מבחירות הנתונים; תנאי השימוש החינמי והרישיון דורשים אימות נוסף.", url: "https://github.com/longsurf-ai/openchart", checked: "2026-10-07" },
+  { name: "SVG Spark", mark: "SS", category: "design", signal: "אוסף חדש של עשרה כלי דפדפן מקומיים ל-SVG, PDF, תמונות, JSON, כתוביות, SQL, נגישות ו-Markdown; צבר 35 נקודות בתוך שעות ב-Show HN.", reason: "האתר פעיל, חינמי וללא העלאת קבצים, אך לא נמצא מאגר מקור, רישיון שימוש מפורש או זהות מתחזקת מספקת; נדרש אימות לפני כניסה לקטלוג הפעיל.", url: "https://svg-spark.vercel.app/", checked: "2026-10-09" },
+  { name: "Pocketty", mark: "Po", category: "development", signal: "מסוף SSH ל-iPhone ול-iPad ששולח התראה כאשר סוכן קוד ממתין לקלט; 27 נקודות ו-12 תגובות בתוך שעות ב-Show HN.", reason: "האתר הרשמי מציג את המוצר ואת פרטיותו, אך מחיר קבוע, מגבלות המסלול החינמי ורישיון לא אומתו ממקור רשמי ברור בזמן הסריקה.", url: "https://pocketty.app/", checked: "2026-10-09" },
+  { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" }
 ];
