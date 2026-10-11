@@ -41,13 +41,12 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_news_ingest.py' -v
 
   collect:
-    # Allow a tightly scoped one-time trial on an explicitly marked main-branch merge.
-    # The scheduled job stays off until NEWS_INGEST_ENABLED is explicitly set true.
+    # Only manual dispatch, or scheduled collection explicitly enabled by the owner.
+    # A push or pull request never runs the live collector.
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true') ||
-      (github.event_name == 'push' && contains(github.event.head_commit.message, '[news-pilot-once]')))
+      (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true'))
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
