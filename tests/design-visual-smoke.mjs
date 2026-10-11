@@ -77,14 +77,18 @@ try {
         hero:bounds(".hero"),
         visual:bounds("#portalVisual"),
         photograph:bounds("#cinematicPhotograph"),
-        heading:bounds("#heroHeading")
+        heading:bounds("#heroHeading"),
+        news:bounds("#news")
       };
     });
-    assert.ok(geometry.hero.height > 720, JSON.stringify(geometry));
-    assert.ok(geometry.visual.width >= 900, JSON.stringify(geometry));
+    assert.ok(geometry.hero.height >= 900, JSON.stringify(geometry));
+    assert.ok(geometry.news.y >= 899, "Next section must be hidden until scroll: "+JSON.stringify(geometry));
+    assert.ok(geometry.visual.width >= 1598, "Scene must span the entire viewport: "+JSON.stringify(geometry));
     assert.ok(geometry.visual.height >= 650, JSON.stringify(geometry));
     assert.ok(geometry.photograph.width >= 950, JSON.stringify(geometry));
-    assert.ok(geometry.photograph.height >= 650, JSON.stringify(geometry));
+    assert.ok(geometry.photograph.height >= 900, JSON.stringify(geometry));
+    assert.ok(geometry.photograph.y+geometry.photograph.height >= geometry.hero.y+geometry.hero.height-30,
+      "Photograph leaves a bottom seam: "+JSON.stringify(geometry));
     assert.ok(geometry.heading.width > 420, JSON.stringify(geometry));
     fs.writeFileSync(path.join(output, "desktop-geometry.json"), JSON.stringify(geometry,null,2));
   });
@@ -99,20 +103,30 @@ try {
     assert.equal(animation.woman,"cinematic-panel-hover");
     assert.equal(animation.mountain,"cinematic-panel-hover");
   });
+  const headBefore = await page.locator("#cinematicHeadAnchor").boundingBox();
+  const photoBefore = await page.locator("#cinematicPhotograph").boundingBox();
   await page.mouse.move(150, 240);
   await page.waitForTimeout(440);
-  await run("Mouse moves the real cube, cards and head independently", async () => {
+  await run("Mouse moves cube and panels without moving the person", async () => {
     const vars = await page.locator("#portalScene").evaluate(scene => {
       const css = getComputedStyle(scene);
       return {
         cube:css.getPropertyValue("--cube-x").trim(),
         panels:css.getPropertyValue("--panels-x").trim(),
-        head:css.getPropertyValue("--head-ry").trim()
+        headTransform:getComputedStyle(document.querySelector("#cinematicHeadAnchor")).transform,
+        personVariables:["--head-x","--head-y","--head-rx","--head-ry"].map(key => css.getPropertyValue(key).trim())
       };
     });
+    const headAfter = await page.locator("#cinematicHeadAnchor").boundingBox();
+    const photoAfter = await page.locator("#cinematicPhotograph").boundingBox();
     assert.notEqual(vars.cube,"0px", JSON.stringify(vars));
     assert.notEqual(vars.panels,"0px", JSON.stringify(vars));
-    assert.notEqual(vars.head,"0deg", JSON.stringify(vars));
+    assert.equal(vars.headTransform,"none",JSON.stringify(vars));
+    assert.ok(vars.personVariables.every(value => !value),"Head tracking variables must not exist");
+    assert.ok(Math.abs(headAfter.x-headBefore.x)<.1 && Math.abs(headAfter.y-headBefore.y)<.1,
+      "Head unexpectedly moved");
+    assert.ok(Math.abs(photoAfter.x-photoBefore.x)<.1 && Math.abs(photoAfter.y-photoBefore.y)<.1,
+      "Entire photograph unexpectedly moved");
   });
   await page.screenshot({path:path.join(output,"hero-desktop.png"),fullPage:false});
   await run("Pause button stops cube/panel motion and supports resume", async () => {
