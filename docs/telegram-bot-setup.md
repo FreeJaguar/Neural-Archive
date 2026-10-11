@@ -7,7 +7,7 @@ In Vercel -> neural-archive -> Settings -> Environment Variables, add these for 
 - `TELEGRAM_BOT_TOKEN`: the private token issued by @BotFather. NEVER share it or commit it.
 - `TELEGRAM_WEBHOOK_SECRET`: a fresh secret of 32+ characters drawn from `A-Z a-z 0-9 _ -`. Example generation (Windows PowerShell):
   ```powershell
-  $bytes = [byte[]]::new(32); [Security.Cryptography.RandomNumberGenerator]::Fill($bytes); [Convert]::ToHexString($bytes)
+  $bytes = New-Object byte[] 32; $rng = [System.Security.Cryptography.RandomNumberGenerator]::Create(); $rng.GetBytes($bytes); $rng.Dispose(); [BitConverter]::ToString($bytes).Replace("-", "")
   ```
 - Later, after the first `/start` test: `TELEGRAM_ADMIN_CHAT_ID` (your numeric private chat ID).
 
