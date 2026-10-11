@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080f20">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="תצוגה מקדימה לעיצוב החדש של Neural Archive. כלים מאומתים, חדשות AI ומדריכים בעברית.">
+  <title>Neural Archive | תצוגה מקדימה של החוויה החדשה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design.css">
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("na-theme") === "dark" ? "dark" : "light"; } catch {}
+  </script>
+  <script src="/data.js" defer></script>
+  <script src="/design.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.8 8.8 0 0 1 9.3 3.6 8.9 8.9 0 1 0 20.4 14.7Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 5-6 7 6 7m8-14 6 7-6 7m-3-18-2 22"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20h2a2.5 2.5 0 0 0 1.6-4.4 2 2 0 0 1 1.4-3.5h1.2A3.8 3.8 0 0 0 22 10.3 10 10 0 0 0 12 2Z"/><circle cx="7" cy="12" r=".8" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r=".8" fill="currentColor" stroke="none"/><circle cx="16" cy="7" r=".8" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3.4-2.2-7-2.2-10-1v15c3-1.2 6.6-1.2 10 1 3.4-2.2 7-2.2 10-1V4c-3-1.2-6.6-1.2-10 1Zm0 0v15"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path d="m2 9.5 10-5 10 5-10 5-10-5Zm4 2v6c3.6 2.8 8.4 2.8 12 0v-6m4-2v7"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 13h7l-1 9 10-12h-7l0-8Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.6 5.7a5.5 5.5 0 0 0-7.8 0L12 6.5l-.8-.8a5.5 5.5 0 0 0-7.8 7.8L12 22l8.6-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 4h7v7m0-7-9 9"/><path d="M20 14v6H4V4h6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5 11-11"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v7c0 6-4 9-9 11-5-2-9-5-9-11V6l9-4Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  </svg>
+  <a class="skip-link" href="#news">דלגו לתוכן</a>
+  <div class="scroll-meter" aria-hidden="true"><div id="scrollFill"></div></div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#home" class="brand" aria-label="Neural Archive, חזרה לראש העמוד">
+        <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="brand-text" dir="ltr">Neural Archive</span>
+      </a>
+      <nav class="desktop-nav" aria-label="ניווט ראשי">
+        <a class="active" href="#home">דף הבית</a><a href="#tools">כל הכלים</a><a href="#categories">קטגוריות</a><a href="#news">חדשות AI</a><a href="#watchlist">במעקב</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" id="openQuickSearch" class="header-search" aria-label="חיפוש באתר"><svg><use href="#i-search"></use></svg><span>חיפוש בכלים ובחדשות...</span><kbd>Ctrl K</kbd></button>
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="החלפת מצב תצוגה" aria-pressed="false" title="החלפת מצב בהיר וכהה"><svg class="sun"><use href="#i-sun"></use></svg><svg class="moon"><use href="#i-moon"></use></svg></button>
+        <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobileNav"><svg><use href="#i-menu"></use></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="ניווט לנייד" hidden>
+      <a href="#home">בית</a><a href="#news">חדשות AI</a><a href="#categories">קטגוריות</a><a href="#tools">כל הכלים</a><a href="#watchlist">כלים במעקב</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="heroHeading">
+      <div class="hero-haze" aria-hidden="true"></div>
+      <div class="hero-gridline" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-overline"><span class="overline-mark"></span> NEURAL ARCHIVE <span class="overline-rule"></span> הספרייה שמתעדכנת</div>
+          <h1 id="heroHeading">כל הכלים.<br><em>בלי אותיות קטנות.</em></h1>
+          <p class="hero-subtitle">מה חינם, מה מוגבל, ולמי זה באמת מתאים.<br>כלי AI, חדשות ומחקר — בעברית ובמקום אחד.</p>
+          <form class="hero-search" id="heroSearchForm" role="search">
+            <svg aria-hidden="true"><use href="#i-search"></use></svg>
+            <label class="sr-only" for="heroSearchInput">חיפוש חופשי בכלי AI</label>
+            <input id="heroSearchInput" type="search" placeholder="חפשו כלי, קטגוריה או שימוש..." autocomplete="off">
+            <kbd class="desktop-kbd">Ctrl K</kbd>
+            <button type="submit" aria-label="חיפוש כלים"><svg><use href="#i-arrow"></use></svg></button>
+          </form>
+          <div class="hot-topics" aria-label="קטגוריות פופולריות">
+            <span>לגלות לפי תחום:</span>
+            <div id="heroTopics"></div>
+          </div>
+          <div class="hero-cta-row"><a class="hero-primary" href="#tools">לגלות כלים <svg><use href="#i-arrow"></use></svg></a><a class="hero-secondary" href="#news">לחדשות AI <svg><use href="#i-chevron"></use></svg></a></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img class="portal-illustration" src="/assets/design-portal.svg" alt="" fetchpriority="high">
+          <div class="visual-orbit orbit-1"></div><div class="visual-orbit orbit-2"></div>
+          <div class="hero-art-label">THE NEXT <span>FRONTIER</span> OF AI <span class="hero-art-dot"></span></div>
+          <div class="hero-mini-card mini-a"><span class="mini-status">● AI DISCOVERY</span><span class="mini-lines"><i></i><i></i><i></i></span></div>
+          <div class="hero-mini-card mini-b"><span class="mini-spark">✦</span><span class="mini-lines"><i></i><i></i></span></div>
+        </div>
+        <div class="hero-meta"><div><strong id="heroCount">80</strong><span>כלים מאומתים</span></div><div><strong id="heroCategoryCount">5</strong><span>תחומי שימוש</span></div><div><strong>24/7</strong><span>זמין לגלות</span></div></div>
+      </div>
+      <a class="hero-down" href="#news" aria-label="גלילה לחדשות"><svg><use href="#i-arrow"></use></svg><span>המשיכו לגלות</span></a>
+    </section>
+
+    <nav class="section-rail" aria-label="מעבר בין מקטעים"><a href="#home" class="active" data-rail="home"><span>בית</span></a><a href="#news" data-rail="news"><span>חדשות</span></a><a href="#categories" data-rail="categories"><span>קטגוריות</span></a><a href="#tools" data-rail="tools"><span>כלים</span></a><a href="#watchlist" data-rail="watchlist"><span>במעקב</span></a></nav>
+
+    <section class="news-section section-light" id="news" aria-labelledby="newsHeading">
+      <div class="section-inner">
+        <div class="section-topline reveal"><span class="section-index">01 / NEWSROOM</span><a href="/news" class="section-link">לכל החדשות <svg><use href="#i-arrow"></use></svg></a></div>
+        <div class="section-title-group reveal">
+          <div><p class="section-eyebrow">THE INTELLIGENCE FEED</p><h2 id="newsHeading">מה חדש בעולם ה-AI<span class="gradient-dot">.</span></h2><p>ידיעות ממקורות רשמיים, בתקציר עברי ולאחר אישור המערכת.</p></div>
+          <div class="carousel-actions"><button type="button" id="newsPrev" aria-label="חדשות קודמות" disabled><svg><use href="#i-chevron"></use></svg></button><button type="button" id="newsNext" aria-label="חדשות הבאות" disabled><svg><use href="#i-chevron"></use></svg></button></div>
+        </div>
+        <div class="news-scroller" id="newsTrack" role="region" aria-label="ידיעות AI אחרונות" tabindex="0">
+          <div class="news-skeleton" role="status">טוען את החדשות המאושרות…</div>
+        </div>
+        <div class="section-footnote reveal"><span class="mini-live-dot"></span><span>חדשות המבוססות על פרסומים מקוריים. יש לבדוק פרטים וזמינות באתר המקור.</span><span class="news-dots" id="newsDots" aria-hidden="true"></span></div>
+      </div>
+    </section>
+
+    <section class="categories-section" id="categories" aria-labelledby="categoriesHeading">
+      <div class="section-inner">
+        <div class="section-topline reveal"><span class="section-index">02 / CATEGORIES</span><span class="decor-line"></span></div>
+        <div class="section-title-group reveal"><div><p class="section-eyebrow">DISCOVER YOUR PATH</p><h2 id="categoriesHeading">לאיזה כיוון נצא?</h2><p>גלו כלים לפי מה שאתם באמת רוצים לעשות.</p></div><a class="section-link light-link" href="#tools">לכל הכלים <svg><use href="#i-arrow"></use></svg></a></div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="tools-section section-light" id="tools" aria-labelledby="toolsHeading">
+      <div class="section-inner">
+        <div class="section-topline reveal"><span class="section-index">03 / TOOL LIBRARY</span><span class="tool-trust"><svg><use href="#i-shield"></use></svg> נתונים שנבדקו מול מקורות רשמיים</span></div>
+        <div class="section-title-group reveal"><div><p class="section-eyebrow">PRACTICAL, NOT HYPE</p><h2 id="toolsHeading">כלים שכדאי להכיר<span class="gradient-dot">.</span></h2><p>מה הם עושים, מה חינם, ומה באמת חשוב לדעת לפני שמתחילים.</p></div><div class="tool-count"><strong id="visibleCount">0</strong><span>תוצאות בקטלוג</span></div></div>
+        <div class="tools-toolbar reveal">
+          <div class="tool-tabs" id="toolTabs" aria-label="סינון קטגוריות"></div>
+          <div class="tool-toolbar-actions"><label class="sort-label"><span class="sr-only">מיון כלים</span><select id="toolSort"><option value="newest">החדשים קודם</option><option value="name">לפי שם</option><option value="category">לפי קטגוריה</option></select></label><button id="favoritesOnly" class="favorites-filter" type="button" aria-pressed="false"><svg><use href="#i-heart"></use></svg> מועדפים</button></div>
+        </div>
+        <p id="activeSearch" class="active-search" hidden></p>
+        <div id="toolsGrid" class="tools-grid" aria-live="polite"></div>
+        <div id="toolsEmpty" class="empty-tools" hidden><svg><use href="#i-search"></use></svg><h3>לא מצאנו כלים מתאימים</h3><p>אפשר לנסות חיפוש אחר או לנקות את הסינון.</p><button id="clearSearch" type="button">הצגת כל הכלים</button></div>
+        <div class="load-more-wrap"><button id="loadMore" class="load-more" type="button">הציגו עוד כלים <svg><use href="#i-arrow"></use></svg></button></div>
+      </div>
+    </section>
+
+    <section class="watch-section" id="watchlist" aria-labelledby="watchHeading">
+      <div class="section-inner">
+        <div class="section-topline reveal"><span class="section-index">04 / ON THE RADAR</span></div>
+        <div class="section-title-group reveal"><div><p class="section-eyebrow">WHAT'S NEXT</p><h2 id="watchHeading">על הרדאר שלנו.</h2><p>כלים מסקרנים שעדיין לא השלימו את בדיקת החינמיות או הבשלות.</p></div></div>
+        <div class="watch-cards" id="watchCards"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Neural Archive</span><small>לגלות את ה-AI בלי ללכת לאיבוד.</small></div><div class="footer-links"><a href="#home">לראש העמוד</a><a href="/news">חדשות AI</a><a href="#tools">כל הכלים</a><a href="https://github.com/FreeJaguar/Neural-Archive" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><p>התוכן מתעדכן ממקורות רשמיים. מחירים ומגבלות עשויים להשתנות.</p></div></footer>
+
+  <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle"><div class="drawer-body"><button class="drawer-close" id="closeDetail" type="button" aria-label="סגירת חלון הפרטים"><svg><use href="#i-close"></use></svg></button><div id="detailContent"></div></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
