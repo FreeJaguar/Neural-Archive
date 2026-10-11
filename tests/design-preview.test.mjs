@@ -95,7 +95,7 @@ test("high-resolution photographed 2.5D art is split into real moving image laye
   assert.match(heroMotionCss, /min-height:\s*100svh/);
   assert.match(heroMotionCss, /min-height:\s*calc\(100svh - 76px\)/);
   assert.match(heroMotionCss, /top:\s*-76px/);
-  assert.match(heroMotionCss, /right:\s*0;\s*width:\s*100%/);
+  assert.match(heroMotionCss, /width:\s*100vw/);
   assert.match(heroMotionCss, /\.hero-visual#portalVisual::before/);
   assert.match(heroMotionCss, /\.hero-visual#portalVisual::after/);
   assert.match(heroMotionCss, /background: url\("\/assets\/cinematic-scene-backdrop-hq\.webp"\) right center \/ 280% auto/);
@@ -116,7 +116,7 @@ test("the scene reaches the full viewport while the person stays grounded", () =
   const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
   assert.match(desktop, /\.hero\s*\{[^}]*min-height:\s*100svh/);
   assert.match(desktop, /\.hero-inner\s*\{[^}]*min-height:\s*calc\(100svh - 76px\)/);
-  assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100%/);
+  assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100vw/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*height:\s*104%/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*top:\s*49%/);
   assert.match(desktop, /\.cinematic-head-anchor\s*\{[^}]*transform:\s*none/);
