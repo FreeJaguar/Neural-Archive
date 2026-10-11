@@ -8,7 +8,7 @@ on:
       - ".github/workflows/ai-news-pilot.yml"
       - "supabase/migrations/20261011_ai_triage_metadata.sql"
   push:
-    branches: ["feature/ai-news-rss-pilot"]
+    branches: ["feature/ai-news-rss-pilot", "main"]
     paths:
       - "scripts/ingest_news.py"
       - "tests/test_news_ingest.py"
@@ -41,7 +41,13 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_news_ingest.py' -v
 
   collect:
-    if: (github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true')) && github.ref == 'refs/heads/main'
+    # Allow a tightly scoped one-time trial on an explicitly marked main-branch merge.
+    # The scheduled job stays off until NEWS_INGEST_ENABLED is explicitly set true.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true') ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[news-pilot-once]')))
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
