@@ -19,6 +19,10 @@ async function telegramCall(method, payload, token) {
   return response.json();
 }
 
+const editOnlyActions = (id) => ({
+  inline_keyboard: [[{ text: "✏️ עריכת טיוטה", callback_data: "edit:" + id }]],
+});
+
 const actions = (id) => ({
   inline_keyboard: [[
     { text: "✅ אישור", callback_data: "approve:" + id },
@@ -46,6 +50,19 @@ function validCopy(title, summary) {
 }
 
 function formatCandidate(item) {
+  const qualityLabels = {
+    passed: "עבר בדיקת עברית",
+    corrected: "הוגה ותוקן אוטומטית",
+    needs_review: "נדרשת הגהה ידנית",
+    human_edited: "נוסח נערך בידי מנהל",
+    not_checked: "לא נבדק",
+  };
+  const qualityText = item.language_quality_state
+    ? "\nאיכות נוסח: " + (qualityLabels[item.language_quality_state] || "לא ידוע")
+      + (item.status === "draft" && item.language_quality_state === "needs_review"
+        ? "\nטיוטה זו אינה ניתנת לאישור. שלח /edit " + item.id + " | כותרת | תקציר"
+        : "")
+    : "";
   const aiEvidence = Array.isArray(item.ai_evidence) ? item.ai_evidence : [];
   const matched = aiEvidence.filter((e) => e && e.quote_found);
   const metadata = item.ai_score == null ? "" :
@@ -61,7 +78,7 @@ function formatCandidate(item) {
     "סטטוס: " + (item.status === "pending" ? "ממתינה לאישור" : item.status === "draft" ? "טיוטה" : item.status) + "\n\n" +
     (item.title || "כותרת טרם הוזנה") + "\n\n" +
     (item.summary || "טרם נכתב תקציר מקורי") +
-    metadata + "\n\n" +
+    metadata + qualityText + "\n\n" +
     "מקור: " + item.source_url
   ).slice(0, 3900);
 }
@@ -104,6 +121,7 @@ async function handleSubmission(update, message, chatId, token, input) {
       status,
       telegram_update_id: update.update_id,
       submitted_by_chat_id: chatId,
+      language_quality_state: status === "pending" ? "human_edited" : "not_checked",
     });
   } catch (error) {
     if (error instanceof NewsStoreError && error.status === 409) {
@@ -148,6 +166,9 @@ async function handleEdit(chatId, token, input) {
     ai_importance: null,
     ai_novelty: null,
     ai_audience: null,
+    language_quality_state: "human_edited",
+    language_quality_issues: [],
+    language_checked_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   });
   if (!records?.length) return reply(chatId, "לא נמצאה טיוטה פתוחה עם המזהה הזה.", token);
@@ -157,13 +178,13 @@ async function handleEdit(chatId, token, input) {
 async function handlePending(chatId, token) {
   const records = await newsQuery("GET", {
     status: "in.(draft,pending)",
-    select: "id,title,summary,source_url,status,ai_score,ai_confidence,ai_evidence,ai_novelty,ai_audience",
+    select: "id,title,summary,source_url,status,ai_score,ai_confidence,ai_evidence,ai_novelty,ai_audience,language_quality_state",
     order: "created_at.desc",
     limit: "6",
   });
   if (!records?.length) return reply(chatId, "אין ידיעות שממתינות לאישור.", token);
   for (const item of records) {
-    await reply(chatId, formatCandidate(item), token, item.status === "pending" ? actions(item.id) : undefined);
+    await reply(chatId, formatCandidate(item), token, item.status === "pending" ? actions(item.id) : editOnlyActions(item.id));
   }
 }
 
@@ -175,7 +196,7 @@ async function handleCallback(callback, chatId, token) {
 
   const records = await newsQuery("GET", {
     id: "eq." + id,
-    select: "id,title,summary,status,source_url,ai_confidence,ai_score,ai_evidence",
+    select: "id,title,summary,status,source_url,ai_confidence,ai_score,ai_evidence,language_quality_state",
     limit: "1",
   });
   const item = records?.[0];
@@ -192,6 +213,10 @@ async function handleCallback(callback, chatId, token) {
     return reply(chatId, "הידיעה כבר טופלה. הסטטוס הנוכחי: " + item.status, token);
   }
 
+  if ((action === "approve" || action === "approve_confirm") &&
+      item.language_quality_state === "needs_review") {
+    return reply(chatId, "⚠️ הטקסט חייב הגהה ידנית לפני פרסום. השתמש ב-/edit " + id, token);
+  }
   if ((action === "approve" || action === "approve_confirm") && !validCopy(item.title, item.summary)) {
     return reply(chatId, "לא ניתן לפרסם ללא כותרת ותקציר מלאים. לחץ על עריכה תחילה.", token);
   }
