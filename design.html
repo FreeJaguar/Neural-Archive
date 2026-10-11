@@ -11,11 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/design.css">
+  <link rel="stylesheet" href="/hero-motion.css">
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem("na-theme") === "dark" ? "dark" : "light"; } catch {}
   </script>
   <script src="/data.js" defer></script>
   <script src="/design.js" defer></script>
+  <script src="/hero-motion.js" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
@@ -85,12 +87,66 @@
           </div>
           <div class="hero-cta-row"><a class="hero-primary" href="#tools">לגלות כלים <svg><use href="#i-arrow"></use></svg></a><a class="hero-secondary" href="#news">לחדשות AI <svg><use href="#i-chevron"></use></svg></a></div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <img class="portal-illustration" src="/assets/design-portal.svg" alt="" fetchpriority="high">
-          <div class="visual-orbit orbit-1"></div><div class="visual-orbit orbit-2"></div>
-          <div class="hero-art-label">THE NEXT <span>FRONTIER</span> OF AI <span class="hero-art-dot"></span></div>
-          <div class="hero-mini-card mini-a"><span class="mini-status">● AI DISCOVERY</span><span class="mini-lines"><i></i><i></i><i></i></span></div>
-          <div class="hero-mini-card mini-b"><span class="mini-spark">✦</span><span class="mini-lines"><i></i><i></i></span></div>
+        <div class="hero-visual" id="portalVisual">
+          <div class="portal-scene" id="portalScene" aria-hidden="true">
+            <img class="portal-backdrop" src="/assets/design-portal-backdrop.svg" alt="" fetchpriority="high" decoding="async">
+            <div class="portal-atmosphere atmosphere-blue"></div>
+            <div class="portal-atmosphere atmosphere-violet"></div>
+            <div class="portal-sparkles">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="portal-horizon">
+              <span class="horizon-ring ring-one"></span>
+              <span class="horizon-ring ring-two"></span>
+              <span class="horizon-ring ring-three"></span>
+            </div>
+            <div class="portal-stage" id="portalStage">
+              <div class="portal-tilt" id="portalTilt">
+                <div class="portal-float">
+                  <div class="portal-rotation">
+                    <div class="holo-cube">
+                      <div class="cube-inner-light"></div>
+                      <div class="cube-face cube-face-front">
+                        <span class="cube-glass-grid"></span>
+                        <span class="cube-face-label">AI</span>
+                        <span class="cube-coordinates">N / A · 01</span>
+                      </div>
+                      <div class="cube-face cube-face-back"><span class="cube-glass-grid"></span></div>
+                      <div class="cube-face cube-face-right"><span class="cube-glass-grid"></span><span class="cube-circuit"></span></div>
+                      <div class="cube-face cube-face-left"><span class="cube-glass-grid"></span></div>
+                      <div class="cube-face cube-face-top"><span class="cube-glass-grid"></span></div>
+                      <div class="cube-face cube-face-bottom"><span class="cube-glass-grid"></span></div>
+                      <div class="cube-orb" aria-hidden="true">
+                        <span class="orb-ring orb-ring-a"></span>
+                        <span class="orb-ring orb-ring-b"></span>
+                        <span class="orb-ring orb-ring-c"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portal-floorlight"></div>
+            <div class="portal-info-card portal-info-left">
+              <span class="portal-info-icon">✦</span>
+              <span class="portal-info-text"><strong>AI SIGNAL</strong><small>Neural Archive</small></span>
+              <span class="portal-info-bars"><i></i><i></i><i></i></span>
+            </div>
+            <div class="portal-info-card portal-info-right">
+              <span class="portal-info-orb"></span>
+              <span class="portal-info-text"><strong>LIVE DISCOVERY</strong><small>Exploring what's next</small></span>
+            </div>
+            <div class="portal-info-card portal-info-bottom">
+              <span class="portal-info-text"><strong>NEURAL SYSTEM</strong><small>Knowledge in motion</small></span>
+              <span class="portal-info-pulse"></span>
+            </div>
+            <div class="portal-art-label">NEURAL <span>ARCHIVE</span> / DISCOVERY ENGINE <span class="hero-art-dot"></span></div>
+          </div>
+          <button type="button" class="portal-motion-toggle" id="portalMotionToggle"
+            aria-pressed="false" aria-label="עצירת האנימציה" title="עצירה או הפעלה של תנועת התלת־ממד">
+            <span aria-hidden="true" class="portal-toggle-icon">Ⅱ</span>
+            <span class="portal-toggle-label">עצירת תנועה</span>
+          </button>
         </div>
         <div class="hero-meta"><div><strong id="heroCount">80</strong><span>כלים מאומתים</span></div><div><strong id="heroCategoryCount">5</strong><span>תחומי שימוש</span></div><div><strong>24/7</strong><span>זמין לגלות</span></div></div>
       </div>
