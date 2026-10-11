@@ -4,16 +4,24 @@ on:
   pull_request:
     paths:
       - "scripts/ingest_news.py"
+      - "scripts/news_proofreader.py"
+      - "scripts/news_text_quality.py"
       - "tests/test_news_ingest.py"
+      - "tests/test_news_quality.py"
       - ".github/workflows/ai-news-pilot.yml"
       - "supabase/migrations/20261011_ai_triage_metadata.sql"
+      - "supabase/migrations/20261011_language_quality.sql"
   push:
-    branches: ["feature/ai-news-rss-pilot", "main"]
+    branches: ["main", "feature/ai-news-hebrew-quality-gate"]
     paths:
       - "scripts/ingest_news.py"
+      - "scripts/news_proofreader.py"
+      - "scripts/news_text_quality.py"
       - "tests/test_news_ingest.py"
+      - "tests/test_news_quality.py"
       - ".github/workflows/ai-news-pilot.yml"
       - "supabase/migrations/20261011_ai_triage_metadata.sql"
+      - "supabase/migrations/20261011_language_quality.sql"
   workflow_dispatch:
   schedule:
     - cron: "17,47 * * * *"
@@ -36,9 +44,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Compile Python
-        run: python -m py_compile scripts/ingest_news.py
+        run: python -m py_compile scripts/ingest_news.py scripts/news_proofreader.py scripts/news_text_quality.py
       - name: Unit tests
-        run: python -m unittest discover -s tests -p 'test_news_ingest.py' -v
+        run: python -m unittest discover -s tests -p 'test_news_*.py' -v
 
   collect:
     # Only manual dispatch, or scheduled collection explicitly enabled by the owner.
@@ -48,7 +56,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true'))
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -61,4 +69,4 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
-        run: python scripts/ingest_news.py
+        run: python -m scripts.ingest_news
