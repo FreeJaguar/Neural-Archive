@@ -778,6 +778,72 @@ window.TOOLS = [
     pros: ["אישורים, kill switch ומכסות", "audit log עם אימות שרשרת", "MCP, SDK ו-hooks לסוכני קוד"], cons: ["פרויקט חדש", "דורש הגדרה ובדיקה לכל סביבת כלים"],
     alternatives: ["Pinrail", "Open Code Review", "AI Maestro"], url: "https://github.com/agentwares/agentguard", added: "2026-10-09", verified: "2026-10-09",
     sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/agentwares/agentguard" }, { label: "חבילת npm וגרסה 0.1.9", url: "https://www.npmjs.com/package/@agentwares/agentguard" }]
+  },
+  {
+    slug: "openclaw", name: "OpenClaw", mark: "OC", category: "productivity", subcategories: ["עוזר אישי", "אוטומציה", "Self-hosted"],
+    tagline: "עוזר AI מקומי ורב-ערוצי שפועל במחשב, בנייד ובאפליקציות המסרים.",
+    solves: "מחבר זיכרון, כלים וסוכנים לשער אחד שיכול לקבל בקשות דרך Discord, Slack, Teams, Telegram, WhatsApp, iMessage וערוצים נוספים.",
+    uses: ["אוטומציה", "עוזר אישי", "AI"], audience: "משתמשים טכניים וצוותים שרוצים עוזר מתמשך בבעלותם עם בחירת מודל וערוץ.",
+    free: "התוכנה חינמית תחת MIT, ללא מסלול ענן או מנוי חובה; היא רצה על החומרה של המשתמש ותומכת במודלים מקומיים או בחיבור לחשבונות ולספקים קיימים.",
+    limits: "מודלים, שרתים וחשבונות מסרים עשויים לעלות כסף בנפרד. כלים רצים על ה-host בסשן הראשי כברירת מחדל וה-sandbox כבוי, לכן יש להפעיל בידוד, לאשר שולחים ולקרוא את מדריך האבטחה לפני חשיפה מרחוק.",
+    pros: ["יותר מ-20 ערוצי תקשורת", "אפליקציות לכל הפלטפורמות", "זיכרון, כלים וסוכנים הניתנים להחלפה"], cons: ["הגדרה ותפעול מורכבים", "הרשאות רחבות אם לא מקשיחים sandbox"],
+    alternatives: ["nanoMuse", "ScallopBot", "OpenBot"], url: "https://openclaw.ai/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, תכונות ורישיון MIT", url: "https://github.com/openclaw/openclaw" }, { label: "גרסה 2026.9.8", url: "https://github.com/openclaw/openclaw/blob/main/docs/releases/2026.9.8.md" }, { label: "תיעוד sandbox רשמי", url: "https://docs.openclaw.ai/gateway/sandboxing" }]
+  },
+  {
+    slug: "gsd-task-manager", name: "GSD Task Manager", mark: "GSD", category: "productivity", subcategories: ["ניהול משימות", "Eisenhower", "MCP"],
+    tagline: "מטריצת אייזנהאואר פרטית ואופליין עם גישה מובנית לסוכני AI.",
+    solves: "ממיינת משימות לפי דחיפות וחשיבות, שומרת אותן מקומית ומאפשרת לסוכן לקרוא, לעדכן ולנתח אותן דרך 19 כלי MCP.",
+    uses: ["ניהול משימות", "תכנון", "אוטומציה"], audience: "יחידים שרוצים תעדוף חזותי פשוט, אחסון מקומי וחיבור אופציונלי לסוכן AI.",
+    free: "האפליקציה וה-MCP חינמיים תחת MIT, פועלים בדפדפן ללא backend ושומרים ב-IndexedDB; סנכרון PocketBase הוא אופציונלי וניתן לאירוח עצמי.",
+    limits: "ניקוי נתוני הדפדפן מוחק משימות ללא גיבוי JSON. סנכרון ענן שולח מידע לשרת שנבחר, והפרויקט עדיין צעיר עם אימוץ קהילתי מוגבל.",
+    pros: ["אופליין וללא חשבון כברירת מחדל", "19 כלי MCP עם dry-run", "ייבוא וייצוא JSON"], cons: ["אין סנכרון מקומי מובנה בין מכשירים", "פרויקט צעיר"],
+    alternatives: ["Todoist", "Trello", "Edi Life OS"], url: "https://gsd.vinny.dev/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, פרטיות ורישיון", url: "https://github.com/vscarpenter/gsd-task-manager" }, { label: "אות Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "openqodex", name: "OpenQodex", mark: "OQ", category: "development", subcategories: ["סקירת קוד", "אבטחה", "CLI"],
+    tagline: "סקירת קוד מקומית לפני push שמשלבת סורקים וסוקר AI נפרד.",
+    solves: "מקפיאה את השינוי הנוכחי, מריצה סורקי SAST, סודות, תלויות ו-lint רק על הקווים שהשתנו, ואז מאמתת את הממצאים בתהליך Claude Code או Codex נפרד.",
+    uses: ["סקירת קוד", "אבטחה", "פיתוח"], audience: "מפתחים שרוצים דוח Markdown, JSON או SARIF לפני העלאת שינוי, מתוך הטרמינל או סוכן הקוד.",
+    free: "ה-CLI חינמי תחת Apache-2.0, ללא שרת או telemetry וללא מפתח API נוסף; הוא משתמש בהתחברות קיימת ל-Claude Code או Codex.",
+    limits: "נדרש Node.js 22, Git וסוכן נתמך שמותקן ומחובר; macOS ו-Linux נתמכים ו-Windows דורש WSL. הפרויקט בדרך ל-1.0 והממשק עשוי להשתנות בין גרסאות minor.",
+    pros: ["סורקים רבים ודוח אחיד", "אין העלאת telemetry", "עדכונים עם provenance ו-rollback"], cons: ["דורש מנוי או גישה לסוכן קוד חיצוני", "עדיין לפני 1.0"],
+    alternatives: ["Open Code Review", "AgentGuard", "Pinrail"], url: "https://github.com/openqodex/openqodex", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, אבטחה ורישיון", url: "https://github.com/openqodex/openqodex" }, { label: "חבילת npm וגרסה 0.8.1", url: "https://www.npmjs.com/package/openqodex" }]
+  },
+  {
+    slug: "diffle", name: "Diffle", mark: "Df", category: "development", subcategories: ["Diff", "LSP", "GitHub"],
+    tagline: "מציג diff ממוקד-מקלדת עם ניווט סמנטי דרך LSP ואינטגרציית GitHub.",
+    solves: "מאפשר לעבור במהירות על שינויים, לפתוח הגדרות והפניות מתוך הקוד ולהחזיק את הקשר הסמנטי בזמן סקירת diff או pull request.",
+    uses: ["סקירת קוד", "Git", "פיתוח"], audience: "מפתחים וסוקרי קוד שמעדיפים workflow מהיר במקלדת ולא רוצים לאבד הקשר בין קבצים וסמלים.",
+    free: "היישום חינמי וקוד פתוח תחת Apache-2.0, עם מאגר ציבורי ואינטגרציה ל-GitHub; אין שירות בתשלום שנדרש להפעלת הליבה.",
+    limits: "פרויקט צעיר עם עשרות משתמשים מוקדמים בלבד; תמיכת שפות תלויה בשרתי LSP, והאינטגרציה ל-GitHub דורשת הרשאות מתאימות.",
+    pros: ["ניווט LSP בתוך diff", "ממשק keyboard-first", "אינטגרציית pull requests"], cons: ["אימוץ מוקדם", "תלות בהגדרת LSP"],
+    alternatives: ["OpenQodex", "Open Code Review", "Whiteboard"], url: "https://diffle.app/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/moritzwilksch/diffle" }, { label: "אות Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "compositor", name: "Compositor", mark: "Co", category: "design", subcategories: ["עריכת תמונה", "PSD", "macOS"],
+    tagline: "עורך תמונות מקומי וחינמי ל-Mac שנבנה סביב הרגלי עבודה של Photoshop.",
+    solves: "מספק שכבות, מסכות, התאמות לא-הרסניות, בחירות, ריטוש, Camera Raw וייבוא PSD/PSB בממשק native עם קיצורי דרך מוכרים.",
+    uses: ["עריכת תמונה", "עיצוב", "צילום"], audience: "צלמים ומעצבים עם Mac Apple silicon שרוצים עורך מקומי ללא מנוי ועם workflow דומה ל-Photoshop.",
+    free: "האפליקציה חינמית וקוד פתוח תחת MIT, ללא חשבון או מנוי; ההפצה חתומה ומאומתת notarization וזמינה גם דרך Homebrew.",
+    limits: "דורשת macOS 26 ומעבד Apple silicon, זמינה באנגלית בלבד ומתוחזקת בידי מפתח יחיד. ייבוא PSD אינו משמר כל וקטור, טקסט אנכי או מצב צבע CMYK כעריכה חיה.",
+    pros: ["שכבות, מסכות ו-adjustment layers", "ייבוא PSD/PSB ו-RAW", "חתימה ועדכונים אוטומטיים"], cons: ["Mac חדש בלבד", "אין Windows, Linux או תרגומים"],
+    alternatives: ["GIMP", "Rembrandt", "OpenDesign"], url: "https://robbietilton.com/compositor", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, דרישות ורישיון", url: "https://github.com/robbietilton/Compositor" }, { label: "הפצות רשמיות", url: "https://github.com/robbietilton/Compositor/releases" }]
+  },
+  {
+    slug: "lune-research", name: "Lune Research", mark: "Lu", category: "research", subcategories: ["חיפוש מאמרים", "MCP", "מדעי המחשב"],
+    tagline: "מנוע חיפוש וקריאה למאמרי מדעי המחשב שמתחבר ישירות לסוכני AI.",
+    solves: "נותן לסוכן לחפש מאמרים מכנסים מובילים, לקרוא טקסט מלא זמין, לעקוב אחר ציטוטים ולהחזיר ראיות שאפשר לפתוח מתוך סביבת העבודה הקיימת.",
+    uses: ["מחקר", "סקירת ספרות", "למידה"], audience: "חוקרי AI ומדעי המחשב, סטודנטים ומפתחים שעובדים עם ChatGPT, Claude, Codex, Cursor או לקוח MCP אחר.",
+    free: "מסלול Free קבוע כולל 10 בקשות ביום ואת כל היכולות, דרך MCP מרוחק, CLI או סביבת הסוכן; אין צורך בכרטיס אשראי כדי להתחיל.",
+    limits: "הכיסוי ממוקד בכנסי מדעי המחשב בדירוג CORE/CCF משנת 2016 ואילך ולא בכל הספרות המדעית. נדרש חשבון, והבקשות מעבר למכסה היומית עולות כסף.",
+    pros: ["טקסט מלא ושרשראות ציטוטים", "מתחבר לעשרות לקוחות MCP", "מקורות נפתחים לצד התשובה"], cons: ["10 בקשות ביום", "כיסוי תחומי צר יחסית"],
+    alternatives: ["ResearchRabbit", "NotebookLM", "AstaBrief"], url: "https://luneresearch.com/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "שאלות נפוצות ותמחור רשמי", url: "https://luneresearch.com/docs/faq" }, { label: "תנאי השירות והמכסות", url: "https://luneresearch.com/legal/terms" }, { label: "אות ההשקה ב-Product Hunt", url: "https://www.producthunt.com/products/lune-research" }]
   }
 
 ];
@@ -794,5 +860,7 @@ window.WATCHLIST = [
   { name: "OpenChart", mark: "OC", category: "research", signal: "חלופת TradingView מקומית עם סוכן AI, 95 כוכבים וגרסאות desktop פעילות בתוך יומיים מההשקה.", reason: "GitHub מסמן את הרישיון כ-NOASSERTION והגרסה מציגה נעילות ל-OpenChart Cloud בחלק מבחירות הנתונים; תנאי השימוש החינמי והרישיון דורשים אימות נוסף.", url: "https://github.com/longsurf-ai/openchart", checked: "2026-10-07" },
   { name: "SVG Spark", mark: "SS", category: "design", signal: "אוסף חדש של עשרה כלי דפדפן מקומיים ל-SVG, PDF, תמונות, JSON, כתוביות, SQL, נגישות ו-Markdown; צבר 35 נקודות בתוך שעות ב-Show HN.", reason: "האתר פעיל, חינמי וללא העלאת קבצים, אך לא נמצא מאגר מקור, רישיון שימוש מפורש או זהות מתחזקת מספקת; נדרש אימות לפני כניסה לקטלוג הפעיל.", url: "https://svg-spark.vercel.app/", checked: "2026-10-09" },
   { name: "Pocketty", mark: "Po", category: "development", signal: "מסוף SSH ל-iPhone ול-iPad ששולח התראה כאשר סוכן קוד ממתין לקלט; 27 נקודות ו-12 תגובות בתוך שעות ב-Show HN.", reason: "האתר הרשמי מציג את המוצר ואת פרטיותו, אך מחיר קבוע, מגבלות המסלול החינמי ורישיון לא אומתו ממקור רשמי ברור בזמן הסריקה.", url: "https://pocketty.app/", checked: "2026-10-09" },
-  { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" }
+  { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" },
+  { name: "Curie", mark: "Cu", category: "research", signal: "עוזר חדש לספרות מדעית, חילוץ נתונים וסקירות שיטתיות עם 100 נקודות ו-96 עוקבים בהשקת Product Hunt השבוע.", reason: "Product Hunt מסמן את הכלי כחינמי, אך באתר הרשמי לא נמצא מחירון נגיש שמגדיר מכסה מתחדשת, מספר מסמכים או גבולות שימוש; אין לפרסם כפעיל עד לאימות תנאי Free ממקור ראשון.", url: "https://curieai.tech/", checked: "2026-10-11" },
+  { name: "Task Monki", mark: "TM", category: "development", signal: "אפליקציית desktop מקומית לניהול כמה סוכני קוד מלוח קנבן עד preview, review ו-pull request; הושקה השבוע ב-Product Hunt.", reason: "הרישיון MIT והחינמיות מאומתים, אך המאגר עצמו מזהיר שמדובר בתוכנה ניסיונית שמריצה תהליכים ופעולות Git אמיתיים; עם 8 כוכבים בלבד ותמיכת Windows/Linux ניסיונית, נדרש עוד זמן בשלות.", url: "https://github.com/RojhatToptamus/task-monki", checked: "2026-10-11" }
 ];
