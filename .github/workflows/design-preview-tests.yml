@@ -6,6 +6,9 @@ on:
       - "design.html"
       - "design.css"
       - "design.js"
+      - "hero-motion.js"
+      - "hero-motion.css"
+      - "assets/design-portal-backdrop.svg"
       - "assets/design-portal.svg"
       - "tests/design-preview.test.mjs"
       - ".github/workflows/design-preview-tests.yml"
@@ -15,6 +18,9 @@ on:
       - "design.html"
       - "design.css"
       - "design.js"
+      - "hero-motion.js"
+      - "hero-motion.css"
+      - "assets/design-portal-backdrop.svg"
       - "assets/design-portal.svg"
       - "tests/design-preview.test.mjs"
       - ".github/workflows/design-preview-tests.yml"
@@ -32,6 +38,8 @@ jobs:
         with:
           node-version: "22"
       - name: Validate JavaScript syntax
-        run: node --check design.js
+        run: |
+          node --check design.js
+          node --check hero-motion.js
       - name: Run offline design integration checks
         run: node --test tests/design-preview.test.mjs
