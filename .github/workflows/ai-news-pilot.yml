@@ -1,0 +1,59 @@
+name: AI News Pilot
+
+on:
+  pull_request:
+    paths:
+      - "scripts/ingest_news.py"
+      - "tests/test_news_ingest.py"
+      - ".github/workflows/ai-news-pilot.yml"
+      - "supabase/migrations/20261011_ai_triage_metadata.sql"
+  push:
+    branches: ["feature/ai-news-rss-pilot"]
+    paths:
+      - "scripts/ingest_news.py"
+      - "tests/test_news_ingest.py"
+      - ".github/workflows/ai-news-pilot.yml"
+      - "supabase/migrations/20261011_ai_triage_metadata.sql"
+  workflow_dispatch:
+  schedule:
+    - cron: "17,47 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-news-pilot
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile Python
+        run: python -m py_compile scripts/ingest_news.py
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p 'test_news_ingest.py' -v
+
+  collect:
+    if: (github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.NEWS_INGEST_ENABLED == 'true')) && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover primary-source news and queue for approval
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: python scripts/ingest_news.py
