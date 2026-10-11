@@ -26,3 +26,17 @@ AI scores indicate likely newsworthiness, not factual verification. During the p
 Run Python 3.12: python -m unittest discover -s tests -p test_news_ingest.py -v
 
 See the GitHub Actions run for CI results. No API keys are used during unit tests.
+
+## Evidence-aware scoring upgrade
+
+The Gemini response now separates three editorial dimensions: importance (50%), novelty (25%) and audience usefulness (25%). The weighted value is a priority score, not an objective scientific assessment.
+
+The old uncalibrated self-reported confidence is now capped by deterministic checks. The model must return short source-language quotes. The script checks whether each quote is present exactly (after whitespace/Unicode normalization) in the public publisher feed text, or, for specifically whitelisted GitHub projects, official public release notes returned from the GitHub API.
+
+The stored ai_confidence field now represents a conservative *grounding indicator*, displayed in Telegram as "ביסוס מידע". It is NOT a probability of truth, and a matching quote does NOT by itself prove that the summary correctly interprets the text. Short or vague sources, missing quotes or invented quotes force a low indicator. Source kind, source text size, verified quote entries and scoring subcomponents are saved for later audit. This upgrade does not inspect copyrighted full articles or Telegram channel messages.
+
+Bot commands /pending display the evidence metric and an example source quote. If the grounding score is below 60, publishing requires an additional explicit acknowledgement that the moderator checked the original source. Manually edited stories clear their old model-derived scoring metadata to avoid presenting stale confidence.
+
+This is deliberately a cautious pilot. A future phase should add claim-by-claim semantic verification against independent original sources, domain-specific trusted sources and manual calibration using 20-30 reviewed examples. Automatic publishing remains OFF.
+
+Schema prerequisite: apply supabase/migrations/20261011_evidence_grounding.sql before merging this upgrade into production. No new keys or credentials are needed.
