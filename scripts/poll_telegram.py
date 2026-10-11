@@ -266,8 +266,11 @@ async def poll_sources():
                 mark_stage("telegram.read_new_messages")
                 scanned += 1
     finally:
-        mark_stage("telegram.disconnect")
-        await client.disconnect()
+        try:
+            await client.disconnect()
+        except Exception:
+            mark_stage("telegram.disconnect")
+            raise
 
     mark_stage("telegram.notify_admin")
     notified = notify_new_links()
