@@ -277,10 +277,16 @@ export default async function handler(req, res) {
     const content = text.slice(text.indexOf(" ") + 1).trim();
 
     if (command === "/status") {
-      await reply(chatId,
-        "✅ הבוט מחובר ואתה מזוהה כמנהל.\n" +
-        (newsStorageReady() ? "✅ הגדרת Supabase קיימת. השתמש ב-/pending לבדיקה." :
-          "⏳ מסד החדשות עדיין לא הוגדר ב-Vercel."), token);
+      let dbMessage = "⏳ מסד החדשות עדיין לא הוגדר ב-Vercel.";
+      if (newsStorageReady()) {
+        try {
+          await newsQuery("GET", { select: "id", limit: "1" });
+          dbMessage = "✅ מסד החדשות מחובר ופעיל.";
+        } catch {
+          dbMessage = "⚠️ הוגדרו פרטי מסד נתונים, אך החיבור או הטבלה אינם תקינים.";
+        }
+      }
+      await reply(chatId, "✅ הבוט מחובר ואתה מזוהה כמנהל.\n" + dbMessage, token);
     } else if (command === "/start" || command === "/help") {
       await reply(chatId, helpMessage(), token);
     } else if (!newsStorageReady()) {
