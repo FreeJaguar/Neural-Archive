@@ -151,3 +151,37 @@ test("public news API returns only approved records from storage", async () => {
     assert.equal(res.body.configured, true);
   } finally { globalThis.fetch = previous; }
 });
+
+
+test("weakly grounded model summaries require a second confirmation", async () => {
+  setup("145088490", true);
+  const prior = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    calls.push([String(url), options]);
+    if (String(url).includes("/rest/v1/news_items") && options.method === "GET") {
+      return response([{
+        id: 21, title: "מודל חדש לתכנות", summary: "עדכון חדשותי למודל בינה מלאכותית שהגיע ממקור ראשוני ומהימן.",
+        source_url: "https://example.com/a", status: "pending", ai_confidence: 30
+      }]);
+    }
+    if (String(url).includes("/rest/v1/news_items") && options.method === "PATCH") {
+      return response([{ id: 21, status: "published" }]);
+    }
+    return response({ ok: true });
+  };
+  const callback = (data) => ({
+    callback_query: { id: data, data, from: { id: 145088490 },
+      message: { chat: { id: 145088490, type: "private" } } }
+  });
+  try {
+    await invoke(telegramHandler, { body: callback("approve:21") });
+    assert.equal(calls.filter((x) => x[1].method === "PATCH").length, 0);
+    const reply = calls.find((x) => x[0].includes("sendMessage"));
+    assert.equal(JSON.parse(reply[1].body).reply_markup.inline_keyboard[0][0].callback_data, "approve_confirm:21");
+    await invoke(telegramHandler, { body: callback("approve_confirm:21") });
+    assert.equal(calls.filter((x) => x[1].method === "PATCH").length, 1);
+  } finally {
+    globalThis.fetch = prior;
+  }
+});
