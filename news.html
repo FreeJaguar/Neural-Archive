@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="חדשות ועדכוני בינה מלאכותית שנבדקו ונבחרו עבור Neural Archive." />
+  <title>חדשות AI | Neural Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/news.css" />
+  <script src="/news.js" defer></script>
+</head>
+<body>
+  <a href="#news-feed" class="skip-link">דלגו לחדשות</a>
+  <header class="news-header">
+    <a class="brand" href="/" aria-label="מעבר לקטלוג הכלים">
+      <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><strong>מפת הכלים</strong><small>החינמיים</small></span>
+    </a>
+    <nav aria-label="ניווט ראשי">
+      <a href="/">קטלוג כלים</a>
+      <a href="/news" aria-current="page">חדשות AI</a>
+    </nav>
+  </header>
+  <main class="news-layout">
+    <section class="news-hero">
+      <p class="eyebrow">NEURAL ARCHIVE / AI NEWS</p>
+      <h1>החדשות שחשוב להכיר.</h1>
+      <p>עדכונים על מודלים, כלים, מחקר ושימושים מעשיים בבינה מלאכותית, עם תקציר בעברית וקישור למקור.</p>
+      <div class="news-hero-foot">
+        <span class="news-dot" aria-hidden="true"></span>
+        <span>מופיעות כאן רק ידיעות שאושרו לפרסום</span>
+      </div>
+    </section>
+    <section id="news-feed" class="news-feed-section" aria-label="פיד חדשות">
+      <div class="news-feed-toolbar">
+        <div>
+          <span class="section-kicker">עדכונים אחרונים</span>
+          <h2>מה חדש בתחום ה-AI</h2>
+        </div>
+        <label class="news-search">
+          <span class="sr-only">חיפוש בחדשות</span>
+          <input type="search" id="newsSearch" placeholder="חיפוש בידיעות..." autocomplete="off" />
+        </label>
+      </div>
+      <p id="newsMessage" class="news-message" role="status" aria-live="polite">טוען חדשות...</p>
+      <div id="newsList" class="news-grid"></div>
+      <p class="news-disclaimer">התקצירים נכתבים בנפרד מהמקורות. מומלץ לעיין בפרסום המקורי לקבלת פרטים מלאים ולבדוק את תאריך הפרסום.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Neural Archive | חדשות AI</p>
+    <a href="/">חזרה לקטלוג הכלים</a>
+  </footer>
+</body>
+</html>
