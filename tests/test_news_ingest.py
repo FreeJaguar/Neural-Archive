@@ -80,12 +80,20 @@ class ClassificationTests(unittest.TestCase):
         }
         self.good = {
             "is_ai": True,
-            "score": 89,
+            "importance": 89,
+            "novelty": 85,
+            "audience": 90,
             "confidence": 93,
             "category": "models",
             "title_he": "מודל בינה מלאכותית רב לשוני חדש",
             "summary_he": "בפרסום רשמי הוצג מודל רב לשוני חדש, עם מיקוד בשפה ובשימושים מעשיים.",
             "reason_he": "הכרזת מודל רשמית רלוונטית לקטלוג.",
+            "evidence": [
+                {
+                    "quote": "The blog announced a new multilingual model.",
+                    "supports_he": "המקור מציין הכרזה על מודל רב לשוני.",
+                }
+            ],
         }
 
     @patch.dict("os.environ", {"GEMINI_API_KEY": "test-key"})
@@ -93,8 +101,11 @@ class ClassificationTests(unittest.TestCase):
     def test_structured_ai_response(self, mock):
         mock.return_value = {"candidates": [{"content": {"parts": [{"text": json.dumps(self.good)}]}}]}
         result = ingest.classify_article(self.article)
-        self.assertEqual(result["score"], 89)
+        self.assertEqual(result["score"], 88)
         self.assertEqual(result["category"], "models")
+        self.assertEqual(result["evidence_valid"], 1)
+        self.assertEqual(result["confidence"], 30)  # Short source must cap confidence.
+        self.assertEqual(result["model_confidence"], 93)
         url, method, *_ = mock.call_args.args
         self.assertEqual(method, "POST")
         self.assertIn("gemini-3.5-flash-lite", url)
@@ -106,6 +117,45 @@ class ClassificationTests(unittest.TestCase):
         mock.return_value = {"candidates": [{"content": {"parts": [{"text": json.dumps(response)}]}}]}
         with self.assertRaises(ValueError):
             ingest.classify_article(self.article)
+
+    def test_fabricated_quotes_cannot_raise_evidence_score(self):
+        evidence = [{"quote": "The company verified every performance metric.", "supports_he": "הכרזה מוכחת"}]
+        computed, checked, count = ingest.evidence_confidence(self.article, 99, evidence)
+        self.assertEqual(computed, 15)
+        self.assertEqual(count, 0)
+        self.assertFalse(checked[0]["quote_found"])
+
+    def test_evidence_is_not_probability_and_is_capped_by_excerpt(self):
+        evidence = [{"quote": "The blog announced a new multilingual model.", "supports_he": "הודעה על מודל"}]
+        result, checked, count = ingest.evidence_confidence(self.article, 100, evidence)
+        self.assertEqual(result, 30)
+        self.assertEqual(count, 1)
+
+    @patch.object(ingest, "request_json")
+    def test_trusted_github_release_enriches_feed(self, fake_request):
+        article = {
+            "url": "https://github.com/googleapis/python-genai/releases/tag/v2.29.0",
+            "title": "Google Gen AI Python SDK v2.29.0",
+            "excerpt": "Release notice",
+            "source_kind": "release_feed",
+        }
+        fake_request.return_value = {"body": "This version contains improvements to the Gemini Python SDK. " * 5}
+        improved = ingest.expand_official_release(article)
+        self.assertEqual(improved["source_kind"], "official_release_notes")
+        self.assertGreater(len(improved["excerpt"]), len(article["excerpt"]))
+        self.assertEqual(fake_request.call_args.args[0],
+                         "https://api.github.com/repos/googleapis/python-genai/releases/tags/v2.29.0")
+
+    @patch.object(ingest, "request_json")
+    def test_does_not_fetch_unapproved_github_releases(self, fake_request):
+        article = {
+            "url": "https://github.com/attacker/repo/releases/tag/v2",
+            "excerpt": "A release",
+            "title": "Unknown software",
+        }
+        result = ingest.expand_official_release(article)
+        self.assertIs(result, article)
+        fake_request.assert_not_called()
 
     @patch.object(ingest, "supabase_request")
     def test_high_score_still_goes_to_pending(self, mock):
