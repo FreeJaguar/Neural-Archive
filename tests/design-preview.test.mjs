@@ -6,6 +6,7 @@ import { Script } from "node:vm";
 const read = path => readFileSync(new URL("../" + path, import.meta.url), "utf8");
 const html = read("design.html");
 const css = read("design.css");
+const compactCss = read("compact-sections.css");
 const js = read("design.js");
 const data = read("data.js");
 const portal = read("assets/design-portal.svg");
@@ -120,6 +121,23 @@ test("3D pointer motion stops on reduced motion, hidden tab and user pause", () 
   assert.match(heroMotionCss, /max-width:\s*690px/);
   assert.match(html, /id="portalMotionToggle"/);
   assert.ok(!/GEMINI_API_KEY|TG_STRING_SESSION|SUPABASE_SERVICE_ROLE_KEY/.test(heroMotionJs));
+});
+
+test("news and categories are compact, responsive and visually readable", () => {
+  assert.match(html, /href="\/compact-sections\.css"/);
+  assert.match(compactCss, /\.news-section\s*\{/);
+  assert.match(compactCss, /\.news-card\s*\{/);
+  assert.match(compactCss, /height:\s*171px/);
+  assert.match(compactCss, /\.news-card-content\s*\{/);
+  assert.match(compactCss, /linear-gradient/);
+  assert.match(compactCss, /\.news-skeleton\s*\{/);
+  assert.match(compactCss, /min-height:\s*68px/);
+  assert.match(compactCss, /\.categories-section\s*\{/);
+  assert.match(compactCss, /\.category-card\s*\{/);
+  assert.match(compactCss, /min-height:\s*104px/);
+  assert.match(compactCss, /@media\s*\(max-width:\s*690px\)/);
+  assert.ok(!/\.hero(?:\s|\{|\-inner|\-visual)/.test(compactCss),
+    "Compact strip must not alter the cinematic Hero.");
 });
 
 test("light and dark modes, motion accessibility and mobile layouts exist", () => {
