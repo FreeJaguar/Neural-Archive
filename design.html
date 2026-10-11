@@ -88,34 +88,49 @@
           <div class="hero-cta-row"><a class="hero-primary" href="#tools">לגלות כלים <svg><use href="#i-arrow"></use></svg></a><a class="hero-secondary" href="#news">לחדשות AI <svg><use href="#i-chevron"></use></svg></a></div>
         </div>
         <div class="hero-visual" id="portalVisual">
-          <!-- Original Neural Archive cinematic concept, separated into a photo plate and an independently moving head layer. -->
           <div class="portal-scene cinematic-scene" id="portalScene" aria-hidden="true">
-            <div class="cinematic-aurora cinematic-aurora-a"></div>
-            <div class="cinematic-aurora cinematic-aurora-b"></div>
+            <div class="cinematic-sky-glow"></div>
             <div class="cinematic-photograph" id="cinematicPhotograph">
-              <img class="cinematic-backdrop" src="/assets/cinematic-hero.avif"
-                width="570" height="301" alt="" fetchpriority="high" decoding="async">
-              <div class="cinematic-cube-energy">
-                <span class="cinematic-energy-heart"></span>
-                <span class="cinematic-energy-sheen"></span>
-                <span class="cinematic-energy-ring"></span>
+              <img class="cinematic-backdrop" src="/assets/cinematic-scene-backdrop-hq.webp"
+                width="910" height="636" alt="" fetchpriority="high" decoding="async" draggable="false">
+              <div class="cinematic-cube-aura"></div>
+              <div class="cinematic-layer cinematic-layer-cube" style="--x:35.9341%;--y:1.1006%;--w:41.6484%;--h:65.5660%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-cube-hq.webp" width="379" height="417" alt="" decoding="async" draggable="false"></div>
               </div>
-              <div class="cinematic-head-anchor" id="cinematicHeadAnchor">
-                <img class="cinematic-head" src="/assets/cinematic-man-head.webp"
-                  width="21" height="21" alt="" decoding="async">
+              <div class="cinematic-layer cinematic-layer-woman" style="--x:18.5714%;--y:8.9623%;--w:13.7363%;--h:27.6730%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-woman.webp" width="125" height="176" alt="" decoding="async" draggable="false"></div>
               </div>
-              <div class="cinematic-glass-panel cinematic-glass-panel-a"></div>
-              <div class="cinematic-glass-panel cinematic-glass-panel-b"></div>
-              <div class="cinematic-glass-panel cinematic-glass-panel-c"></div>
-              <div class="cinematic-depth-sparks">
+              <div class="cinematic-layer cinematic-layer-light" style="--x:11.0989%;--y:36.6352%;--w:16.9231%;--h:25.0000%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-light.webp" width="154" height="159" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-layer cinematic-layer-code" style="--x:28.2418%;--y:41.6667%;--w:16.7033%;--h:23.1132%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-code.webp" width="152" height="147" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-layer cinematic-layer-mountain" style="--x:76.7033%;--y:14.4654%;--w:15.4945%;--h:37.8931%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-mountain.webp" width="141" height="241" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-layer cinematic-layer-robot" style="--x:73.8462%;--y:44.3396%;--w:11.7582%;--h:21.5409%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-robot.webp" width="107" height="137" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-layer cinematic-layer-top" style="--x:63.1868%;--y:0.3145%;--w:11.3187%;--h:20.7547%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-top.webp" width="103" height="132" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-layer cinematic-layer-top2" style="--x:68.3516%;--y:8.0189%;--w:6.8132%;--h:14.3082%">
+                <div class="cinematic-layer-motion"><img src="/assets/cinematic-panel-top2.webp" width="62" height="91" alt="" decoding="async" draggable="false"></div>
+              </div>
+              <div class="cinematic-head-anchor" id="cinematicHeadAnchor"
+                style="--x:57.0330%;--y:58.1761%;--w:4.6154%;--h:7.2327%">
+                <img class="cinematic-head" src="/assets/cinematic-man-head-hq.webp"
+                  width="42" height="46" alt="" decoding="async" draggable="false">
+              </div>
+              <div class="cinematic-particles">
                 <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
               </div>
-              <div class="cinematic-foreground-rays"></div>
+              <div class="cinematic-floor-reflection"></div>
             </div>
-            <div class="cinematic-atmosphere-floor"></div>
           </div>
           <button type="button" class="portal-motion-toggle" id="portalMotionToggle"
-            aria-pressed="false" aria-label="עצירת האנימציה" title="עצירה או הפעלה של תנועת התמונה">
+            aria-pressed="false" aria-label="עצירת האנימציה" title="עצירה או הפעלה של תנועת הסצנה">
             <span aria-hidden="true" class="portal-toggle-icon">Ⅱ</span>
             <span class="portal-toggle-label">עצירת תנועה</span>
           </button>
