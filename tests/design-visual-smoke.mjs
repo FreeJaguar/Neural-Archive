@@ -135,11 +135,13 @@ try {
         innerWidth:window.innerWidth,
         scrollWidth:document.documentElement.scrollWidth,
         visualWidth:a.width,
-        visualHeight:a.height
+        visualHeight:a.height,
+        photographOpacity:getComputedStyle(document.querySelector(".cinematic-photograph")).opacity
       };
     });
     assert.ok(geometry.visualWidth >= 360,JSON.stringify(geometry));
     assert.ok(geometry.visualHeight >= 290,JSON.stringify(geometry));
+    assert.ok(Number(geometry.photographOpacity) > .95, "Mobile hero must be visible on first frame: "+JSON.stringify(geometry));
     assert.ok(geometry.scrollWidth <= geometry.innerWidth+2,JSON.stringify(geometry));
   });
   await mobile.screenshot({path:path.join(output,"hero-mobile.png"),fullPage:false});
