@@ -27,6 +27,9 @@
   padding-block: 49px 85px;
 }
 .hero-visual#portalVisual {
+  /* Absolute grid items keep their grid-area as the containing block.
+     Span BOTH columns: otherwise width:100% still measures only 48%. */
+  grid-column: 1 / -1;
   position: absolute;
   z-index: 2;
   /* Full-bleed artwork reaches behind the headline, not a left-side card. */
@@ -83,10 +86,6 @@
   --cube-y: 0px;
   --panels-x: 0px;
   --panels-y: 0px;
-  --head-x: 0px;
-  --head-y: 0px;
-  --head-rx: 0deg;
-  --head-ry: 0deg;
   position: absolute;
   inset: 0;
   z-index: 1;
