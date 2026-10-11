@@ -18,10 +18,12 @@ UNSAFE_FORMAT = set(range(0x202A, 0x202F)) | set(range(0x2066, 0x206A))
 UNSAFE_FORMAT.update((0x200B, 0x2060, 0xFEFF))
 TECH_TOKEN = re.compile(
     r"(?<![A-Za-z0-9])"
-    r"(?:[A-Za-z][A-Za-z0-9]*(?:[._-][A-Za-z0-9]+)*(?:\+\+)?"
+    r"(?:[A-Za-z][A-Za-z0-9]*(?:[._-][A-Za-z0-9]+)*(?:\+\+|#)?"
     r"|\d+(?:[.,]\d+)*(?:%|×)?)"
 )
 REPEATED = re.compile(r"(?i)(?<!\w)([\w]{3,})\s+\1(?!\w)")
+TECH_EXPR = re.compile(r"(?:`[^`\n]{1,150}`|(?<!\w)[A-Za-z]{1,12}\([^)\n]{1,80}\))")
+MATH_GLYPH = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉±∑∫√∞≠≈≤≥∈∉∧∨→↔λμπθσ]")
 HEBREW = re.compile(r"[\u05D0-\u05EA]")
 
 
@@ -97,7 +99,10 @@ def inspect_copy(title, summary):
 def protected_tokens(title, summary):
     """Keep English technical names, version numbers and numeric facts intact."""
     combined = (title or "") + " " + (summary or "")
-    return Counter(token.casefold() for token in TECH_TOKEN.findall(combined))
+    tokens = [token.casefold() for token in TECH_TOKEN.findall(combined)]
+    tokens.extend("expression:" + expression for expression in TECH_EXPR.findall(combined))
+    tokens.extend("math-symbol:" + symbol for symbol in MATH_GLYPH.findall(combined))
+    return Counter(tokens)
 
 
 def inspect_revision(old_title, old_summary, new_title, new_summary):
