@@ -10,8 +10,18 @@ const js = read("design.js");
 const data = read("data.js");
 const portal = read("assets/design-portal.svg");
 const portalBackdrop = read("assets/design-portal-backdrop.svg");
-const cinematicPhoto = readFileSync(new URL("../assets/cinematic-hero.avif", import.meta.url));
-const cinematicHead = readFileSync(new URL("../assets/cinematic-man-head.webp", import.meta.url));
+const heroAssets = [
+  "assets/cinematic-scene-backdrop-hq.webp",
+  "assets/cinematic-cube-hq.webp",
+  "assets/cinematic-panel-woman.webp",
+  "assets/cinematic-panel-light.webp",
+  "assets/cinematic-panel-code.webp",
+  "assets/cinematic-panel-mountain.webp",
+  "assets/cinematic-panel-robot.webp",
+  "assets/cinematic-panel-top.webp",
+  "assets/cinematic-panel-top2.webp",
+  "assets/cinematic-man-head-hq.webp"
+];
 const heroMotionCss = read("hero-motion.css");
 const heroMotionJs = read("hero-motion.js");
 
@@ -21,7 +31,7 @@ test("preview is independent of live homepage and stays unindexed", () => {
   assert.match(html, /src="\/data\.js"/);
   assert.match(html, /src="\/design\.js"/);
   assert.match(html, /href="\/design\.css"/);
-  assert.match(html, /src="\/assets\/cinematic-hero\.avif"/);
+  assert.match(html, /src="\/assets\/cinematic-scene-backdrop-hq\.webp"/);
   assert.match(portal, /<svg[\s>]/);
   assert.ok(!html.includes("SUPABASE_SERVICE_ROLE_KEY"));
   assert.ok(!html.includes("TG_STRING_SESSION"));
@@ -53,32 +63,45 @@ test("interactive controls and internal section links have matching ids", () => 
   assert.match(html, /class="skip-link"/);
 });
 
-test("cinematic reference uses local image plus separately tracked head", () => {
+test("high-resolution photographed 2.5D art is split into real moving image layers", () => {
   assert.match(html, /id="portalVisual"/);
   assert.match(html, /id="cinematicPhotograph"/);
   assert.match(html, /id="cinematicHeadAnchor"/);
   assert.match(html, /class="cinematic-head"/);
-  assert.match(html, /src="\/assets\/cinematic-hero\.avif"/);
-  assert.match(html, /src="\/assets\/cinematic-man-head\.webp"/);
+  assert.match(html, /src="\/assets\/cinematic-scene-backdrop-hq\.webp"/);
+  assert.match(html, /width="910"\s+height="636"/);
   assert.match(html, /src="\/hero-motion\.js"/);
   assert.match(html, /href="\/hero-motion\.css"/);
   assert.match(portalBackdrop, /<svg[\s>]/);
-  assert.match(cinematicPhoto.toString("ascii",4,12), /ftypavif/);
-  assert.equal(cinematicHead.toString("ascii",0,4), "RIFF");
-  assert.equal(cinematicHead.toString("ascii",8,12), "WEBP");
-  assert.ok(cinematicPhoto.byteLength > 5000);
-  assert.ok(cinematicPhoto.byteLength < 250000);
-  assert.match(heroMotionCss, /\.cinematic-photograph\s*\{/);
+  for (const asset of heroAssets) {
+    const binary = readFileSync(new URL("../" + asset, import.meta.url));
+    assert.equal(binary.toString("ascii",0,4), "RIFF", asset);
+    assert.equal(binary.toString("ascii",8,12), "WEBP", asset);
+    assert.ok(binary.length > 1000, "Empty asset: " + asset);
+    assert.ok(binary.length < 200000, "Oversized asset: " + asset);
+    assert.ok(html.includes('src="/' + asset + '"'), "Missing layer image: " + asset);
+  }
+  const layers = ["cube","woman","light","code","mountain","robot","top","top2"];
+  for (const layer of layers) {
+    assert.match(html, new RegExp("cinematic-layer-" + layer + '"'));
+    assert.match(heroMotionCss, new RegExp("\\.cinematic-layer-" + layer));
+  }
+  assert.match(html, /class="cinematic-layer-motion"/);
+  assert.match(heroMotionCss, /--panels-x/);
+  assert.match(heroMotionCss, /--cube-x/);
+  assert.match(heroMotionCss, /@keyframes cinematic-cube-hover/);
+  assert.match(heroMotionCss, /@keyframes cinematic-panel-hover/);
+  assert.match(heroMotionCss, /width:\s*min\(64vw,\s*1250px\)/);
+  assert.match(heroMotionCss, /min-height:\s*clamp\(700px,/);
   assert.match(heroMotionCss, /\.cinematic-head-anchor\s*\{/);
   assert.match(heroMotionCss, /transform-origin:\s*50%\s+77%/);
-  assert.match(heroMotionCss, /cinematic-energy-breathe/);
-  assert.match(heroMotionCss, /cinematic-panel-float/);
-  assert.match(heroMotionCss, /cinematic-breathe/);
-  assert.doesNotMatch(html, /class="holo-cube"/);
   assert.match(heroMotionJs, /Body orientation NEVER changes/);
   assert.match(heroMotionJs, /--head-x/);
   assert.match(heroMotionJs, /--head-ry/);
-  assert.match(heroMotionJs, /--scene-x/);
+  assert.match(heroMotionJs, /--cube-x/);
+  assert.match(heroMotionJs, /--panels-x/);
+  assert.doesNotMatch(html, /src="\/assets\/cinematic-hero\.avif"/);
+  assert.doesNotMatch(html, /class="holo-cube"/);
 });
 
 test("3D pointer motion stops on reduced motion, hidden tab and user pause", () => {
