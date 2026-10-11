@@ -437,3 +437,31 @@
   .cinematic-head-anchor {transform:none!important}
   .portal-motion-toggle {transition:none}
 }
+
+
+/* NEURAL HERO TYPE REFINEMENT
+ * Retain the two-line Hebrew headline and large cinematic presence.
+ * Reduced desktop letter compression and 4% headline size; separate dots
+ * receive an optical gap on their right-hand side (RTL inline-start).
+ */
+.hero h1 {
+  font-size: clamp(45px, 5.14vw, 81px);
+  letter-spacing: -.045em;
+}
+.hero h1 .hero-dot {
+  display: inline-block;
+  margin-inline-start: .085em;
+  letter-spacing: 0;
+}
+@media (max-width: 1200px) {
+  .hero h1 {font-size: clamp(41px, 5.04vw, 72px)}
+}
+@media (max-width: 920px) {
+  .hero h1 {font-size: clamp(38px, 5.2vw, 56px)}
+}
+@media (max-width: 690px) {
+  .hero h1 {font-size: clamp(40px, 8.9vw, 60px)}
+}
+@media (max-width: 390px) {
+  .hero h1 {font-size: 38px}
+}
