@@ -46,11 +46,22 @@ function validCopy(title, summary) {
 }
 
 function formatCandidate(item) {
+  const aiEvidence = Array.isArray(item.ai_evidence) ? item.ai_evidence : [];
+  const matched = aiEvidence.filter((e) => e && e.quote_found);
+  const metadata = item.ai_score == null ? "" :
+    "\n\nחשיבות משוקללת: " + item.ai_score + "/100" +
+    " | ביסוס מידע: " + (item.ai_confidence ?? "לא נבדק") + "/100" +
+    "\nחדשנות: " + (item.ai_novelty ?? "?") +
+    " | התאמה לקהל: " + (item.ai_audience ?? "?") +
+    "\nציטוטים שאותרו בטקסט המקור: " + matched.length + "/" + aiEvidence.length +
+    (matched.length ? "\nדוגמת ראיה: \"" + matched[0].quote.slice(0,140) + "\"" : "") +
+    "\nהציון אינו הסתברות או אימות עובדות עצמאי.";
   return (
     "📰 ידיעה #" + item.id + "\n" +
     "סטטוס: " + (item.status === "pending" ? "ממתינה לאישור" : item.status === "draft" ? "טיוטה" : item.status) + "\n\n" +
     (item.title || "כותרת טרם הוזנה") + "\n\n" +
-    (item.summary || "טרם נכתב תקציר מקורי") + "\n\n" +
+    (item.summary || "טרם נכתב תקציר מקורי") +
+    metadata + "\n\n" +
     "מקור: " + item.source_url
   ).slice(0, 3900);
 }
@@ -130,6 +141,13 @@ async function handleEdit(chatId, token, input) {
     title: parts[0],
     summary: parts[1],
     status: "pending",
+    ai_score: null,
+    ai_confidence: null,
+    ai_evidence: null,
+    ai_rationale: "התקציר נערך ידנית, אין לו ניקוד ביסוס AI תקף.",
+    ai_importance: null,
+    ai_novelty: null,
+    ai_audience: null,
     updated_at: new Date().toISOString(),
   });
   if (!records?.length) return reply(chatId, "לא נמצאה טיוטה פתוחה עם המזהה הזה.", token);
@@ -139,7 +157,7 @@ async function handleEdit(chatId, token, input) {
 async function handlePending(chatId, token) {
   const records = await newsQuery("GET", {
     status: "in.(draft,pending)",
-    select: "id,title,summary,source_url,status",
+    select: "id,title,summary,source_url,status,ai_score,ai_confidence,ai_evidence,ai_novelty,ai_audience",
     order: "created_at.desc",
     limit: "6",
   });
@@ -150,14 +168,14 @@ async function handlePending(chatId, token) {
 }
 
 async function handleCallback(callback, chatId, token) {
-  const payload = String(callback.data || "").match(/^(approve|reject|edit):([1-9]\d{0,15})$/);
+  const payload = String(callback.data || "").match(/^(approve|approve_confirm|reject|edit):([1-9]\d{0,15})$/);
   await telegramCall("answerCallbackQuery", { callback_query_id: callback.id }, token);
   if (!payload) return;
   const [, action, id] = payload;
 
   const records = await newsQuery("GET", {
     id: "eq." + id,
-    select: "id,title,summary,status,source_url",
+    select: "id,title,summary,status,source_url,ai_confidence,ai_score,ai_evidence",
     limit: "1",
   });
   const item = records?.[0];
@@ -174,12 +192,28 @@ async function handleCallback(callback, chatId, token) {
     return reply(chatId, "הידיעה כבר טופלה. הסטטוס הנוכחי: " + item.status, token);
   }
 
-  if (action === "approve" && !validCopy(item.title, item.summary)) {
+  if ((action === "approve" || action === "approve_confirm") && !validCopy(item.title, item.summary)) {
     return reply(chatId, "לא ניתן לפרסם ללא כותרת ותקציר מלאים. לחץ על עריכה תחילה.", token);
   }
 
+  // Explicit second confirmation for low-grounding machine summaries.
+  if (action === "approve" && item.ai_confidence !== null &&
+      item.ai_confidence !== undefined && item.ai_confidence < 60) {
+    return reply(chatId,
+      "⚠️ רמת הביסוס של ידיעה #" + id + " נמוכה (" + item.ai_confidence +
+      "/100). זהו מדד ראיות, לא הסתברות לאמיתות הידיעה.\n" +
+      "פתח ובדוק את המקור לפני פרסום:\n" + item.source_url +
+      "\n\nהאם לפרסם בכל זאת?",
+      token,
+      { inline_keyboard: [[
+        { text: "✅ בדקתי את המקור, לפרסם", callback_data: "approve_confirm:" + id },
+        { text: "לעריכה", callback_data: "edit:" + id },
+      ]] }
+    );
+  }
+
   const now = new Date().toISOString();
-  const nextStatus = action === "approve" ? "published" : "rejected";
+  const nextStatus = action === "approve" || action === "approve_confirm" ? "published" : "rejected";
   const updated = await newsQuery("PATCH", {
     id: "eq." + id,
     status: "eq.pending",
@@ -194,7 +228,7 @@ async function handleCallback(callback, chatId, token) {
   if (!updated?.length) return reply(chatId, "הידיעה טופלה במקביל. בדוק את מצבה באמצעות /pending.", token);
   return reply(chatId,
     (nextStatus === "published" ? "✅ ידיעה #" + id + " אושרה לפרסום." : "❌ ידיעה #" + id + " נדחתה.") +
-    "\nלא בוצע כאן איסוף אוטומטי או עיבוד AI.", token);
+    "\nשינוי הסטטוס בוצע לאחר החלטת המנהל.", token);
 }
 
 function helpMessage() {
