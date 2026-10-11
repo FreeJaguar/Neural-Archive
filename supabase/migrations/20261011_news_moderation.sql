@@ -30,6 +30,6 @@ alter table public.news_items enable row level security;
 
 -- No RLS policies are granted for anon/authenticated. All database access
 -- must go through authenticated, server-side handlers using a service role key.
-revoke all on public.news_items from anon, authenticated;
+revoke all on public.news_items from public, anon, authenticated;
 grant select, insert, update on public.news_items to service_role;
 grant usage, select on sequence public.news_items_id_seq to service_role;
