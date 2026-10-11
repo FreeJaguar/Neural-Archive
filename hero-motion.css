@@ -51,7 +51,7 @@
   inset: -5%;
   z-index: 0;
   pointer-events: none;
-  background: url("/assets/cinematic-scene-backdrop-hq.webp") center 46% / cover no-repeat;
+  background: url("/assets/cinematic-scene-backdrop-hq.webp") right center / 280% auto no-repeat;
   filter: blur(32px) brightness(.55) saturate(.86);
   opacity: .34;
   -webkit-mask-image: linear-gradient(90deg, transparent 41%, rgba(0,0,0,.5) 61%, #000 83%);
