@@ -88,62 +88,34 @@
           <div class="hero-cta-row"><a class="hero-primary" href="#tools">לגלות כלים <svg><use href="#i-arrow"></use></svg></a><a class="hero-secondary" href="#news">לחדשות AI <svg><use href="#i-chevron"></use></svg></a></div>
         </div>
         <div class="hero-visual" id="portalVisual">
-          <div class="portal-scene" id="portalScene" aria-hidden="true">
-            <img class="portal-backdrop" src="/assets/design-portal-backdrop.svg" alt="" fetchpriority="high" decoding="async">
-            <div class="portal-atmosphere atmosphere-blue"></div>
-            <div class="portal-atmosphere atmosphere-violet"></div>
-            <div class="portal-sparkles">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="portal-horizon">
-              <span class="horizon-ring ring-one"></span>
-              <span class="horizon-ring ring-two"></span>
-              <span class="horizon-ring ring-three"></span>
-            </div>
-            <div class="portal-stage" id="portalStage">
-              <div class="portal-tilt" id="portalTilt">
-                <div class="portal-float">
-                  <div class="portal-rotation">
-                    <div class="holo-cube">
-                      <div class="cube-inner-light"></div>
-                      <div class="cube-face cube-face-front">
-                        <span class="cube-glass-grid"></span>
-                        <span class="cube-face-label">AI</span>
-                        <span class="cube-coordinates">N / A · 01</span>
-                      </div>
-                      <div class="cube-face cube-face-back"><span class="cube-glass-grid"></span></div>
-                      <div class="cube-face cube-face-right"><span class="cube-glass-grid"></span><span class="cube-circuit"></span></div>
-                      <div class="cube-face cube-face-left"><span class="cube-glass-grid"></span></div>
-                      <div class="cube-face cube-face-top"><span class="cube-glass-grid"></span></div>
-                      <div class="cube-face cube-face-bottom"><span class="cube-glass-grid"></span></div>
-                      <div class="cube-orb" aria-hidden="true">
-                        <span class="orb-ring orb-ring-a"></span>
-                        <span class="orb-ring orb-ring-b"></span>
-                        <span class="orb-ring orb-ring-c"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <!-- Original Neural Archive cinematic concept, separated into a photo plate and an independently moving head layer. -->
+          <div class="portal-scene cinematic-scene" id="portalScene" aria-hidden="true">
+            <div class="cinematic-aurora cinematic-aurora-a"></div>
+            <div class="cinematic-aurora cinematic-aurora-b"></div>
+            <div class="cinematic-photograph" id="cinematicPhotograph">
+              <img class="cinematic-backdrop" src="/assets/cinematic-hero.webp"
+                width="570" height="301" alt="" fetchpriority="high" decoding="async">
+              <div class="cinematic-cube-energy">
+                <span class="cinematic-energy-heart"></span>
+                <span class="cinematic-energy-sheen"></span>
+                <span class="cinematic-energy-ring"></span>
               </div>
+              <div class="cinematic-head-anchor" id="cinematicHeadAnchor">
+                <img class="cinematic-head" src="/assets/cinematic-man-head.webp"
+                  width="21" height="21" alt="" decoding="async">
+              </div>
+              <div class="cinematic-glass-panel cinematic-glass-panel-a"></div>
+              <div class="cinematic-glass-panel cinematic-glass-panel-b"></div>
+              <div class="cinematic-glass-panel cinematic-glass-panel-c"></div>
+              <div class="cinematic-depth-sparks">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="cinematic-foreground-rays"></div>
             </div>
-            <div class="portal-floorlight"></div>
-            <div class="portal-info-card portal-info-left">
-              <span class="portal-info-icon">✦</span>
-              <span class="portal-info-text"><strong>AI SIGNAL</strong><small>Neural Archive</small></span>
-              <span class="portal-info-bars"><i></i><i></i><i></i></span>
-            </div>
-            <div class="portal-info-card portal-info-right">
-              <span class="portal-info-orb"></span>
-              <span class="portal-info-text"><strong>LIVE DISCOVERY</strong><small>Exploring what's next</small></span>
-            </div>
-            <div class="portal-info-card portal-info-bottom">
-              <span class="portal-info-text"><strong>NEURAL SYSTEM</strong><small>Knowledge in motion</small></span>
-              <span class="portal-info-pulse"></span>
-            </div>
-            <div class="portal-art-label">NEURAL <span>ARCHIVE</span> / DISCOVERY ENGINE <span class="hero-art-dot"></span></div>
+            <div class="cinematic-atmosphere-floor"></div>
           </div>
           <button type="button" class="portal-motion-toggle" id="portalMotionToggle"
-            aria-pressed="false" aria-label="עצירת האנימציה" title="עצירה או הפעלה של תנועת התלת־ממד">
+            aria-pressed="false" aria-label="עצירת האנימציה" title="עצירה או הפעלה של תנועת התמונה">
             <span aria-hidden="true" class="portal-toggle-icon">Ⅱ</span>
             <span class="portal-toggle-label">עצירת תנועה</span>
           </button>
