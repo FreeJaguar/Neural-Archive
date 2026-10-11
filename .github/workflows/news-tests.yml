@@ -1,0 +1,37 @@
+name: News bot validation
+
+on:
+  pull_request:
+    paths:
+      - "api/**"
+      - "tests/**"
+      - "supabase/migrations/**"
+      - ".github/workflows/news-tests.yml"
+  push:
+    branches: ["feature/telegram-news-moderation"]
+    paths:
+      - "api/**"
+      - "tests/**"
+      - "supabase/migrations/**"
+      - ".github/workflows/news-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax check
+        run: |
+          node --check api/_news-store.mjs
+          node --check api/telegram.mjs
+          node --check api/news.mjs
+          node --check news.js
+      - name: Run news workflow tests
+        run: node --test tests/news-workflow.test.mjs
