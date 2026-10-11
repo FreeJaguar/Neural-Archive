@@ -82,6 +82,7 @@
   top: 48%;
   left: 51%;
   transform: translate(-50%,-50%);
+  animation: portal-stage-awaken 1.3s cubic-bezier(.16,.74,.25,1) both;
   perspective: 920px;
   perspective-origin: 50% 48%;
   transform-style: preserve-3d;
@@ -468,11 +469,17 @@
   animation-play-state: paused !important;
 }
 .portal-visual-paused .portal-tilt { transform: rotateX(0deg) rotateY(0deg) }
+.portal-visual-paused .portal-stage { animation-play-state: paused !important; }
 
 /* An explicit pause must also neutralize interactive pointer transforms. */
 .portal-visual-paused .portal-backdrop { transform: translate3d(0,0,0) scale(1.07); }
 .portal-visual-paused .portal-info-card { animation-play-state: paused !important; }
 
+@keyframes portal-stage-awaken {
+  0% { opacity: 0; transform: translate(-50%,-46%) scale(.76); }
+  48% { opacity: .9; }
+  100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+}
 @keyframes portal-float-breathe {
   0%,100% { transform: translate3d(0,9px,0) scale3d(.978,.978,.978); }
   50% { transform: translate3d(0,-13px,0) scale3d(1.028,1.028,1.028); }
@@ -573,6 +580,7 @@
     animation: none !important;
     transition: none !important;
   }
+  .portal-stage {animation:none;opacity:1;transform:translate(-50%,-50%)}
   .portal-float {transform:none}
   .portal-rotation {transform:rotateX(-18deg) rotateY(-28deg)}
   .portal-tilt {transform:none}
