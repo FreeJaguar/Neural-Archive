@@ -130,6 +130,35 @@ class CollectorGuardTests(unittest.TestCase):
             self.assertEqual(sources[0]["username"], "ApprovedChannel")
             self.assertIn("huggingface.co", hosts)
 
+    def test_missing_rights_reports_stage_without_exposing_values(self):
+        from io import StringIO
+        from contextlib import redirect_stdout
+
+        env = {**self.valid, "TG_RIGHTS_ACK": "not_confirmed"}
+        output = StringIO()
+        with patch.dict("os.environ", env, clear=True), redirect_stdout(output):
+            code = poll_telegram.main()
+        self.assertEqual(code, 1)
+        self.assertIn("stage=config.rights_ack", output.getvalue())
+        self.assertIn("error_type=ValueError", output.getvalue())
+        self.assertNotIn(env["TG_STRING_SESSION"], output.getvalue())
+        self.assertNotIn(env["TG_API_HASH"], output.getvalue())
+
+    def test_runtime_error_reports_failing_stage_not_secret(self):
+        from io import StringIO
+        from contextlib import redirect_stdout
+
+        async def private_error():
+            poll_telegram.mark_stage("telegram.resolve_source")
+            raise ValueError("PrivateSessionValueShouldNeverAppear")
+
+        output = StringIO()
+        with patch.object(poll_telegram, "poll_sources", private_error), redirect_stdout(output):
+            code = poll_telegram.main()
+        self.assertEqual(code, 1)
+        self.assertIn("stage=telegram.resolve_source", output.getvalue())
+        self.assertNotIn("PrivateSessionValueShouldNeverAppear", output.getvalue())
+
     @patch.object(poll_telegram, "rest_request")
     def test_first_run_can_baseline_without_fetching_history(self, mock):
         mock.return_value = []
