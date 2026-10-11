@@ -185,3 +185,59 @@ test("weakly grounded model summaries require a second confirmation", async () =
     globalThis.fetch = prior;
   }
 });
+
+
+test("language-review drafts in /pending can only be edited", async () => {
+  setup("145088490", true);
+  const previous = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    const address = String(url);
+    calls.push({ address, options });
+    if (address.includes("/rest/v1/news_items")) {
+      return response([{ id: 27, title: "טיוטה על מודל בינה מלאכותית",
+        summary: "התקציר ממתין לתיקון ניסוח לפני אישור ופרסום בחדשות באתר.",
+        source_url: "https://example.com/item", status: "draft",
+        language_quality_state: "needs_review", ai_evidence: [] }]);
+    }
+    return response({ ok: true });
+  };
+  try {
+    const result = await invoke(telegramHandler, { body: adminMessage("/pending") });
+    assert.equal(result.statusCode, 200);
+    const outbound = calls.find((x) => x.address.includes("/sendMessage"));
+    const payload = JSON.parse(outbound.options.body);
+    assert.match(payload.text, /נדרשת הגהה ידנית/);
+    assert.equal(payload.reply_markup.inline_keyboard[0].length, 1);
+    assert.equal(payload.reply_markup.inline_keyboard[0][0].callback_data, "edit:27");
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
+
+test("an AI item marked as linguistically unsafe cannot be published", async () => {
+  setup("145088490", true);
+  const previous = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    const address = String(url);
+    calls.push({ address, options });
+    if (address.includes("/rest/v1/news_items") && options.method === "GET") {
+      return response([{ id: 27, title: "מודל AI חדש",
+        summary: "הסיכום כולל מידע מוגבל על פיתוח מודל חדש שטרם עבר בדיקה.",
+        source_url: "https://example.com/item", status: "pending",
+        ai_confidence: 90, language_quality_state: "needs_review" }]);
+    }
+    return response({ ok: true });
+  };
+  try {
+    const callback = { callback_query: { id: "check-27", data: "approve_confirm:27",
+      from: { id: 145088490 }, message: { chat: { id: 145088490, type: "private" } } } };
+    const result = await invoke(telegramHandler, { body: callback });
+    assert.equal(result.statusCode, 200);
+    assert.ok(!calls.some((x) => x.options?.method === "PATCH"));
+    assert.ok(calls.some((x) => x.address.includes("/sendMessage")));
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
