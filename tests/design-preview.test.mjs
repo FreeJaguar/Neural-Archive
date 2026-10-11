@@ -92,7 +92,7 @@ test("3D pointer motion stops on reduced motion, hidden tab and user pause", () 
   assert.match(heroMotionJs, /cancelAnimationFrame/);
   assert.match(heroMotionJs, /aria-pressed/);
   assert.match(heroMotionJs, /portal-visual-paused/);
-  assert.match(heroMotionCss, /prefers-reduced-motion: reduce/);
+  assert.match(heroMotionCss, /prefers-reduced-motion:\s*reduce/);
   assert.match(heroMotionCss, /portal-visual-paused/);
   assert.match(heroMotionCss, /max-width:\s*690px/);
   assert.match(html, /id="portalMotionToggle"/);
