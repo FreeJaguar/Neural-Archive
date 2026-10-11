@@ -844,6 +844,50 @@ window.TOOLS = [
     pros: ["טקסט מלא ושרשראות ציטוטים", "מתחבר לעשרות לקוחות MCP", "מקורות נפתחים לצד התשובה"], cons: ["10 בקשות ביום", "כיסוי תחומי צר יחסית"],
     alternatives: ["ResearchRabbit", "NotebookLM", "AstaBrief"], url: "https://luneresearch.com/", added: "2026-10-11", verified: "2026-10-11",
     sources: [{ label: "שאלות נפוצות ותמחור רשמי", url: "https://luneresearch.com/docs/faq" }, { label: "תנאי השירות והמכסות", url: "https://luneresearch.com/legal/terms" }, { label: "אות ההשקה ב-Product Hunt", url: "https://www.producthunt.com/products/lune-research" }]
+  },
+  {
+    slug: "littleguys", name: "littleguys", mark: "lg", category: "productivity", subcategories: ["ניהול סוכנים", "שורת תפריט", "macOS"],
+    tagline: "חלון אחד לניטור, שיחה ואישור פעולות של סוכני AI מקומיים.",
+    solves: "מרכז בשורת התפריט את מצבם של Claude Code, Codex, Gemini, OpenClaw, Hermes וסוכני ACP, כולל הודעות, אישורים, שגרות ומכונות מרוחקות.",
+    uses: ["ניהול סוכנים", "אוטומציה", "ניטור"], audience: "משתמשי Mac שמפעילים כמה סוכנים ורוצים לראות מי עובד, מי ממתין ומי דורש אישור בלי לחפש בין חלונות טרמינל.",
+    free: "האפליקציה חינמית וקוד פתוח תחת MIT, ללא חשבון, ענן, אנליטיקה או טלמטריה; זמינה ב-Homebrew וב-GitHub Releases.",
+    limits: "דורשת macOS 13 ומעלה. היא שומרת אסימוני gateway ויכולה לאשר פקודות אמיתיות, לכן יש להגן על המחשב והגישה אליו; הפרויקט צעיר מאוד עם אימוץ קהילתי התחלתי.",
+    pros: ["מצב כל הסוכנים במבט אחד", "שיחה ואישורים מתוך שורת התפריט", "גילוי מכונות ב-LAN וב-Tailscale"], cons: ["Mac בלבד", "פרויקט חדש עם קהילה קטנה"],
+    alternatives: ["AI Maestro", "OpenBot", "Velozity"], url: "https://littleguys.hervalicio.us/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "האתר הרשמי ותנאי השימוש", url: "https://littleguys.hervalicio.us/" }, { label: "המאגר, דרישות ורישיון MIT", url: "https://github.com/herval/littleguys" }]
+  },
+  {
+    slug: "big-arrow-on-the-screen", name: "Big Arrow on the Screen", mark: "BA", category: "development", subcategories: ["סוכני AI", "נגישות", "macOS"],
+    tagline: "מאפשר לסוכן להצביע על כפתור, שדה או אזור במסך בלי ללחוץ במקומך.",
+    solves: "יוצר חצים, מסגרות וטקסט זמניים מעל יישומי Mac למסירת פעולה אנושית כמו אישור הרשאה, 2FA, CAPTCHA, תשלום או הדרכה חזותית.",
+    uses: ["פיתוח", "אוטומציה", "הדרכה"], audience: "מפתחים ומשתמשי Claude Code או Codex שרוצים handoff חזותי ברור כשהסוכן חייב לעצור ולהחזיר שליטה לאדם.",
+    free: "ה-CLI וה-Skill חינמיים תחת MIT, ללא חשבון או שירות ענן; התקנה דרך Homebrew או בנייה מקומית, עם גרסאות חתומות ב-GitHub.",
+    limits: "דורש macOS 14 ומעלה. הקובץ הבינארי המוכן חתום ad hoc ואינו notarized, ולכן הורדה בדפדפן עלולה להיחסם; התקנת Homebrew בונה מהמקור. נדרשות הרשאות Accessibility.",
+    pros: ["handoff חזותי שאינו לוחץ או מקליד", "מיקוד לפי רכיב, חלון או קואורדינטה", "ניקוי אוטומטי ויצוא PNG"], cons: ["Mac בלבד", "דורש הרשאות מערכת והתקנה טכנית"],
+    alternatives: ["Anthropic Skills", "Vercel Agent Skills", "Superpowers"], url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen" }, { label: "גרסאות רשמיות ו-v0.4.5", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen/releases" }]
+  },
+  {
+    slug: "manimgx", name: "ManimGX", mark: "MX", category: "design", subcategories: ["אנימציה", "וידאו בקוד", "תלת-ממד"],
+    tagline: "מנוע GPU מהיר ליצירת סרטוני מתמטיקה ותלת-ממד דרך Python או הדפדפן.",
+    solves: "מרנדר סצנות, נוסחאות, גרפים, משטחים, מצלמות וקול מסונכרן באמצעות API תואם-Manim על ליבת Rust ו-wgpu.",
+    uses: ["אנימציה", "וידאו", "המחשה מדעית"], audience: "יוצרי תוכן, מורים ומפתחים שבונים אנימציות מדעיות או תלת-ממדיות בקוד ורוצים משוב מהיר לסוכן.",
+    free: "קוד הפרויקט MIT; חבילות native הכוללות x264 מופצות תחת GPL-3.0-or-later. ההתקנה והעיבוד המקומי חינמיים ללא חשבון או שירות ענן.",
+    limits: "גרסה 0.1.1 צעירה ודורשת Python 3.13 ומעלה. התאימות ל-Manim CE אינה מלאה, וגלגלי ההפצה גדולים בגלל מנוע הרינדור, קידוד הווידאו והגופנים הכלולים.",
+    pros: ["2D ו-3D עם רינדור GPU מהיר", "LaTeX ו-Typst ללא התקנה נפרדת", "חבילות חתומות עם provenance לכל הפלטפורמות"], cons: ["דורש Python חדש", "פרויקט מוקדם ו-API שעשוי להשתנות"],
+    alternatives: ["HyperFrames", "Cavalry", "Concat"], url: "https://manimgx.academa.ai/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, תיעוד ורישיונות", url: "https://github.com/academa-labs/manimgx" }, { label: "PyPI, גרסה 0.1.1 וחבילות מאומתות", url: "https://pypi.org/project/manimgx/" }]
+  },
+  {
+    slug: "apogee", name: "Apogee", mark: "Ap", category: "research", subcategories: ["סיכום מקומי", "דפדפן", "פרטיות"],
+    tagline: "מסכם ושואל על אתרים, סרטונים ומסמכים בתוך הדפדפן, בלי לשלוח תוכן לענן.",
+    solves: "מחלץ ומסכם מאמרים, שרשורים, YouTube, PDF, DOCX וטקסט מודבק ומקשר את התשובה חזרה לקטעי המקור.",
+    uses: ["מחקר", "סיכום", "קריאה"], audience: "חוקרים, סטודנטים וקוראים שרוצים סיכום ושאלות על חומר רגיש באמצעות WebGPU, WebAssembly, Ollama או llama.cpp מקומי.",
+    free: "ההרחבה חינמית תחת MIT, ללא חשבון, מנוי, מפתח API, backend או טלמטריה; לאחר הורדת מודל ראשונה היא יכולה לפעול אופליין.",
+    limits: "ההרצה המקומית מורידה מודל ותלויה בזיכרון ובביצועי המחשב; WebGPU זמין בעיקר בדפדפני Chromium ו-Firefox משתמש כברירת מחדל ב-WebAssembly האיטי יותר. איכות הסיכום תלויה במודל המקומי.",
+    pros: ["הכול נשאר במכשיר", "Chrome/Edge ו-Firefox", "הדגשת קטעי מקור ושאלות המשך"], cons: ["הורדת מודל ראשונית", "מודלים מקומיים קטנים עשויים להיות איטיים או פחות מדויקים"],
+    alternatives: ["NotebookLM", "AstaBrief", "InsightArxiv"], url: "https://darshi1337.github.io/apogee/", added: "2026-10-11", verified: "2026-10-11",
+    sources: [{ label: "המאגר, פרטיות ורישיון MIT", url: "https://github.com/darshi1337/apogee" }, { label: "אתר הפרויקט והתקנה", url: "https://darshi1337.github.io/apogee/" }]
   }
 
 ];
