@@ -23,6 +23,16 @@ MAX_MESSAGES_PER_SOURCE = 60
 MAX_LINKS_PER_MESSAGE = 3
 MAX_NOTIFICATIONS = 8
 
+# A fixed, non-sensitive stage marker. Never include user inputs, chat titles,
+# exception bodies, URLs, sessions, credentials or account IDs in job logs.
+CURRENT_STAGE = "startup"
+
+
+def mark_stage(value):
+    global CURRENT_STAGE
+    CURRENT_STAGE = value
+
+
 
 def rest_request(table, method="GET", *, params=None, payload=None, preference=None):
     base = os.environ["SUPABASE_URL"].rstrip("/")
@@ -154,6 +164,7 @@ def notify_new_links():
 
 
 def validate_environment():
+    mark_stage("config.required_secrets")
     required = (
         "TG_API_ID", "TG_API_HASH", "TG_STRING_SESSION",
         "TG_APPROVED_SOURCES_JSON", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY",
@@ -162,19 +173,25 @@ def validate_environment():
     if absent:
         raise ValueError("Missing GitHub Actions secrets: " + ", ".join(absent))
 
+    mark_stage("config.rights_ack")
     if os.getenv("TG_RIGHTS_ACK") != "authorized_channels_only":
         raise ValueError("Source permissions not confirmed; collector remains disabled")
 
     api_id = os.environ["TG_API_ID"]
     api_hash = os.environ["TG_API_HASH"]
+    mark_stage("config.api_id")
     if not api_id.isdecimal() or int(api_id) <= 0:
         raise ValueError("Invalid TG_API_ID")
+    mark_stage("config.api_hash")
     if len(api_hash) != 32 or not all(c in "0123456789abcdefABCDEF" for c in api_hash):
         raise ValueError("Invalid TG_API_HASH")
+    mark_stage("config.session_format")
     if len(os.environ["TG_STRING_SESSION"]) < 100:
         raise ValueError("Invalid TG_STRING_SESSION")
 
+    mark_stage("config.approved_sources")
     sources = parse_authorized_sources(os.environ["TG_APPROVED_SOURCES_JSON"])
+    mark_stage("config.publisher_hosts")
     allowed_hosts = parse_allowed_hosts(os.getenv("TG_ALLOWED_PUBLISHER_HOSTS", ""))
     return int(api_id), api_hash, sources, allowed_hosts
 
@@ -186,6 +203,7 @@ async def poll_sources():
     from telethon import TelegramClient
     from telethon.sessions import StringSession
 
+    mark_stage("telegram.decode_session")
     client = TelegramClient(
         StringSession(os.environ["TG_STRING_SESSION"]), api_id, api_hash,
         request_retries=2, connection_retries=2, retry_delay=1,
@@ -195,31 +213,40 @@ async def poll_sources():
     discovered = 0
     baselined = 0
 
+    mark_stage("telegram.connect")
     await client.connect()
     try:
+        mark_stage("telegram.authorize_session")
         if not await client.is_user_authorized():
             raise ValueError("Session revoked or no longer authorized")
 
         for source in sources:
+            mark_stage("telegram.resolve_source")
             entity = await client.get_entity("@" + source["username"])
             # Deny public user accounts, bots, and private ID-based lookups.
+            mark_stage("telegram.check_source_type")
             if not (getattr(entity, "broadcast", False)
                     or getattr(entity, "megagroup", False)):
                 raise ValueError("Configured source is not a public group/channel")
             actual_username = str(getattr(entity, "username", "") or "")
+            mark_stage("telegram.check_source_username")
             if actual_username.casefold() != source["username"].casefold():
                 raise ValueError("Telegram username did not resolve as configured")
             source_key = stable_source_key(entity.id)
+            mark_stage("supabase.read_cursor")
             cursor = get_cursor(source_key)
 
             if cursor is None:
                 # First run deliberately starts from now: no historical scraping.
+                mark_stage("telegram.read_latest")
                 recent = await client.get_messages(entity, limit=1)
                 latest = int(recent[0].id) if recent else 0
+                mark_stage("supabase.initialize_cursor")
                 save_cursor(source_key, source["label"], latest)
                 baselined += 1
                 continue
 
+            mark_stage("telegram.read_new_messages")
             async for message in client.iter_messages(
                 entity, min_id=cursor, reverse=True, limit=MAX_MESSAGES_PER_SOURCE
             ):
@@ -229,15 +256,23 @@ async def poll_sources():
                     message, allowed_hosts, limit=MAX_LINKS_PER_MESSAGE
                 )
                 for url in urls:
+                    mark_stage("supabase.store_link")
                     if store_discovered_link(
                         source_key, source["label"], message.id, source["username"], url
                     ):
                         discovered += 1
+                mark_stage("supabase.update_cursor")
                 save_cursor(source_key, source["label"], int(message.id))
+                mark_stage("telegram.read_new_messages")
                 scanned += 1
     finally:
-        await client.disconnect()
+        try:
+            await client.disconnect()
+        except Exception:
+            mark_stage("telegram.disconnect")
+            raise
 
+    mark_stage("telegram.notify_admin")
     notified = notify_new_links()
     # No post text, account identifiers, URLs, tokens or sessions are logged.
     print(
@@ -252,9 +287,13 @@ async def poll_sources():
 def main():
     try:
         asyncio.run(poll_sources())
-    except (ValueError, KeyError, urllib.error.URLError, TimeoutError) as error:
-        # Avoid printing exception bodies from secret-bearing network requests.
-        print("Telegram discovery stopped safely: " + type(error).__name__)
+    except Exception as error:
+        # Only a literal code-defined stage and exception *class* may be logged.
+        # Telethon/network exception messages can contain private information.
+        print(
+            "Telegram discovery failed: stage=" + CURRENT_STAGE
+            + " error_type=" + type(error).__name__
+        )
         return 1
     return 0
 
