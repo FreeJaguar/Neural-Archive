@@ -92,17 +92,41 @@ test("high-resolution photographed 2.5D art is split into real moving image laye
   assert.match(heroMotionCss, /--cube-x/);
   assert.match(heroMotionCss, /@keyframes cinematic-cube-hover/);
   assert.match(heroMotionCss, /@keyframes cinematic-panel-hover/);
-  assert.match(heroMotionCss, /width:\s*min\(64vw,\s*1250px\)/);
-  assert.match(heroMotionCss, /min-height:\s*clamp\(700px,/);
+  assert.match(heroMotionCss, /min-height:\s*100svh/);
+  assert.match(heroMotionCss, /min-height:\s*calc\(100svh - 76px\)/);
+  assert.match(heroMotionCss, /top:\s*-76px/);
+  assert.match(heroMotionCss, /right:\s*0;\s*width:\s*100%/);
+  assert.match(heroMotionCss, /\.hero-visual#portalVisual::before/);
+  assert.match(heroMotionCss, /\.hero-visual#portalVisual::after/);
+  assert.match(heroMotionCss, /background: url\("\/assets\/cinematic-scene-backdrop-hq\.webp"\) right center \/ 280% auto/);
+  assert.match(heroMotionCss, /height:\s*104%/);
+  assert.match(heroMotionCss, /-webkit-mask-image:\s*linear-gradient/);
   assert.match(heroMotionCss, /\.cinematic-head-anchor\s*\{/);
-  assert.match(heroMotionCss, /transform-origin:\s*50%\s+77%/);
-  assert.match(heroMotionJs, /Body orientation NEVER changes/);
-  assert.match(heroMotionJs, /--head-x/);
-  assert.match(heroMotionJs, /--head-ry/);
+  assert.match(heroMotionCss, /\.cinematic-head-anchor\s*\{[^}]*transform:\s*none/);
+  assert.match(heroMotionJs, /body AND head are all locked in place/);
+  assert.doesNotMatch(heroMotionJs, /--head-|cinematicHeadAnchor|rotateY|rotateX/);
+  assert.doesNotMatch(heroMotionCss, /var\(--head-/);
   assert.match(heroMotionJs, /--cube-x/);
   assert.match(heroMotionJs, /--panels-x/);
   assert.doesNotMatch(html, /src="\/assets\/cinematic-hero\.avif"/);
   assert.doesNotMatch(html, /class="holo-cube"/);
+});
+
+test("the scene reaches the full viewport while the person stays grounded", () => {
+  const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
+  assert.match(desktop, /\.hero\s*\{[^}]*min-height:\s*100svh/);
+  assert.match(desktop, /\.hero-inner\s*\{[^}]*min-height:\s*calc\(100svh - 76px\)/);
+  assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100%/);
+  assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*height:\s*104%/);
+  assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*top:\s*49%/);
+  assert.match(desktop, /\.cinematic-head-anchor\s*\{[^}]*transform:\s*none/);
+  assert.doesNotMatch(desktop, /animation:\s*cinematic-arrival/);
+  assert.match(heroMotionCss, /\.hero \{min-height:100svh\}/);
+  assert.match(heroMotionCss, /min-height:calc\(100svh - 64px\)/);
+  assert.match(heroMotionCss, /\.hero-visual#portalVisual::before \{display:none\}/);
+  assert.match(heroMotionJs, /--cube-x/);
+  assert.match(heroMotionJs, /--panels-y/);
+  assert.doesNotMatch(heroMotionJs, /--scene-|--head-/);
 });
 
 test("3D pointer motion stops on reduced motion, hidden tab and user pause", () => {
