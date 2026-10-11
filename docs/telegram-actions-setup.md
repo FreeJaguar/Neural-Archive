@@ -38,7 +38,7 @@ GitHub scheduled jobs can be delayed or skipped. This is not a realtime Telegram
 - Open Actions > Telegram Source Discovery > Run workflow, select main and mode validate. This tests code only and does not access Telegram.
 - Once secrets and source permission are configured, choose mode collect to initialize the baseline on Telegram. The first poll deliberately skips previously published posts.
 - Repeat collect after a new permitted-channel post to test link discovery and bot alerting.
-- Only then, if you want scheduled polling, add GitHub Actions repository VARIABLE TG_SOURCE_POLL_ENABLED with the exact value true. The scheduled workflow starts at minute 13 and 43 of each hour. With a missing or false variable, the schedule does not poll any sources.
+- Only then, if you want scheduled polling, add GitHub Actions repository VARIABLE TG_SOURCE_POLL_ENABLED with the exact value true. The scheduled workflow starts at minute 19 and 49 of each hour (UTC cron; those minute numbers are the same in Israel). With a missing or false variable, the schedule does not poll any sources.
 - To stop, set the variable false or remove it.
 - If the account session is compromised, revoke it in Telegram Settings > Devices and remove the secret from GitHub.
 
@@ -49,3 +49,11 @@ GitHub scheduled jobs can be delayed or skipped. This is not a realtime Telegram
 - Each source keeps a cursor. The cursor only advances after staging the permitted external links for the message; a failed database write can be retried.
 - Discovered source links are NOT treated as verified facts. Further summary generation must use independently permitted publisher content and continue to require admin approval.
 - Protect the main branch and never expose sensitive GitHub Actions secrets through pull-request jobs.
+
+## Scheduled trigger troubleshooting
+
+The collector schedule is set to minute 19 and 49 of each hour. GitHub may delay or skip scheduled workflow events, even if manual runs succeed.
+
+The workflow now has a minimal `schedule_probe` job that runs on every GitHub schedule event, even if the collector's repository variable is unset. It reads no secrets, contacts no APIs, and only reports whether the opt-in variable is enabled. If the GitHub Actions run list has no runs with Event = `schedule`, the problem is the creation or registration of GitHub's scheduled event, not the Telegram session, Telegram API, Supabase or collection-code logic.
+
+If two consecutive scheduled windows pass without any `schedule` run, check that the workflow is enabled in the GitHub Actions UI. Use its upper-right three-dot menu to disable and then enable the workflow to refresh GitHub's scheduler registration. The actual collector remains gated behind `TG_SOURCE_POLL_ENABLED=true` for scheduled runs. If GitHub keeps failing to enqueue events, contact GitHub Support and include the repository/workflow link and the time windows that were missed.
