@@ -6,14 +6,16 @@
  */
 
 .hero {
-  min-height: min(940px, 100svh);
+  /* One complete initial viewport at every desktop height. Never expose news on load. */
+  min-height: 100svh;
+  overflow: hidden;
   background:
     radial-gradient(ellipse at 28% 44%, rgba(97,82,202,.13), transparent 52%),
     linear-gradient(112deg, #06101f 0%, #091527 52%, #081224 100%);
 }
 .hero-inner {
   max-width: none;
-  min-height: clamp(700px, calc(100svh - 76px), 930px);
+  min-height: calc(100svh - 76px);
   padding: 48px clamp(27px, 5vw, 108px) 84px;
   grid-template-columns: 52% 48%;
 }
@@ -27,10 +29,12 @@
 .hero-visual#portalVisual {
   position: absolute;
   z-index: 2;
+  /* Full-bleed artwork reaches behind the headline, not a left-side card. */
   top: -76px;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  width: min(64vw, 1250px);
+  right: 0;
+  width: 100%;
   height: auto;
   min-height: 0;
   max-height: none;
@@ -39,15 +43,33 @@
   overflow: hidden;
   isolation: isolate;
 }
+/* A blurred right-side extension of the same world prevents a rectangular
+   edge behind the title. Masked to the right, so the person cannot be doubled. */
+.hero-visual#portalVisual::before {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  z-index: 0;
+  pointer-events: none;
+  background: url("/assets/cinematic-scene-backdrop-hq.webp") center 46% / cover no-repeat;
+  filter: blur(32px) brightness(.55) saturate(.86);
+  opacity: .34;
+  -webkit-mask-image: linear-gradient(90deg, transparent 41%, rgba(0,0,0,.5) 61%, #000 83%);
+  mask-image: linear-gradient(90deg, transparent 41%, rgba(0,0,0,.5) 61%, #000 83%);
+}
 .hero-visual#portalVisual::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 11;
   pointer-events: none;
-  background: linear-gradient(90deg,
-    transparent 0%, transparent 70%,
-    rgba(7,17,32,.48) 87%, #081224 100%);
+  /* Dark content zone + integrated floor: no hard photographic rectangle. */
+  background:
+    linear-gradient(180deg, transparent 0%, transparent 85%,
+      rgba(5,13,30,.22) 93%, #071122 100%),
+    linear-gradient(90deg, transparent 0%, transparent 31%,
+      rgba(5,13,28,.18) 46%, rgba(5,13,28,.69) 61%,
+      rgba(7,17,34,.95) 83%, #081224 100%);
 }
 .hero-meta {
   z-index: 13;
@@ -57,8 +79,6 @@
 }
 .hero-down {z-index: 14}
 .cinematic-scene {
-  --scene-x: 0px;
-  --scene-y: 0px;
   --cube-x: 0px;
   --cube-y: 0px;
   --panels-x: 0px;
@@ -74,17 +94,21 @@
 }
 .cinematic-photograph {
   position: absolute;
-  top: 53%;
-  left: 48%;
-  height: 88%;
+  /* Overscan beyond the Hero conceals the top and floor edges while keeping
+     the complete stationary person within view. */
+  top: 49%;
+  left: 30%;
+  height: 104%;
   width: auto;
   aspect-ratio: 910 / 636;
   max-width: none;
-  transform: translate3d(calc(-50% + var(--scene-x)), calc(-50% + var(--scene-y)), 0);
+  transform: translate(-50%,-50%);
   overflow: visible;
   opacity: 1;
   isolation: isolate;
-  animation: cinematic-arrival 1s ease-out both;
+  /* Fade the far right of the photo into the background behind the copy. */
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 77%, rgba(0,0,0,.8) 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 77%, rgba(0,0,0,.8) 88%, transparent 100%);
 }
 .cinematic-backdrop {
   display: block;
@@ -237,13 +261,10 @@
   top: var(--y);
   width: var(--w);
   height: var(--h);
-  transform-origin: 50% 77%;
-  transform:
-    translate3d(var(--head-x),var(--head-y),0)
-    perspective(240px)
-    rotateY(var(--head-ry))
-    rotateX(var(--head-rx));
-  will-change: transform;
+  /* The original head sprite stays perfectly locked to the body.
+     No pointer tracking, rotation, float or transform on the person. */
+  transform: none;
+  will-change: auto;
   backface-visibility: hidden;
 }
 .cinematic-head {
@@ -339,10 +360,6 @@
   animation-play-state: paused!important;
 }
 /* Paused transforms from the pointer are reset by the controller. */
-@keyframes cinematic-arrival {
-  from {opacity:0;translate:0 14px}
-  to {opacity:1;translate:0 0}
-}
 @keyframes cinematic-ambient {
   0% {opacity:.4;scale:.95}
   100% {opacity:.8;scale:1.06}
@@ -369,23 +386,24 @@
 }
 @media(max-width:1200px) {
   .hero-inner {grid-template-columns:53% 47%}
-  .hero-visual#portalVisual {width:65vw}
+  .hero-visual#portalVisual {width:100%}
   .hero-copy {max-width:620px}
   .hero h1 {font-size:clamp(43px,5.25vw,75px)}
 }
 @media(max-width:920px) {
-  .hero-inner {min-height:680px;grid-template-columns:55% 45%;padding-inline:26px}
-  .hero-visual#portalVisual {width:68vw}
+  .hero-inner {min-height:calc(100svh - 76px);grid-template-columns:55% 45%;padding-inline:26px}
+  .hero-visual#portalVisual {width:100%}
   .hero-meta {display:none}
   .hero-copy {padding-block:55px 60px}
 }
 @media(max-width:690px) {
-  .hero {min-height:0}
+  /* Phones still get a complete opening viewport, with stacked readable copy. */
+  .hero {min-height:100svh}
   .hero-inner {
     display:flex;
     flex-direction:column;
     align-items:stretch;
-    min-height:0;
+    min-height:calc(100svh - 64px);
     padding:26px 20px 48px;
   }
   .hero-copy {
@@ -406,7 +424,15 @@
     overflow:hidden;
     align-self:center;
   }
-  .cinematic-photograph {height:106%;left:50%;top:52%;animation:none!important;opacity:1!important}
+  .cinematic-photograph {
+    height:106%;
+    left:50%;
+    top:50%;
+    opacity:1!important;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .hero-visual#portalVisual::before {display:none}
   .hero-visual#portalVisual::after {
     background:linear-gradient(180deg,rgba(8,17,33,.26),transparent 15%,transparent 80%,#071020 100%);
   }
@@ -416,7 +442,7 @@
 }
 @media(max-width:390px) {
   .hero-visual#portalVisual {height:300px}
-  .cinematic-photograph {height:103%}
+  .cinematic-photograph {height:106%}
 }
 @media(prefers-reduced-motion:reduce) {
   .cinematic-layer-motion,
