@@ -165,6 +165,7 @@ class ClassificationTests(unittest.TestCase):
             "is_ai": True,
             "score": 100,
             "confidence": 100,
+            "language_quality": "passed",
             "category": "models",
             "title": response["title_he"],
             "summary": response["summary_he"],
