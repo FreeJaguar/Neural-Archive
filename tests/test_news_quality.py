@@ -5,6 +5,7 @@ from unittest.mock import Mock, patch
 
 from scripts.news_text_quality import (
     editorial_decision,
+    editorial_reason_decision,
     inspect_copy,
     inspect_text,
     protected_tokens,
@@ -25,7 +26,8 @@ ORIGINAL_TITLE = "שוחרר מודל GPT-6 חדש לעיבוד מידע"
 ORIGINAL_SUMMARY = "החברה הציגה מודל GPT-6 עם תמיכה ב-C++ וגרסה 2.5 לשימושים מקצועיים."
 
 
-def mocked_model(title=ORIGINAL_TITLE, summary=ORIGINAL_SUMMARY, needs_review=False):
+def mocked_model(title=ORIGINAL_TITLE, summary=ORIGINAL_SUMMARY, needs_review=False,
+                 reason="המידע עשוי להיות רלוונטי לפיתוח מודלים חדשים."):
     return {
         "candidates": [{
             "content": {
@@ -33,6 +35,7 @@ def mocked_model(title=ORIGINAL_TITLE, summary=ORIGINAL_SUMMARY, needs_review=Fa
                     "text": json.dumps({
                         "title_he": title,
                         "summary_he": summary,
+                        "reason_he": reason,
                         "needs_review": needs_review,
                     })
                 }]
@@ -49,7 +52,7 @@ def analysis(title=ORIGINAL_TITLE, summary=ORIGINAL_SUMMARY):
         "title": title,
         "summary": summary,
         "category": "models",
-        "reason": "Relevant AI model release",
+        "reason": "המידע עשוי להיות רלוונטי לפיתוח מודלים חדשים.",
     }
 
 
@@ -112,6 +115,23 @@ class TextChecksTests(unittest.TestCase):
         self.assertEqual(result["state"], "corrected")
         self.assertEqual(result["summary"], ORIGINAL_SUMMARY)
 
+
+    def test_reason_corruption_is_rejected_or_repaired(self):
+        reason = "המידע עשוי להיות רלוונטי ֣לפיתוח מודלים חדשים."
+        bad = editorial_reason_decision(reason, reason)
+        self.assertEqual(bad["state"], "needs_review")
+        good = editorial_reason_decision(
+            reason, "המידע עשוי להיות רלוונטי לפיתוח מודלים חדשים."
+        )
+        self.assertEqual(good["state"], "corrected")
+
+    def test_proofreading_cannot_silently_remove_evidence_warning(self):
+        reason = "לא נמצא במקור ציטוט ראיה תקף. נדרש אימות ידני."
+        changed = "זוהי ידיעה מהימנה במיוחד וניתן לאשר אותה ללא חשש."
+        result = editorial_reason_decision(reason, changed)
+        self.assertEqual(result["state"], "needs_review")
+        self.assertIn("reason:warning_removed", result["issues"])
+
     def test_large_model_rewrite_is_not_allowed(self):
         proposed = "מוצר GPT-6 זמין לציבור הרחב, וגרסה 2.5 מאפשרת להפעיל C++ ולבדוק ביצועים."
         result = editorial_decision(ORIGINAL_TITLE, ORIGINAL_SUMMARY,
@@ -134,6 +154,16 @@ class ProofreaderWorkflowTests(unittest.TestCase):
         )
         self.assertEqual(result["language_quality"], "corrected")
         self.assertNotIn("֣", result["summary"])
+
+
+    def test_broken_explanation_is_corrected_before_telegram(self):
+        flawed = "המידע עשוי להיות רלוונטי ֣לפיתוח מודלים חדשים."
+        result, _ = proof(
+            {**analysis(), "reason": flawed},
+            mocked_model(reason="המידע עשוי להיות רלוונטי לפיתוח מודלים חדשים."),
+        )
+        self.assertEqual(result["language_quality"], "corrected")
+        self.assertNotIn("֣", result["reason"])
 
     def test_dangerous_edit_is_blocked_and_keeps_original(self):
         result, _ = proof(
