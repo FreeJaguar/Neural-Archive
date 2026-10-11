@@ -149,3 +149,33 @@ def editorial_decision(old_title, old_summary, new_title, new_summary, needs_rev
         "state": "corrected" if changed else "passed",
         "issues": original_issues,
     }
+
+
+def editorial_reason_decision(old_reason, new_reason):
+    """Apply the same invariants to the user-visible Gemini explanation.
+
+    In particular, a proofreader must not remove the warning when the
+    source-evidence check found no matching quote.
+    """
+    old = clean_spacing(old_reason)
+    proposed = clean_spacing(new_reason)
+    issues = set(inspect_text(proposed))
+
+    if not 8 <= len(proposed) <= 600:
+        issues.add("reason:invalid_length")
+    if len(HEBREW.findall(proposed)) < 4:
+        issues.add("reason:no_hebrew")
+    if protected_tokens(old, "") != protected_tokens(proposed, ""):
+        issues.add("reason:technical_tokens_changed")
+    if old and SequenceMatcher(None, old, proposed, autojunk=False).ratio() < 0.67:
+        issues.add("reason:large_rewrite")
+    if "לא נמצא במקור" in old and "לא נמצא במקור" not in proposed:
+        issues.add("reason:warning_removed")
+
+    if issues:
+        return {"reason": old_reason, "state": "needs_review", "issues": sorted(issues)}
+    return {
+        "reason": proposed,
+        "state": "corrected" if proposed != old_reason else "passed",
+        "issues": [],
+    }
