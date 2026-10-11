@@ -10,6 +10,7 @@ on:
       - "hero-motion.css"
       - "assets/design-portal-backdrop.svg"
       - "assets/design-portal.svg"
+      - "assets/cinematic-*.webp"
       - "tests/design-preview.test.mjs"
       - ".github/workflows/design-preview-tests.yml"
   push:
@@ -22,6 +23,7 @@ on:
       - "hero-motion.css"
       - "assets/design-portal-backdrop.svg"
       - "assets/design-portal.svg"
+      - "assets/cinematic-*.webp"
       - "tests/design-preview.test.mjs"
       - ".github/workflows/design-preview-tests.yml"
 
