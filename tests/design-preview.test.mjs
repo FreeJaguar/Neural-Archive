@@ -16,7 +16,7 @@ test("preview is independent of live homepage and stays unindexed", () => {
   assert.match(html, /src="\/data\.js"/);
   assert.match(html, /src="\/design\.js"/);
   assert.match(html, /href="\/design\.css"/);
-  assert.match(html, /href="\/assets\/design-portal\.svg"/);
+  assert.match(html, /src="\/assets\/design-portal\.svg"/);
   assert.match(portal, /<svg[\s>]/);
   assert.ok(!html.includes("SUPABASE_SERVICE_ROLE_KEY"));
   assert.ok(!html.includes("TG_STRING_SESSION"));
