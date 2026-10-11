@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="330" y1="50" x2="750" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#0A1629"/><stop offset=".42" stop-color="#17182F"/><stop offset=".78" stop-color="#27304B"/><stop offset="1" stop-color="#060F1E"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(474 295) rotate(90) scale(325 420)" gradientUnits="userSpaceOnUse"><stop stop-color="#9E6CFF" stop-opacity=".34"/><stop offset=".45" stop-color="#2C94F7" stop-opacity=".13"/><stop offset="1" stop-color="#273B82" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rock" x1="300" y1="301" x2="513" y2="618" gradientUnits="userSpaceOnUse"><stop stop-color="#1C2946"/><stop offset=".7" stop-color="#0B1425"/><stop offset="1" stop-color="#030A13"/></linearGradient>
+    <linearGradient id="glass" x1="306" y1="113" x2="682" y2="466" gradientUnits="userSpaceOnUse"><stop stop-color="#CA9FFF" stop-opacity=".27"/><stop offset=".35" stop-color="#6585FF" stop-opacity=".09"/><stop offset=".75" stop-color="#41D7FB" stop-opacity=".26"/><stop offset="1" stop-color="#090F34" stop-opacity=".4"/></linearGradient>
+    <linearGradient id="neon" x1="293" y1="115" x2="707" y2="488" gradientUnits="userSpaceOnUse"><stop stop-color="#BAA2FF"/><stop offset=".38" stop-color="#7A76F1"/><stop offset=".71" stop-color="#64DBFA"/><stop offset="1" stop-color="#B389FF"/></linearGradient>
+    <linearGradient id="water" x1="479" y1="450" x2="483" y2="680" gradientUnits="userSpaceOnUse"><stop stop-color="#5681F6" stop-opacity=".32"/><stop offset=".5" stop-color="#35245D" stop-opacity=".12"/><stop offset="1" stop-color="#03101D"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="35"/></filter>
+    <filter id="shine" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.1"/></filter>
+    <pattern id="star" width="93" height="99" patternUnits="userSpaceOnUse"><circle cx="16" cy="28" r=".9" fill="#E3D5FF" opacity=".43"/><circle cx="69" cy="82" r=".6" fill="#B9F1FF" opacity=".55"/></pattern>
+  </defs>
+  <rect width="960" height="680" fill="url(#sky)"/>
+  <rect width="960" height="680" fill="url(#star)" opacity=".65"/>
+  <ellipse cx="474" cy="305" rx="420" ry="310" fill="url(#glow)"/>
+  <circle cx="764" cy="170" r="126" stroke="#70C7FF" stroke-opacity=".26" stroke-width="2"/>
+  <circle cx="764" cy="170" r="115" fill="#2762A9" opacity=".1"/>
+  <path d="M0 458 59 340l53 36 75-182 101 126 81-91 67 226H0Z" fill="#091527" opacity=".95"/>
+  <path d="m651 439 87-185 58 64 52-101 112 202v177H643Z" fill="#091325"/>
+  <path d="m0 458 94-116 63 36 66-86 95 128 93 28-19 114H0Z" fill="#233256" opacity=".65"/>
+  <path d="m632 442 75-93 55 33 78-105 120 122v152H609Z" fill="#192946" opacity=".75"/>
+  <ellipse cx="476" cy="489" rx="249" ry="35" fill="#8185FF" opacity=".28" filter="url(#blur)"/>
+  <path d="M0 489c155-22 267 11 428 0 169-12 364-15 532 8v183H0Z" fill="#060F1E"/>
+  <path d="M0 509c200-19 304 19 466 7 184-14 333-10 494 16" stroke="#354D7B" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M0 535c200-11 335 20 485 8 202-14 337 0 475 12" stroke="#7E79DB" stroke-opacity=".17" stroke-width="2"/>
+  <path d="m438 480 93 0 148 200H239Z" fill="url(#water)"/>
+  <path d="M457 480 513 480 571 680H407Z" fill="#4F73BC" opacity=".14"/>
+  <path d="M477 485 487 485 507 680H454Z" fill="#88E7FF" opacity=".12"/>
+  <!-- Background plate only. The holographic cube and panels are separate CSS 3D layers. -->
+  <g filter="url(#soft)"><path d="M0 600c160-4 260-15 480-25 145-8 339 16 480 14" stroke="#83D8FF" stroke-opacity=".13" stroke-width="3"/><path d="M0 648c212-37 380-37 542-27 179 12 264-4 418-11" stroke="#AE80FF" stroke-opacity=".13" stroke-width="4"/></g>
+  <path d="M439 486h77l-25 194h-30Z" fill="#3C5A9C" opacity=".1"/>
+</svg>
