@@ -140,6 +140,14 @@ test("news and categories are compact, responsive and visually readable", () => 
     "Compact strip must not alter the cinematic Hero.");
 });
 
+test("hero headline punctuation is separated and readable at responsive sizes", () => {
+  assert.match(html, /<h1 id="heroHeading">כל הכלים<span class="hero-dot">\.<\/span><br><em>בלי אותיות קטנות<span class="hero-dot">\.<\/span><\/em><\/h1>/);
+  assert.match(heroMotionCss, /NEURAL HERO TYPE REFINEMENT/);
+  assert.match(heroMotionCss, /margin-inline-start:\s*\.085em/);
+  assert.match(heroMotionCss, /letter-spacing:\s*-\.045em/);
+  assert.match(heroMotionCss, /@media \(max-width: 690px\)/);
+});
+
 test("light and dark modes, motion accessibility and mobile layouts exist", () => {
   assert.match(css, /:root\[data-theme="dark"\]/);
   assert.match(css, /@media\(max-width:690px\)/);
