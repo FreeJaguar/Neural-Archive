@@ -32,7 +32,7 @@ on:
           - collect
   schedule:
     # Not real-time. GitHub can delay/drop schedule runs.
-    - cron: "13,43 * * * *"
+    - cron: "19,49 * * * *"
 
 permissions:
   contents: read
@@ -58,6 +58,25 @@ jobs:
         run: python -m py_compile scripts/telegram_source_utils.py scripts/poll_telegram.py scripts/create_telegram_session.py
       - name: Run offline tests without credentials
         run: python -m unittest discover -s tests -p 'test_telegram_sources.py' -v
+
+  schedule_probe:
+    # Runs even if the TG_SOURCE_POLL_ENABLED flag is missing. Does not read
+    # repository secrets or connect to Telegram. Helps distinguish a missing
+    # GitHub schedule event from a disabled collector job.
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Show schedule event and non-secret activation state
+        env:
+          POLL_ENABLED: ${{ vars.TG_SOURCE_POLL_ENABLED == 'true' }}
+        run: |
+          echo "GitHub schedule event received (UTC)."
+          if [ "$POLL_ENABLED" = "true" ]; then
+            echo "Telegram discovery schedule variable: enabled"
+          else
+            echo "Telegram discovery schedule variable: disabled or missing"
+          fi
 
   collect:
     # OFF until the owner explicitly enables it; no secrets on PR or push.
