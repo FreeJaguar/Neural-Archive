@@ -1,0 +1,89 @@
+name: Telegram Source Discovery
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/telegram-source-discovery.yml"
+      - "scripts/poll_telegram.py"
+      - "scripts/telegram_source_utils.py"
+      - "scripts/create_telegram_session.py"
+      - "tests/test_telegram_sources.py"
+      - "requirements-telegram.txt"
+      - "supabase/migrations/20261011_telegram_discovery.sql"
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/telegram-source-discovery.yml"
+      - "scripts/poll_telegram.py"
+      - "scripts/telegram_source_utils.py"
+      - "scripts/create_telegram_session.py"
+      - "tests/test_telegram_sources.py"
+      - "requirements-telegram.txt"
+      - "supabase/migrations/20261011_telegram_discovery.sql"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "validate = no Telegram login, collect = poll explicitly approved sources"
+        type: choice
+        required: true
+        default: validate
+        options:
+          - validate
+          - collect
+  schedule:
+    # Not real-time. GitHub can delay/drop schedule runs.
+    - cron: "13,43 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: telegram-source-discovery
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: >-
+      github.event_name == 'pull_request' ||
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && inputs.mode == 'validate')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile source files
+        run: python -m py_compile scripts/telegram_source_utils.py scripts/poll_telegram.py scripts/create_telegram_session.py
+      - name: Run offline tests without credentials
+        run: python -m unittest discover -s tests -p 'test_telegram_sources.py' -v
+
+  collect:
+    # OFF until the owner explicitly enables it; no secrets on PR or push.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'schedule' && vars.TG_SOURCE_POLL_ENABLED == 'true') ||
+       (github.event_name == 'workflow_dispatch' && inputs.mode == 'collect'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned Telegram client
+        run: python -m pip install -r requirements-telegram.txt
+      - name: Poll consented public sources and discover external publisher links
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_STRING_SESSION: ${{ secrets.TG_STRING_SESSION }}
+          TG_APPROVED_SOURCES_JSON: ${{ secrets.TG_APPROVED_SOURCES_JSON }}
+          TG_RIGHTS_ACK: ${{ secrets.TG_RIGHTS_ACK }}
+          TG_ALLOWED_PUBLISHER_HOSTS: ${{ vars.TG_ALLOWED_PUBLISHER_HOSTS }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: python -m scripts.poll_telegram
