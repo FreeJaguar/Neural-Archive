@@ -1,20 +1,19 @@
 /**
  * Neural Archive - Cinematic 2.5D Hero
  *
- * Separate high-resolution masked images supply the floating panels, cube
- * and head. The inpainted photograph keeps the body and terrain fixed.
- * Body orientation NEVER changes. This is cinematic layered animation,
- * not a reconstructed human 3D mesh.
+ * High-resolution masked images supply independent floating panels and cube.
+ * The photograph, landscape, body AND head are all locked in place.
+ * Only the floating UI and environmental light react to the pointer.
+ * This is cinematic layered animation, not a human 3D mesh.
  */
 (() => {
   "use strict";
   const visual = document.getElementById("portalVisual");
   const scene = document.getElementById("portalScene");
   const photo = document.getElementById("cinematicPhotograph");
-  const head = document.getElementById("cinematicHeadAnchor");
   const toggle = document.getElementById("portalMotionToggle");
   const hero = document.getElementById("home");
-  if (!visual || !scene || !photo || !head || !toggle || !hero) return;
+  if (!visual || !scene || !photo || !toggle || !hero) return;
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -34,11 +33,8 @@
   const clearMotion = () => {
     current.x = current.y = target.x = target.y = 0;
     for (const [name, value] of [
-      ["--scene-x", "0px"], ["--scene-y", "0px"],
       ["--cube-x", "0px"], ["--cube-y", "0px"],
-      ["--panels-x", "0px"], ["--panels-y", "0px"],
-      ["--head-x", "0px"], ["--head-y", "0px"],
-      ["--head-rx", "0deg"], ["--head-ry", "0deg"]
+      ["--panels-x", "0px"], ["--panels-y", "0px"]
     ]) scene.style.setProperty(name, value);
   };
 
@@ -63,13 +59,7 @@
     scene.style.setProperty("--panels-x", (current.x * 8.5).toFixed(2) + "px");
     scene.style.setProperty("--panels-y", (current.y * -6.5).toFixed(2) + "px");
 
-    // Only the independently extracted head sprite follows the cursor, with
-    // sub-3px physical shifts and gentle X/Y rotation. The torso never turns.
-    const scale = clamp(photo.getBoundingClientRect().width / 910, .5, 2.5);
-    scene.style.setProperty("--head-x", (current.x * scale * 1.65).toFixed(2) + "px");
-    scene.style.setProperty("--head-y", (current.y * scale * 1.05).toFixed(2) + "px");
-    scene.style.setProperty("--head-ry", (current.x * 5).toFixed(2) + "deg");
-    scene.style.setProperty("--head-rx", (-current.y * 3).toFixed(2) + "deg");
+    // The person is deliberately excluded: no motion on torso or head.
 
     if (Math.abs(target.x - current.x) > .005 ||
         Math.abs(target.y - current.y) > .005) {
