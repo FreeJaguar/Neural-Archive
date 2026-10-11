@@ -100,6 +100,18 @@ class TextChecksTests(unittest.TestCase):
         self.assertEqual(protected_tokens(ORIGINAL_TITLE, source),
                          protected_tokens(result["title"], result["summary"]))
 
+    def test_formula_and_code_notation_must_be_preserved(self):
+        old_summary = "נמצא שיפור בביצועים של O(n²) בגרסה C# של המערכת החדשה."
+        for revised in [
+            old_summary.replace("O(n²)", "O(n³)"),
+            old_summary.replace("C#", "C++"),
+        ]:
+            result = editorial_decision(
+                ORIGINAL_TITLE, old_summary, ORIGINAL_TITLE, revised
+            )
+            self.assertEqual(result["state"], "needs_review")
+            self.assertIn("technical_tokens_changed", result["issues"])
+
     def test_factual_number_change_fails_closed(self):
         changed = ORIGINAL_SUMMARY.replace("2.5", "3.0")
         result = editorial_decision(ORIGINAL_TITLE, ORIGINAL_SUMMARY,
