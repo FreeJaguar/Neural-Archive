@@ -5,6 +5,7 @@ on:
     paths:
       - "design.html"
       - "design.css"
+      - "compact-sections.css"
       - "design.js"
       - "hero-motion.js"
       - "hero-motion.css"
@@ -18,6 +19,7 @@ on:
     paths:
       - "design.html"
       - "design.css"
+      - "compact-sections.css"
       - "design.js"
       - "hero-motion.js"
       - "hero-motion.css"
