@@ -22,6 +22,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
+from scripts.news_proofreader import proofread_candidate
 
 MODEL = "gemini-3.5-flash-lite"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models/"
@@ -402,7 +403,8 @@ def insert_candidate(article, analysis):
     relevant = analysis["is_ai"] and analysis["score"] >= LOW_RELEVANCE
     # PILOT SAFETY: all relevant candidates require explicit admin approval.
     # Automatic publication remains disabled regardless of AI score.
-    status = "pending" if relevant else "rejected"
+    quality = analysis.get("language_quality", "not_checked")
+    status = ("pending" if quality in ("passed", "corrected") else "draft") if relevant else "rejected"
     record = {
         "source_url": article["url"],
         "source_host": article["source_host"],
@@ -425,17 +427,20 @@ def insert_candidate(article, analysis):
         "ai_rationale": analysis["reason"],
         "ai_model": MODEL,
         "ai_processed_at": datetime.now(timezone.utc).isoformat(),
+        "language_quality_state": quality,
+        "language_quality_issues": analysis.get("language_issues", []),
+        "language_checked_at": datetime.now(timezone.utc).isoformat() if quality != "not_checked" else None,
     }
     result = supabase_request("POST", {
         "on_conflict": "source_url",
-        "select": "id,title,summary,status,source_url,ai_score,ai_confidence,ai_rationale,ai_evidence,ai_source_kind,ai_novelty,ai_audience",
+        "select": "id,title,summary,status,source_url,ai_score,ai_confidence,ai_rationale,ai_evidence,ai_source_kind,ai_novelty,ai_audience,language_quality_state,language_quality_issues",
     }, record, preferences="resolution=ignore-duplicates,return=representation")
     return result[0] if result else None
 
 
 def notify_admin(item):
     if not os.getenv("TELEGRAM_BOT_TOKEN") or not os.getenv("TELEGRAM_ADMIN_CHAT_ID"):
-        print("Telegram notification not configured. Article remains in /pending.")
+        print("Telegram notification not configured; item remains available via /pending.")
         return
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat = os.environ["TELEGRAM_ADMIN_CHAT_ID"]
@@ -494,6 +499,7 @@ def main():
 
     new_count = 0
     queued = 0
+    drafts = 0
     for item in sorted(found.values(), key=lambda entry: entry["published"], reverse=True):
         if new_count >= MAX_PER_RUN:
             break
@@ -501,13 +507,22 @@ def main():
             if already_stored(item["url"]):
                 continue
             enriched = expand_official_release(item)
-            result = classify_article(enriched)
+            result = proofread_candidate(
+                enriched, classify_article(enriched),
+                request_json=request_json,
+                api_base=API_BASE,
+                model=MODEL,
+                api_key=os.environ["GEMINI_API_KEY"],
+            )
             item = enriched
             saved = insert_candidate(item, result)
             if saved:
                 new_count += 1
-                if saved["status"] == "pending":
-                    queued += 1
+                if saved["status"] in ("pending", "draft"):
+                    if saved["status"] == "pending":
+                        queued += 1
+                    else:
+                        drafts += 1
                     try:
                         notify_admin(saved)
                     except (urllib.error.URLError, TimeoutError, ValueError) as error:
@@ -518,7 +533,7 @@ def main():
             print("Article processing failed (" + type(error).__name__ + "); next candidate")
             continue
 
-    print("Processed: " + str(new_count) + " | awaiting review: " + str(queued))
+    print("Processed: " + str(new_count) + " | awaiting approval: " + str(queued) + " | requiring language edits: " + str(drafts))
     return 0
 
 
