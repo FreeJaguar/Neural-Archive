@@ -406,7 +406,7 @@
     overflow:hidden;
     align-self:center;
   }
-  .cinematic-photograph {height:106%;left:50%;top:52%}
+  .cinematic-photograph {height:106%;left:50%;top:52%;animation:none!important;opacity:1!important}
   .hero-visual#portalVisual::after {
     background:linear-gradient(180deg,rgba(8,17,33,.26),transparent 15%,transparent 80%,#071020 100%);
   }
