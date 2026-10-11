@@ -195,7 +195,8 @@ async def poll_sources():
     discovered = 0
     baselined = 0
 
-    async with client:
+    await client.connect()
+    try:
         if not await client.is_user_authorized():
             raise ValueError("Session revoked or no longer authorized")
 
@@ -234,6 +235,8 @@ async def poll_sources():
                         discovered += 1
                 save_cursor(source_key, source["label"], int(message.id))
                 scanned += 1
+    finally:
+        await client.disconnect()
 
     notified = notify_new_links()
     # No post text, account identifiers, URLs, tokens or sessions are logged.
