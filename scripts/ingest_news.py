@@ -442,35 +442,70 @@ def notify_admin(item):
     if not os.getenv("TELEGRAM_BOT_TOKEN") or not os.getenv("TELEGRAM_ADMIN_CHAT_ID"):
         print("Telegram notification not configured; item remains available via /pending.")
         return
+
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat = os.environ["TELEGRAM_ADMIN_CHAT_ID"]
-    news_id = item["id"]
+    news_id = str(item["id"])
+    needs_edit = item.get("status") == "draft"
+    quality = item.get("language_quality_state", "not_checked")
+    diagnostic_names = {
+        "replacement_character": "תו שבור",
+        "hebrew_cantillation": "טעם מקראי חריג",
+        "orphan_combining_mark": "סימן ניקוד מנותק",
+        "invisible_formatting": "תו בלתי נראה",
+        "technical_tokens_changed": "חשש לשינוי מונח או מספר",
+        "large_rewrite": "שינוי גדול מדי בטקסט",
+        "repeated_word": "מילה כפולה",
+        "model_requested_review": "נדרש עיון אנושי",
+        "proofreader_unavailable": "ההגהה לא הושלמה",
+    }
+    problem_codes = item.get("language_quality_issues") or []
+    problems = ", ".join(diagnostic_names.get(str(code).split(":")[-1], "בדיקת לשון") for code in problem_codes[:4])
+    quality_status = (
+        "⚠️ דרושה עריכה לפני אישור"
+        if needs_edit else
+        ("✅ ההגהה תיקנה את הטקסט" if quality == "corrected" else
+         "✅ טקסט עבר בדיקת לשון" if quality == "passed" else "בדיקת לשון: טרם בוצעה")
+    )
     message = (
-        "🤖 הצעת AI חדשה ל-Neural Archive\n\n"
+        ("⚠️ ידיעת AI לבדיקה ידנית ב-Neural Archive\n\n" if needs_edit else
+         "🤖 הצעת AI חדשה ל-Neural Archive\n\n")
         + str(item["title"]) + "\n\n" + str(item["summary"])[:850]
         + "\n\nציון חשיבות: " + str(item["ai_score"])
         + " | ביסוס מידע (לא הסתברות): " + str(item["ai_confidence"])
         + "\nחדשנות: " + str(item.get("ai_novelty", "לא דורג"))
         + " | התאמה לקהל: " + str(item.get("ai_audience", "לא דורג"))
-        + "\nראיות בטקסט המקור: " + str(sum(1 for e in (item.get("ai_evidence") or []) if e.get("quote_found")))
+        + "\nראיות בטקסט המקור: "
+        + str(sum(1 for e in (item.get("ai_evidence") or []) if e.get("quote_found")))
         + "/" + str(len(item.get("ai_evidence") or []))
         + "\n" + str(item["ai_rationale"])[:220]
+        + "\n\nבדיקת עברית: " + quality_status
+        + ("\nבעיות אפשריות: " + problems if problems else "")
         + "\n\nמקור: " + str(item["source_url"])
-        + "\n\nהפרסום דורש אישור שלך."
+        + (
+            "\n\nהידיעה נשמרה כטיוטה ולא ניתן לאשר אותה לפני עריכה."
+            "\nשלח /edit " + news_id + " | כותרת מתוקנת | תקציר מתוקן"
+            if needs_edit else "\n\nהפרסום דורש אישור שלך."
+        )
     )[:3900]
-    payload = {
-        "chat_id": chat,
-        "text": message,
-        "link_preview_options": {"is_disabled": True},
-        "reply_markup": {"inline_keyboard": [[
-            {"text": "✅ אישור", "callback_data": "approve:" + str(news_id)},
-            {"text": "❌ דחייה", "callback_data": "reject:" + str(news_id)},
-            {"text": "✏️ עריכה", "callback_data": "edit:" + str(news_id)},
-        ]]},
-    }
+    buttons = (
+        [[{"text": "✏️ עריכה", "callback_data": "edit:" + news_id}]]
+        if needs_edit else
+        [[
+            {"text": "✅ אישור", "callback_data": "approve:" + news_id},
+            {"text": "❌ דחייה", "callback_data": "reject:" + news_id},
+            {"text": "✏️ עריכה", "callback_data": "edit:" + news_id},
+        ]]
+    )
     request_json(
-        "https://api.telegram.org/bot" + token + "/sendMessage",
-        "POST", payload, timeout=15,
+        "https://api.telegram.org/bot" + token + "/sendMessage", "POST",
+        {
+            "chat_id": chat,
+            "text": message,
+            "link_preview_options": {"is_disabled": True},
+            "reply_markup": {"inline_keyboard": buttons},
+        },
+        timeout=15,
     )
 
 
