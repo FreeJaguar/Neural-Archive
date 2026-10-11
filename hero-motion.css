@@ -35,9 +35,10 @@
   /* Full-bleed artwork reaches behind the headline, not a left-side card. */
   top: -76px;
   bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
   height: auto;
   min-height: 0;
   max-height: none;
@@ -414,6 +415,7 @@
   .hero-visual#portalVisual {
     position:relative;
     top:auto;left:auto;bottom:auto;right:auto;
+    transform:none;
     width:calc(100% + 40px);
     height:clamp(300px,94vw,455px);
     min-height:0;
