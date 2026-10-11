@@ -1,9 +1,9 @@
 /**
  * Neural Archive - Cinematic 2.5D Hero
  *
- * The original image supplies the landscape, holographic panels, cube and
- * full figure. Only a tiny, separately cut head sprite follows the pointer.
- * Body orientation NEVER changes. This is parallax / puppet animation,
+ * Separate high-resolution masked images supply the floating panels, cube
+ * and head. The inpainted photograph keeps the body and terrain fixed.
+ * Body orientation NEVER changes. This is cinematic layered animation,
  * not a reconstructed human 3D mesh.
  */
 (() => {
@@ -35,7 +35,8 @@
     current.x = current.y = target.x = target.y = 0;
     for (const [name, value] of [
       ["--scene-x", "0px"], ["--scene-y", "0px"],
-      ["--lens-x", "0px"], ["--lens-y", "0px"],
+      ["--cube-x", "0px"], ["--cube-y", "0px"],
+      ["--panels-x", "0px"], ["--panels-y", "0px"],
       ["--head-x", "0px"], ["--head-y", "0px"],
       ["--head-rx", "0deg"], ["--head-ry", "0deg"]
     ]) scene.style.setProperty(name, value);
@@ -54,20 +55,21 @@
     current.x = lerp(current.x, target.x, 0.075);
     current.y = lerp(current.y, target.y, 0.075);
 
-    // Physical background movement is deliberately much smaller than the
-    // panel motion so the original photographic geometry remains intact.
-    scene.style.setProperty("--scene-x", (current.x * 4).toFixed(2) + "px");
-    scene.style.setProperty("--scene-y", (current.y * 2.5).toFixed(2) + "px");
-    scene.style.setProperty("--lens-x", (-current.x * 5).toFixed(2) + "px");
-    scene.style.setProperty("--lens-y", (-current.y * 4).toFixed(2) + "px");
+    // The original body and terrain remain stationary. Unlike the old flat
+    // prototype, the cube and every photographed floating card now have their
+    // own alpha-masked image layer and can physically move.
+    scene.style.setProperty("--cube-x", (current.x * 6.5).toFixed(2) + "px");
+    scene.style.setProperty("--cube-y", (current.y * -4.5).toFixed(2) + "px");
+    scene.style.setProperty("--panels-x", (current.x * 8.5).toFixed(2) + "px");
+    scene.style.setProperty("--panels-y", (current.y * -6.5).toFixed(2) + "px");
 
-    // Head crop is 21x21 pixels in the 570x301 original scene. Convert to
-    // screen pixels; max translation is ~2 source pixels horizontally.
-    const scale = clamp(photo.getBoundingClientRect().width / 570, .5, 3);
-    scene.style.setProperty("--head-x", (current.x * scale * 1.8).toFixed(2) + "px");
-    scene.style.setProperty("--head-y", (current.y * scale * 1.0).toFixed(2) + "px");
+    // Only the independently extracted head sprite follows the cursor, with
+    // sub-3px physical shifts and gentle X/Y rotation. The torso never turns.
+    const scale = clamp(photo.getBoundingClientRect().width / 910, .5, 2.5);
+    scene.style.setProperty("--head-x", (current.x * scale * 1.65).toFixed(2) + "px");
+    scene.style.setProperty("--head-y", (current.y * scale * 1.05).toFixed(2) + "px");
     scene.style.setProperty("--head-ry", (current.x * 5).toFixed(2) + "deg");
-    scene.style.setProperty("--head-rx", (-current.y * 3.2).toFixed(2) + "deg");
+    scene.style.setProperty("--head-rx", (-current.y * 3).toFixed(2) + "deg");
 
     if (Math.abs(target.x - current.x) > .005 ||
         Math.abs(target.y - current.y) > .005) {
