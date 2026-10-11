@@ -1,299 +1,439 @@
 /*
- * Neural Archive | Cinematic 2.5D Hero
- * Preserves the original approved composition. The photograph contains the
- * body, terrain, holographic cube and panels. A separate head sprite follows
- * the pointer with tightly clamped motion while the BODY NEVER ROTATES.
- * No Three.js, server state, remote animation libraries or additional API.
+ * Neural Archive / Cinematic Hero 2.5D
+ * Full-resolution art, an inpainted backplate and separately masked objects.
+ * No framework, no fake glass rectangles and no movement of the person's body.
+ * Scoped to /design until visual approval.
  */
 
-.hero-visual#portalVisual {
-  grid-column: 2;
-  position: relative;
-  align-self: stretch;
-  min-height: 510px;
-  isolation: isolate;
-  overflow: visible;
-  pointer-events: none;
+.hero {
+  min-height: min(940px, 100svh);
+  background:
+    radial-gradient(ellipse at 28% 44%, rgba(97,82,202,.13), transparent 52%),
+    linear-gradient(112deg, #06101f 0%, #091527 52%, #081224 100%);
 }
+.hero-inner {
+  max-width: none;
+  min-height: clamp(700px, calc(100svh - 76px), 930px);
+  padding: 48px clamp(27px, 5vw, 108px) 84px;
+  grid-template-columns: 52% 48%;
+}
+.hero-copy {
+  position: relative;
+  z-index: 12;
+  width: 100%;
+  max-width: 700px;
+  padding-block: 49px 85px;
+}
+.hero-visual#portalVisual {
+  position: absolute;
+  z-index: 2;
+  top: -76px;
+  bottom: -5px;
+  left: 0;
+  width: min(64vw, 1250px);
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  align-self: unset;
+  pointer-events: none;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-visual#portalVisual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 11;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%, transparent 70%,
+    rgba(7,17,32,.48) 87%, #081224 100%);
+}
+.hero-meta {
+  z-index: 13;
+  top: 25%;
+  left: clamp(15px, 2.8vw, 53px);
+  text-shadow: 0 4px 12px rgba(3,8,23,.45);
+}
+.hero-down {z-index: 14}
 .cinematic-scene {
   --scene-x: 0px;
   --scene-y: 0px;
+  --cube-x: 0px;
+  --cube-y: 0px;
+  --panels-x: 0px;
+  --panels-y: 0px;
   --head-x: 0px;
   --head-y: 0px;
   --head-rx: 0deg;
   --head-ry: 0deg;
-  --lens-x: 0px;
-  --lens-y: 0px;
   position: absolute;
-  top: -33px;
-  bottom: -36px;
-  left: -123px;
-  right: -37px;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
-  overflow: visible;
-  isolation: isolate;
 }
 .cinematic-photograph {
   position: absolute;
-  width: min(100%, 920px);
-  aspect-ratio: 570 / 301;
-  top: 49%;
-  left: 49%;
-  transform: translate(-50%,-50%) translate3d(var(--scene-x),var(--scene-y),0);
-  background: url("/assets/design-portal-backdrop.svg") center / cover no-repeat;
-  border-radius: 3px;
+  top: 51%;
+  left: 48%;
+  height: 104%;
+  width: auto;
+  aspect-ratio: 910 / 636;
+  max-width: none;
+  transform: translate3d(calc(-50% + var(--scene-x)), calc(-50% + var(--scene-y)), 0);
+  overflow: visible;
   opacity: 1;
-  animation: cinematic-breathe 13s ease-in-out infinite,
-             cinematic-appear 1.1s cubic-bezier(.17,.71,.29,1) both;
   isolation: isolate;
-  will-change: transform;
-  -webkit-mask-image: radial-gradient(ellipse 74% 82% at 49% 51%, #000 44%, #000d 73%, transparent 99%);
-  mask-image: radial-gradient(ellipse 74% 82% at 49% 51%, #000 44%, #000d 73%, transparent 99%);
+  animation: cinematic-arrival 1s ease-out both;
 }
 .cinematic-backdrop {
   display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 570 / 301;
-  object-fit: cover;
+  height: 100%;
+  object-fit: fill;
+  filter: none;
   pointer-events: none;
   user-select: none;
 }
-.cinematic-aurora {
+.cinematic-sky-glow {
   position: absolute;
-  pointer-events: none;
+  top: 2%;
+  left: 21%;
+  width: 76%;
+  height: 77%;
   border-radius: 50%;
+  background: radial-gradient(ellipse,
+    rgba(103,88,220,.20), rgba(49,137,237,.14) 37%,transparent 73%);
+  filter: blur(45px);
   mix-blend-mode: screen;
-  will-change: opacity;
-  z-index: -1;
+  z-index: 0;
+  animation: cinematic-ambient 13s ease-in-out infinite alternate;
 }
-.cinematic-aurora-a {
-  width: 77%;
-  height: 69%;
+.cinematic-cube-aura {
+  position: absolute;
+  z-index: 1;
   top: 8%;
-  left: 13%;
-  background: radial-gradient(ellipse,rgba(90,140,240,.28),rgba(107,70,211,.10) 43%,transparent 73%);
-  filter: blur(48px);
-  animation: cinematic-aurora-blue 14s ease-in-out infinite alternate;
-}
-.cinematic-aurora-b {
-  width: 80%;
-  height: 65%;
-  top: 16%;
-  left: 3%;
-  background: radial-gradient(ellipse,rgba(194,119,232,.17),rgba(96,164,239,.10) 46%,transparent 70%);
-  filter: blur(53px);
-  animation: cinematic-aurora-violet 17s ease-in-out infinite alternate;
-}
-/* Energies deliberately enhance the existing photographic cube rather
-   than drawing a new cube that would no longer resemble the mockup. */
-.cinematic-cube-energy {
-  position: absolute;
-  z-index: 3;
-  width: 44%;
-  height: 84%;
-  top: 1%;
-  left: 27%;
-  border-radius: 20%;
-  opacity: .45;
+  left: 33%;
+  width: 46%;
+  height: 63%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 52% 45%,
+    rgba(137,170,255,.23),rgba(89,121,255,.09) 48%,transparent 75%);
   mix-blend-mode: screen;
-  background:
-    radial-gradient(ellipse at 55% 49%,rgba(152,144,255,.17),rgba(57,152,244,.14) 26%,transparent 64%);
-  animation: cinematic-energy-breathe 7.6s ease-in-out infinite;
+  animation: cinematic-cube-glow 7.7s ease-in-out infinite;
 }
-.cinematic-energy-heart {
-  position:absolute;
-  inset: 32% 21% 25%;
-  border-radius: 50%;
-  background: radial-gradient(circle,rgba(216,239,255,.19),rgba(74,202,254,.13) 35%,transparent 70%);
-  filter: blur(17px);
-  animation: cinematic-heartbeat 5.8s ease-in-out infinite;
-}
-.cinematic-energy-sheen {
+.cinematic-layer {
   position: absolute;
-  width: 27%;
-  height: 110%;
-  top: -8%;
-  left: -30%;
-  opacity: .3;
-  transform: rotate(24deg);
-  background: linear-gradient(90deg,transparent,rgba(221,235,255,.2),transparent);
-  animation: cinematic-sheen-pass 14s ease-in-out infinite;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  z-index: 3;
+  transform: translate3d(
+    calc(var(--panels-x) * var(--depth, 1)),
+    calc(var(--panels-y) * var(--depth, 1)),
+    0);
+  pointer-events: none;
+  will-change: transform;
 }
-.cinematic-energy-ring {
-  position: absolute;
-  width: 91%;
-  height: 26%;
-  bottom: 7%;
-  left: 3%;
-  transform: perspective(280px) rotateX(69deg);
-  border: 1px solid rgba(143,190,255,.55);
-  box-shadow: 0 0 15px rgba(99,155,248,.30);
-  border-radius: 50%;
-  animation: cinematic-ring-breathe 11s infinite ease-in-out;
+.cinematic-layer-motion {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 55%;
+  animation: cinematic-panel-hover var(--duration, 8.5s) ease-in-out infinite;
+  animation-delay: var(--delay, -2s);
+  will-change: transform;
+}
+.cinematic-layer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.cinematic-layer-cube {
+  z-index: 5;
+  --depth: .7;
+  transform: translate3d(var(--cube-x),var(--cube-y),0);
+}
+.cinematic-layer-cube .cinematic-layer-motion {
+  animation-name: cinematic-cube-hover;
+  animation-duration: 9s;
+  animation-delay: -1.6s;
+}
+.cinematic-layer-woman {
+  z-index: 6;
+  --depth: 1.1;
+  --duration: 8.4s;
+  --delay: -3.2s;
+  --fx: -7px;
+  --fy: -11px;
+  --rotation: -1.2deg;
+}
+.cinematic-layer-light {
+  z-index: 6;
+  --depth: 1.35;
+  --duration: 7.3s;
+  --delay: -5.1s;
+  --fx: 8px;
+  --fy: -9px;
+  --rotation: 1.1deg;
+}
+.cinematic-layer-code {
+  z-index: 8;
+  --depth: 1.6;
+  --duration: 9.7s;
+  --delay: -1.3s;
+  --fx: -6px;
+  --fy: -12px;
+  --rotation: -.9deg;
+}
+.cinematic-layer-mountain {
+  z-index: 7;
+  --depth: 1.15;
+  --duration: 10.1s;
+  --delay: -6.3s;
+  --fx: 5px;
+  --fy: -14px;
+  --rotation: 1.35deg;
+}
+.cinematic-layer-robot {
+  z-index: 8;
+  --depth: 1.65;
+  --duration: 8.1s;
+  --delay: -2.7s;
+  --fx: -7px;
+  --fy: 8px;
+  --rotation: -1.1deg;
+}
+.cinematic-layer-top {
+  z-index: 9;
+  --depth: 1.4;
+  --duration: 8.9s;
+  --delay: -4.6s;
+  --fx: 6px;
+  --fy: -9px;
+  --rotation: 1.3deg;
+}
+.cinematic-layer-top2 {
+  z-index: 10;
+  --depth: 1.85;
+  --duration: 7.2s;
+  --delay: -5s;
+  --fx: -6px;
+  --fy: -10px;
+  --rotation: -1.4deg;
 }
 .cinematic-head-anchor {
   position: absolute;
-  z-index: 8;
-  /* Coordinates are relative to the original 570x301 photographic crop. */
-  left: 43.1579%;
-  top: 70.0997%;
-  width: 3.6842%;
-  aspect-ratio: 1;
+  z-index: 15;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
   transform-origin: 50% 77%;
   transform:
     translate3d(var(--head-x),var(--head-y),0)
-    perspective(180px)
+    perspective(240px)
     rotateY(var(--head-ry))
     rotateX(var(--head-rx));
   will-change: transform;
   backface-visibility: hidden;
 }
-.cinematic-head { display:block; width:100%; height:100%; object-fit:contain; user-select:none; pointer-events:none; }
-/* Very faint glass reflections float above already-present UI panels.
-   They must NEVER produce a duplicate panel with invented content. */
-.cinematic-glass-panel {
-  position: absolute;
-  z-index: 4;
+.cinematic-head {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
   pointer-events: none;
-  border: 1px solid rgba(162,211,255,.17);
-  border-radius: 7px;
-  background: linear-gradient(125deg,rgba(224,225,255,.075),transparent 56%,rgba(112,194,252,.045));
-  box-shadow: inset 0 0 16px rgba(146,172,255,.065),0 0 14px rgba(118,173,250,.055);
-  -webkit-backdrop-filter: none;
-  opacity: .45;
-  will-change: transform;
-  animation: cinematic-panel-float 9s ease-in-out infinite;
+  user-select: none;
+  -webkit-user-drag: none;
 }
-.cinematic-glass-panel-a { width: 15%;height: 28%;top:35%;left:8%; transform: translate3d(var(--lens-x),var(--lens-y),0) rotate(-7deg);animation-delay:-2s; }
-.cinematic-glass-panel-b { width: 18%;height: 39%;top:14%;left:66%;transform: translate3d(var(--lens-x),var(--lens-y),0) rotate(5deg);animation-delay:-5s; }
-.cinematic-glass-panel-c { width: 13%;height: 25%;top:45%;left:62%;transform: translate3d(var(--lens-x),var(--lens-y),0) rotate(9deg);animation-delay:-6.2s; }
-.cinematic-depth-sparks {position:absolute;inset:0;z-index:5;pointer-events:none}
-.cinematic-depth-sparks i {
+.cinematic-floor-reflection {
+  position: absolute;
+  z-index: 12;
+  width: 56%;
+  height: 16%;
+  left: 23%;
+  bottom: 2%;
+  pointer-events: none;
+  opacity: .33;
+  border-radius: 50%;
+  transform: perspective(450px) rotateX(65deg);
+  filter: blur(14px);
+  background: radial-gradient(ellipse,
+    rgba(151,166,255,.24),rgba(106,188,255,.10) 30%,transparent 69%);
+  animation: cinematic-reflection 10s ease-in-out infinite;
+}
+.cinematic-particles {
+  position: absolute;
+  z-index: 13;
+  inset: 0;
+  pointer-events: none;
+}
+.cinematic-particles i {
   position: absolute;
   width: 2px;
   height: 2px;
+  background: #e5f1ff;
   border-radius: 50%;
-  opacity: .3;
-  background: #d8e5ff;
-  box-shadow: 0 0 8px rgba(205,185,255,.9),0 0 17px rgba(134,187,248,.6);
-  animation: cinematic-spark-twinkle 5.5s ease-in-out infinite alternate;
+  opacity: .55;
+  box-shadow: 0 0 9px #80c2ff,0 0 17px #9e8cff;
+  animation: cinematic-star 5s ease-in-out infinite alternate;
 }
-.cinematic-depth-sparks i:nth-child(1){top:14%;left:24%;animation-delay:-1.4s}
-.cinematic-depth-sparks i:nth-child(2){top:26%;left:36%;animation-delay:-2.2s}
-.cinematic-depth-sparks i:nth-child(3){top:9%;left:49%;animation-delay:-4.7s}
-.cinematic-depth-sparks i:nth-child(4){top:29%;left:74%;animation-delay:-3.6s}
-.cinematic-depth-sparks i:nth-child(5){top:52%;left:20%;animation-delay:-5.2s}
-.cinematic-depth-sparks i:nth-child(6){top:38%;left:52%;animation-delay:-1.9s}
-.cinematic-depth-sparks i:nth-child(7){top:62%;left:77%;animation-delay:-.4s}
-.cinematic-depth-sparks i:nth-child(8){top:81%;left:69%;animation-delay:-2.8s}
-.cinematic-depth-sparks i:nth-child(9){top:13%;left:87%;animation-delay:-4.1s}
-.cinematic-depth-sparks i:nth-child(10){top:73%;left:32%;animation-delay:-3.3s}
-.cinematic-foreground-rays {
-  position:absolute;
-  z-index:6;
-  inset:auto 17% 0;
-  height:22%;
-  border-radius:50%;
-  opacity:.3;
-  background:radial-gradient(ellipse at 50% 50%,rgba(140,162,253,.2),transparent 65%);
-  transform:perspective(180px) rotateX(75deg);
-  filter:blur(16px);
-  animation:cinematic-reflection-breathe 9s ease-in-out infinite;
-}
-.cinematic-atmosphere-floor {
-  position:absolute;
-  z-index:0;
-  inset:auto 0 3%;
-  height:10%;
-  pointer-events:none;
-  background:radial-gradient(ellipse at 47% 50%,rgba(105,165,254,.12),transparent 70%);
-  filter:blur(15px);
-  animation:cinematic-reflection-breathe 10s ease-in-out infinite;
-}
+.cinematic-particles i:nth-child(1){left:17%;top:18%;animation-delay:-.8s}
+.cinematic-particles i:nth-child(2){left:41%;top:8%;animation-delay:-3.2s}
+.cinematic-particles i:nth-child(3){left:84%;top:26%;animation-delay:-5s}
+.cinematic-particles i:nth-child(4){left:24%;top:49%;animation-delay:-1.9s}
+.cinematic-particles i:nth-child(5){left:77%;top:67%;animation-delay:-4.1s}
+.cinematic-particles i:nth-child(6){left:48%;top:35%;animation-delay:-2.7s}
+.cinematic-particles i:nth-child(7){left:93%;top:13%;animation-delay:-1.4s}
+.cinematic-particles i:nth-child(8){left:13%;top:72%;animation-delay:-4.6s}
+.cinematic-particles i:nth-child(9){left:60%;top:88%;animation-delay:-2.2s}
+.cinematic-particles i:nth-child(10){left:32%;top:65%;animation-delay:-3.9s}
 .portal-motion-toggle {
   position: absolute;
-  z-index: 12;
-  bottom: 8%;
-  right: 2%;
+  z-index: 18;
+  bottom: 8.5%;
+  left: clamp(18px, 2.5vw, 50px);
+  right: auto;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   padding: 8px 12px;
   pointer-events: auto;
-  border: 1px solid rgba(182,208,255,.36);
+  border: 1px solid rgba(173,205,250,.4);
   border-radius: 11px;
-  color: #d8e7ff;
-  background: rgba(9,20,38,.77);
-  -webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
+  color: #e2edff;
+  background: rgba(8,20,43,.76);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
   font-size: 11px;
-  white-space:nowrap;
-  transition:border-color .2s,background .2s;
+  transition: background .18s,border-color .18s;
 }
-.portal-motion-toggle:hover { background:rgba(25,45,76,.92);border-color:rgba(191,218,255,.75) }
-.portal-toggle-icon{display:inline-grid;place-items:center;width:14px;direction:ltr;font-size:15px;line-height:1}
-.portal-motion-toggle[aria-pressed="true"] {border-color:rgba(119,217,211,.58)}
-.portal-motion-toggle:disabled{opacity:.75;cursor:default}
-.portal-visual-paused .cinematic-scene *,
-.portal-visual-paused .cinematic-scene *::before,
-.portal-visual-paused .cinematic-scene *::after {
-  animation-play-state:paused!important;
+.portal-motion-toggle:hover {
+  background: rgba(28,52,91,.9);
+  border-color: rgba(206,233,255,.75);
 }
-/* The main picture's body does not turn or rotate. There is NO CSS
-   rotateX/rotateY applied to the background image or to the body. */
-@keyframes cinematic-breathe {
-  0%,100% { scale:1 }
-  50% { scale:1.013 }
+.portal-motion-toggle:disabled {opacity:.72;cursor:default}
+.portal-toggle-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  direction: ltr;
+  font-size: 15px;
+  line-height: 1;
 }
-@keyframes cinematic-appear {
-  0%{opacity:0;filter:brightness(.7);translate:0 17px}
-  100%{opacity:1;filter:brightness(1);translate:0 0}
+.portal-visual-paused .cinematic-layer-motion,
+.portal-visual-paused .cinematic-floor-reflection,
+.portal-visual-paused .cinematic-sky-glow,
+.portal-visual-paused .cinematic-cube-aura,
+.portal-visual-paused .cinematic-particles i {
+  animation-play-state: paused!important;
 }
-@keyframes cinematic-aurora-blue{
-  0%{opacity:.35;transform:translate3d(-3%,3%,0) scale(.91)}
-  100%{opacity:.84;transform:translate3d(4%,-2%,0) scale(1.09)}
+/* Paused transforms from the pointer are reset by the controller. */
+@keyframes cinematic-arrival {
+  from {opacity:0;translate:0 14px}
+  to {opacity:1;translate:0 0}
 }
-@keyframes cinematic-aurora-violet{
-  0%{opacity:.25;transform:translate3d(4%,-2%,0) scale(1.1)}
-  100%{opacity:.83;transform:translate3d(-4%,5%,0) scale(.9)}
+@keyframes cinematic-ambient {
+  0% {opacity:.4;scale:.95}
+  100% {opacity:.8;scale:1.06}
 }
-@keyframes cinematic-energy-breathe{0%,100%{opacity:.28;filter:brightness(.85)}50%{opacity:.65;filter:brightness(1.4)}}
-@keyframes cinematic-heartbeat{0%,100%{opacity:.23;scale:.84}50%{opacity:.9;scale:1.18}}
-@keyframes cinematic-sheen-pass{0%,29%{left:-32%;opacity:0}36%{opacity:.44}53%{left:106%;opacity:0}100%{left:106%;opacity:0}}
-@keyframes cinematic-ring-breathe{0%,100%{opacity:.23;scale:.92}50%{opacity:.78;scale:1.08}}
-@keyframes cinematic-panel-float{0%,100%{translate:0 2px}50%{translate:0 -7px}}
-@keyframes cinematic-spark-twinkle{0%{opacity:.09;scale:.62}100%{opacity:.85;scale:1.3}}
-@keyframes cinematic-reflection-breathe{0%,100%{opacity:.19;scale:.92}50%{opacity:.44;scale:1.12}}
-@media(max-width:1220px){
-  .cinematic-scene{left:-100px;right:-22px}
-  .cinematic-photograph{width:min(100%,860px)}
-  .portal-motion-toggle{right:3%}
+@keyframes cinematic-cube-hover {
+  0%,100% {transform:translate3d(0,2px,0) rotate(-.35deg) scale(.992)}
+  50% {transform:translate3d(0,-10px,0) rotate(.65deg) scale(1.014)}
 }
-@media(max-width:920px){
-  .hero-visual#portalVisual{min-height:455px}
-  .cinematic-scene{left:-78px;right:-35px;top:-26px;bottom:-24px}
-  .cinematic-photograph{width:min(108%,750px)}
-  .portal-motion-toggle{bottom:9%;right:1%}
+@keyframes cinematic-panel-hover {
+  0%,100% {transform:translate3d(0,1px,0) rotate(-.3deg)}
+  50% {transform:translate3d(var(--fx,5px),var(--fy,-9px),0) rotate(var(--rotation,1deg))}
 }
-@media(max-width:690px){
-  .hero-visual#portalVisual{height:285px;min-height:285px;max-height:none;width:min(100%,530px);overflow:hidden;margin-top:4px}
-  .cinematic-scene{inset:0}
-  .cinematic-photograph{width:108%;left:50%;top:47%}
-  .cinematic-aurora-a{filter:blur(24px)}
-  .cinematic-aurora-b{filter:blur(27px)}
-  .cinematic-glass-panel{border-width:.5px;opacity:.25}
-  .portal-motion-toggle{bottom:7%;right:4%;font-size:10px;padding:6px 8px}
+@keyframes cinematic-cube-glow {
+  0%,100% {opacity:.29;scale:.91}
+  50% {opacity:.84;scale:1.1}
 }
-@media(max-width:390px){
-  .hero-visual#portalVisual{height:260px;min-height:260px}
-  .cinematic-photograph{width:114%}
+@keyframes cinematic-reflection {
+  0%,100% {opacity:.22;scale:.94}
+  50% {opacity:.5;scale:1.07}
 }
-@media(prefers-reduced-motion:reduce){
-  .cinematic-scene *, .cinematic-scene *::before, .cinematic-scene *::after {
-    animation:none!important;transition:none!important
+@keyframes cinematic-star {
+  0% {opacity:.1;scale:.45}
+  100% {opacity:.8;scale:1.4}
+}
+@media(max-width:1200px) {
+  .hero-inner {grid-template-columns:53% 47%}
+  .hero-visual#portalVisual {width:65vw}
+  .hero-copy {max-width:620px}
+  .hero h1 {font-size:clamp(43px,5.25vw,75px)}
+}
+@media(max-width:920px) {
+  .hero-inner {min-height:680px;grid-template-columns:55% 45%;padding-inline:26px}
+  .hero-visual#portalVisual {width:68vw}
+  .hero-meta {display:none}
+  .hero-copy {padding-block:55px 60px}
+}
+@media(max-width:690px) {
+  .hero {min-height:0}
+  .hero-inner {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    min-height:0;
+    padding:26px 20px 48px;
   }
-  .cinematic-photograph{scale:1;opacity:1;translate:none;filter:none}
-  .cinematic-head-anchor{transform:none}
-  .portal-motion-toggle{transition:none}
+  .hero-copy {
+    order:1;
+    width:100%;
+    max-width:none;
+    padding:40px 0 9px;
+  }
+  .hero-visual#portalVisual {
+    position:relative;
+    top:auto;left:auto;bottom:auto;right:auto;
+    width:calc(100% + 40px);
+    height:clamp(300px,94vw,455px);
+    min-height:0;
+    max-height:none;
+    margin:8px -20px 0;
+    order:2;
+    overflow:hidden;
+    align-self:center;
+  }
+  .cinematic-photograph {height:106%;left:50%;top:52%}
+  .hero-visual#portalVisual::after {
+    background:linear-gradient(180deg,rgba(8,17,33,.26),transparent 15%,transparent 80%,#071020 100%);
+  }
+  .portal-motion-toggle {bottom:15px;left:17px;font-size:10px;padding:6px 9px}
+  .hero-down {bottom:6px}
+  .cinematic-layer-motion {animation-duration:calc(var(--duration, 9s) * 1.2)}
+}
+@media(max-width:390px) {
+  .hero-visual#portalVisual {height:300px}
+  .cinematic-photograph {height:103%}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cinematic-layer-motion,
+  .cinematic-sky-glow,
+  .cinematic-cube-aura,
+  .cinematic-floor-reflection,
+  .cinematic-particles i,
+  .cinematic-photograph {
+    animation:none!important;
+    transform:none!important;
+    translate:none!important;
+    transition:none!important;
+  }
+  .cinematic-photograph {
+    transform:translate(-50%,-50%)!important;
+    opacity:1!important;
+  }
+  .cinematic-head-anchor {transform:none!important}
+  .portal-motion-toggle {transition:none}
 }
