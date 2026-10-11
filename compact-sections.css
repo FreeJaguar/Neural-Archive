@@ -1,0 +1,227 @@
+/*
+ * Neural Archive cinematic preview — compact editorial strips.
+ * Scope: news carousel and category tiles only. Preserve the full-screen Hero,
+ * tool library, API data, RTL semantics and interactive card dialogs.
+ */
+
+.news-section {
+  padding-bottom: 18px;
+}
+.news-section .section-topline,
+.categories-section .section-topline {
+  padding-top: 15px;
+}
+.news-section .section-title-group,
+.categories-section .section-title-group {
+  margin: 8px 0 14px;
+}
+.news-section .section-title-group h2,
+.categories-section .section-title-group h2 {
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.21;
+}
+.news-section .section-title-group p:not(.section-eyebrow),
+.categories-section .section-title-group p:not(.section-eyebrow) {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.news-section .section-eyebrow,
+.categories-section .section-eyebrow {
+  font-size: 9px;
+}
+.news-section .carousel-actions button {
+  width: 33px;
+  height: 33px;
+}
+.news-section .carousel-actions svg {
+  width: 15px;
+  height: 15px;
+}
+.news-section .news-scroller {
+  gap: 11px;
+  padding: 2px 3px 12px;
+}
+.news-section .news-card {
+  flex: 0 0 clamp(235px, 22vw, 300px);
+  height: 171px;
+  min-height: 171px;
+  border-radius: 11px;
+  box-shadow: 0 7px 18px rgba(4, 12, 33, .1);
+}
+.news-section .news-card-btn {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.news-section .news-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.news-section .news-art strong {
+  display: none; /* The headline appears once, in the readable text overlay. */
+}
+.news-section .news-art small {
+  top: 10px;
+  right: 11px;
+  left: auto;
+  z-index: 3;
+  max-width: 70%;
+  padding: 3px 8px;
+  font-size: 9px;
+}
+.news-section .news-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 42px 13px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(4, 11, 28, .23) 20%,
+    rgba(5, 12, 31, .75) 60%,
+    rgba(5, 11, 29, .96) 100%
+  );
+  color: #fff;
+}
+.news-section .news-card-content h3 {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.34;
+  min-height: 0;
+  margin: 0 0 5px;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, .56);
+}
+.news-section .news-card-content p {
+  color: #d7dfef;
+  font-size: 10px;
+  line-height: 1.45;
+  min-height: 0;
+  margin: 0 0 7px;
+  -webkit-line-clamp: 2;
+}
+.news-section .news-card-foot {
+  font-size: 10px;
+  color: #c2cee6;
+}
+.news-section .news-card-foot .read-more {
+  color: #d7c8ff;
+  font-size: 10px;
+}
+.news-section .news-card-foot svg {
+  width: 12px;
+  height: 12px;
+}
+.news-section .news-skeleton {
+  min-height: 68px;
+  padding: 14px 18px;
+  border-radius: 11px;
+  font-size: 12px;
+}
+.news-section .section-footnote {
+  margin-top: 0;
+  line-height: 1.4;
+  font-size: 10px;
+}
+.categories-section {
+  padding: 0 0 20px;
+}
+.categories-section .category-grid {
+  gap: 11px;
+}
+.categories-section .category-card {
+  min-height: 104px;
+  padding: 10px 13px;
+  gap: 7px;
+  border-radius: 11px;
+}
+.categories-section .category-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+}
+.categories-section .category-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.categories-section .category-text {
+  gap: 0;
+}
+.categories-section .category-text strong {
+  font-size: 13px;
+  line-height: 1.4;
+}
+.categories-section .category-text small {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.categories-section .category-card .corner-arrow {
+  top: 11px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+}
+@media (max-width: 920px) {
+  .categories-section .category-grid {
+    gap: 9px;
+  }
+}
+@media (max-width: 690px) {
+  .news-section {
+    padding-bottom: 14px;
+  }
+  .news-section .section-title-group,
+  .categories-section .section-title-group {
+    margin: 9px 0 13px;
+  }
+  .news-section .section-title-group h2,
+  .categories-section .section-title-group h2 {
+    font-size: clamp(23px, 6vw, 30px);
+  }
+  .news-section .news-card {
+    flex-basis: min(252px, 76vw);
+    height: 160px;
+    min-height: 160px;
+  }
+  .news-section .news-card-content {
+    padding: 40px 11px 9px;
+  }
+  .news-section .news-card-content h3 {
+    font-size: 13px;
+  }
+  .news-section .news-skeleton {
+    min-height: 72px;
+    font-size: 11px;
+  }
+  .categories-section {
+    padding-bottom: 16px;
+  }
+  .categories-section .category-card {
+    min-height: 96px;
+    padding: 10px 12px;
+  }
+  .categories-section .category-icon {
+    width: 31px;
+    height: 31px;
+  }
+  .categories-section .category-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .categories-section .category-text strong {
+    font-size: 12px;
+  }
+  .categories-section .category-text small {
+    font-size: 9px;
+  }
+}
