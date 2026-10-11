@@ -17,6 +17,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -72,10 +73,16 @@ class FeedText(HTMLParser):
             self.parts.append(data)
 
 
-def text_only(value, max_length=1500):
+def text_only(value, max_length=5000):
     parser = FeedText()
     parser.feed(str(value or "")[:30000])
     return " ".join(html.unescape(" ".join(parser.parts)).split())[:max_length]
+
+
+def richest_excerpt(*values):
+    """Use the longest text that the publisher explicitly exposes in its feed."""
+    options = [text_only(item, 5000) for item in values if item]
+    return max(options, key=len, default="")
 
 
 def parse_date(value):
@@ -128,7 +135,7 @@ def parse_feed(xml_bytes, feed):
             entries.append((
                 item.findtext(ATOM + "title"),
                 _atom_link(item),
-                item.findtext(ATOM + "summary") or item.findtext(ATOM + "content"),
+                                richest_excerpt(item.findtext(ATOM + "summary"), item.findtext(ATOM + "content")),
                 item.findtext(ATOM + "published") or item.findtext(ATOM + "updated"),
             ))
     else:
@@ -136,7 +143,7 @@ def parse_feed(xml_bytes, feed):
             entries.append((
                 item.findtext("title"),
                 item.findtext("link") or item.findtext("guid"),
-                item.findtext("description") or item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded"),
+                richest_excerpt(item.findtext("description"), item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded")),
                 item.findtext("pubDate") or item.findtext("{http://purl.org/dc/elements/1.1/}date"),
             ))
 
@@ -150,7 +157,7 @@ def parse_feed(xml_bytes, feed):
         if published > datetime.now(timezone.utc) + timedelta(hours=3):
             continue
         title = text_only(raw_title, 250)
-        excerpt = text_only(raw_summary, 1500)
+        excerpt = text_only(raw_summary, 5000)
         if len(title) < 5:
             continue
         latest.append({
@@ -160,6 +167,7 @@ def parse_feed(xml_bytes, feed):
             "published": published,
             "source_name": feed["name"],
             "source_host": feed["host"],
+            "source_kind": "release_feed" if feed["host"] == "github.com" else "publisher_feed",
         })
     latest.sort(key=lambda item: item["published"], reverse=True)
     return latest
@@ -186,6 +194,71 @@ def fetch_feed(feed):
     with urllib.request.urlopen(request, timeout=20) as response:
         raw = response.read(2000000)
     return parse_feed(raw, feed)
+
+
+def expand_official_release(article):
+    """Public GitHub release metadata, restricted to explicitly configured repos.
+
+    This never retrieves arbitrary article URLs or Telegram content.
+    Failed enrichment leaves the signed-off public feed excerpt unchanged.
+    """
+    path = urllib.parse.urlsplit(article["url"]).path
+    for feed in FEEDS:
+        if feed["host"] != "github.com" or not path.startswith(feed["path"]):
+            continue
+        tag = urllib.parse.unquote(path[len(feed["path"]):])
+        if not re.fullmatch(r"[A-Za-z0-9._-]{1,100}", tag):
+            return article
+        repo = feed["path"].split("/releases/tag/")[0]
+        api_url = "https://api.github.com/repos" + repo + "/releases/tags/" + urllib.parse.quote(tag)
+        try:
+            meta = request_json(api_url, headers={"Accept": "application/vnd.github+json"}, timeout=15)
+            body = text_only(meta.get("body", ""), 5000)
+            if len(body) >= 100 and len(body) > len(article.get("excerpt", "")):
+                article = {**article, "excerpt": body, "source_kind": "official_release_notes"}
+        except (urllib.error.URLError, TimeoutError, ValueError, KeyError, TypeError):
+            pass
+        return article
+    return article
+
+
+def normalize_evidence(value):
+    """Normalize formatting only; never use approximate substring matching."""
+    return " ".join(unicodedata.normalize("NFKC", str(value or "")).casefold().split())
+
+
+def evidence_coverage(article, evidence):
+    """Exact quote presence in the supplied publisher text, not factual proof."""
+    text = normalize_evidence(article["title"] + " " + article["excerpt"])
+    checked = []
+    for candidate in (evidence or [])[:4]:
+        quote = str(candidate.get("quote", "") if isinstance(candidate, dict) else "").strip()
+        support = str(candidate.get("supports_he", "") if isinstance(candidate, dict) else "").strip()
+        valid = 15 <= len(quote) <= 320 and normalize_evidence(quote) in text
+        checked.append({"quote": quote[:320], "supports_he": support[:180], "quote_found": bool(valid)})
+    supported = sum(int(item["quote_found"]) for item in checked)
+    return checked, supported
+
+
+def evidence_confidence(article, model_confidence, evidence):
+    """Conservative evidence-based cap, never a calibrated truth probability."""
+    checked, supported = evidence_coverage(article, evidence)
+    source_size = len(article.get("excerpt", ""))
+    if supported == 0:
+        cap = 15
+    elif source_size < 90:
+        cap = 30
+    elif source_size < 180:
+        cap = 45
+    elif source_size < 400:
+        cap = 60
+    else:
+        cap = 80 if supported >= 2 else 60
+    if supported < len(checked):
+        cap = min(cap, 45)
+    if article.get("source_kind") == "official_release_notes" and supported >= 2:
+        cap = min(90, cap + 10)
+    return min(model_confidence, cap), checked, supported
 
 
 def supabase_request(method, params=None, payload=None, *, preferences=None):
