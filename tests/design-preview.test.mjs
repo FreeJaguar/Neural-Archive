@@ -134,7 +134,7 @@ test("full-bleed preview places scenery outside layout columns and preserves int
 test("full-bleed scene retains its width while the figure stays grounded", () => {
   const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
   assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
-  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*calc\(100% - 58px\)/);
+  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*100%/);
   assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100vw/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*height:\s*104%/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*top:\s*49%/);
@@ -189,7 +189,7 @@ test("the compact cinematic landing preserves functional controls and responsive
   assert.match(compactHeroCss, /@media \(min-width: 691px\)/);
   assert.match(compactHeroCss, /\.site-header\s*\{[^}]*height:\s*58px/);
   assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
-  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*calc\(100% - 58px\)/);
+  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*100%/);
   assert.match(compactHeroCss, /\.cinematic-photograph\s*\{[^}]*height:\s*111%/);
   assert.match(compactHeroCss, /\.hero-search\s*\{[^}]*height:\s*46px/);
   assert.match(compactHeroCss, /@media \(max-width: 690px\)/);
