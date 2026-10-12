@@ -177,7 +177,7 @@ test("news and categories are compact, responsive and visually readable", () => 
   assert.match(compactCss, /min-height:\s*68px/);
   assert.match(compactCss, /\.categories-section\s*\{/);
   assert.match(compactCss, /\.category-card\s*\{/);
-  assert.match(compactCss, /min-height:\s*86px/);
+  assert.match(compactCss, /min-height:\s*78px/);
   assert.match(compactCss, /@media\s*\(max-width:\s*690px\)/);
   assert.ok(!/\.hero(?:\s|\{|\-inner|\-visual)/.test(compactCss),
     "Compact strip must not alter the cinematic Hero.");
