@@ -7,6 +7,7 @@ const read = path => readFileSync(new URL("../" + path, import.meta.url), "utf8"
 const html = read("design.html");
 const css = read("design.css");
 const compactCss = read("compact-sections.css");
+const categorySpacingCss = read("category-spacing.css");
 const compactHeroCss = read("compact-hero.css");
 const js = read("design.js");
 const data = read("data.js");
@@ -184,6 +185,17 @@ test("news and categories are compact, responsive and visually readable", () => 
   assert.match(compactCss, /@media\s*\(max-width:\s*690px\)/);
   assert.ok(!/\.hero(?:\s|\{|\-inner|\-visual)/.test(compactCss),
     "Compact strip must not alter the cinematic Hero.");
+});
+
+test("production category section visibly breathes and stylesheet cache is bypassed", () => {
+  assert.match(html, /href="\/category-spacing\.css"/);
+  assert.ok(html.indexOf('href="/compact-sections.css"') < html.indexOf('href="/category-spacing.css"'));
+  assert.match(categorySpacingCss, /@media \(min-width: 691px\)/);
+  assert.match(categorySpacingCss, /\.categories-section\s*\{[^}]*padding:\s*20px 0 24px/);
+  assert.match(categorySpacingCss, /\.categories-section \.section-title-group\s*\{[^}]*margin:\s*8px 0 17px/);
+  assert.match(categorySpacingCss, /\.categories-section \.category-card\s*\{[^}]*min-height:\s*108px/);
+  assert.match(categorySpacingCss, /padding:\s*13px 15px/);
+  assert.doesNotMatch(categorySpacingCss, /\.hero\b|\.news-section\b|\.tools-section\b/);
 });
 
 test("the compact cinematic landing preserves functional controls and responsiveness", () => {
