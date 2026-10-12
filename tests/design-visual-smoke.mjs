@@ -127,13 +127,13 @@ try {
     });
     console.log("CATEGORY_RIBBON_SPACING", JSON.stringify(spacing));
     assert.equal(spacing.cardCount,6);
-    assert.ok(spacing.paddingTop >= 8,JSON.stringify(spacing));
-    assert.ok(spacing.paddingBottom >= 16,JSON.stringify(spacing));
-    assert.ok(spacing.headerGap >= 9,JSON.stringify(spacing));
-    assert.ok(spacing.cardHeight >= 89,JSON.stringify(spacing));
-    assert.ok(spacing.cardPaddingTop >= 10 && spacing.cardPaddingBottom >= 10,JSON.stringify(spacing));
-    assert.ok(spacing.bottomGap >= 15,JSON.stringify(spacing));
-    assert.ok(spacing.sectionHeight < 225, "Category ribbon should stay compact: "+JSON.stringify(spacing));
+    assert.ok(spacing.paddingTop >= 20,JSON.stringify(spacing));
+    assert.ok(spacing.paddingBottom >= 24,JSON.stringify(spacing));
+    assert.ok(spacing.headerGap >= 16,JSON.stringify(spacing));
+    assert.ok(spacing.cardHeight >= 107,JSON.stringify(spacing));
+    assert.ok(spacing.cardPaddingTop >= 13 && spacing.cardPaddingBottom >= 13,JSON.stringify(spacing));
+    assert.ok(spacing.bottomGap >= 23,JSON.stringify(spacing));
+    assert.ok(spacing.sectionHeight >= 225 && spacing.sectionHeight < 285, "Category ribbon should feel airy without becoming oversized: "+JSON.stringify(spacing));
     fs.writeFileSync(path.join(output,"category-ribbon-spacing.json"),JSON.stringify(spacing,null,2));
   });
 
