@@ -185,17 +185,6 @@ window.TOOLS = [
     sources: [{ label: "תמחור רשמי", url: "https://www.researchrabbit.ai/pricing" }, { label: "מדריך המסלול החינמי", url: "https://learn.researchrabbit.ai/en/articles/12865509-researchrabbit-free-tier" }]
   },
   {
-    slug: "orbit", name: "Orbit", mark: "Or", category: "productivity", subcategories: ["ניהול משימות", "Realtime", "קוד פתוח"],
-    tagline: "מנהל משימות ופרויקטים מהיר עם מסמכים, ספרינטים ו־MCP.",
-    solves: "מאחד משימות, לוחות, פרויקטים, מסמכים ואנליטיקה בסביבת צוות שמתעדכנת בזמן אמת.",
-    uses: ["ניהול פרויקטים", "ניהול משימות", "שיתוף"], audience: "צוותי מוצר ופיתוח שמחפשים חלופה פתוחה למערכות ניהול עבודה בתשלום.",
-    free: "השירות המתארח והקוד זמינים ללא תמחור או מסלול בתשלום; הפרויקט כולו Apache-2.0.",
-    limits: "אירוח עצמי עדיין מוגדר Preview ודורש Bun, Docker, PostgreSQL, Redis ו־MinIO.",
-    pros: ["ללא תמחור או חיוב", "Realtime ו־MCP מובנים", "קוד פתוח ברישיון Apache-2.0"], cons: ["אירוח עצמי עדיין Preview", "פרויקט צעיר יחסית"],
-    alternatives: ["Trello", "Paperclip"], url: "https://orbit.noveum.ai/", added: "2026-10-01", verified: "2026-10-01",
-    sources: [{ label: "המאגר הרשמי", url: "https://github.com/Noveum/orbit" }, { label: "גרסאות", url: "https://github.com/Noveum/orbit/releases" }]
-  },
-  {
     slug: "whiteboard", name: "Whiteboard", mark: "W", category: "development", subcategories: ["ארכיטקטורה", "סקירת קוד", "Desktop"],
     tagline: "קנבס מקומי לתכנון תוכנה ולסקירת קוד עם סוכני פיתוח.",
     solves: "מציג מבנה, החלטות ו־diffs על קנבס משותף כדי להבין שינויי קוד לפני ואחרי ביצועם.",
@@ -216,28 +205,6 @@ window.TOOLS = [
     pros: ["MIT ללא מגבלות", "MCP ויותר מ־60 אינטגרציות", "אפשר לעבוד עם מודלים מקומיים"], cons: ["דורש תשתית לאירוח עצמי", "הענן אינו מסלול חינמי מתמשך"],
     alternatives: ["OpenResearch", "NotebookLM"], url: "https://hindsight.vectorize.io/", added: "2026-10-01", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://vectorize.io/pricing" }, { label: "המאגר הרשמי", url: "https://github.com/vectorize-io/hindsight" }]
-  },
-  {
-    slug: "yue2-studio", name: "YuE2 Studio", mark: "Y2", category: "design", subcategories: ["מוזיקה", "AI מקומי", "Desktop"],
-    tagline: "אפליקציית Windows מקומית ליצירת שירים ועריכת תווים עם AI.",
-    solves: "מריצה מודלים ליצירת מוזיקה באופן מקומי ומאפשרת לערוך את התוצאה ברמת תווים ומבנה.",
-    uses: ["מוזיקה", "AI", "יצירת תוכן"], audience: "יוצרי מוזיקה עם מחשב Windows וכרטיס גרפי מתאים שרוצים עבודה מקומית.",
-    free: "האפליקציה חינמית וקוד פתוח תחת MIT ויכולה לעבוד במצב מקומי ללא מנוי.",
-    limits: "דורשת Windows, הורדות מודל גדולות וכ־5.5GB VRAM לפחות; רישיונות המודלים מגבילים שימוש מסחרי לחברות ועטיפות SheetSage2 אינן מסחריות.",
-    pros: ["יצירה מקומית", "עריכת תווים", "MCP מובנה"], cons: ["דרישות חומרה גבוהות", "רישוי המודלים מורכב יותר מרישיון האפליקציה"],
-    alternatives: ["Cavalry", "OpenResearch"], url: "https://github.com/timoncool/YuE2-Studio", added: "2026-10-01", verified: "2026-10-01",
-    sources: [{ label: "המאגר והרישיון", url: "https://github.com/timoncool/YuE2-Studio" }, { label: "גרסאות", url: "https://github.com/timoncool/YuE2-Studio/releases" }]
-  },
-  {
-    slug: "kiwidesk", name: "KiwiDesk", mark: "KD", category: "productivity", subcategories: ["חלונות", "macOS", "Desktop"],
-    tagline: "מנהל חלונות tiling מקורי ל־macOS עם שליטה מהירה במקלדת.",
-    solves: "מסדר חלונות אוטומטית ומקצר מעבר בין פריסות, מסכים וסביבות עבודה.",
-    uses: ["פרודוקטיביות", "חלונות", "macOS"], audience: "משתמשי Mac שרוצים סביבת עבודה צפופה ויעילה יותר.",
-    free: "חינם לשימוש בבית ובעבודה תחת BSL 1.1; כל גרסה עוברת לרישיון MIT לאחר ארבע שנים.",
-    limits: "דורש macOS 14 ומעלה, Apple silicon והרשאת Accessibility; אינו זמין ל־Windows או Linux.",
-    pros: ["אפליקציה מקורית ומהירה", "חינם גם לעבודה", "כל גרסה הופכת MIT"], cons: ["Apple silicon בלבד", "דורש הרשאת נגישות"],
-    alternatives: ["Tinycast", "Todoist"], url: "https://kiwidesk.kiwicanopy.com/", added: "2026-09-30", verified: "2026-10-01",
-    sources: [{ label: "האתר הרשמי", url: "https://kiwidesk.kiwicanopy.com/" }, { label: "המאגר הרשמי", url: "https://github.com/KiwiCanopy/KiwiDesk" }]
   },
   {
     slug: "graphify", name: "Graphify", mark: "Gr", category: "development", subcategories: ["Knowledge graph", "קוד", "סוכנים"],
@@ -284,17 +251,6 @@ window.TOOLS = [
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/PaperclipAI/paperclip" }, { label: "אודות", url: "https://paperclip.app/about/" }]
   },
   {
-    slug: "minutes", name: "Minutes", mark: "Mi", category: "productivity", subcategories: ["פגישות", "תמלול מקומי", "MCP"],
-    tagline: "תמלול פגישות מקומי שהופך שיחות לזיכרון נגיש דרך MCP.",
-    solves: "מקליט ומתמלל שיחות באופן מקומי ומאפשר לסוכנים לחפש בהחלטות ובהקשר מפגישות קודמות.",
-    uses: ["פגישות", "תמלול", "AI"], audience: "צוותים ויחידים שרוצים ארכיון פגישות מקומי שנגיש לסוכנים.",
-    free: "התוכנה המקומית חינמית וקוד פתוח תחת MIT, כולל תמלול ושכבת MCP.",
-    limits: "שירותי סיכום ענן הם אופציונליים ועשויים לעלות כסף; איכות התמלול תלויה בחומרה ובמודל.",
-    pros: ["עיבוד מקומי", "MCP מובנה", "קוד פתוח"], cons: ["סיכום ענן עשוי לעלות", "דורש משאבי מחשב"],
-    alternatives: ["Circleback", "Hindsight"], url: "https://github.com/silverstein/minutes", added: "2026-09-29", verified: "2026-10-01",
-    sources: [{ label: "המאגר הרשמי", url: "https://github.com/silverstein/minutes" }]
-  },
-  {
     slug: "paper2agent", name: "Paper2Agent", mark: "P2", category: "research", subcategories: ["מאמרים", "MCP", "קוד פתוח"],
     tagline: "הופך מאמרים וקוד נלווה לכלי MCP בדוקים לשימוש סוכנים.",
     solves: "מתרגם שיטות ממאמר מחקר לממשק תפעולי שסוכן יכול להפעיל, לבדוק ולשחזר.",
@@ -304,17 +260,6 @@ window.TOOLS = [
     pros: ["מגשר בין מאמר לקוד", "בדיקות וכלי MCP", "MIT"], cons: ["דורש יכולת טכנית", "עלויות מודל וחישוב נפרדות"],
     alternatives: ["OpenResearch", "Hindsight"], url: "https://github.com/jmiao24/Paper2Agent", added: "2026-09-29", verified: "2026-10-01",
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/jmiao24/Paper2Agent" }]
-  },
-  {
-    slug: "everfern", name: "EverFern", mark: "EF", category: "productivity", subcategories: ["Computer use", "סוכן מקומי", "Desktop"],
-    tagline: "סוכן Desktop פתוח שמבצע משימות במחשב מקומי.",
-    solves: "מאפשר לסוכן לראות את שולחן העבודה, לתפעל יישומים ולבצע רצפי פעולות על Windows, macOS ו־Linux.",
-    uses: ["אוטומציה", "AI", "Desktop"], audience: "משתמשים טכניים שרוצים סוכן computer-use מקומי ופתוח.",
-    free: "האפליקציה חינמית וקוד פתוח תחת MIT, עם גרסאות ל־Windows, macOS ו־Linux.",
-    limits: "נדרש מודל מקומי או ספק ענן שעשוי לעלות כסף; זהו פרויקט מוקדם ויש לבחון הרשאות ופעולות בזהירות.",
-    pros: ["שלוש מערכות הפעלה", "קוד פתוח", "אפשרות למודלים מקומיים"], cons: ["פרויקט צעיר", "ספקי מודל עשויים לעלות כסף"],
-    alternatives: ["Paperclip", "Tinycast"], url: "https://everfern.app/", added: "2026-09-29", verified: "2026-10-01",
-    sources: [{ label: "האתר הרשמי", url: "https://everfern.app/" }, { label: "המאגר הרשמי", url: "https://github.com/Everfern-AI/Everfern" }]
   },
   {
     slug: "chit", name: "Chit", mark: "Ch", category: "productivity", subcategories: ["Claude Code", "סיכום עבודה", "macOS"],
@@ -372,28 +317,6 @@ window.TOOLS = [
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/alphaXiv/OpenResearch" }, { label: "האתר הרשמי", url: "https://openresearch.sh/" }]
   },
   {
-    slug: "ledge", name: "Ledge", mark: "L", category: "research", subcategories: ["Markdown", "מחברות קוד", "Local-first"],
-    tagline: "מחברת Markdown שמריצה קוד, פקודות ושאילתות מתוך ההערות.",
-    solves: "מחברת תיעוד ופקודות במקום אחד, כך שאפשר להריץ shell, Python, Node, SQL ועוד בלי להעתיק למסוף.",
-    uses: ["ניהול ידע", "פיתוח", "אוטומציה"], audience: "מפתחים, אנשי DevOps וחוקרים שמתעדים תהליכים ניתנים להרצה.",
-    free: "האפליקציה כולה חינמית וקוד פתוח תחת Apache-2.0, ללא חשבון או שירות ענן נדרש.",
-    limits: "ב-Windows נדרש WSL; המובייל מתחבר ב-SSH לשרת Ledge ואינו מחזיק מחברות מקומיות; בלוקי AI דורשים סוכן נפרד.",
-    pros: ["קובצי Markdown רגילים", "הרצה מקומית או דרך SSH", "תמיכה במחשב ובמובייל"], cons: ["דורש אמון בקוד שמריצים", "Windows תלוי ב-WSL"],
-    alternatives: ["Obsidian", "OpenResearch"], url: "https://ledge.sh/", added: "2026-10-02", verified: "2026-10-02",
-    sources: [{ label: "האתר הרשמי", url: "https://ledge.sh/" }, { label: "המאגר והרישיון", url: "https://github.com/ledgesh/ledge" }]
-  },
-  {
-    slug: "perspica", name: "Perspica", mark: "P", category: "development", subcategories: ["סקירת קוד", "Diff סמנטי", "Local-first"],
-    tagline: "מציג שינויי קוד לפי משמעות וכוונה במקום רק לפי שורות.",
-    solves: "מסנן רעש מכני, מזהה העברות ושינויי חתימה ומסדר את סדר הקריאה של PR גדול או קוד שנוצר בסוכן.",
-    uses: ["סקירת קוד", "פיתוח", "אבטחה"], audience: "מפתחים וסוקרי קוד שמתמודדים עם שינויים גדולים, במיוחד מעוזרי AI.",
-    free: "כלי מקומי חינמי וקוד פתוח תחת MIT; הניתוח הדטרמיניסטי עובד ללא מודל, חשבון או מפתח API.",
-    limits: "ניתוח כוונה ודירוג סיכון בעזרת LLM הם אופציונליים ודורשים ספק שעשוי לעלות; שפות לא נתמכות מוצגות כ-diff רגיל.",
-    pros: ["עובד ללא מודל", "מזהה שינויי מבנה ורעש", "CLI וממשק דפדפן"], cons: ["פרויקט חדש", "כיסוי שפות עדיין מוגבל"],
-    alternatives: ["Open Code Review", "GitHub"], url: "https://github.com/sshah03/perspica", added: "2026-10-02", verified: "2026-10-02",
-    sources: [{ label: "המאגר והרישיון", url: "https://github.com/sshah03/perspica" }, { label: "חבילת Rust", url: "https://crates.io/crates/perspica" }]
-  },
-  {
     slug: "concat", name: "Concat", mark: "Co", category: "design", subcategories: ["עריכת וידאו", "AI מקומי", "Desktop"],
     tagline: "עורך וידאו מקומי וחוצה פלטפורמות כחלופה פתוחה ל-CapCut.",
     solves: "מרכז חיתוך רב-ערוצי, כתוביות אוטומטיות, הסרת רקע, אפקטים וייצוא 4K ללא העלאת חומר לענן.",
@@ -416,61 +339,6 @@ window.TOOLS = [
     sources: [{ label: "חבילת npm, רישיון ותיעוד", url: "https://www.npmjs.com/package/@workscribe/cli" }]
   },
   {
-    slug: "nsl", name: "nsl", mark: "nsl", category: "development", subcategories: ["Linux", "מכונות מבודדות", "CLI"],
-    tagline: "מכונות Linux קלות בסגנון WSL, מתוך מערכת Linux קיימת.",
-    solves: "יוצר סביבת Linux מבודדת עם init, systemd, משתמשים, רשת ותיקיות משותפות בלי לנהל VM מסורתי ידנית.",
-    uses: ["פיתוח", "בדיקות", "סביבות מבודדות"], audience: "מפתחי Linux שרוצים סביבות הפצה נקיות, זמניות ונוחות לפרויקטים ולבדיקות.",
-    free: "הכלי כולו חינמי וקוד פתוח תחת MIT, עם קבצי התקנה חתומים ותמונות מכונה המתעדכנות בקביעות.",
-    limits: "פועל על Linux בלבד ודורש systemd, KVM והגדרות מארח מתאימות; התמיכה כרגע ב-linux_amd64.",
-    pros: ["CLI פשוט", "מכונות עם systemd מלא", "תמונות רשמיות נבנות לפחות מדי שבוע"], cons: ["Linux בלבד", "פרויקט צעיר ותלויות מערכת משמעותיות"],
-    alternatives: ["Vercel", "Supabase"], url: "https://frostyard.github.io/nsl/", added: "2026-10-03", verified: "2026-10-03",
-    sources: [{ label: "תיעוד רשמי", url: "https://frostyard.github.io/nsl/" }, { label: "המאגר והרישיון", url: "https://github.com/frostyard/nsl" }]
-  },
-  {
-    slug: "zero-slop", name: "Zero Slop", mark: "ZS", category: "skills", subcategories: ["כתיבה", "עריכה", "Agent Skill"],
-    tagline: "בודק ניסוחים גנריים של AI ועורך אותם תוך שמירה על עובדות ומבנה.",
-    solves: "מסמן קלישאות, קצב מכני וטענות עמומות, ואז מפעיל עוזר קיים לשכתוב עם בדיקות מקומיות לשמות, מספרים, ציטוטים וקישורים.",
-    uses: ["כתיבה", "עריכת תוכן", "AI"], audience: "כותבים, משווקים, חוקרים וצוותי מוצר שעורכים טקסט שנוצר בעזרת AI.",
-    free: "ה-skill, כלי הניקוד המקומי ועורך הדפדפן חינמיים; הקוד תחת MIT והניקוד המקומי עובד ללא חשבון או שרת.",
-    limits: "השכתוב עצמו משתמש במודל של העוזר הקיים ועשוי להיות כפוף למנוי או לעלות שלו; הציון בוחן דפוסי כתיבה ואינו גלאי מחבר.",
-    pros: ["ניקוד מקומי ושקוף", "בדיקת שימור עובדות", "תמיכה ב-Codex, Claude Code, Cursor ועוד"], cons: ["איכות השכתוב תלויה במודל", "בדיקות סגנון אינן מדד אוניברסלי לאיכות"],
-    alternatives: ["Anthropic Skills", "Vercel Agent Skills"], url: "https://zero-slop.ai/", added: "2026-10-03", verified: "2026-10-06",
-    sources: [{ label: "האתר ותנאי החינם", url: "https://zero-slop.ai/" }, { label: "המאגר והרישיון", url: "https://github.com/manavmishra/ZeroSlop" }]
-  },
-  {
-    slug: "graphene-data", name: "Graphene", mark: "Gr", category: "research", subcategories: ["ניתוח נתונים", "SQL", "דשבורדים"],
-    tagline: "מסגרת analytics-as-code שמאפשרת לסוכני קוד לשאול נתונים ולבנות דשבורדים.",
-    solves: "מגדירה שכבה סמנטית ב-SQL ודפי דוח ב-Markdown כדי שסוכן יוכל לנתח נתונים, להציגם ולשמור הכול ב-Git.",
-    uses: ["ניתוח נתונים", "מחקר", "ויזואליזציה"], audience: "אנליסטים, מהנדסי נתונים וצוותים שעובדים עם סוכני קוד ומסדי SQL.",
-    free: "ה-CLI והמסגרת המקומית חינמיים לתמיד לשימוש פנימי תחת Elastic License 2.0, כולל DuckDB מקומי וחיבור למסדי נתונים נתמכים.",
-    limits: "אסור להציע את התוכנה כשירות מנוהל מתחרה; שימוש מסחרי מוטמע דורש בדיקת רישוי. שירות Graphene Cloud נפרד.",
-    pros: ["קבצים מקומיים בבעלות המשתמש", "שכבה סמנטית ודשבורדים באותו פרויקט", "תמיכה ב-Postgres, BigQuery, Snowflake, ClickHouse ו-DuckDB"], cons: ["מכוון למשתמשי Git וסוכני קוד", "רישיון source-available ולא רישיון קוד פתוח מאושר OSI"],
-    alternatives: ["OpenResearch", "NotebookLM"], url: "https://graphenedata.com/", added: "2026-10-03", verified: "2026-10-03",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/graphene-data/graphene" }, { label: "חבילת CLI", url: "https://www.npmjs.com/package/@graphenedata/cli" }]
-  },
-  {
-    slug: "takt", name: "TAKT", mark: "TK", category: "development", subcategories: ["תזמור סוכנים", "Workflows", "CLI"],
-    tagline: "מגדיר תהליכי פיתוח חוזרים לסוכני קוד באמצעות YAML ובקרות אנושיות.",
-    solves: "מפריד תכנון, מימוש, סקירה ותיקון לשלבים אכיפים עם הרשאות, חוזי פלט, worktrees מבודדים ולוגים שניתנים לבדיקה.",
-    uses: ["פיתוח", "אוטומציה", "AI"], audience: "מפתחים וצוותים שרוצים תהליך עקבי ומבוקר סביב Claude Code, Codex, OpenCode וסוכני קוד נוספים.",
-    free: "ה-CLI כולו חינמי וקוד פתוח תחת MIT; אפשר להריץ אותו מקומית עם ספק או סוכן שכבר מותקן.",
-    limits: "דורש Node.js וסוכן קוד נתמך; שימוש במודלים, מנויים או API חיצוניים כפוף לעלות ולמגבלות של הספק הנבחר.",
-    pros: ["Workflows מוצהרים ב-YAML", "שלבי סקירה ותיקון אכיפים", "worktrees ולוגים מבודדים"], cons: ["מוסיף שכבת תצורה לתהליך", "עלות ההסקה אינה כלולה"],
-    alternatives: ["Paperclip", "Kilo Code"], url: "https://github.com/nrslib/takt", added: "2026-10-04", verified: "2026-10-04",
-    sources: [{ label: "המאגר, התיעוד והרישיון", url: "https://github.com/nrslib/takt" }, { label: "חבילת npm", url: "https://www.npmjs.com/package/takt" }]
-  },
-  {
-    slug: "wu", name: "Wu", mark: "Wu", category: "development", subcategories: ["עורך קוד", "Rust", "Desktop"],
-    tagline: "עורך קוד מקומי ומהיר ב-Rust עם תחושה מוכרת למשתמשי VS Code.",
-    solves: "מספק סביבת עריכה קלה ומהירה המבוססת על ליבת Zed, בלי חשבון, טלמטריה או עוזר AI מובנה.",
-    uses: ["פיתוח", "עריכת קוד", "פרטיות"], audience: "מפתחים שמעדיפים עורך native מהיר ורוצים לחבר בנפרד את הסוכן או ה-harness שלהם.",
-    free: "האפליקציה חינמית וקוד פתוח תחת GPL-3.0-or-later, עם רכיבי Apache-2.0 מסומנים; אין חשבון או טלמטריה.",
-    limits: "המתקינים עדיין אינם חתומים ועלולים להציג אזהרות מערכת; הפרויקט צעיר, מבוסס על Zed ואינו כולל AI מובנה.",
-    pros: ["מהיר ו-native", "ללא חשבון או טלמטריה", "מתקינים ל-macOS, Linux ו-Windows"], cons: ["מתקינים לא חתומים", "פרויקט צעיר ושינויים מהירים"],
-    alternatives: ["Kilo Code", "GitHub"], url: "https://wu.farshed.me/", added: "2026-10-04", verified: "2026-10-04",
-    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/farshed/wu" }, { label: "דף ההשקה", url: "https://www.producthunt.com/products/wu" }]
-  },
-  {
     slug: "open-design", name: "OpenDesign", mark: "OD", category: "design", subcategories: ["עיצוב בעזרת AI", "Local-first", "Design systems"],
     tagline: "סביבת עיצוב פתוחה שמפעילה סוכני קוד על מערכות עיצוב ומייצאת תוצרים אמיתיים.",
     solves: "מחברת brief, מערכת עיצוב, skills ותבניות כדי ליצור ולרענן אבטיפוסים, דפים, מצגות, תמונות ווידאו מתוך סוכן מקומי.",
@@ -480,105 +348,6 @@ window.TOOLS = [
     pros: ["Local-first ו-BYOK", "מבחר גדול של skills ומערכות עיצוב", "ייצוא HTML, PDF, PPTX, ZIP ו-MP4"], cons: ["תלוי בסוכן חיצוני", "מורכב יותר מכלי עיצוב ממוקד"],
     alternatives: ["Diagram Design", "HyperFrames"], url: "https://open-design.ai/", added: "2026-10-04", verified: "2026-10-04",
     sources: [{ label: "המאגר והתיעוד", url: "https://github.com/nexu-io/open-design" }, { label: "רישיון Apache-2.0", url: "https://github.com/nexu-io/open-design/blob/main/LICENSE" }, { label: "מדיניות פרטיות", url: "https://github.com/nexu-io/open-design/blob/main/PRIVACY.md" }]
-  },
-  {
-    slug: "astabrief", name: "AstaBrief", mark: "AB", category: "research", subcategories: ["סינתזת מחקר", "דוחות מצוטטים", "מודל פתוח"],
-    tagline: "מודל פתוח ליצירת דוחות מחקר מצוטטים מתוך שאלה ומקטעי ספרות.",
-    solves: "מסנתז אוסף מקורות מדעיים לדוח מובנה עם ציטוטים, וניתן להרצה מקומית או כחלק מצינור ScholarQA מותאם.",
-    uses: ["מחקר", "סיכום", "למידה"], audience: "חוקרים, מוסדות ומפתחים שבונים תהליכי סקירת ספרות עם שליטה מקומית במודל.",
-    free: "משקלי AstaBrief-8B והדוגמה להרצה מקומית זמינים בחינם תחת Apache-2.0, ללא תשלום רישוי למודל.",
-    limits: "המודל אינו כולל אחזור מקורות ודורש קטעי ספרות מוכנים, סביבת Transformers או vLLM וחומרה מתאימה; אין ספק inference מתארח פעיל בדף המודל.",
-    pros: ["ציטוטים כחלק מהפלט", "משקלים ונתוני אימון פתוחים", "ניתן להרצה מאחורי חומת הארגון"], cons: ["דורש צינור אחזור נפרד", "מודל 8B דורש משאבי חישוב"],
-    alternatives: ["NotebookLM", "Paper2Agent"], url: "https://huggingface.co/allenai/AstaBrief_8B", added: "2026-10-04", verified: "2026-10-04",
-    sources: [{ label: "דף המודל והרישיון", url: "https://huggingface.co/allenai/AstaBrief_8B" }, { label: "הכרזה רשמית", url: "https://huggingface.co/blog/allenai/astabrief" }, { label: "דוגמת workflow", url: "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite" }]
-  },
-  {
-    slug: "scallopbot", name: "ScallopBot", mark: "SB", category: "productivity", subcategories: ["עוזר אישי", "אוטומציה", "Self-hosted"],
-    tagline: "עוזר AI באירוח עצמי עם זיכרון מתמשך, ערוצים מרובים ותקציבי שימוש.",
-    solves: "מאחד שיחות, משימות, כלים וזיכרון מקומי בסוכן אישי שפועל דרך דפדפן, CLI וערוצי מסרים.",
-    uses: ["פרודוקטיביות", "אוטומציה", "AI"], audience: "משתמשים טכניים שרוצים עוזר אישי בשליטה עצמית עם זיכרון, MCP וכלים מקומיים.",
-    free: "הקוד והשרת חינמיים תחת MIT; אפשר להריץ את הסוכן באירוח עצמי עם Ollama או endpoint מקומי ללא עלות רישוי לתוכנה.",
-    limits: "דורש Node.js 24 ותשתית מקומית או שרת; ברירות המחדל משתמשות בספקי מודלים בתשלום, ותפעול ענן, חיפוש או יצירת תמונות עשויים לעלות כסף.",
-    pros: ["זיכרון SQLite מקומי", "MCP וערוצי מסרים רבים", "ניתוב מודלים ומגבלות תקציב"], cons: ["התקנה ותפעול טכניים", "יכולות רבות תלויות במודל או בשירות חיצוני"],
-    alternatives: ["Hindsight", "Paperclip"], url: "https://scallopbot.com/", added: "2026-10-05", verified: "2026-10-05",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/tashfeenahmed/scallopbot" }, { label: "האתר הרשמי", url: "https://scallopbot.com/" }]
-  },
-  {
-    slug: "agenthatch", name: "AgentHatch", mark: "AH", category: "development", subcategories: ["סוכני AI", "Skills", "Python"],
-    tagline: "מהדר קובצי SKILL.md לסוכנים עצמאיים שניתנים להרצה, לייבוא או לחשיפה דרך MCP.",
-    solves: "הופך הוראות skill וחומרי עזר לחבילת Python עם אחזור RAG, תצורה, בדיקות וממשק CLI עצמאי.",
-    uses: ["פיתוח", "AI", "אוטומציה"], audience: "מפתחי סוכנים ומתחזקי skills שרוצים להפוך הוראות Markdown לכלי תוכנה עצמאי.",
-    free: "החבילה והקוד חינמיים תחת MIT ומופצים ב-PyPI עם attestations של GitHub Actions; תומך גם ב-Ollama וב-endpoints תואמי OpenAI.",
-    limits: "הפרויקט מסומן Alpha ודורש Python 3.11 ומעלה; יצירה והרצה עם ספקי ענן או harnesses חיצוניים עשויות לצרוך API בתשלום.",
-    pros: ["פלט כחבילת Python עצמאית", "RAG ו-MCP מובנים", "תמיכה ב-macOS, Linux ו-Windows"], cons: ["בשלות Alpha", "איכות ועלות תלויות בספק המודל"],
-    alternatives: ["TAKT", "Diagram Design"], url: "https://pypi.org/project/agenthatch/", added: "2026-10-05", verified: "2026-10-05",
-    sources: [{ label: "PyPI, גרסה ו-provenance", url: "https://pypi.org/project/agenthatch/" }, { label: "המאגר והרישיון", url: "https://github.com/agenthatch/agenthatch" }]
-  },
-  {
-    slug: "audionaut", name: "Audionaut", mark: "Au", category: "design", subcategories: ["עריכת אודיו", "הקלטה", "MCP"],
-    tagline: "עורך אודיו רב-ערוצי פתוח למוזיקה ופודקאסטים, עם שליטה דרך MCP.",
-    solves: "מספק חיתוך, הקלטה, ערוצים, playlists וייצוא נקי ביישום מקומי קל יותר מ-DAW מלא.",
-    uses: ["אודיו", "פודקאסטים", "יצירת תוכן"], audience: "יוצרי מוזיקה ופודקאסטים שרוצים עורך מקומי פתוח או עריכה בעזרת סוכן.",
-    free: "היישום חינמי תחת GPL-3.0-or-later ופועל מקומית ב-Windows, macOS ו-Linux; עריכת הליבה אינה דורשת חשבון או מנוי.",
-    limits: "בניית חלק מיכולות הניתוח דורשת תלויות וכלי build; משקלי htdemucs להפרדת ערוצים מורדים בנפרד ומוגדרים למחקר בלבד, ושימוש בסוכן עשוי לדרוש שירות חיצוני.",
-    pros: ["עריכה והקלטה רב-ערוצית", "MCP עם פעולות undo", "יישום native חוצה פלטפורמות"], cons: ["התקנה מהמקור מורכבת יחסית", "רישוי נפרד ומגביל למשקלי הפרדת ערוצים"],
-    alternatives: ["Cavalry", "YuE2 Studio"], url: "https://audionaut.app/", added: "2026-10-05", verified: "2026-10-05",
-    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/kvoltmer/Audionaut" }, { label: "רישיון ותלויות", url: "https://github.com/kvoltmer/Audionaut/blob/main/LICENSE.md" }, { label: "האתר הרשמי", url: "https://audionaut.app/" }]
-  },
-  {
-    slug: "scm-screen-memories", name: "SCM", mark: "SCM", category: "research", subcategories: ["חיפוש מדיה", "AI מקומי", "macOS"],
-    tagline: "חיפוש מקומי עמוק בתמונות ובכל פריים של וידאו, כולל OCR ודיבור.",
-    solves: "מאנדקס תיקיות מדיה ומאפשר למצוא קבצים ורגעים בווידאו לפי משמעות, טקסט נראה או משפט שנאמר.",
-    uses: ["חיפוש", "ניהול ידע", "וידאו"], audience: "יוצרי תוכן, חוקרים ומשתמשי Mac עם ארכיון גדול של תמונות וסרטונים.",
-    free: "האפליקציה חינמית תחת MIT, ללא חשבון, ענן, העלאה או טלמטריה; המודלים יורדים פעם אחת וההסקה מתבצעת מקומית.",
-    limits: "דורש macOS 12 ומעלה על Apple silicon; ההורדה הראשונית כוללת מאות MB עד כמה GB, ואינדוקס וידאו עשוי לצרוך זמן, CPU ואחסון.",
-    pros: ["פרטיות ועבודה לא מקוונת", "חיפוש סצנות, OCR ותמלול", "תוצאות עם הסבר וציטוטים מקומיים"], cons: ["macOS ו-Apple silicon בלבד", "פרויקט חדש עם מעט commits"],
-    alternatives: ["NotebookLM", "OpenResearch"], url: "https://github.com/allenv0/SCM", added: "2026-10-05", verified: "2026-10-05",
-    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/allenv0/SCM" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "grimoire-memory", name: "Grimoire", mark: "Gm", category: "research", subcategories: ["ניהול ידע", "MCP", "Self-hosted"],
-    tagline: "מחבר סוכני AI לכספת Markdown קריאה עם זיכרון מתמשך וכספת סודות.",
-    solves: "מאנדקס תיקיית Markdown, מחזיר הקשר מצוטט לסוכנים ושומר ידע חדש בקבצים רגילים שבשליטת המשתמש.",
-    uses: ["ניהול ידע", "מחקר", "AI"], audience: "משתמשי Obsidian, Logseq ותיקיות Markdown שרוצים זיכרון סוכן מקומי ושקוף.",
-    free: "השרת, ה-CLI וה-MCP חינמיים תחת MIT, פועלים באירוח עצמי וללא חשבון; זמינים בינארים ל-Windows, macOS ו-Linux וגם Docker.",
-    limits: "דורש תפעול מקומי ואחסון; שאלות AI, חיפוש ופעולות דרך ספק חיצוני עשויים לעלות כסף. חיבור מרחוק דורש TLS, אסימון או OAuth והגדרה זהירה.",
-    pros: ["הידע נשאר בקובצי Markdown", "אחזור מצוטט ותיקונים אנושיים", "כספת הרשאות מוצפנת לסודות"], cons: ["התקנה ותפעול טכניים", "אבטחת גישה מרחוק באחריות המשתמש"],
-    alternatives: ["Obsidian", "Hindsight"], url: "https://github.com/JeremiahM37/grimoire", added: "2026-10-06", verified: "2026-10-06",
-    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/JeremiahM37/grimoire" }, { label: "חבילת Go רשמית", url: "https://pkg.go.dev/github.com/JeremiahM37/grimoire/go" }]
-  },
-  {
-    slug: "motif-memory", name: "Motif", mark: "Mo", category: "development", subcategories: ["זיכרון סוכנים", "MCP", "Self-hosted"],
-    tagline: "זיכרון עבודה משותף לסשנים של Claude Code, Codex ו-Cursor.",
-    solves: "אוסף החלטות, ניסיונות ותיקונים מסשני קוד לגרף שאפשר לחפש, לאמת ולהעביר בין סוכנים וצוותים.",
-    uses: ["פיתוח", "ניהול ידע", "AI"], audience: "מפתחים וצוותים שעובדים עם כמה סוכני קוד ורוצים לשמר החלטות והקשר בין סשנים.",
-    free: "כל המאגר חינמי תחת Apache-2.0, ללא מפתחות רישוי, מגבלות חברים, סשנים או פרויקטים; אפשר להריץ לבד עם npm ו-SQLite.",
-    limits: "דורש Node.js 22 ותשתית עצמית לצוות; התמיכה ממוקדת כרגע ב-Claude Code, Codex ו-Cursor, ותוכן רגיש דורש מדיניות שיתוף והחרגות.",
-    pros: ["ללא חשבון או ענן חובה", "זיכרון עם מקור, ביטחון ותיקון אנושי", "העברת הקשר בין סוכנים"], cons: ["פרויקט צעיר עם מעט משתמשים", "מחברי סשנים מוגבלים למספר כלים"],
-    alternatives: ["Hindsight", "Paperclip"], url: "https://www.getmotif.dev/", added: "2026-10-06", verified: "2026-10-06",
-    sources: [{ label: "המאגר והרישיון", url: "https://github.com/motif-Labs/motif" }, { label: "חבילת npm", url: "https://www.npmjs.com/package/getmotif" }]
-  },
-  {
-    slug: "ai-maestro", name: "AI Maestro", mark: "AM", category: "development", subcategories: ["תזמור סוכנים", "קנבן", "Workflows"],
-    tagline: "לוח עבודה ותהליך מסירה מנוהל לצוותים של סוכני קוד.",
-    solves: "מפרק פיתוח לכרטיסים ותפקידים, מנתב עבודה לסוכנים מבודדים ומוסיף שערי איכות, סקירה ומעקב.",
-    uses: ["פיתוח", "ניהול פרויקטים", "AI"], audience: "מפתחים שרוצים לנהל כמה סוכני קוד כתהליך מסירה נראה ומבוקר.",
-    free: "ערכת ה-CLI, הלוח, ה-workflows וה-dashboard חינמיים תחת MIT; חבילת npm ציבורית פועלת מקומית וללא תלות runtime.",
-    limits: "הפרויקט מוגדר מוקדם ומתפתח ודורש Node.js 18 ומעלה; סוכני הקוד, המנויים והמודלים שמבצעים את העבודה מגיעים בנפרד ועלולים לעלות כסף.",
-    pros: ["לוח עבודה ויזואלי", "בידוד worktrees ושערי איכות", "תמיכה ב-Codex וב-Claude Code"], cons: ["אריזה צעירה ומשתנה", "עלות הסוכנים והמודלים אינה כלולה"],
-    alternatives: ["TAKT", "Paperclip"], url: "https://github.com/my-chiefmind/ai-maestro", added: "2026-10-06", verified: "2026-10-06",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/my-chiefmind/ai-maestro" }, { label: "חבילת npm וגרסה", url: "https://www.npmjs.com/package/@mychiefmind/ai-maestro" }]
-  },
-  {
-    slug: "omnicam-webcam", name: "OmniCam", mark: "OC", category: "design", subcategories: ["וידאו", "Webcam", "יצירת תוכן"],
-    tagline: "הופך טלפון למצלמת Windows דרך QR ודפדפן, בלי להתקין אפליקציה בטלפון.",
-    solves: "מעביר וידאו מהטלפון ישירות למחשב ברשת המקומית ומציג אותו כמצלמה רגילה ב-Zoom, Meet, Discord ו-OBS.",
-    uses: ["וידאו", "שידור", "יצירת תוכן"], audience: "יוצרי תוכן, מרצים ומשתמשי Windows שרוצים לנצל את מצלמת הטלפון כ-webcam.",
-    free: "האפליקציה כולה חינמית תחת MIT, ללא חשבון, ענן, פרסומות או סימן מים; הווידאו עובר מקומית ב-WebRTC.",
-    limits: "Windows 10 או 11 ב-64-bit בלבד; אין עדיין מיקרופון או USB, הטלפון חייב להישאר עם המסך דולק, וחיבור ראשון מציג אזהרת אבטחה בדפדפן.",
-    pros: ["אין אפליקציה בצד הטלפון", "720p עד 4K ב-H.264", "פועל מקומית ללא ענן"], cons: ["Windows בלבד", "צריכת סוללה וללא מיקרופון"],
-    alternatives: ["Tinycast", "Cavalry"], url: "https://orest-z.github.io/OmniCam/", added: "2026-10-06", verified: "2026-10-06",
-    sources: [{ label: "המאגר, התקנה ורישיון", url: "https://github.com/Orest-Z/OmniCam" }, { label: "האתר הרשמי", url: "https://orest-z.github.io/OmniCam/" }]
   },
   {
     slug: "anthropic-skills", name: "Anthropic Skills", mark: "An", category: "skills", subcategories: ["אוסף סקילים", "Claude", "Agent Skills"],
@@ -625,39 +394,6 @@ window.TOOLS = [
     sources: [{ label: "ה-SKILL.md הרשמי", url: "https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md" }, { label: "Skills CLI ורישיון", url: "https://github.com/vercel-labs/skills" }]
   },
   {
-    slug: "photoc", name: "Photoc", mark: "Ph", category: "design", subcategories: ["צילום", "CLI", "ניהול מדיה"],
-    tagline: "ארגז כלי שורת פקודה לסינון, ארגון והכנת תמונות בלי לשנות מקור כברירת מחדל.",
-    solves: "מרכז בדיקת חדות וכפילויות, קריאת EXIF, שינוי שמות, מיון, דפי מגע, דחיסה והסרת GPS ב-workflow שניתן לתסרוט.",
-    uses: ["צילום", "אוטומציה", "יצירת תוכן"], audience: "צלמים ומשתמשים טכניים שמנהלים צילומים ב-macOS או Linux ורוצים תהליך מקומי ובטוח.",
-    free: "כל הכלי חינמי וקוד פתוח תחת MIT, ללא חשבון או שירות ענן; זמין דרך Homebrew ובינארים חתומי checksum ל-macOS ול-Linux.",
-    limits: "תומך כעת ב-JPEG ובמטא-דאטה של Sony ARW בלבד; אין Windows, פיתוח RAW, HEIC או קטלוג ספרייה, והבינארים ל-macOS אינם notarized.",
-    pros: ["ברירת מחדל לא הרסנית", "JSON ותסרוט מלא", "בדיקת חדות, פרטיות וכפילויות"], cons: ["כיסוי פורמטים צר", "דורש עבודה בטרמינל"],
-    alternatives: ["GIMP", "SCM"], url: "https://github.com/ahmetomerv/photoc", added: "2026-10-07", verified: "2026-10-07",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/ahmetomerv/photoc" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49944196" }]
-  },
-  {
-    slug: "vectory", name: "Vectory", mark: "Ve", category: "development", subcategories: ["Observability", "ניהול תצורה", "Self-hosted"],
-    tagline: "לוח בקרה חזותי לבנייה, פריסה ו-rollback של צינורות Vector על צי שרתים.",
-    solves: "מחליף עריכה והפצה ידנית של תצורות Vector בעורך סכמטי, גרסאות immutable, canary, תזמון ואימות בכל יעד.",
-    uses: ["פיתוח", "DevOps", "אוטומציה"], audience: "צוותי פלטפורמה ו-DevOps שמפעילים Vector לאיסוף לוגים, metrics ואירועים בכמה מכונות.",
-    free: "השרת, הסוכן וה-dashboard חינמיים בקוד פתוח תחת Apache-2.0; האירוח העצמי משתמש ב-Docker Compose ו-SQLite ללא חשבון, אנליטיקה או CDN חיצוני.",
-    limits: "דורש תשתית עצמית, HTTPS ו-Vector 0.58.x ביעדים; תמונת השרת היא x86-64, וב-Apple silicon היא פועלת דרך אמולציית amd64.",
-    pros: ["עורך לכל 128 רכיבי Vector", "canary ו-rollback", "סוכנים יוצאים בלבד ו-mTLS"], cons: ["מוצר חדש עם אימוץ מוקדם", "ממוקד בגרסה מסוימת של Vector"],
-    alternatives: ["Graphene", "GitHub"], url: "https://vectory.ahmadz.ai/", added: "2026-10-07", verified: "2026-10-07",
-    sources: [{ label: "המאגר, ארכיטקטורה ורישיון", url: "https://github.com/416rehman/Vectory" }, { label: "תיעוד ההתקנה הרשמי", url: "https://vectory.ahmadz.ai/help/quickstart/" }]
-  },
-  {
-    slug: "openbot", name: "OpenBot", mark: "OB", category: "development", subcategories: ["סוכני AI", "תזמור", "Self-hosted"],
-    tagline: "סביבת עבודה מקומית לצוות סוכנים מתמשכים עם תיבות דואר, כלים וזיכרון.",
-    solves: "מאפשר לסוכנים בעלי תפקידים להעביר משימות זה לזה בשרשורים, להשתמש ב-MCP ובכלים, לעצור לאישור אנושי ולשמור זיכרון ארוך טווח.",
-    uses: ["פיתוח", "AI", "אוטומציה"], audience: "מפתחים שרוצים להריץ workflows רב-סוכניים בשליטה עצמית דרך דפדפן או אפליקציית desktop.",
-    free: "הפלטפורמה חינמית תחת MIT ופועלת באירוח עצמי עם SQLite; Ollama נתמך לצ'אט ול-embeddings ולכן קיים נתיב שימוש מקומי ללא עלות ספק מודל.",
-    limits: "הגרסה 0.1.3 צעירה והבינארים אינם חתומים; נדרשים uv ותשתית מקומית, כלי shell אינם sandboxed, וספקי ענן חלופיים עולים כסף.",
-    pros: ["העברת עבודה בין סוכנים", "MCP, אישורים וזיכרון מובנים", "מעקב עלות והרצה מקומית"], cons: ["בשלות מוקדמת", "מודל אמון רחב לכלי shell"],
-    alternatives: ["ScallopBot", "AI Maestro"], url: "https://github.com/regnull/openbot", added: "2026-10-07", verified: "2026-10-07",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/regnull/openbot" }, { label: "גרסת 0.1.3 ובינארים", url: "https://github.com/regnull/openbot/releases/tag/v0.1.3" }]
-  },
-  {
     slug: "vokalu", name: "Vokalu", mark: "Vo", category: "productivity", subcategories: ["הכתבה", "נגישות", "AI מקומי"],
     tagline: "הכתבה מערכתית ל-Windows ול-Mac עם מצב מקומי חינמי שפועל גם ללא אינטרנט.",
     solves: "מכניס דיבור כטקסט בכל שדה כתיבה באמצעות קיצור מקשים, בלי תלות בתוסף לדפדפן או באינטגרציה ייעודית לכל אפליקציה.",
@@ -681,105 +417,6 @@ window.TOOLS = [
     sources: [{ label: "תמחור ומכסות רשמיים", url: "https://www.velozity.ai/pricing-us" }, { label: "אתר ההשקה הרשמי", url: "https://getvelozity.com/" }, { label: "אות השקה ב-Product Hunt", url: "https://www.producthunt.com/leaderboard/weekly/2026/41" }]
   },
   {
-    slug: "nanomuse", name: "nanoMuse", mark: "nM", category: "productivity", subcategories: ["סוכן אישי", "אוטומציה", "קוד פתוח"],
-    tagline: "סוכן אישי פתוח שחוצה טלפון, מחשב ודפדפן ושומר זיכרון מתמשך.",
-    solves: "מחבר שיחה אחת לפעולות במכשירים, קבצים, דפדפן, shell, MCP וסקילים, עם עצירה לאישור לפני פעולה בלתי הפיכה.",
-    uses: ["אוטומציה", "AI", "ניהול ידע"], audience: "משתמשים טכניים שרוצים סוכן אישי רב-מכשירי שניתן לאירוח עצמי ולחיבור למודל לבחירתם.",
-    free: "כל המערכת חינמית וקוד פתוח תחת GPL-3.0-or-later. ה-relay הקהילתי מעניק מכסת מודל התחלתית, ולאחריה ניתן להשתמש במפתח אישי או לארח relay עצמי.",
-    limits: "המכסה הקהילתית אינה קבועה; מפתח או שרת אישיים עשויים לעלות כסף. הפרויקט צעיר, פעולות מערכת דורשות הרשאות רחבות ו-iOS עדיין מתפתח.",
-    pros: ["Android, iOS, Windows, macOS, Linux ודפדפן", "אירוח עצמי ובחירת מודל", "אישורים וזיכרון קריא בקבצים"], cons: ["דורש מודל או מפתח לאחר המכסה", "משטח הרשאות רחב ופרויקט חדש"],
-    alternatives: ["ScallopBot", "OpenBot", "Hindsight"], url: "https://nanomuse.cn/", added: "2026-10-08", verified: "2026-10-08",
-    sources: [{ label: "המאגר, רישיון ותנאי החינם", url: "https://github.com/nano-muse/nanoMuse" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49980743" }, { label: "המאמר הרשמי", url: "https://arxiv.org/abs/2610.08699" }]
-  },
-  {
-    slug: "penguin-mail", name: "Penguin Mail", mark: "PM", category: "productivity", subcategories: ["דואר אלקטרוני", "לוח שנה", "Linux"],
-    tagline: "לקוח דואר ולוח שנה native ל-Linux עם הצפנה ועוזר AI אופציונלי.",
-    solves: "מרכז Gmail, Microsoft וחשבונות IMAP או POP3, יומנים ואנשי קשר ביישום מקומי אחד ללא שרת תיווך של המפתח.",
-    uses: ["דואר", "לוח שנה", "פרודוקטיביות"], audience: "משתמשי Linux שרוצים חלופה מקומית וקלה ללקוחות דואר ותיקים.",
-    free: "היישום חינמי וקוד פתוח תחת GPL-3.0, ללא חשבון Penguin או מנוי. עוזר AI יכול לפעול עם Ollama או LM Studio מקומיים.",
-    limits: "Linux בלבד; Send Later פועל רק כשהיישום רץ. שימוש ב-Anthropic או במודל ענן עולה בנפרד, והפרויקט החדש עדיין צובר בדיקות אבטחה ושימוש.",
-    pros: ["תמיכה רחבה בספקי דואר", "OpenPGP ו-S/MIME", "AI מקומי אופציונלי וכבוי כברירת מחדל"], cons: ["Linux בלבד", "גרסה צעירה עם סיכוני בשלות ואחסון מקומי"],
-    alternatives: ["Vokalu", "Minutes", "Obsidian"], url: "https://penguin-mail.com/", added: "2026-10-08", verified: "2026-10-08",
-    sources: [{ label: "המאגר, תכונות ורישיון", url: "https://github.com/c9dev/penguin-mail" }, { label: "גרסאות רשמיות", url: "https://github.com/c9dev/penguin-mail/releases" }, { label: "דיון ההשקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49980770" }]
-  },
-  {
-    slug: "pinrail", name: "Pinrail", mark: "Pi", category: "development", subcategories: ["Human-in-the-loop", "סוכני קוד", "Desktop"],
-    tagline: "תיבת אישורים מקומית שבה סוכני קוד ממתינים להחלטה אנושית מובנית.",
-    solves: "הופך נקודות עצירה של סוכן לסקירת diff, רשימה, Markdown או תמונה, ומחזיר החלטה מובנית כדי שה-workflow ימשיך.",
-    uses: ["פיתוח", "סקירת קוד", "AI"], audience: "מפתחים שמפעילים Claude Code, Codex, Cursor, OpenCode או כל סוכן שיכול להריץ פקודה.",
-    free: "האפליקציה, ה-CLI, ה-SDK וה-plugin system חינמיים וקוד פתוח תחת Apache-2.0; הכול נשמר מקומית ומוגש רק דרך loopback.",
-    limits: "גרסה 0.1.2 ובשלות מוקדמת; כרגע macOS ו-Linux בלבד ו-Windows עדיין בפיתוח. הסוכן והמודל עצמם אינם כלולים.",
-    pros: ["החלטות מובנות ולא תשובת צ'אט", "נתונים מקומיים ו-API על loopback", "תוספים לסוגי סקירה שונים"], cons: ["פרויקט חדש מאוד", "אין Windows עדיין"],
-    alternatives: ["Open Code Review", "Perspica", "AI Maestro"], url: "https://pinrail.dev/", added: "2026-10-08", verified: "2026-10-08",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/forgeplane/pinrail" }, { label: "גרסה 0.1.2", url: "https://github.com/forgeplane/pinrail/releases/tag/v0.1.2" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49981549" }]
-  },
-  {
-    slug: "convkit", name: "Convkit", mark: "Cv", category: "design", subcategories: ["המרת קבצים", "מדיה", "CLI"],
-    tagline: "פקודה אחת להמרה מקומית של וידאו, אודיו, תמונות ומסמכים.",
-    solves: "ממפה מקור ויעד לפקודה מותאמת של FFmpeg, ImageMagick, LibreOffice, Pandoc או Typst, כולל batch ודחיסה לגודל יעד.",
-    uses: ["המרת קבצים", "וידאו", "אוטומציה"], audience: "יוצרי תוכן ומפתחים שרוצים workflow מקומי, עקבי וניתן לתסרוט להמרות מדיה ומסמכים.",
-    free: "ה-CLI חינמי בקוד פתוח תחת Apache-2.0 או MIT, פועל ללא חשבון ומבצע המרות offline; רק התקנה ועדכון ניגשים לרשת.",
-    limits: "דורש התקנת כלי backend לפי סוג ההמרה; בינארי Windows אינו חתום, ובנייה מהמקור דורשת Rust וכלי C. הפרויקט צעיר.",
-    pros: ["115 זוגות המרה ב-27 פורמטים", "Windows, macOS ו-Linux", "dry-run, JSON ויציאות מתאימות לסקריפטים"], cons: ["תלוי בכלים חיצוניים", "מעט משתמשים ואימוץ מוקדם"],
-    alternatives: ["GIMP", "Concat", "Cavalry"], url: "https://github.com/shdwfruit/convkit", added: "2026-10-08", verified: "2026-10-08",
-    sources: [{ label: "המאגר, התקנה ורישיונות", url: "https://github.com/shdwfruit/convkit" }, { label: "גרסה 0.3.1", url: "https://github.com/shdwfruit/convkit/releases/tag/v0.3.1" }, { label: "אות השקה ב-Hacker News", url: "https://news.ycombinator.com/item?id=49981175" }]
-  },
-  {
-    slug: "insightarxiv", name: "InsightArxiv", mark: "IA", category: "research", subcategories: ["arXiv", "סיכומי מחקר", "אוטומציה"],
-    tagline: "תקציר יומי פתוח של מאמרי arXiv עם ניתוח מובנה בעזרת AI.",
-    solves: "סורק עשרות קטגוריות arXiv, מסנן כפילויות ומפיק לכל מאמר TL;DR, מוטיבציה, שיטה, תוצאות, מסקנות ומילות מפתח.",
-    uses: ["מחקר", "למידה", "ניהול ידע"], audience: "חוקרים, סטודנטים ומהנדסים שרוצים לסרוק במהירות ספרות חדשה או להפעיל digest מותאם.",
-    free: "ה-digest הציבורי פתוח ללא חשבון, והקוד ניתן לשימוש עצמי תחת Apache-2.0 לפי קובץ LICENSE; ה-pipeline פועל ב-Python ומפרסם Markdown.",
-    limits: "אירוח עצמי של שכבת ה-AI דורש מפתחות Google Gemini ומכסה שעשויה לעלות; סיכומי AI עלולים לטעות ודורשים קריאת המקור. ה-README עדיין מציין MIT בניגוד לקובץ LICENSE הרשמי.",
-    pros: ["כיסוי רחב של קטגוריות arXiv", "ארכיון יומי וניווט לפי תחום", "pipeline ניתן להתאמה"], cons: ["תלות ב-Gemini ליצירה עצמית", "סתירת תיעוד רישיון והצורך לאמת סיכומים"],
-    alternatives: ["ResearchRabbit", "AstaBrief", "Paper2Agent"], url: "https://xmkxabc.github.io/insightarxiv/", added: "2026-10-08", verified: "2026-10-08",
-    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/xmkxabc/InsightArxiv" }, { label: "רישיון Apache-2.0 בפועל", url: "https://github.com/xmkxabc/InsightArxiv/blob/main/LICENSE" }, { label: "ה-digest החי", url: "https://xmkxabc.github.io/insightarxiv/" }]
-  },
-  {
-    slug: "edi-life-os", name: "Edi Life OS", mark: "EL", category: "productivity", subcategories: ["ניהול אישי", "הרגלים", "Self-hosted"],
-    tagline: "לוח חיים באירוח עצמי שמחבר הרגלים, מטרות, קנבן, מיקוד וכספים.",
-    solves: "מרכז משימות, יעדים, הרגלים, לוח שנה, הערות, Pomodoro ומעקב כספי במסד נתונים אחד, עם MCP אופציונלי לעוזרי AI.",
-    uses: ["תכנון", "ניהול משימות", "אוטומציה"], audience: "משתמשים טכניים שרוצים סביבת פרודוקטיביות אישית בבעלות מלאה ובאירוח עצמי.",
-    free: "המערכת כולה חינמית תחת MIT, ללא מנוי, מעקב או נעילת ספק; אפשר להריץ ב-Docker או על PHP 8.1+ עם MySQL או MariaDB.",
-    limits: "מיועדת לבעלים יחיד ודורשת תחזוקת שרת ומסד נתונים. אסימון ה-API מעניק גישת קריאה וכתיבה רחבה ללא scopes או rate limiting מובנים, ולכן נדרשים HTTPS והגבלת גישה חיצונית.",
-    pros: ["עשרה אזורי עבודה מחוברים", "נתונים בבעלות המשתמש", "API ו-MCP מובנים"], cons: ["אירוח עצמי ותחזוקה", "מודל הרשאות לבעלים יחיד"],
-    alternatives: ["Todoist", "Trello", "Obsidian"], url: "https://github.com/edrisranjbar/lifeos", added: "2026-10-09", verified: "2026-10-09",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/edrisranjbar/lifeos" }, { label: "גרסה 1.0.0", url: "https://github.com/edrisranjbar/lifeos/releases/tag/v1.0.0" }]
-  },
-  {
-    slug: "k10s", name: "K10s", mark: "K10", category: "development", subcategories: ["Kubernetes", "TUI", "DevOps"],
-    tagline: "ממשק טרמינל לחיץ ומהיר לניהול Kubernetes, עם חיפוש ומצב קריאה בלבד.",
-    solves: "מאפשר לסרוק משאבי cluster, לצפות בלוגים וב-YAML, להריץ exec ו-port-forward ולבצע פעולות נפוצות דרך מקלדת או עכבר.",
-    uses: ["DevOps", "תצפית", "ניהול תשתיות"], audience: "מפתחי Backend, אנשי SRE ומפעילי Kubernetes שמעדיפים כלי TUI יחיד.",
-    free: "הכלי חינמי תחת Apache-2.0, פועל כבינארי יחיד ומציע גרסאות עם checksums ל-macOS, Linux ו-Windows. תכונות הליבה אינן דורשות חשבון או מודל AI.",
-    limits: "יכולת ה-AI דורשת ספק ומפתח API נפרדים, והמפתח נשמר בקובץ ההגדרות כטקסט רגיל בהרשאות 0600. יש להשתמש בגרסה 0.1.7 ומעלה, משום שבינארים קודמים נבנו עם toolchain שכלל חולשות שתוקנו מאז.",
-    pros: ["חיפוש מיידי וממשק לחיץ", "מצב read-only כפול UI ותעבורה", "הפצות רב-פלטפורמיות מאומתות checksum"], cons: ["מיועד רק ל-Kubernetes", "אחסון מקומי של מפתח AI כטקסט"],
-    alternatives: ["Vectory", "GitHub", "nsl"], url: "https://github.com/p10node/k10s", added: "2026-10-09", verified: "2026-10-09",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/p10node/k10s" }, { label: "גרסה 0.1.7 והנחיית אבטחה", url: "https://github.com/p10node/k10s/releases/tag/v0.1.7" }, { label: "הגדרות AI ומגבלות מפתח", url: "https://github.com/p10node/k10s/blob/main/docs/config.md" }]
-  },
-  {
-    slug: "rembrandt-photo", name: "Rembrandt", mark: "Re", category: "design", subcategories: ["עריכת תמונה", "RAW", "AI מקומי"],
-    tagline: "עורך RAW מקומי וחוצה פלטפורמות עם ספרייה, מסכות וכלי AI במכשיר.",
-    solves: "מספק workflow לא-הרסני דמוי Lightroom לעריכה, מיון, batch, HDR, פנורמות וייצוא, בלי להעלות תמונות לענן.",
-    uses: ["צילום", "עריכת תמונה", "ניהול מדיה"], audience: "צלמים ויוצרי תוכן שרוצים עורך RAW מקומי עם ספרייה וכלי GPU.",
-    free: "כל העריכה המקומית חינמית תחת GPL-3.0, ללא חשבון או מנוי; רק סנכרון ענן אופציונלי עולה כסף. קיימים מתקינים ו-SHA256SUMS ל-macOS, Windows ו-Linux.",
-    limits: "הפרויקט צעיר והממשק מציע פחות שליטה מ-darktable. המתקינים עדיין אינם חתומים ולכן SmartScreen ו-Gatekeeper עשויים להזהיר; מומלץ להוריד רק מ-GitHub Releases ולאמת checksum ו-attestation.",
-    pros: ["RAW מיותר מ-1,000 מצלמות", "מסכות ו-AI מקומיים", "עריכות XMP לא-הרסניות"], cons: ["מתקינים לא חתומים", "פחות מודולים ושליטה מכלים ותיקים"],
-    alternatives: ["GIMP", "Photoc", "Concat"], url: "https://github.com/thesnarkitecht/rembrandt", added: "2026-10-09", verified: "2026-10-09",
-    sources: [{ label: "המאגר, תכונות ורישיון", url: "https://github.com/thesnarkitecht/rembrandt" }, { label: "גרסה 0.3.9 והפצות", url: "https://github.com/thesnarkitecht/rembrandt/releases/tag/v0.3.9" }, { label: "אימות הורדות ומגבלות חתימה", url: "https://github.com/thesnarkitecht/rembrandt/blob/main/SECURITY.md" }]
-  },
-  {
-    slug: "agentwares-agentguard", name: "AgentGuard", mark: "AG", category: "development", subcategories: ["אבטחת סוכנים", "MCP", "Policy"],
-    tagline: "שכבת מדיניות מקומית שמגבילה פעולות, עלויות ולולאות של סוכני AI.",
-    solves: "מציבה proxy לפני כלי MCP או hooks של סוכן קוד, מסווגת כתיבות ומחיקות, דורשת אישור לפעולות מסוכנות ומתעדת audit log משורשר.",
-    uses: ["אבטחה", "פיתוח", "אוטומציה"], audience: "מפתחים וצוותים שמחברים סוכנים לכלים בעלי הרשאות כתיבה או עלות כספית.",
-    free: "ה-CLI, ה-proxy וה-SDK חינמיים תחת MIT, ללא חשבון, telemetry או קריאות LLM. אפשר להתחיל ב-dry-run שמדמה כתיבות ומציג mutation diff.",
-    limits: "גרסה 0.1.9 צעירה עם אימוץ מוגבל; הסיווג הדטרמיניסטי אינו תחליף ל-sandbox או לבקרת הרשאות של השירות עצמו. תמיכת hooks משתנה בין Claude Code, Codex ו-Gemini CLI, ויש לבדוק policy ב-dry-run לפני enforce.",
-    pros: ["אישורים, kill switch ומכסות", "audit log עם אימות שרשרת", "MCP, SDK ו-hooks לסוכני קוד"], cons: ["פרויקט חדש", "דורש הגדרה ובדיקה לכל סביבת כלים"],
-    alternatives: ["Pinrail", "Open Code Review", "AI Maestro"], url: "https://github.com/agentwares/agentguard", added: "2026-10-09", verified: "2026-10-09",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/agentwares/agentguard" }, { label: "חבילת npm וגרסה 0.1.9", url: "https://www.npmjs.com/package/@agentwares/agentguard" }]
-  },
-  {
     slug: "openclaw", name: "OpenClaw", mark: "OC", category: "productivity", subcategories: ["עוזר אישי", "אוטומציה", "Self-hosted"],
     tagline: "עוזר AI מקומי ורב-ערוצי שפועל במחשב, בנייד ובאפליקציות המסרים.",
     solves: "מחבר זיכרון, כלים וסוכנים לשער אחד שיכול לקבל בקשות דרך Discord, Slack, Teams, Telegram, WhatsApp, iMessage וערוצים נוספים.",
@@ -789,39 +426,6 @@ window.TOOLS = [
     pros: ["יותר מ-20 ערוצי תקשורת", "אפליקציות לכל הפלטפורמות", "זיכרון, כלים וסוכנים הניתנים להחלפה"], cons: ["הגדרה ותפעול מורכבים", "הרשאות רחבות אם לא מקשיחים sandbox"],
     alternatives: ["nanoMuse", "ScallopBot", "OpenBot"], url: "https://openclaw.ai/", added: "2026-10-11", verified: "2026-10-11",
     sources: [{ label: "המאגר, תכונות ורישיון MIT", url: "https://github.com/openclaw/openclaw" }, { label: "גרסה 2026.9.8", url: "https://github.com/openclaw/openclaw/blob/main/docs/releases/2026.9.8.md" }, { label: "תיעוד sandbox רשמי", url: "https://docs.openclaw.ai/gateway/sandboxing" }]
-  },
-  {
-    slug: "gsd-task-manager", name: "GSD Task Manager", mark: "GSD", category: "productivity", subcategories: ["ניהול משימות", "Eisenhower", "MCP"],
-    tagline: "מטריצת אייזנהאואר פרטית ואופליין עם גישה מובנית לסוכני AI.",
-    solves: "ממיינת משימות לפי דחיפות וחשיבות, שומרת אותן מקומית ומאפשרת לסוכן לקרוא, לעדכן ולנתח אותן דרך 19 כלי MCP.",
-    uses: ["ניהול משימות", "תכנון", "אוטומציה"], audience: "יחידים שרוצים תעדוף חזותי פשוט, אחסון מקומי וחיבור אופציונלי לסוכן AI.",
-    free: "האפליקציה וה-MCP חינמיים תחת MIT, פועלים בדפדפן ללא backend ושומרים ב-IndexedDB; סנכרון PocketBase הוא אופציונלי וניתן לאירוח עצמי.",
-    limits: "ניקוי נתוני הדפדפן מוחק משימות ללא גיבוי JSON. סנכרון ענן שולח מידע לשרת שנבחר, והפרויקט עדיין צעיר עם אימוץ קהילתי מוגבל.",
-    pros: ["אופליין וללא חשבון כברירת מחדל", "19 כלי MCP עם dry-run", "ייבוא וייצוא JSON"], cons: ["אין סנכרון מקומי מובנה בין מכשירים", "פרויקט צעיר"],
-    alternatives: ["Todoist", "Trello", "Edi Life OS"], url: "https://gsd.vinny.dev/", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, פרטיות ורישיון", url: "https://github.com/vscarpenter/gsd-task-manager" }, { label: "אות Show HN", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "openqodex", name: "OpenQodex", mark: "OQ", category: "development", subcategories: ["סקירת קוד", "אבטחה", "CLI"],
-    tagline: "סקירת קוד מקומית לפני push שמשלבת סורקים וסוקר AI נפרד.",
-    solves: "מקפיאה את השינוי הנוכחי, מריצה סורקי SAST, סודות, תלויות ו-lint רק על הקווים שהשתנו, ואז מאמתת את הממצאים בתהליך Claude Code או Codex נפרד.",
-    uses: ["סקירת קוד", "אבטחה", "פיתוח"], audience: "מפתחים שרוצים דוח Markdown, JSON או SARIF לפני העלאת שינוי, מתוך הטרמינל או סוכן הקוד.",
-    free: "ה-CLI חינמי תחת Apache-2.0, ללא שרת או telemetry וללא מפתח API נוסף; הוא משתמש בהתחברות קיימת ל-Claude Code או Codex.",
-    limits: "נדרש Node.js 22, Git וסוכן נתמך שמותקן ומחובר; macOS ו-Linux נתמכים ו-Windows דורש WSL. הפרויקט בדרך ל-1.0 והממשק עשוי להשתנות בין גרסאות minor.",
-    pros: ["סורקים רבים ודוח אחיד", "אין העלאת telemetry", "עדכונים עם provenance ו-rollback"], cons: ["דורש מנוי או גישה לסוכן קוד חיצוני", "עדיין לפני 1.0"],
-    alternatives: ["Open Code Review", "AgentGuard", "Pinrail"], url: "https://github.com/openqodex/openqodex", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, אבטחה ורישיון", url: "https://github.com/openqodex/openqodex" }, { label: "חבילת npm וגרסה 0.8.1", url: "https://www.npmjs.com/package/openqodex" }]
-  },
-  {
-    slug: "diffle", name: "Diffle", mark: "Df", category: "development", subcategories: ["Diff", "LSP", "GitHub"],
-    tagline: "מציג diff ממוקד-מקלדת עם ניווט סמנטי דרך LSP ואינטגרציית GitHub.",
-    solves: "מאפשר לעבור במהירות על שינויים, לפתוח הגדרות והפניות מתוך הקוד ולהחזיק את הקשר הסמנטי בזמן סקירת diff או pull request.",
-    uses: ["סקירת קוד", "Git", "פיתוח"], audience: "מפתחים וסוקרי קוד שמעדיפים workflow מהיר במקלדת ולא רוצים לאבד הקשר בין קבצים וסמלים.",
-    free: "היישום חינמי וקוד פתוח תחת Apache-2.0, עם מאגר ציבורי ואינטגרציה ל-GitHub; אין שירות בתשלום שנדרש להפעלת הליבה.",
-    limits: "פרויקט צעיר עם עשרות משתמשים מוקדמים בלבד; תמיכת שפות תלויה בשרתי LSP, והאינטגרציה ל-GitHub דורשת הרשאות מתאימות.",
-    pros: ["ניווט LSP בתוך diff", "ממשק keyboard-first", "אינטגרציית pull requests"], cons: ["אימוץ מוקדם", "תלות בהגדרת LSP"],
-    alternatives: ["OpenQodex", "Open Code Review", "Whiteboard"], url: "https://diffle.app/", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, תיעוד ורישיון", url: "https://github.com/moritzwilksch/diffle" }, { label: "אות Show HN", url: "https://news.ycombinator.com/show" }]
   },
   {
     slug: "compositor", name: "Compositor", mark: "Co", category: "design", subcategories: ["עריכת תמונה", "PSD", "macOS"],
@@ -844,105 +448,6 @@ window.TOOLS = [
     pros: ["טקסט מלא ושרשראות ציטוטים", "מתחבר לעשרות לקוחות MCP", "מקורות נפתחים לצד התשובה"], cons: ["10 בקשות ביום", "כיסוי תחומי צר יחסית"],
     alternatives: ["ResearchRabbit", "NotebookLM", "AstaBrief"], url: "https://luneresearch.com/", added: "2026-10-11", verified: "2026-10-11",
     sources: [{ label: "שאלות נפוצות ותמחור רשמי", url: "https://luneresearch.com/docs/faq" }, { label: "תנאי השירות והמכסות", url: "https://luneresearch.com/legal/terms" }, { label: "אות ההשקה ב-Product Hunt", url: "https://www.producthunt.com/products/lune-research" }]
-  },
-  {
-    slug: "littleguys", name: "littleguys", mark: "lg", category: "productivity", subcategories: ["ניהול סוכנים", "שורת תפריט", "macOS"],
-    tagline: "חלון אחד לניטור, שיחה ואישור פעולות של סוכני AI מקומיים.",
-    solves: "מרכז בשורת התפריט את מצבם של Claude Code, Codex, Gemini, OpenClaw, Hermes וסוכני ACP, כולל הודעות, אישורים, שגרות ומכונות מרוחקות.",
-    uses: ["ניהול סוכנים", "אוטומציה", "ניטור"], audience: "משתמשי Mac שמפעילים כמה סוכנים ורוצים לראות מי עובד, מי ממתין ומי דורש אישור בלי לחפש בין חלונות טרמינל.",
-    free: "האפליקציה חינמית וקוד פתוח תחת MIT, ללא חשבון, ענן, אנליטיקה או טלמטריה; זמינה ב-Homebrew וב-GitHub Releases.",
-    limits: "דורשת macOS 13 ומעלה. היא שומרת אסימוני gateway ויכולה לאשר פקודות אמיתיות, לכן יש להגן על המחשב והגישה אליו; הפרויקט צעיר מאוד עם אימוץ קהילתי התחלתי.",
-    pros: ["מצב כל הסוכנים במבט אחד", "שיחה ואישורים מתוך שורת התפריט", "גילוי מכונות ב-LAN וב-Tailscale"], cons: ["Mac בלבד", "פרויקט חדש עם קהילה קטנה"],
-    alternatives: ["AI Maestro", "OpenBot", "Velozity"], url: "https://littleguys.hervalicio.us/", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "האתר הרשמי ותנאי השימוש", url: "https://littleguys.hervalicio.us/" }, { label: "המאגר, דרישות ורישיון MIT", url: "https://github.com/herval/littleguys" }]
-  },
-  {
-    slug: "big-arrow-on-the-screen", name: "Big Arrow on the Screen", mark: "BA", category: "development", subcategories: ["סוכני AI", "נגישות", "macOS"],
-    tagline: "מאפשר לסוכן להצביע על כפתור, שדה או אזור במסך בלי ללחוץ במקומך.",
-    solves: "יוצר חצים, מסגרות וטקסט זמניים מעל יישומי Mac למסירת פעולה אנושית כמו אישור הרשאה, 2FA, CAPTCHA, תשלום או הדרכה חזותית.",
-    uses: ["פיתוח", "אוטומציה", "הדרכה"], audience: "מפתחים ומשתמשי Claude Code או Codex שרוצים handoff חזותי ברור כשהסוכן חייב לעצור ולהחזיר שליטה לאדם.",
-    free: "ה-CLI וה-Skill חינמיים תחת MIT, ללא חשבון או שירות ענן; התקנה דרך Homebrew או בנייה מקומית, עם גרסאות חתומות ב-GitHub.",
-    limits: "דורש macOS 14 ומעלה. הקובץ הבינארי המוכן חתום ad hoc ואינו notarized, ולכן הורדה בדפדפן עלולה להיחסם; התקנת Homebrew בונה מהמקור. נדרשות הרשאות Accessibility.",
-    pros: ["handoff חזותי שאינו לוחץ או מקליד", "מיקוד לפי רכיב, חלון או קואורדינטה", "ניקוי אוטומטי ויצוא PNG"], cons: ["Mac בלבד", "דורש הרשאות מערכת והתקנה טכנית"],
-    alternatives: ["Anthropic Skills", "Vercel Agent Skills", "Superpowers"], url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen" }, { label: "גרסאות רשמיות ו-v0.4.5", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen/releases" }]
-  },
-  {
-    slug: "manimgx", name: "ManimGX", mark: "MX", category: "design", subcategories: ["אנימציה", "וידאו בקוד", "תלת-ממד"],
-    tagline: "מנוע GPU מהיר ליצירת סרטוני מתמטיקה ותלת-ממד דרך Python או הדפדפן.",
-    solves: "מרנדר סצנות, נוסחאות, גרפים, משטחים, מצלמות וקול מסונכרן באמצעות API תואם-Manim על ליבת Rust ו-wgpu.",
-    uses: ["אנימציה", "וידאו", "המחשה מדעית"], audience: "יוצרי תוכן, מורים ומפתחים שבונים אנימציות מדעיות או תלת-ממדיות בקוד ורוצים משוב מהיר לסוכן.",
-    free: "קוד הפרויקט MIT; חבילות native הכוללות x264 מופצות תחת GPL-3.0-or-later. ההתקנה והעיבוד המקומי חינמיים ללא חשבון או שירות ענן.",
-    limits: "גרסה 0.1.1 צעירה ודורשת Python 3.13 ומעלה. התאימות ל-Manim CE אינה מלאה, וגלגלי ההפצה גדולים בגלל מנוע הרינדור, קידוד הווידאו והגופנים הכלולים.",
-    pros: ["2D ו-3D עם רינדור GPU מהיר", "LaTeX ו-Typst ללא התקנה נפרדת", "חבילות חתומות עם provenance לכל הפלטפורמות"], cons: ["דורש Python חדש", "פרויקט מוקדם ו-API שעשוי להשתנות"],
-    alternatives: ["HyperFrames", "Cavalry", "Concat"], url: "https://manimgx.academa.ai/", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, תיעוד ורישיונות", url: "https://github.com/academa-labs/manimgx" }, { label: "PyPI, גרסה 0.1.1 וחבילות מאומתות", url: "https://pypi.org/project/manimgx/" }]
-  },
-  {
-    slug: "apogee", name: "Apogee", mark: "Ap", category: "research", subcategories: ["סיכום מקומי", "דפדפן", "פרטיות"],
-    tagline: "מסכם ושואל על אתרים, סרטונים ומסמכים בתוך הדפדפן, בלי לשלוח תוכן לענן.",
-    solves: "מחלץ ומסכם מאמרים, שרשורים, YouTube, PDF, DOCX וטקסט מודבק ומקשר את התשובה חזרה לקטעי המקור.",
-    uses: ["מחקר", "סיכום", "קריאה"], audience: "חוקרים, סטודנטים וקוראים שרוצים סיכום ושאלות על חומר רגיש באמצעות WebGPU, WebAssembly, Ollama או llama.cpp מקומי.",
-    free: "ההרחבה חינמית תחת MIT, ללא חשבון, מנוי, מפתח API, backend או טלמטריה; לאחר הורדת מודל ראשונה היא יכולה לפעול אופליין.",
-    limits: "ההרצה המקומית מורידה מודל ותלויה בזיכרון ובביצועי המחשב; WebGPU זמין בעיקר בדפדפני Chromium ו-Firefox משתמש כברירת מחדל ב-WebAssembly האיטי יותר. איכות הסיכום תלויה במודל המקומי.",
-    pros: ["הכול נשאר במכשיר", "Chrome/Edge ו-Firefox", "הדגשת קטעי מקור ושאלות המשך"], cons: ["הורדת מודל ראשונית", "מודלים מקומיים קטנים עשויים להיות איטיים או פחות מדויקים"],
-    alternatives: ["NotebookLM", "AstaBrief", "InsightArxiv"], url: "https://darshi1337.github.io/apogee/", added: "2026-10-11", verified: "2026-10-11",
-    sources: [{ label: "המאגר, פרטיות ורישיון MIT", url: "https://github.com/darshi1337/apogee" }, { label: "אתר הפרויקט והתקנה", url: "https://darshi1337.github.io/apogee/" }]
-  },
-  {
-    slug: "betterwispr", name: "BetterWispr", mark: "BW", category: "productivity", subcategories: ["הכתבה קולית", "תמלול מקומי", "macOS"],
-    tagline: "הכתבה ותמלול מקומיים ל-Mac שמקלידים ישירות לכל אפליקציה.",
-    solves: "ממיר דיבור לטקסט בכל שדה כתיבה, שומר היסטוריה מקומית ויכול לתמלל פגישות ולהפיק סיכום באמצעות Apple Intelligence או מודל Ollama מקומי.",
-    uses: ["תמלול", "כתיבה", "פגישות"], audience: "משתמשי Mac, כותבים ואנשי ידע שרוצים הכתבה פרטית ללא מנוי ענן.",
-    free: "האפליקציה חינמית וקוד פתוח תחת Apache-2.0, ללא חשבון, מנוי או מפתח API; מודלי Apple Speech, Parakeet ו-Whisper רצים מקומית ואופליין לאחר ההורדה.",
-    limits: "דורשת macOS 14 ומעלה והרשאות מיקרופון ו-Accessibility. Apple silicon מומלץ; היסטוריית התמלול המקומית אינה מוצפנת, הקלטה נעצרת אחרי שתי דקות וחיבור אופציונלי לספק ענן כפוף למחיריו ולמדיניותו.",
-    pros: ["הכתבה בכל אפליקציה ללא מנוי", "מודלים מקומיים ופרטיות טובה", "תמלול פגישות ותיקון מילים נלמד"], cons: ["Mac בלבד", "קובץ ההיסטוריה המקומי אינו מוצפן"],
-    alternatives: ["Circleback", "Penguin Mail"], url: "https://betterwispr.com/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "האתר הרשמי והתחייבות החינמיות", url: "https://betterwispr.com/" }, { label: "המאגר, דרישות ורישיון Apache-2.0", url: "https://github.com/opennookorg/betterwispr" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "plimsoll", name: "Plimsoll", mark: "Pl", category: "development", subcategories: ["Sandbox", "סוכני AI", "אבטחה"],
-    tagline: "מריץ קוד שסוכן כתב בתוך sandbox ומדווח איזו רמת בידוד הופעלה בפועל.",
-    solves: "נותן לסוכנים ולמסגרות AI להריץ קוד לא-מהימן עם דרישת סף לבידוד, תוצאות חתומות, בדיקות חוזרות וגישת API מוגבלת בלי למסור לקוד את האישורים עצמם.",
-    uses: ["פיתוח", "אבטחה", "סוכני AI"], audience: "מפתחי סוכנים ומערכות שמריצות קוד שנוצר אוטומטית וצריכות גבול ביצוע מפורש וניתן לבדיקה.",
-    free: "הקוד Apache-2.0 וניתן להפעלה עצמית. ספק WebAssembly המקומי עובד ללא daemon, Docker, חשבון או אישורים; Docker ו-gVisor מאפשרים רמות בידוד מקומיות חזקות יותר.",
-    limits: "רמת process אינה מתאימה לקוד עוין, gVisor דורש התקנה ותחזוקה, ו-E2B או Docker Cloud מחויבים בנפרד. דיווח רמת הבידוד הוא ראיה שנאספה בידי ה-daemon ולא attestation חומרתי; הפרויקט עדיין צעיר.",
-    pros: ["סף בידוד שנאכף לפני הרצה", "אישורים נשארים מחוץ ל-sandbox", "לקוחות למסגרות סוכנים נפוצות"], cons: ["הקמה מורכבת לבידוד חזק", "ספקי microVM מנוהלים עולים כסף"],
-    alternatives: ["AgentGuard by agentwares", "Pinrail", "OpenQodex"], url: "https://github.com/plimsollmark/plimsoll", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, תיעוד ורישיון Apache-2.0", url: "https://github.com/plimsollmark/plimsoll" }, { label: "השוואת ספקים ורמות בידוד", url: "https://plimsollmark.github.io/plimsoll/comparison/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "brainotes", name: "braiNOTES", mark: "BN", category: "research", subcategories: ["הערות בכתב יד", "PDF", "למידה"],
-    tagline: "מחברת ו-whiteboard בדפדפן לכתיבה ידנית על חומרי הרצאה ו-PDF.",
-    solves: "מצמיד שקפים או PDF למחברת, מאפשר כתיבה בעט ולחץ, סימון, גזירת אזורים, לוח אינסופי וייצוא של דפים עם דיו וקטורי.",
-    uses: ["למידה", "הערות", "PDF"], audience: "סטודנטים, מרצים ולומדים עם עט או מסך מגע שרוצים מחברת מקומית בלי חשבון.",
-    free: "היישום חינמי וקוד פתוח תחת MIT, עובד בדפדפן ללא חשבון או שרת ושומר את התוכן מקומית; לאחר פתיחה ראשונה ניתן לעבוד גם אופליין.",
-    limits: "אין סנכרון ענן או שיתוף פעולה מובנים, ולכן גיבוי והעברה נעשים ידנית בקובצי .brainotes. הנתונים תלויים באחסון הדפדפן, והפרויקט צעיר עם קהילה קטנה.",
-    pros: ["כתיבה על PDF או לצדו", "עובד מקומית וללא חשבון", "ייצוא PDF עם דיו וקטורי"], cons: ["אין סנכרון בין מכשירים", "נדרש גיבוי ידני כדי להגן ממחיקת נתוני הדפדפן"],
-    alternatives: ["Obsidian", "NotebookLM", "Zotero"], url: "https://notes.swimmingbrain.dev/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, יכולות ורישיון MIT", url: "https://github.com/swimmingbrain/brainotes" }, { label: "היישום הרשמי", url: "https://notes.swimmingbrain.dev/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "cachety", name: "Cachety", mark: "Ca", category: "design", subcategories: ["PDF", "סימון מים", "פרטיות"],
-    tagline: "מסמן, משחיר ומצפין מסמכים רגישים בדפדפן בלי להעלות אותם לשרת.",
-    solves: "יוצר עותקים ייעודיים של תעודות, דרכונים, תלושים ודפי חשבון עם watermark, הסתרת מידע, ניקוי metadata, מגבלת גודל והצפנת PDF.",
-    uses: ["מסמכים", "פרטיות", "עיצוב"], audience: "כל מי שצריך לשלוח מסמך מזהה או פיננסי ורוצה לצמצם שימוש חוזר וחשיפת מידע.",
-    free: "השירות חינמי ויישאר חינמי לפי האתר הרשמי, ללא חשבון, מעקב או העלאת קבצים; הקוד זמין תחת AGPL-3.0 וניתן לאירוח עצמי.",
-    limits: "עד 200MB לקובץ ו-500 עמודים ל-PDF ועד 20 נמענים בעיבוד אחד. כל עמוד נבנה מחדש מפיקסלים כדי להסיר טקסט ו-metadata, ולכן הטקסט המתקבל אינו ניתן לבחירה והעיבוד צורך זיכרון מקומי.",
-    pros: ["הקבצים נשארים במכשיר", "watermark, השחרה והצפנת AES-256", "עובד במחשב ובטלפון וגם אופליין לאחר טעינה"], cons: ["Rasterization מסיר טקסט בר-בחירה", "אין ממשק עברי ברשימת 11 השפות הנוכחית"],
-    alternatives: ["GIMP", "Canva", "SVG Spark"], url: "https://cachety.com/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "האתר הרשמי והתחייבות החינמיות", url: "https://cachety.com/" }, { label: "המאגר, מגבלות ורישיון AGPL-3.0", url: "https://github.com/cachety/cachety" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
-  },
-  {
-    slug: "skills-hub", name: "Skills Hub", mark: "SH", category: "skills", subcategories: ["ניהול Skills", "סנכרון", "Desktop"],
-    tagline: "מנהל ומסנכרן ספריית Agent Skills אחת לעשרות כלי קוד וסוכנים.",
-    solves: "מתקין Skills פעם אחת, מארגן אותם בתגים ומסנכרן אותם לתיקיות הגלובליות או לפרויקטים של Codex, Claude Code, Cursor, OpenCode וכלים נוספים.",
-    uses: ["סוכני AI", "ניהול Skills", "פיתוח"], audience: "מפתחים ומשתמשי סוכנים שמחזיקים Skills בכמה כלי קוד ומערכות הפעלה.",
-    free: "אפליקציית ה-desktop וה-CLI חינמיים וקוד פתוח תחת MIT, ללא מסלול בתשלום שנדרש לליבה; יש חבילות ל-macOS, Windows ו-Linux.",
-    limits: "ב-macOS המערכת עשויה להזהיר שהמפתח אינו מאומת. סנכרון בין מכשירים דורש מאגר GitHub, GitLab או Gitee, ו-Skills מצד שלישי עדיין מחייבים בדיקת מקור, הרשאות וקוד לפני התקנה.",
-    pros: ["תומך ב-48 כלי קוד וסוכנים", "ניהול קבוצתי ועדכונים מרוכזים", "אפליקציה, CLI וניהול דרך סוכן"], cons: ["אזהרת חתימה אפשרית ב-Mac", "אינו מבטיח ש-Skill חיצוני בטוח או איכותי"],
-    alternatives: ["Find Skills", "Anthropic Skills", "Vercel Agent Skills"], url: "https://aiskillshub.link/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, פלטפורמות ורישיון MIT", url: "https://github.com/qufei1993/skills-hub" }, { label: "האתר והתיעוד הרשמיים", url: "https://aiskillshub.link/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
   },
   {
     slug: "pentagi", name: "PentAGI", mark: "PA", category: "development", subcategories: ["אבטחת מידע", "סוכני AI", "אירוח עצמי"],
@@ -998,11 +503,30 @@ window.TOOLS = [
     pros: ["כל הפיצ'רים פתוחים ללא תשלום", "חבילה חתומה ו-notarized", "CLI ופעולות Shortcuts לאוטומציה"], cons: ["Mac בלבד", "חלק מהיכולות דורשות הרשאות מערכת"],
     alternatives: ["BetterWispr"], url: "https://crispmac.app/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, התחייבות החינמיות ורישיון MIT", url: "https://github.com/didriksg/Crisp" }, { label: "האתר הרשמי", url: "https://crispmac.app/" }]
+  },
+  {
+    slug: "claude-mem", name: "Claude-Mem", mark: "CM", category: "development", subcategories: ["זיכרון לסוכנים", "MCP", "כלי פיתוח"],
+    tagline: "זיכרון מתמשך לסוכני קוד ששומר, מכווץ ומחזיר הקשר בין מפגשים.",
+    solves: "לוכד תצפיות משימוש בכלים, מסכם אותן ומחזיר הקשר רלוונטי למפגשים עתידיים כדי לצמצם אובדן החלטות וידע לאחר סגירת שיחה או דחיסת הקשר.",
+    uses: ["זיכרון לסוכנים", "המשכיות בין מפגשים", "חיפוש הקשר"], audience: "מפתחים שעובדים עם Claude Code, Codex, Gemini, OpenClaw, Copilot, OpenCode וסוכנים תואמים נוספים.",
+    free: "הקוד וה-worker המקומי זמינים תחת Apache-2.0. אפשר לדלג על כניסה לחשבון ולהפעיל את הסיכום מול Ollama, LM Studio או vLLM מקומיים ללא מפתח API; הנתונים המקומיים נשמרים ב-SQLite ו-Chroma.",
+    limits: "התקנת ברירת המחדל מציעה CMEM Pro באירוח עם ניסיון של 30 יום בלבד. לאחר מכן נדרש מנוי, מודל מקומי או ספק חיצוני; שימוש בספק ענן עשוי לעלות כסף ולשלוח אליו הקשר. ההתקנה דורשת Node.js 20 ומעלה, ויש לבדוק היטב אילו תכנים רגישים נלכדים.",
+    pros: ["כ-99,883 כוכבי GitHub ופעילות שוטפת", "תמיכה במספר רב של סוכנים", "נתיב מקומי חינמי עם שליטה בספק המודל"], cons: ["לכידת הקשר דורשת הגדרות פרטיות זהירות", "השירות המאוחסן אינו חינמי לאחר תקופת הניסיון"],
+    alternatives: ["Hindsight", "Context Mode"], url: "https://claude-mem.ai/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/thedotmack/claude-mem" }, { label: "מודלים מקומיים ושיקולי אבטחה", url: "https://github.com/thedotmack/claude-mem/blob/main/SECURITY.md" }, { label: "גרסאות רשמיות", url: "https://github.com/thedotmack/claude-mem/releases" }]
   }
 
 ];
 
 window.WATCHLIST = [
+  { name: "YuE2 Studio", mark: "Y2", category: "design", signal: "מאגר פעיל עם 551 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/timoncool/YuE2-Studio", checked: "2026-10-12" },
+  { name: "Minutes", mark: "Mi", category: "productivity", signal: "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/silverstein/minutes", checked: "2026-10-12" },
+  { name: "TAKT", mark: "Ta", category: "development", signal: "מאגר פעיל עם 1,403 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/nrslib/takt", checked: "2026-10-12" },
+  { name: "nanoMuse", mark: "nM", category: "design", signal: "מאגר פעיל עם 923 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/nano-muse/nanoMuse", checked: "2026-10-12" },
+  { name: "OpenQodex", mark: "OQ", category: "development", signal: "מאגר פעיל עם 615 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/openqodex/openqodex", checked: "2026-10-12" },
+  { name: "Big Arrow on the Screen", mark: "BA", category: "development", signal: "מאגר פעיל עם 638 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen", checked: "2026-10-12" },
+  { name: "ManimGX", mark: "MX", category: "design", signal: "מאגר פעיל עם 716 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/academa-labs/manimgx", checked: "2026-10-12" },
+  { name: "Skills Hub", mark: "SH", category: "skills", signal: "מאגר פעיל עם 1,760 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/qufei1993/skills-hub", checked: "2026-10-12" },
   { name: "hob", mark: "hob", category: "development", signal: "סביבת עבודה מקומית לסוכני קוד עם 73 עוקבים ו-90 נקודות בהשקת Product Hunt, ותמיכה ב-macOS, Windows ו-Linux.", reason: "המחירון הרשמי מאשר חודש ראשון חינם בלבד ולאחריו מסלול Personal Pro בתשלום; אין מסלול חינמי מתמשך ולכן הכלי נשאר מחוץ לקטלוג הפעיל.", url: "https://hob.dev/", checked: "2026-10-05" },
   { name: "Bracket", mark: "Br", category: "productivity", signal: "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.", reason: "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.", url: "https://www.use-bracket.com/", checked: "2026-10-04" },
   { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI; הגיע ל-106 נקודות ו-19 תגובות ב-Show HN.", reason: "הפרויקט עדיין צעיר מאוד, והדיון הטכני מצביע על חפיפה משמעותית עם llama-server ללא בנצ’מרקים שמבססים ערך מוסף; נדרש להמתין לגרסאות, אימוץ ובדיקות ביצועים.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-06" },
