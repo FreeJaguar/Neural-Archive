@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "design.html"
+      - "index.html"
+      - "tests/homepage-release.test.mjs"
       - "design.css"
       - "design.js"
       - "hero-motion.js"
@@ -19,6 +21,8 @@ on:
     branches: ["design/neural-archive-cinematic-experience", "main"]
     paths:
       - "design.html"
+      - "index.html"
+      - "tests/homepage-release.test.mjs"
       - "design.css"
       - "design.js"
       - "hero-motion.js"
@@ -48,4 +52,4 @@ jobs:
           node --check design.js
           node --check hero-motion.js
       - name: Run offline design integration checks
-        run: node --test tests/design-preview.test.mjs
+        run: node --test tests/design-preview.test.mjs tests/homepage-release.test.mjs
