@@ -1,0 +1,61 @@
+name: Cinematic Hero Browser QA
+
+on:
+  pull_request:
+    paths:
+      - "design.html"
+      - "design.css"
+      - "hero-motion.css"
+      - "compact-hero.css"
+      - "compact-sections.css"
+      - "hero-motion.js"
+      - "assets/cinematic-*.webp"
+      - "tests/design-visual-smoke.mjs"
+      - ".github/workflows/design-visual-qa.yml"
+  push:
+    branches: ["design/neural-archive-cinematic-experience", "main"]
+    paths:
+      - "design.html"
+      - "design.css"
+      - "hero-motion.css"
+      - "compact-hero.css"
+      - "compact-sections.css"
+      - "hero-motion.js"
+      - "assets/cinematic-*.webp"
+      - "tests/design-visual-smoke.mjs"
+      - ".github/workflows/design-visual-qa.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  visual-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install isolated test browser (not production dependency)
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Start preview-only static server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/neural-preview-server.log 2>&1 &
+          for _ in 1 2 3 4 5 6 7 8 9 10; do
+            if curl --fail --silent http://127.0.0.1:4173/design.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/neural-preview-server.log
+          exit 1
+      - name: Validate 2.5D interactions in real Chromium
+        run: node tests/design-visual-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cinematic-hero-qa
+          path: design-qa-artifacts/
+          if-no-files-found: ignore
+          retention-days: 7
