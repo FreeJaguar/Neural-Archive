@@ -112,6 +112,24 @@ test("high-resolution photographed 2.5D art is split into real moving image laye
   assert.doesNotMatch(html, /class="holo-cube"/);
 });
 
+test("full-bleed preview places scenery outside layout columns and preserves interactive copy", () => {
+  const scene = html.indexOf('<div class="hero-visual" id="portalVisual">');
+  const inner = html.indexOf('<div class="hero-inner">');
+  const copy = html.indexOf('<div class="hero-copy">');
+  const section = html.indexOf('<section class="hero"');
+  assert.ok(section >= 0 && scene > section && inner > scene && copy > inner,
+    "The artwork must be a sibling preceding the content grid, never nested inside it");
+  const styles = heroMotionCss.slice(heroMotionCss.indexOf("NEURAL FULL-BLEED HERO V3"));
+  assert.match(styles, /\.hero-inner\s*\{[^}]*display:\s*flex/);
+  assert.match(styles, /\.hero-visual#portalVisual\s*\{[^}]*position:\s*absolute/);
+  assert.match(styles, /\.hero-visual#portalVisual\s*\{[^}]*inset:\s*0/);
+  assert.match(styles, /\.hero-visual#portalVisual::before\s*\{/);
+  assert.match(styles, /\.hero-visual#portalVisual::after\s*\{/);
+  assert.match(styles, /\.hero-copy\s*\{[^}]*width:\s*min\(700px,\s*45\.5vw\)/);
+  assert.match(styles, /@media \(max-width: 690px\)/);
+  assert.doesNotMatch(heroMotionJs, /--head-|cinematicHeadAnchor|rotateY|rotateX/);
+});
+
 test("the scene reaches the full viewport while the person stays grounded", () => {
   const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
   assert.match(desktop, /\.hero\s*\{[^}]*min-height:\s*100svh/);
