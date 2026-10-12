@@ -7,6 +7,7 @@ const read = path => readFileSync(new URL("../" + path, import.meta.url), "utf8"
 const html = read("design.html");
 const css = read("design.css");
 const compactCss = read("compact-sections.css");
+const compactHeroCss = read("compact-hero.css");
 const js = read("design.js");
 const data = read("data.js");
 const portal = read("assets/design-portal.svg");
@@ -92,8 +93,8 @@ test("high-resolution photographed 2.5D art is split into real moving image laye
   assert.match(heroMotionCss, /--cube-x/);
   assert.match(heroMotionCss, /@keyframes cinematic-cube-hover/);
   assert.match(heroMotionCss, /@keyframes cinematic-panel-hover/);
-  assert.match(heroMotionCss, /min-height:\s*100svh/);
-  assert.match(heroMotionCss, /min-height:\s*calc\(100svh - 76px\)/);
+  assert.match(compactHeroCss, /height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
+  assert.match(compactHeroCss, /min-height:\s*360px/);
   assert.match(heroMotionCss, /top:\s*-76px/);
   assert.match(heroMotionCss, /width:\s*100vw/);
   assert.match(heroMotionCss, /\.hero-visual#portalVisual::before/);
@@ -130,17 +131,17 @@ test("full-bleed preview places scenery outside layout columns and preserves int
   assert.doesNotMatch(heroMotionJs, /--head-|cinematicHeadAnchor|rotateY|rotateX/);
 });
 
-test("the scene reaches the full viewport while the person stays grounded", () => {
+test("full-bleed scene retains its width while the figure stays grounded", () => {
   const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
-  assert.match(desktop, /\.hero\s*\{[^}]*min-height:\s*100svh/);
-  assert.match(desktop, /\.hero-inner\s*\{[^}]*min-height:\s*calc\(100svh - 76px\)/);
+  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
+  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*calc\(100% - 58px\)/);
   assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100vw/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*height:\s*104%/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*top:\s*49%/);
   assert.match(desktop, /\.cinematic-head-anchor\s*\{[^}]*transform:\s*none/);
   assert.doesNotMatch(desktop, /animation:\s*cinematic-arrival/);
-  assert.match(heroMotionCss, /\.hero \{min-height:100svh\}/);
-  assert.match(heroMotionCss, /min-height:calc\(100svh - 64px\)/);
+  assert.match(compactHeroCss, /min-height:\s*clamp\(630px,\s*83svh,\s*760px\)/);
+  assert.match(compactHeroCss, /padding-top:\s*60px/);
   assert.match(heroMotionCss, /\.hero-visual#portalVisual::before \{display:none\}/);
   assert.match(heroMotionJs, /--cube-x/);
   assert.match(heroMotionJs, /--panels-y/);
@@ -169,17 +170,34 @@ test("news and categories are compact, responsive and visually readable", () => 
   assert.match(html, /href="\/compact-sections\.css"/);
   assert.match(compactCss, /\.news-section\s*\{/);
   assert.match(compactCss, /\.news-card\s*\{/);
-  assert.match(compactCss, /height:\s*171px/);
+  assert.match(compactCss, /height:\s*145px/);
   assert.match(compactCss, /\.news-card-content\s*\{/);
   assert.match(compactCss, /linear-gradient/);
   assert.match(compactCss, /\.news-skeleton\s*\{/);
   assert.match(compactCss, /min-height:\s*68px/);
   assert.match(compactCss, /\.categories-section\s*\{/);
   assert.match(compactCss, /\.category-card\s*\{/);
-  assert.match(compactCss, /min-height:\s*104px/);
+  assert.match(compactCss, /min-height:\s*86px/);
   assert.match(compactCss, /@media\s*\(max-width:\s*690px\)/);
   assert.ok(!/\.hero(?:\s|\{|\-inner|\-visual)/.test(compactCss),
     "Compact strip must not alter the cinematic Hero.");
+});
+
+test("the compact cinematic landing preserves functional controls and responsiveness", () => {
+  assert.match(html, /href="\/compact-hero\.css"/);
+  assert.ok(html.indexOf('href="/hero-motion.css"') < html.indexOf('href="/compact-hero.css"'));
+  assert.match(compactHeroCss, /@media \(min-width: 691px\)/);
+  assert.match(compactHeroCss, /\.site-header\s*\{[^}]*height:\s*58px/);
+  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
+  assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*calc\(100% - 58px\)/);
+  assert.match(compactHeroCss, /\.cinematic-photograph\s*\{[^}]*height:\s*111%/);
+  assert.match(compactHeroCss, /\.hero-search\s*\{[^}]*height:\s*46px/);
+  assert.match(compactHeroCss, /@media \(max-width: 690px\)/);
+  assert.match(compactHeroCss, /min-height:\s*clamp\(630px,\s*83svh,\s*760px\)/);
+  assert.match(heroMotionCss, /NEURAL FULL-BLEED HERO V3/);
+  assert.match(heroMotionCss, /\.hero-visual#portalVisual\s*\{[^}]*position:\s*absolute/);
+  assert.match(heroMotionCss, /\.cinematic-head-anchor\s*\{[^}]*transform:\s*none/);
+  assert.doesNotMatch(heroMotionJs, /--head-|cinematicHeadAnchor|rotateY|rotateX/);
 });
 
 test("hero headline punctuation is separated and readable at responsive sizes", () => {
