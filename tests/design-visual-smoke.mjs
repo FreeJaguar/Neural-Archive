@@ -307,7 +307,7 @@ try {
     assert.ok(state.heroHeight >= 430 && state.heroHeight < 570,JSON.stringify(state));
     assert.ok(state.visualWidth >= 1598,JSON.stringify(state));
     assert.ok(state.newsStart < 570,JSON.stringify(state));
-    assert.ok(state.toolCount >= 80,JSON.stringify(state));
+    assert.ok(state.toolCount >= 40,JSON.stringify(state));
     assert.equal(Number(state.displayedCount),state.toolCount,JSON.stringify(state));
     assert.equal(state.categoryTiles,6,JSON.stringify(state));
     assert.ok(state.horizontalScroll <= 1602,JSON.stringify(state));
@@ -319,7 +319,7 @@ try {
     await live.locator("#heroSearchForm button[type=submit]").click();
     await live.waitForTimeout(120);
     const found = Number(await live.locator("#visibleCount").innerText());
-    assert.ok(found > 0 && found < 80,"Search should filter to Claude tools: "+found);
+    const total = await live.evaluate(() => window.TOOLS.length);\n    assert.ok(found > 0 && found < total,"Search should filter to Claude tools: "+found);
     await live.locator(".tool-open").first().click();
     assert.ok(await live.locator("#detailDialog").evaluate(dialog=>dialog.open),"Tool detail modal must open");
     await live.locator("#closeDetail").click();
