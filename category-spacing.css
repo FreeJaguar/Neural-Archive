@@ -1,0 +1,57 @@
+/*
+ * Neural Archive: category ribbon breathing room, production hotfix.
+ *
+ * Separate stylesheet deliberately uses a new URL, so browsers that cached the
+ * earlier compact-sections.css cannot retain the cramped layout.
+ * Desktop/tablet only: maintain the user-approved cinematic Hero, news ribbon,
+ * and accessible mobile category grid exactly as they were.
+ */
+@media (min-width: 691px) {
+  .categories-section {
+    padding: 20px 0 24px;
+  }
+
+  .categories-section .section-topline {
+    padding-top: 0;
+    min-height: 20px;
+  }
+
+  .categories-section .section-title-group {
+    margin: 8px 0 17px;
+  }
+
+  .categories-section .category-grid {
+    gap: 12px;
+  }
+
+  .categories-section .category-card {
+    min-height: 108px;
+    padding: 13px 15px;
+    gap: 8px;
+  }
+
+  .categories-section .category-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .categories-section .category-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .categories-section .category-text strong {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .categories-section .category-text small {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .categories-section .category-card .corner-arrow {
+    top: 13px;
+    left: 13px;
+  }
+}
