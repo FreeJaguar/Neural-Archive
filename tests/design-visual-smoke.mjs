@@ -104,6 +104,39 @@ try {
     fs.writeFileSync(path.join(output, "desktop-geometry.json"), JSON.stringify(geometry,null,2));
   });
 
+  await run("Category cards have breathing room inside the dark ribbon", async () => {
+    const spacing = await page.evaluate(() => {
+      const region = document.querySelector(".categories-section");
+      const heading = region.querySelector(".section-title-group");
+      const grid = region.querySelector(".category-grid");
+      const card = region.querySelector(".category-card:not(.selected)");
+      const bounds = element => element.getBoundingClientRect();
+      const css = getComputedStyle(region);
+      const cardStyle = getComputedStyle(card);
+      return {
+        paddingTop: parseFloat(css.paddingTop),
+        paddingBottom: parseFloat(css.paddingBottom),
+        headerGap: bounds(grid).top - bounds(heading).bottom,
+        bottomGap: bounds(region).bottom - bounds(card).bottom,
+        cardHeight: bounds(card).height,
+        cardPaddingTop: parseFloat(cardStyle.paddingTop),
+        cardPaddingBottom: parseFloat(cardStyle.paddingBottom),
+        cardCount: region.querySelectorAll(".category-card").length,
+        sectionHeight: bounds(region).height
+      };
+    });
+    console.log("CATEGORY_RIBBON_SPACING", JSON.stringify(spacing));
+    assert.equal(spacing.cardCount,6);
+    assert.ok(spacing.paddingTop >= 8,JSON.stringify(spacing));
+    assert.ok(spacing.paddingBottom >= 16,JSON.stringify(spacing));
+    assert.ok(spacing.headerGap >= 9,JSON.stringify(spacing));
+    assert.ok(spacing.cardHeight >= 89,JSON.stringify(spacing));
+    assert.ok(spacing.cardPaddingTop >= 10 && spacing.cardPaddingBottom >= 10,JSON.stringify(spacing));
+    assert.ok(spacing.bottomGap >= 15,JSON.stringify(spacing));
+    assert.ok(spacing.sectionHeight < 225, "Category ribbon should stay compact: "+JSON.stringify(spacing));
+    fs.writeFileSync(path.join(output,"category-ribbon-spacing.json"),JSON.stringify(spacing,null,2));
+  });
+
   await run("Independent cube and panel animations are active", async () => {
     const animation = await page.evaluate(() => ({
       cube:getComputedStyle(document.querySelector(".cinematic-layer-cube .cinematic-layer-motion")).animationName,
@@ -150,6 +183,8 @@ try {
     await toggle.click();
     assert.equal(await toggle.getAttribute("aria-pressed"),"false");
   });
+  await page.locator("#categories").scrollIntoViewIfNeeded();
+  await page.screenshot({path:path.join(output,"categories-spacing-desktop.png"),fullPage:false});
   await context.close();
 
   const {page:referencePage,context:referenceContext} = await newPage(1755,827);
