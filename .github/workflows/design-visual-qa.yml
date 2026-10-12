@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "design.html"
+      - "index.html"
       - "design.css"
       - "hero-motion.css"
       - "compact-hero.css"
@@ -16,6 +17,7 @@ on:
     branches: ["design/neural-archive-cinematic-experience", "main"]
     paths:
       - "design.html"
+      - "index.html"
       - "design.css"
       - "hero-motion.css"
       - "compact-hero.css"

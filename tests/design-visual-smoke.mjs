@@ -25,7 +25,7 @@ async function run(name, fn) {
     results.push({ name, ok: false });
   }
 }
-async function newPage(width, height, reducedMotion = "no-preference") {
+async function newPage(width, height, reducedMotion = "no-preference", route = "/design.html") {
   const context = await browser.newContext({
     viewport: { width, height },
     deviceScaleFactor: 1,
@@ -38,7 +38,7 @@ async function newPage(width, height, reducedMotion = "no-preference") {
     status: 200, contentType: "application/json",
     body: JSON.stringify({ items: [] })
   }));
-  await page.goto(origin + "/design.html", { waitUntil: "domcontentloaded" });
+  await page.goto(origin + route, { waitUntil: "domcontentloaded" });
   await page.waitForSelector(".cinematic-layer-cube img");
   await page.evaluate(async () => {
     const assets = [...document.querySelectorAll(
@@ -246,6 +246,73 @@ try {
     assert.ok(Number(state.opacity)>.9);
   });
   await reducedContext.close();
+  // Test the real index.html, not just the approved /design preview.
+  const {page:live,context:liveContext} = await newPage(1600,900,"no-preference","/");
+  await run("Production homepage matches approved cinematic preview and uses live catalog", async () => {
+    const state = await live.evaluate(() => {
+      const rect = sel => document.querySelector(sel)?.getBoundingClientRect();
+      const hero = rect(".hero"), news = rect("#news"), visual = rect("#portalVisual");
+      return {
+        title:document.title,
+        robots:document.querySelector('meta[name="robots"]')?.content,
+        canonical:document.querySelector('link[rel="canonical"]')?.href,
+        heroHeight:hero?.height,
+        heroWidth:hero?.width,
+        newsStart:news?.top,
+        visualWidth:visual?.width,
+        toolCount:window.TOOLS?.length,
+        displayedCount:document.querySelector("#heroCount")?.textContent,
+        categoryTiles:document.querySelectorAll(".category-card").length,
+        horizontalScroll:document.documentElement.scrollWidth
+      };
+    });
+    assert.match(state.title,/Neural Archive/);
+    assert.equal(state.robots,"index,follow");
+    assert.equal(state.canonical,"https://neural-archive-two.vercel.app/");
+    assert.ok(state.heroHeight >= 430 && state.heroHeight < 570,JSON.stringify(state));
+    assert.ok(state.visualWidth >= 1598,JSON.stringify(state));
+    assert.ok(state.newsStart < 570,JSON.stringify(state));
+    assert.ok(state.toolCount >= 80,JSON.stringify(state));
+    assert.equal(Number(state.displayedCount),state.toolCount,JSON.stringify(state));
+    assert.equal(state.categoryTiles,6,JSON.stringify(state));
+    assert.ok(state.horizontalScroll <= 1602,JSON.stringify(state));
+    fs.writeFileSync(path.join(output,"production-home-geometry.json"),JSON.stringify(state,null,2));
+  });
+  await live.screenshot({path:path.join(output,"hero-production-home.png"),fullPage:false});
+  await run("Production search and tool modal remain functional", async () => {
+    await live.locator("#heroSearchInput").fill("Claude");
+    await live.locator("#heroSearchForm button[type=submit]").click();
+    await live.waitForTimeout(120);
+    const found = Number(await live.locator("#visibleCount").innerText());
+    assert.ok(found > 0 && found < 80,"Search should filter to Claude tools: "+found);
+    await live.locator(".tool-open").first().click();
+    assert.ok(await live.locator("#detailDialog").evaluate(dialog=>dialog.open),"Tool detail modal must open");
+    await live.locator("#closeDetail").click();
+    assert.ok(!(await live.locator("#detailDialog").evaluate(dialog=>dialog.open)),"Tool detail modal must close");
+  });
+  await run("Production dark mode toggle is accessible", async () => {
+    const button=live.locator("#themeToggle");
+    const before=await live.locator("html").getAttribute("data-theme");
+    await button.click();
+    const after=await live.locator("html").getAttribute("data-theme");
+    assert.notEqual(after,before);
+    await button.click();
+  });
+  await liveContext.close();
+  const {page:liveMobile,context:liveMobileContext} = await newPage(390,844,"reduce","/");
+  await run("Production mobile homepage is readable without sideways scrolling", async () => {
+    const metrics=await liveMobile.evaluate(()=>({
+      viewport:innerWidth,
+      scrollWidth:document.documentElement.scrollWidth,
+      heroWidth:document.querySelector(".hero").getBoundingClientRect().width,
+      visualWidth:document.querySelector("#portalVisual").getBoundingClientRect().width,
+      count:document.querySelectorAll(".category-card").length
+    }));
+    assert.ok(metrics.scrollWidth <= metrics.viewport+2,JSON.stringify(metrics));
+    assert.ok(metrics.heroWidth <= metrics.viewport+2,JSON.stringify(metrics));
+    assert.equal(metrics.count,6);
+  });
+  await liveMobileContext.close();
 } finally {
   await browser.close();
 }
