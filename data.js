@@ -943,6 +943,61 @@ window.TOOLS = [
     pros: ["תומך ב-48 כלי קוד וסוכנים", "ניהול קבוצתי ועדכונים מרוכזים", "אפליקציה, CLI וניהול דרך סוכן"], cons: ["אזהרת חתימה אפשרית ב-Mac", "אינו מבטיח ש-Skill חיצוני בטוח או איכותי"],
     alternatives: ["Find Skills", "Anthropic Skills", "Vercel Agent Skills"], url: "https://aiskillshub.link/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, פלטפורמות ורישיון MIT", url: "https://github.com/qufei1993/skills-hub" }, { label: "האתר והתיעוד הרשמיים", url: "https://aiskillshub.link/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "pentagi", name: "PentAGI", mark: "PA", category: "development", subcategories: ["אבטחת מידע", "סוכני AI", "אירוח עצמי"],
+    tagline: "מערכת רב-סוכנית אוטונומית לבדיקות חדירה מורשות על תשתית עצמית.",
+    solves: "מקבלת יעד ומטרה, מתכננת בדיקת אבטחה, מפעילה יותר מ-20 כלי pentest בתוך סביבת Docker מבודדת ושומרת ממצאים ודוחות.",
+    uses: ["בדיקות חדירה", "אבטחת מידע", "אוטומציה"], audience: "חוקרי אבטחה, צוותי Red Team ובודקי חדירה שמפעילים בדיקות מורשות בלבד.",
+    free: "הליבה ניתנת לאירוח עצמי תחת MIT, עם Docker Compose ומבחר ספקי מודלים; אפשר לעבוד עם Ollama או vLLM מקומיים ללא מנוי לפלטפורמת PentAGI.",
+    limits: "נדרשים משאבי אירוח ומודל מקומי או מפתח לספק LLM, ועלויות ספקי ענן נפרדות. יכולות Enterprise ושירותי הענן של VXControl אינם חלק מהליבה החינמית. זהו כלי התקפי שיש להפעיל רק על מערכות שקיבלתם הרשאה מפורשת לבדוק.",
+    pros: ["יותר מ-20 כלי אבטחה בסביבה מבודדת", "בחירת מודל מקומי או ספק ענן", "API ודוחות מפורטים"], cons: ["הקמה כבדה יחסית עם Docker ומסדי נתונים", "שימוש שגוי עלול להיות מסוכן או בלתי חוקי"],
+    alternatives: ["AgentGuard by agentwares", "Plimsoll"], url: "https://github.com/vxcontrol/pentagi", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר הרשמי ורישיון MIT", url: "https://github.com/vxcontrol/pentagi" }, { label: "גרסאות יציבות", url: "https://github.com/vxcontrol/pentagi/releases" }]
+  },
+  {
+    slug: "context-mode", name: "Context Mode", mark: "CM", category: "development", subcategories: ["MCP", "סוכני קוד", "ניהול הקשר"],
+    tagline: "שרת MCP מקומי שמצמצם פלטי כלים ושומר זיכרון עבודה לסוכני קוד.",
+    solves: "מריץ ומסכם פלטים גדולים בתוך sandbox במקום להזרים אותם לחלון ההקשר, ושומר מצב מפגש מקומי כדי לצמצם אובדן מידע לאחר compact.",
+    uses: ["סוכני קוד", "MCP", "חיסכון בטוקנים"], audience: "מפתחים שעובדים עם Codex, Claude Code, Cursor, OpenCode או אחד מ-17 הלקוחות הנתמכים.",
+    free: "השימוש המקומי חינמי ללא חשבון, טלמטריה, ענן או מנוי. הקוד זמין תחת Elastic License 2.0 ונתוני המפגש נשמרים ב-SQLite במחשב.",
+    limits: "ELv2 הוא רישיון source-available ולא רישיון קוד פתוח מאושר OSI: אסור להציע את התוכנה כשירות מנוהל או להסיר הודעות רישוי. ההתקנה דורשת Node.js או Bun, וחיסכון בפועל תלוי בדפוסי העבודה.",
+    pros: ["עיבוד מקומי וללא מעקב", "תמיכה רחבה ב-MCP וב-hooks", "זיכרון מפגש וניתוב כלים"], cons: ["רישיון מגביל שירות מתחרה", "שכבה נוספת שדורשת הגדרה ובדיקת תאימות"],
+    alternatives: ["Skills Hub", "Plimsoll", "OpenQodex"], url: "https://github.com/mksglu/context-mode", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, פרטיות ותיעוד", url: "https://github.com/mksglu/context-mode" }, { label: "רישיון Elastic 2.0", url: "https://github.com/mksglu/context-mode/blob/main/LICENSE" }]
+  },
+  {
+    slug: "text-to-cad", name: "text-to-cad", mark: "TC", category: "skills", subcategories: ["CAD", "Agent Skills", "ייצור"],
+    tagline: "תוסף מקומי שנותן לסוכני AI כלי יצירה, בדיקה והצגה של מודלי CAD.",
+    solves: "מאפשר לסוכן להפיק STEP, GLB, STL ו-3MF, לבצע בדיקות תכנון לייצור, ליצור שרטוטים הנדסיים ולהציג אותם בצופה מקומי.",
+    uses: ["CAD", "מידול תלת-ממד", "סוכני AI"], audience: "מהנדסים, מייקרים ומפתחים שרוצים לשלב יצירת CAD בתהליכי Codex, Claude Code, Cursor, Gemini או סוכן תומך Skills.",
+    free: "התוסף וה-workflows המקומיים חינמיים תחת MIT, ללא מכסת יצירה של הפלטפורמה; ההתקנה משתמשת ב-uv ומריצה שרת וצופה מקומיים.",
+    limits: "נדרש סוכן תואם והעלויות שלו או של מודל ה-AI נפרדות. שירותי הדפסה, CNC ופבריקציה חיצוניים עולים בנפרד. טלמטריית שימוש ודוחות קריסה פעילים כברירת מחדל, אך אפשר לכבות אותם בפקודה הרשמית.",
+    pros: ["פורמטי CAD שימושיים וייצוא מקומי", "תמיכה בכמה סוכנים נפוצים", "בדיקות DFM ושרטוטים הנדסיים"], cons: ["תלוי בסוכן ובסביבת Python/uv", "טלמטריה מופעלת כברירת מחדל"],
+    alternatives: ["Open CAD Studio", "Skills Hub"], url: "https://www.texttocad.dev/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/earthtojake/text-to-cad" }, { label: "התיעוד הרשמי", url: "https://www.texttocad.dev/" }]
+  },
+  {
+    slug: "open-cad-studio", name: "Open CAD Studio", mark: "OC", category: "design", subcategories: ["CAD", "שרטוט טכני", "תלת-ממד"],
+    tagline: "יישום CAD חינמי לדפדפן ולמחשב עם עריכת DWG ו-DXF מקומית.",
+    solves: "מספק שרטוט דו-ממדי, מידול מוצקים, שכבות, מידות, בלוקים, הדפסה והמרה בלי להעלות קבצים לשירות המרה.",
+    uses: ["שרטוט טכני", "מידול תלת-ממד", "המרת קבצים"], audience: "מהנדסים, אדריכלים, יצרנים וסטודנטים שצריכים CAD חוצה-פלטפורמות.",
+    free: "כל היישום מופץ תחת GPL-3.0. גרסת הווב פועלת ללא התקנה ושומרת קבצים כהורדות מקומיות; גרסאות Desktop זמינות ל-Windows, Linux ו-Mac עם Apple Silicon.",
+    limits: "הפרויקט עדיין בפיתוח פעיל וממליץ לגבות שרטוטי ייצור. חבילת macOS חתומה ad-hoc אך אינה notarized, ויכולות כמו PDF, plugins ואוטומציה מלאה זמינות בעיקר ב-Desktop.",
+    pros: ["קריאה וכתיבה של DWG ו-DXF", "עובד בדפדפן ובמחשב", "2D, 3D ו-API לאוטומציה"], cons: ["צעיר יחסית לשימושי ייצור קריטיים", "חבילת Mac אינה מאומתת על ידי Apple"],
+    alternatives: ["text-to-cad"], url: "https://www.opencadstudio.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, מגבלות ורישיון GPL-3.0", url: "https://github.com/HakanSeven12/OpenCADStudio" }, { label: "יישום הווב הרשמי", url: "https://www.opencadstudio.com/" }]
+  },
+  {
+    slug: "crisp-display", name: "Crisp", mark: "Cr", category: "productivity", subcategories: ["macOS", "מסכים", "כלי מערכת"],
+    tagline: "כלי שורת תפריטים חינמי לשליטה מתקדמת במסכים חיצוניים ב-macOS.",
+    solves: "מוסיף קנה מידה HiDPI, בהירות ועוצמה דרך DDC, פרופילים, מסכים וירטואליים, סידור מסכים וקיצורי אוטומציה שחסרים ב-macOS.",
+    uses: ["ניהול מסכים", "אוטומציה", "נגישות"], audience: "משתמשי Mac עם מסך חיצוני שרוצים שליטה חדה ונוחה ללא רישיון Pro.",
+    free: "כל היכולות חינמיות ללא מסלול Pro או מפתח רישיון, והקוד תחת MIT. ההורדות חתומות ומאומתות על ידי Apple וניתן להתקין גם דרך Homebrew.",
+    limits: "דורש macOS 14 ומעלה. שינוי smooth scaling מבקש סיסמת מנהל פעם אחת לכל מסך, ומקשי בהירות מותאמים דורשים הרשאת Accessibility; תמיכת DDC תלויה במסך ובחיבור.",
+    pros: ["כל הפיצ'רים פתוחים ללא תשלום", "חבילה חתומה ו-notarized", "CLI ופעולות Shortcuts לאוטומציה"], cons: ["Mac בלבד", "חלק מהיכולות דורשות הרשאות מערכת"],
+    alternatives: ["BetterWispr"], url: "https://crispmac.app/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, התחייבות החינמיות ורישיון MIT", url: "https://github.com/didriksg/Crisp" }, { label: "האתר הרשמי", url: "https://crispmac.app/" }]
   }
 
 ];
