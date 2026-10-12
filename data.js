@@ -525,11 +525,125 @@ window.TOOLS = [
     pros: ["RAG, סוכן ו-Wiki יחד", "רכיבים ניתנים להחלפה", "כ-33.3 אלף כוכבים"], cons: ["הקמה מלאה מורכבת", "אין installer ל-Desktop"],
     alternatives: ["NotebookLM", "Hindsight"], url: "https://github.com/Tencent/WeKnora", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, פריסה ורישיון MIT", url: "https://github.com/Tencent/WeKnora" }, { label: "התיעוד הרשמי", url: "https://weknora.weixin.qq.com/" }, { label: "גרסאות", url: "https://github.com/Tencent/WeKnora/releases" }]
+  },
+  {
+    slug: "archon", name: "Archon", mark: "Ar", category: "development", subcategories: ["סוכני AI", "Workflow", "קוד פתוח"],
+    tagline: "מנוע פתוח שמגדיר תהליכי עבודה חוזרים לסוכני קוד.",
+    solves: "מקודד תכנון, מימוש, בדיקות, ביקורת ויצירת Pull Request כתהליך YAML עקבי עם שערי אישור ותוצרים.",
+    uses: ["פיתוח", "אוטומציה", "סוכני קוד"], audience: "מפתחים וצוותים שרוצים להפוך עבודת סוכני קוד לתהליך צפוי וניתן לבקרה.",
+    free: "קוד המקור וה-CLI זמינים בחינם ברישיון MIT, עם התקנה מקומית ל-macOS, Linux ו-Windows.",
+    limits: "ההתקנה המלאה דורשת Bun, Claude Code ו-GitHub CLI; שימוש במודל ובשירותי צד שלישי עשוי להיות כרוך בעלות נפרדת.",
+    pros: ["תהליכים דטרמיניסטיים", "שערי אישור אנושיים", "רישיון MIT"], cons: ["דורש סביבת פיתוח וכלים נלווים", "עלויות מודל אינן כלולות"],
+    alternatives: ["Paperclip", "TAKT"], url: "https://archon.diy/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/coleam00/Archon" }, { label: "מדריך רשמי", url: "https://archon.diy/docs/" }]
+  },
+  {
+    slug: "photocraft", name: "PhotoCraft", mark: "PC", category: "design", subcategories: ["עריכת תמונה", "PSD", "קוד פתוח"],
+    tagline: "עורך תמונות פתוח ומקומי שנבנה ב-Rust ותומך בקובצי PSD.",
+    solves: "מספק שכבות, מסכות, שכבות התאמה, טקסט, וקטורים ומברשות לעבודה מקומית ללא תלות בענן.",
+    uses: ["עריכת תמונה", "PSD", "עיצוב"], audience: "מעצבים ויוצרים שמחפשים חלופה פתוחה וכלי עבודה לא מקוון.",
+    free: "היישום והקוד זמינים בחינם ברישיון כפול MIT או Apache-2.0, עם הורדות ל-Windows, macOS, Linux ו-FreeBSD וגם גרסת Web.",
+    limits: "המוצר מוגדר early alpha; תאימות PSD ופיצ'רים מסוימים עדיין עלולים להשתנות או להיות חלקיים.",
+    pros: ["עבודה לא מקוונת", "שכבות ו-PSD", "רישיון פתוח"], cons: ["גרסת alpha מוקדמת", "לא תחליף מלא לכל תרחיש מקצועי"],
+    alternatives: ["GIMP", "ArtCraft"], url: "https://getartcraft.com/apps/photocraft", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, הורדות ורישיון", url: "https://github.com/storytold/photocraft" }, { label: "עמוד המוצר", url: "https://getartcraft.com/apps/photocraft" }]
+  },
+  {
+    slug: "rea", name: "REA", mark: "RE", category: "development", subcategories: ["Reverse engineering", "MCP", "סוכני AI"],
+    tagline: "שרת MCP פתוח לניתוח התנהגות, יישומים וקבצים בינאריים בעזרת סוכני AI.",
+    solves: "מחבר סוכן לכלי ניתוח סטטיים ודינמיים כדי לעקוב אחר זרימות, לאסוף ראיות ולהסביר התנהגות תוכנה.",
+    uses: ["הנדסה לאחור", "דיבוג", "מחקר תוכנה"], audience: "חוקרי אבטחה ומפתחים שמנתחים תוכנה שבבעלותם או שיש להם הרשאה לבדוק.",
+    free: "REA עצמו חינמי בקוד פתוח וברישיון MIT, וניתן להתקנה דרך npm לשימוש מקומי.",
+    limits: "חלק מהאינטגרציות דורשות כלים מסחריים ורישיונות נפרדים; יש להשתמש רק בתוכנה וביעדים שהושגו כחוק ושמותר לנתח.",
+    pros: ["קטלוג כלי MCP", "עובד עם כמה סוכנים", "רישיון MIT"], cons: ["דרישות משתנות לפי יעד", "כלי ניתוח ומודלים עשויים לעלות כסף"],
+    alternatives: ["Open Code Review", "PentAGI"], url: "https://rea.tools/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר והרישיון", url: "https://github.com/morluto/rea" }, { label: "מדריכים רשמיים", url: "https://rea.tools/guides/" }]
+  },
+  {
+    slug: "ponytail", name: "Ponytail", mark: "Po", category: "skills", subcategories: ["סקיל", "קוד מינימלי", "ביקורת קוד"],
+    tagline: "סקיל פתוח שמכוון סוכני קוד לבחור בפתרון הקטן והפשוט ביותר.",
+    solves: "מוסיף לסוכן סולם החלטה שבודק אם אפשר להסיר, למחזר או לצמצם קוד לפני כתיבת פתרון חדש.",
+    uses: ["פיתוח", "ביקורת קוד", "צמצום מורכבות"], audience: "מפתחים שמשתמשים ב-Claude Code, Codex, Cursor וסוכני קוד נוספים.",
+    free: "הפרומפט, קובצי הסקיל והמתקינים זמינים בחינם ברישיון MIT ותומכים במגוון סוכנים.",
+    limits: "זהו סט הוראות לסוכן ולא מנוע שמבצע אימות עצמאי; איכות התוצאה תלויה בסוכן, במודל ובהקשר הקוד.",
+    pros: ["פשוט להתקנה", "תומך בכמה סוכנים", "רישיון MIT"], cons: ["לא כלי בדיקה עצמאי", "עלול להתאים פחות למשימות שמחייבות ארכיטקטורה רחבה"],
+    alternatives: ["Superpowers", "Anthropic Skills"], url: "https://ponytail.dev/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר והפרומפט", url: "https://github.com/DietrichGebert/ponytail" }, { label: "אתר רשמי", url: "https://ponytail.dev/" }]
+  },
+  {
+    slug: "laya", name: "Laya", mark: "Ly", category: "development", subcategories: ["מודל מקומי", "סיווג", "רב-לשוני"],
+    tagline: "מנוע החלטות מקומי ורב-לשוני לבחירה, ניקוד ושאלות כן או לא.",
+    solves: "מבצע החלטות מובנות ביותר מ-100 שפות במעבר מודל יחיד, עם נתבים ל-Python, TypeScript, HTTP ו-MCP.",
+    uses: ["ניתוב בקשות", "סיווג", "אוטומציה"], audience: "מפתחים שצריכים החלטות מהירות ומובנות בלי לשלוח כל בקשה למודל ענן גדול.",
+    free: "הספרייה, השרת והמודלים זמינים להורדה ולהרצה עצמית תחת Apache-2.0.",
+    limits: "דורש Python 3.10 ומעלה או סביבת TypeScript מתאימה; ההורדה וההרצה צורכות אחסון וזיכרון, ויש לבדוק דיוק על הנתונים שלכם.",
+    pros: ["הרצה מקומית", "יותר מ-100 שפות", "ממשקי Python, TS ו-MCP"], cons: ["דורש משאבי מחשוב", "הדיוק משתנה לפי שפה ואורך קלט"],
+    alternatives: ["MT Code", "WeKnora"], url: "https://github.com/NandhaKishorM/laya", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר והתיעוד", url: "https://github.com/NandhaKishorM/laya" }, { label: "מודל רשמי", url: "https://huggingface.co/convaiinnovations/laya" }]
+  },
+  {
+    slug: "deepseek-harness", name: "DeepSeek Harness", mark: "DH", category: "development", subcategories: ["סוכני AI", "Plugins", "Self-hosted"],
+    tagline: "מעטפת פתוחה לסוכני AI שבה כל רכיב בנוי כתוסף.",
+    solves: "מספקת סביבת Web מקומית וארכיטקטורת תוספים להרכבת יכולות, כלים ותהליכי עבודה של סוכנים.",
+    uses: ["סוכני AI", "פיתוח", "אורקסטרציה"], audience: "מפתחים שרוצים להתנסות במעטפת סוכנים מודולרית ולהרחיב אותה בתוספים.",
+    free: "הקוד והממשק המקומי זמינים בחינם ברישיון MIT וניתנים להרצה דרך npm.",
+    limits: "המוצר נמצא ב-developer preview וצפויים שינויי תאימות; ספקי מודלים ושירותים חיצוניים עשויים לדרוש מפתחות ועלות נפרדת.",
+    pros: ["ארכיטקטורת תוספים", "ממשק Web מקומי", "רישיון MIT"], cons: ["גרסת preview", "שינויים שוברים צפויים"],
+    alternatives: ["OpenClaw", "Paperclip"], url: "https://deepseek-harness.github.io/deepseek-harness/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר והרישיון", url: "https://github.com/deepseek-ai/deepseek-harness" }, { label: "תיעוד רשמי", url: "https://deepseek-harness.github.io/deepseek-harness/" }]
+  },
+  {
+    slug: "google-ai-edge-foresight", name: "Google AI Edge Foresight", mark: "GF", category: "productivity", subcategories: ["פגישות", "תמלול", "AI מקומי"],
+    tagline: "עוזר פגישות ניסיוני ל-Mac שפועל מקומית ומחבר שיחות, הערות וקבצים.",
+    solves: "קולט אודיו מערכת ומיקרופון, מעשיר הערות קצרות ומאפשר חיפוש בשיחות ובספריית ידע פרטית גם ללא אינטרנט.",
+    uses: ["פגישות", "סיכום", "חיפוש מקומי"], audience: "משתמשי Mac שרוצים תיעוד וחיפוש בפגישות בלי להעלות חומר רגיש לענן.",
+    free: "האפליקציה ניתנת להורדה ללא עלות ענן או מנוי, וכל עיבוד ה-AI מתבצע במכשיר.",
+    limits: "זוהי אפליקציה ניסיונית ל-Mac בלבד; ביצועים וצריכת משאבים תלויים בחומרה, ויש לבדוק הרשאות הקלטה לפני שימוש בפגישה.",
+    pros: ["עובד לא מקוון", "המידע נשאר במכשיר", "חיפוש רב-מודלי"], cons: ["Mac בלבד", "סטטוס ניסיוני"],
+    alternatives: ["Circleback", "Minutes"], url: "https://developers.google.com/ai/edge/foresight", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "הכרזה ופרטי חינמיות", url: "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/" }, { label: "הורדה רשמית", url: "https://developers.google.com/ai/edge/foresight" }]
+  },
+  {
+    slug: "synthid-detector", name: "SynthID Detector", mark: "SI", category: "research", subcategories: ["אימות מדיה", "AI", "מקור תוכן"],
+    tagline: "בודק תמונות, וידאו ואודיו לאיתור סימני מים בלתי נראים של תוכן שנוצר ב-AI.",
+    solves: "מספק אות מקור נוסף לבדיקת מדיה שנוצרה או נערכה בכלים שתומכים ב-SynthID.",
+    uses: ["אימות תוכן", "מחקר", "בדיקת מדיה"], audience: "עיתונאים, חוקרים, אנשי אמון ובטיחות וכל מי שבודק מקור של מדיה.",
+    free: "Google פתחה את הגלאי בחינם לכולם, ברחבי העולם ובאנגלית, עבור תמונה, וידאו ואודיו.",
+    limits: "הבדיקה מזהה רק תוכן עם סימן מים נתמך; היעדר זיהוי אינו הוכחה שהתוכן אינו AI, ושינויים כבדים בקובץ עשויים לפגוע בזיהוי.",
+    pros: ["שלושה סוגי מדיה", "גישה עולמית", "מקור רשמי"], cons: ["לא מזהה כל תוכן AI", "הממשק באנגלית"],
+    alternatives: ["Graphify", "OpenResearch"], url: "https://synthid.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "הכרזה רשמית", url: "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/" }, { label: "מגבלות האימות", url: "https://support.google.com/gemini/answer/16722517" }]
+  },
+  {
+    slug: "prism-openai", name: "Prism", mark: "Pr", category: "research", subcategories: ["כתיבה מדעית", "LaTeX", "שיתוף"],
+    tagline: "סביבת כתיבה מדעית בענן עם LaTeX, שיתוף ו-GPT בתוך המסמך.",
+    solves: "מאחדת כתיבה, עריכת משוואות וציטוטים, חיפוש ספרות ושיתוף מחברים בסביבת מחקר אחת.",
+    uses: ["כתיבה אקדמית", "LaTeX", "מחקר"], audience: "חוקרים, סטודנטים וצוותים שמכינים מאמרים מדעיים בשיתוף.",
+    free: "חינמית לבעלי חשבון ChatGPT אישי, ללא מגבלת פרויקטים או משתפי פעולה וללא תשלום לפי מושב.",
+    limits: "דורשת חשבון וחיבור לענן; OpenAI מציינת שיכולות AI חזקות יותר יתווספו בהמשך לתוכניות ChatGPT בתשלום.",
+    pros: ["פרויקטים ומשתפים ללא הגבלה", "LaTeX מובנה", "GPT בהקשר המסמך"], cons: ["שירות ענן", "יכולות מתקדמות עתידיות עשויות להיות בתשלום"],
+    alternatives: ["Zotero", "OpenResearch"], url: "https://prism.openai.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "הכרזה ותנאי חינמיות", url: "https://openai.com/index/introducing-prism/" }, { label: "האפליקציה", url: "https://prism.openai.com/" }]
+  },
+  {
+    slug: "rill-browser-recording", name: "Rill", mark: "Ri", category: "development", subcategories: ["בדיקות דפדפן", "הקלטה", "סוכני קוד"],
+    tagline: "מקליט בדיקות דפדפן ועבודת סוכנים עם וידאו, קונסול, רשת וציר זמן.",
+    solves: "הופך באג, שינוי או בדיקת דפדפן להקלטה שאפשר לבדוק, לשתף ולצרף ל-PR או לדוח תקלה.",
+    uses: ["QA", "דיבוג", "Code review"], audience: "מפתחים ובודקים שרוצים לראות ולשתף מה סוכן או משתמש ביצע בדפדפן.",
+    free: "תוכנית Free ללא כרטיס כוללת 5 הקלטות ביום, 100 דקות וידאו מאוחסנות ועד 2 הקלטות במקביל.",
+    limits: "משימות דפדפן בענן צורכות קרדיטים נפרדים; קישורי שיתוף חושפים את ההקלטה למי שמחזיק בהם, והקלטות מסך מוגבלות ל-10 דקות.",
+    pros: ["וידאו וטלמטריית דפדפן", "מתאים לסוכני קוד נפוצים", "תוכנית חינם קבועה"], cons: ["מעלה הקלטות לשירות", "משימות ענן מחויבות בנפרד"],
+    alternatives: ["Open Code Review", "Workscribe"], url: "https://userill.dev/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "עמוד המוצר", url: "https://userill.dev/" }, { label: "תוכנית Free", url: "https://userill.dev/pricing" }]
   }
 
 ];
 
 window.WATCHLIST = [
+
+  { name: "IrisGo", mark: "IG", category: "productivity", signal: "מקור: Product Hunt והאתר הרשמי", reason: "האפליקציה פעילה, אך לא פורסמו תנאי תוכנית חינמית קבועה או מכסות שאפשר לאמת.", url: "https://irisgo.ai/", checked: "2026-10-12" },
+  { name: "FastRouter.ai", mark: "FR", category: "development", signal: "מקור: Product Hunt והארגון הרשמי ב-GitHub", reason: "ההרשמה כוללת קרדיטים חינמיים, אך לא נמצא מסלול חינמי מתמשך עם מכסה מחזורית ברורה.", url: "https://fastrouter.ai/", checked: "2026-10-12" },
+  { name: "ReadySetGo", mark: "RS", category: "development", signal: "מקור: הבלוג הרשמי של thoughtbot", reason: "הבטא פתוחה בחינם לזמן מוגבל בלבד ובכפוף למכסת משתמשים יומית, ולכן אינה עומדת עדיין בתנאי הקטלוג.", url: "https://thoughtbot.com/blog/we-built-an-ai-product-consultant-and-the-free-beta-is-now-open", checked: "2026-10-12" },
   { name: "MT Code", mark: "MT", category: "development", signal: "אפליקציית Desktop חינמית תחת Apache-2.0 לניהול Claude Code, Codex, Cursor, Grok, OpenCode וסוכנים נוספים, עם גרסאות עדכניות ל-macOS, Windows ו-Linux.", reason: "החינמיות והגרסאות מאומתות, אך המאגר צבר רק 8 כוכבים בזמן הבדיקה והוא fork צעיר של T3 Code. נדרש עוד אימוץ ובדיקת אבטחה לפני פרסום פעיל; מנויי הסוכנים והמודלים נפרדים.", url: "https://github.com/munimtechnologies/mtcode", checked: "2026-10-12" },
   { name: "YuE2 Studio", mark: "Y2", category: "design", signal: "מאגר פעיל עם 551 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/timoncool/YuE2-Studio", checked: "2026-10-12" },
   { name: "Minutes", mark: "Mi", category: "productivity", signal: "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/silverstein/minutes", checked: "2026-10-12" },
