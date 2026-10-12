@@ -152,6 +152,39 @@ try {
   });
   await context.close();
 
+  const {page:referencePage,context:referenceContext} = await newPage(1755,827);
+  await run("Reference screenshot: categories end near the bottom of the first fold", async () => {
+    const geometry = await referencePage.evaluate(() => {
+      const rect = selector => {
+        const b=document.querySelector(selector).getBoundingClientRect();
+        return {y:b.y,bottom:b.bottom,height:b.height,width:b.width};
+      };
+      return {
+        viewportHeight:innerHeight,
+        viewportWidth:innerWidth,
+        hero:rect(".hero"),
+        news:rect("#news"),
+        categories:rect("#categories"),
+        tools:rect("#tools"),
+        cta:rect(".hero-cta-row"),
+        visual:rect("#portalVisual"),
+        scrollWidth:document.documentElement.scrollWidth
+      };
+    });
+    console.log("FOLD_1755x827",JSON.stringify(geometry));
+    fs.writeFileSync(path.join(output,"reference-fold-1755x827.json"),JSON.stringify(geometry,null,2));
+    assert.ok(geometry.hero.height >= 435 && geometry.hero.height <= 455,JSON.stringify(geometry));
+    assert.ok(geometry.news.y < 470, "News should remain visible: "+JSON.stringify(geometry));
+    assert.ok(geometry.categories.y < geometry.viewportHeight-90, "Categories should be visible, not only starting at the bottom: "+JSON.stringify(geometry));
+    assert.ok(geometry.tools.y >= geometry.viewportHeight-100 && geometry.tools.y <= geometry.viewportHeight+120,
+      "Category ribbon should roughly meet the lower edge: "+JSON.stringify(geometry));
+    assert.ok(geometry.cta.bottom < geometry.hero.bottom-5, "Hero actions clipped: "+JSON.stringify(geometry));
+    assert.ok(geometry.visual.width >= geometry.viewportWidth-2, "Lost full-bleed art: "+JSON.stringify(geometry));
+    assert.ok(geometry.scrollWidth <= geometry.viewportWidth+2, "Horizontal overflow: "+JSON.stringify(geometry));
+  });
+  await referencePage.screenshot({path:path.join(output,"hero-reference-1755x827.png"),fullPage:false});
+  await referenceContext.close();
+
   const {page:laptop,context:laptopContext} = await newPage(1366,768);
   await run("Laptop-size first fold matches compact mockup without clipped controls", async () => {
     const metric = await laptop.evaluate(() => {
@@ -170,8 +203,8 @@ try {
         scrollWidth:document.documentElement.scrollWidth
       };
     });
-    assert.ok(metric.hero.height >= 350 && metric.hero.height <= 395, JSON.stringify(metric));
-    assert.ok(metric.news.y < 420, "The news strip should be above the fold: "+JSON.stringify(metric));
+    assert.ok(metric.hero.height >= 410 && metric.hero.height <= 455, JSON.stringify(metric));
+    assert.ok(metric.news.y < 465, "The news strip should be above the fold: "+JSON.stringify(metric));
     assert.ok(metric.cta.bottom <= metric.hero.bottom - 5, "Laptop actions are clipped: "+JSON.stringify(metric));
     assert.ok(metric.title.y >= metric.header.bottom - 3, "Headline collides with navbar: "+JSON.stringify(metric));
     assert.ok(metric.scrollWidth <= 1368, "Horizontal page overflow: "+JSON.stringify(metric));
