@@ -624,7 +624,8 @@
 
 /* Avoid the visual stealing clicks from search and nav; the pause button
    intentionally remains interactive. */
-.hero-inner, .hero-copy { pointer-events: auto; }
+.hero-inner { pointer-events: none; }
+.hero-copy { pointer-events: auto; }
 .hero-visual#portalVisual { pointer-events: none; }
 .hero-visual#portalVisual .portal-motion-toggle { pointer-events: auto; }
 
