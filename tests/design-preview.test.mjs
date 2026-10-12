@@ -177,7 +177,10 @@ test("news and categories are compact, responsive and visually readable", () => 
   assert.match(compactCss, /min-height:\s*68px/);
   assert.match(compactCss, /\.categories-section\s*\{/);
   assert.match(compactCss, /\.category-card\s*\{/);
-  assert.match(compactCss, /min-height:\s*78px/);
+  assert.match(compactCss, /min-height:\s*90px/);
+  assert.match(compactCss, /\.categories-section\s*\{\s*padding:\s*8px 0 16px/);
+  assert.match(compactCss, /\.categories-section \.section-title-group\s*\{\s*margin:\s*5px 0 11px/);
+  assert.match(compactCss, /padding:\s*10px 12px/);
   assert.match(compactCss, /@media\s*\(max-width:\s*690px\)/);
   assert.ok(!/\.hero(?:\s|\{|\-inner|\-visual)/.test(compactCss),
     "Compact strip must not alter the cinematic Hero.");
