@@ -42,7 +42,7 @@ test("approved UI loads its actual animation, CSS and up-to-date shared catalog"
   ];
   for (const path of paths) {
     assert.ok(existsSync(new URL("../" + path, import.meta.url)), "Missing resource: " + path);
-    assert.ok(home.includes('"/' + path + '"'), "Homepage does not load resource: " + path);
+    assert.ok(home.includes('"/' + path + '"') || home.includes('"/' + path + '?'), "Homepage does not load resource: " + path);
   }
   assert.match(home, /href="\/news"/);
   assert.match(home, /id="catalog"/); // Legacy deep links remain functional.
