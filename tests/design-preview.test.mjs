@@ -93,8 +93,8 @@ test("high-resolution photographed 2.5D art is split into real moving image laye
   assert.match(heroMotionCss, /--cube-x/);
   assert.match(heroMotionCss, /@keyframes cinematic-cube-hover/);
   assert.match(heroMotionCss, /@keyframes cinematic-panel-hover/);
-  assert.match(compactHeroCss, /height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
-  assert.match(compactHeroCss, /min-height:\s*360px/);
+  assert.match(compactHeroCss, /height:\s*clamp\(430px,\s*calc\(44svh \+ 80px\),\s*565px\)/);
+  assert.match(compactHeroCss, /min-height:\s*430px/);
   assert.match(heroMotionCss, /top:\s*-76px/);
   assert.match(heroMotionCss, /width:\s*100vw/);
   assert.match(heroMotionCss, /\.hero-visual#portalVisual::before/);
@@ -133,7 +133,7 @@ test("full-bleed preview places scenery outside layout columns and preserves int
 
 test("full-bleed scene retains its width while the figure stays grounded", () => {
   const desktop = heroMotionCss.slice(0, heroMotionCss.indexOf("@media(max-width:1200px)"));
-  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
+  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(430px,\s*calc\(44svh \+ 80px\),\s*565px\)/);
   assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*100%/);
   assert.match(desktop, /\.hero-visual#portalVisual\s*\{[^}]*width:\s*100vw/);
   assert.match(desktop, /\.cinematic-photograph\s*\{[^}]*height:\s*104%/);
@@ -188,7 +188,7 @@ test("the compact cinematic landing preserves functional controls and responsive
   assert.ok(html.indexOf('href="/hero-motion.css"') < html.indexOf('href="/compact-hero.css"'));
   assert.match(compactHeroCss, /@media \(min-width: 691px\)/);
   assert.match(compactHeroCss, /\.site-header\s*\{[^}]*height:\s*58px/);
-  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(360px,\s*44svh,\s*485px\)/);
+  assert.match(compactHeroCss, /\.hero\s*\{[^}]*height:\s*clamp\(430px,\s*calc\(44svh \+ 80px\),\s*565px\)/);
   assert.match(compactHeroCss, /\.hero-inner\s*\{[^}]*height:\s*100%/);
   assert.match(compactHeroCss, /\.cinematic-photograph\s*\{[^}]*height:\s*111%/);
   assert.match(compactHeroCss, /\.hero-search\s*\{[^}]*height:\s*46px/);
