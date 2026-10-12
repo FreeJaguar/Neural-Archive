@@ -258,4 +258,33 @@
   .categories-section .category-icon svg { width: 19px; height: 19px; }
   .categories-section .category-text strong { font-size: 12px; }
   .categories-section .category-text small { font-size: 9px; }
+
+  /* Bring the entire category ribbon close to the original mockup's height. */
+  .categories-section .section-topline {
+    padding-top: 0;
+    min-height: 18px;
+  }
+  .categories-section .section-title-group {
+    margin: 1px 0 8px;
+  }
+  .categories-section .section-title-group .section-eyebrow { display: none; }
+  .categories-section .section-title-group h2 {
+    font-size: 23px;
+    line-height: 1.13;
+  }
+  .categories-section .section-title-group p:not(.section-eyebrow) {
+    font-size: 10px;
+    margin-top: 0;
+    line-height: 1.25;
+  }
+  .categories-section .category-card {
+    min-height: 78px;
+    padding: 7px 10px;
+    gap: 4px;
+  }
+  .categories-section .category-icon { width: 28px; height: 28px; }
+  .categories-section .category-icon svg { width: 17px; height: 17px; }
+  .categories-section .category-text strong { font-size: 12px; line-height: 1.3; }
+  .categories-section .category-text small { font-size: 9px; line-height: 1.25; }
+  .categories-section { padding-bottom: 9px; }
 }
