@@ -888,6 +888,61 @@ window.TOOLS = [
     pros: ["הכול נשאר במכשיר", "Chrome/Edge ו-Firefox", "הדגשת קטעי מקור ושאלות המשך"], cons: ["הורדת מודל ראשונית", "מודלים מקומיים קטנים עשויים להיות איטיים או פחות מדויקים"],
     alternatives: ["NotebookLM", "AstaBrief", "InsightArxiv"], url: "https://darshi1337.github.io/apogee/", added: "2026-10-11", verified: "2026-10-11",
     sources: [{ label: "המאגר, פרטיות ורישיון MIT", url: "https://github.com/darshi1337/apogee" }, { label: "אתר הפרויקט והתקנה", url: "https://darshi1337.github.io/apogee/" }]
+  },
+  {
+    slug: "betterwispr", name: "BetterWispr", mark: "BW", category: "productivity", subcategories: ["הכתבה קולית", "תמלול מקומי", "macOS"],
+    tagline: "הכתבה ותמלול מקומיים ל-Mac שמקלידים ישירות לכל אפליקציה.",
+    solves: "ממיר דיבור לטקסט בכל שדה כתיבה, שומר היסטוריה מקומית ויכול לתמלל פגישות ולהפיק סיכום באמצעות Apple Intelligence או מודל Ollama מקומי.",
+    uses: ["תמלול", "כתיבה", "פגישות"], audience: "משתמשי Mac, כותבים ואנשי ידע שרוצים הכתבה פרטית ללא מנוי ענן.",
+    free: "האפליקציה חינמית וקוד פתוח תחת Apache-2.0, ללא חשבון, מנוי או מפתח API; מודלי Apple Speech, Parakeet ו-Whisper רצים מקומית ואופליין לאחר ההורדה.",
+    limits: "דורשת macOS 14 ומעלה והרשאות מיקרופון ו-Accessibility. Apple silicon מומלץ; היסטוריית התמלול המקומית אינה מוצפנת, הקלטה נעצרת אחרי שתי דקות וחיבור אופציונלי לספק ענן כפוף למחיריו ולמדיניותו.",
+    pros: ["הכתבה בכל אפליקציה ללא מנוי", "מודלים מקומיים ופרטיות טובה", "תמלול פגישות ותיקון מילים נלמד"], cons: ["Mac בלבד", "קובץ ההיסטוריה המקומי אינו מוצפן"],
+    alternatives: ["Circleback", "Penguin Mail"], url: "https://betterwispr.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "האתר הרשמי והתחייבות החינמיות", url: "https://betterwispr.com/" }, { label: "המאגר, דרישות ורישיון Apache-2.0", url: "https://github.com/opennookorg/betterwispr" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "plimsoll", name: "Plimsoll", mark: "Pl", category: "development", subcategories: ["Sandbox", "סוכני AI", "אבטחה"],
+    tagline: "מריץ קוד שסוכן כתב בתוך sandbox ומדווח איזו רמת בידוד הופעלה בפועל.",
+    solves: "נותן לסוכנים ולמסגרות AI להריץ קוד לא-מהימן עם דרישת סף לבידוד, תוצאות חתומות, בדיקות חוזרות וגישת API מוגבלת בלי למסור לקוד את האישורים עצמם.",
+    uses: ["פיתוח", "אבטחה", "סוכני AI"], audience: "מפתחי סוכנים ומערכות שמריצות קוד שנוצר אוטומטית וצריכות גבול ביצוע מפורש וניתן לבדיקה.",
+    free: "הקוד Apache-2.0 וניתן להפעלה עצמית. ספק WebAssembly המקומי עובד ללא daemon, Docker, חשבון או אישורים; Docker ו-gVisor מאפשרים רמות בידוד מקומיות חזקות יותר.",
+    limits: "רמת process אינה מתאימה לקוד עוין, gVisor דורש התקנה ותחזוקה, ו-E2B או Docker Cloud מחויבים בנפרד. דיווח רמת הבידוד הוא ראיה שנאספה בידי ה-daemon ולא attestation חומרתי; הפרויקט עדיין צעיר.",
+    pros: ["סף בידוד שנאכף לפני הרצה", "אישורים נשארים מחוץ ל-sandbox", "לקוחות למסגרות סוכנים נפוצות"], cons: ["הקמה מורכבת לבידוד חזק", "ספקי microVM מנוהלים עולים כסף"],
+    alternatives: ["AgentGuard by agentwares", "Pinrail", "OpenQodex"], url: "https://github.com/plimsollmark/plimsoll", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, תיעוד ורישיון Apache-2.0", url: "https://github.com/plimsollmark/plimsoll" }, { label: "השוואת ספקים ורמות בידוד", url: "https://plimsollmark.github.io/plimsoll/comparison/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "brainotes", name: "braiNOTES", mark: "BN", category: "research", subcategories: ["הערות בכתב יד", "PDF", "למידה"],
+    tagline: "מחברת ו-whiteboard בדפדפן לכתיבה ידנית על חומרי הרצאה ו-PDF.",
+    solves: "מצמיד שקפים או PDF למחברת, מאפשר כתיבה בעט ולחץ, סימון, גזירת אזורים, לוח אינסופי וייצוא של דפים עם דיו וקטורי.",
+    uses: ["למידה", "הערות", "PDF"], audience: "סטודנטים, מרצים ולומדים עם עט או מסך מגע שרוצים מחברת מקומית בלי חשבון.",
+    free: "היישום חינמי וקוד פתוח תחת MIT, עובד בדפדפן ללא חשבון או שרת ושומר את התוכן מקומית; לאחר פתיחה ראשונה ניתן לעבוד גם אופליין.",
+    limits: "אין סנכרון ענן או שיתוף פעולה מובנים, ולכן גיבוי והעברה נעשים ידנית בקובצי .brainotes. הנתונים תלויים באחסון הדפדפן, והפרויקט צעיר עם קהילה קטנה.",
+    pros: ["כתיבה על PDF או לצדו", "עובד מקומית וללא חשבון", "ייצוא PDF עם דיו וקטורי"], cons: ["אין סנכרון בין מכשירים", "נדרש גיבוי ידני כדי להגן ממחיקת נתוני הדפדפן"],
+    alternatives: ["Obsidian", "NotebookLM", "Zotero"], url: "https://notes.swimmingbrain.dev/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, יכולות ורישיון MIT", url: "https://github.com/swimmingbrain/brainotes" }, { label: "היישום הרשמי", url: "https://notes.swimmingbrain.dev/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "cachety", name: "Cachety", mark: "Ca", category: "design", subcategories: ["PDF", "סימון מים", "פרטיות"],
+    tagline: "מסמן, משחיר ומצפין מסמכים רגישים בדפדפן בלי להעלות אותם לשרת.",
+    solves: "יוצר עותקים ייעודיים של תעודות, דרכונים, תלושים ודפי חשבון עם watermark, הסתרת מידע, ניקוי metadata, מגבלת גודל והצפנת PDF.",
+    uses: ["מסמכים", "פרטיות", "עיצוב"], audience: "כל מי שצריך לשלוח מסמך מזהה או פיננסי ורוצה לצמצם שימוש חוזר וחשיפת מידע.",
+    free: "השירות חינמי ויישאר חינמי לפי האתר הרשמי, ללא חשבון, מעקב או העלאת קבצים; הקוד זמין תחת AGPL-3.0 וניתן לאירוח עצמי.",
+    limits: "עד 200MB לקובץ ו-500 עמודים ל-PDF ועד 20 נמענים בעיבוד אחד. כל עמוד נבנה מחדש מפיקסלים כדי להסיר טקסט ו-metadata, ולכן הטקסט המתקבל אינו ניתן לבחירה והעיבוד צורך זיכרון מקומי.",
+    pros: ["הקבצים נשארים במכשיר", "watermark, השחרה והצפנת AES-256", "עובד במחשב ובטלפון וגם אופליין לאחר טעינה"], cons: ["Rasterization מסיר טקסט בר-בחירה", "אין ממשק עברי ברשימת 11 השפות הנוכחית"],
+    alternatives: ["GIMP", "Canva", "SVG Spark"], url: "https://cachety.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "האתר הרשמי והתחייבות החינמיות", url: "https://cachety.com/" }, { label: "המאגר, מגבלות ורישיון AGPL-3.0", url: "https://github.com/cachety/cachety" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
+  },
+  {
+    slug: "skills-hub", name: "Skills Hub", mark: "SH", category: "skills", subcategories: ["ניהול Skills", "סנכרון", "Desktop"],
+    tagline: "מנהל ומסנכרן ספריית Agent Skills אחת לעשרות כלי קוד וסוכנים.",
+    solves: "מתקין Skills פעם אחת, מארגן אותם בתגים ומסנכרן אותם לתיקיות הגלובליות או לפרויקטים של Codex, Claude Code, Cursor, OpenCode וכלים נוספים.",
+    uses: ["סוכני AI", "ניהול Skills", "פיתוח"], audience: "מפתחים ומשתמשי סוכנים שמחזיקים Skills בכמה כלי קוד ומערכות הפעלה.",
+    free: "אפליקציית ה-desktop וה-CLI חינמיים וקוד פתוח תחת MIT, ללא מסלול בתשלום שנדרש לליבה; יש חבילות ל-macOS, Windows ו-Linux.",
+    limits: "ב-macOS המערכת עשויה להזהיר שהמפתח אינו מאומת. סנכרון בין מכשירים דורש מאגר GitHub, GitLab או Gitee, ו-Skills מצד שלישי עדיין מחייבים בדיקת מקור, הרשאות וקוד לפני התקנה.",
+    pros: ["תומך ב-48 כלי קוד וסוכנים", "ניהול קבוצתי ועדכונים מרוכזים", "אפליקציה, CLI וניהול דרך סוכן"], cons: ["אזהרת חתימה אפשרית ב-Mac", "אינו מבטיח ש-Skill חיצוני בטוח או איכותי"],
+    alternatives: ["Find Skills", "Anthropic Skills", "Vercel Agent Skills"], url: "https://aiskillshub.link/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, פלטפורמות ורישיון MIT", url: "https://github.com/qufei1993/skills-hub" }, { label: "האתר והתיעוד הרשמיים", url: "https://aiskillshub.link/" }, { label: "אות ההשקה ב-Show HN", url: "https://news.ycombinator.com/show" }]
   }
 
 ];
@@ -906,5 +961,6 @@ window.WATCHLIST = [
   { name: "Pocketty", mark: "Po", category: "development", signal: "מסוף SSH ל-iPhone ול-iPad ששולח התראה כאשר סוכן קוד ממתין לקלט; 27 נקודות ו-12 תגובות בתוך שעות ב-Show HN.", reason: "האתר הרשמי מציג את המוצר ואת פרטיותו, אך מחיר קבוע, מגבלות המסלול החינמי ורישיון לא אומתו ממקור רשמי ברור בזמן הסריקה.", url: "https://pocketty.app/", checked: "2026-10-09" },
   { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" },
   { name: "Curie", mark: "Cu", category: "research", signal: "עוזר חדש לספרות מדעית, חילוץ נתונים וסקירות שיטתיות עם 100 נקודות ו-96 עוקבים בהשקת Product Hunt השבוע.", reason: "Product Hunt מסמן את הכלי כחינמי, אך באתר הרשמי לא נמצא מחירון נגיש שמגדיר מכסה מתחדשת, מספר מסמכים או גבולות שימוש; אין לפרסם כפעיל עד לאימות תנאי Free ממקור ראשון.", url: "https://curieai.tech/", checked: "2026-10-11" },
-  { name: "Task Monki", mark: "TM", category: "development", signal: "אפליקציית desktop מקומית לניהול כמה סוכני קוד מלוח קנבן עד preview, review ו-pull request; הושקה השבוע ב-Product Hunt.", reason: "הרישיון MIT והחינמיות מאומתים, אך המאגר עצמו מזהיר שמדובר בתוכנה ניסיונית שמריצה תהליכים ופעולות Git אמיתיים; עם 8 כוכבים בלבד ותמיכת Windows/Linux ניסיונית, נדרש עוד זמן בשלות.", url: "https://github.com/RojhatToptamus/task-monki", checked: "2026-10-11" }
+  { name: "Task Monki", mark: "TM", category: "development", signal: "אפליקציית desktop מקומית לניהול כמה סוכני קוד מלוח קנבן עד preview, review ו-pull request; הושקה השבוע ב-Product Hunt.", reason: "הרישיון MIT והחינמיות מאומתים, אך המאגר עצמו מזהיר שמדובר בתוכנה ניסיונית שמריצה תהליכים ופעולות Git אמיתיים; עם 8 כוכבים בלבד ותמיכת Windows/Linux ניסיונית, נדרש עוד זמן בשלות.", url: "https://github.com/RojhatToptamus/task-monki", checked: "2026-10-11" },
+  { name: "OldRoll Web", mark: "OR", category: "design", signal: "עורך תמונות וינטג' חדש בדפדפן עם 16 נקודות באות Show HN, עריכת Digicam/Film/VHS, ייצוא ברזולוציה המקורית וללא חשבון.", reason: "האתר הרשמי אומר שכל יכולות ה-Web חינמיות כעת, אך מגדיר זאת במפורש כהצעת ההשקה הנוכחית ולא כמסלול חינמי מתמשך. חלק מהעיבוד מתבצע בשרת ותמונות עשויות להישמר עד 30 יום; נדרש אימות מחדש לאחר תקופת ההשקה.", url: "https://www.oldroll.io/", checked: "2026-10-12" }
 ];
