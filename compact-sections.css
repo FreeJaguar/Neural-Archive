@@ -1,6 +1,6 @@
 /*
  * Neural Archive cinematic preview — compact editorial strips.
- * Scope: news carousel and category tiles only. Preserve the full-screen Hero,
+ * Scope: news carousel and category tiles only. Preserve the cinematic Hero,
  * tool library, API data, RTL semantics and interactive card dialogs.
  */
 
@@ -224,4 +224,38 @@
   .categories-section .category-text small {
     font-size: 9px;
   }
+}
+
+/* The approved mockup shows an editorial news ribbon, followed immediately
+   by compact category tiles. Keep richer tap targets on narrow phones. */
+@media (min-width: 691px) {
+  .news-section { padding-bottom: 12px; }
+  .news-section .section-topline,
+  .categories-section .section-topline { padding-top: 11px; }
+  .news-section .section-title-group,
+  .categories-section .section-title-group { margin: 5px 0 10px; }
+  .news-section .section-title-group h2,
+  .categories-section .section-title-group h2 {
+    font-size: clamp(24px, 2.15vw, 29px);
+    line-height: 1.15;
+  }
+  .news-section .section-title-group p:not(.section-eyebrow),
+  .categories-section .section-title-group p:not(.section-eyebrow) {
+    margin-top: 2px;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  .news-section .news-scroller { padding-bottom: 9px; }
+  .news-section .news-card { height: 145px; min-height: 145px; }
+  .news-section .news-card-content { padding: 31px 12px 8px; }
+  .news-section .news-card-content h3 { font-size: 13px; margin-bottom: 3px; }
+  .news-section .news-card-content p { font-size: 10px; margin-bottom: 4px; }
+  .news-section .news-skeleton { min-height: 58px; padding: 12px 17px; }
+  .categories-section { padding-bottom: 12px; }
+  .categories-section .category-grid { gap: 9px; }
+  .categories-section .category-card { min-height: 86px; padding: 9px 11px; }
+  .categories-section .category-icon { width: 32px; height: 32px; }
+  .categories-section .category-icon svg { width: 19px; height: 19px; }
+  .categories-section .category-text strong { font-size: 12px; }
+  .categories-section .category-text small { font-size: 9px; }
 }
