@@ -185,17 +185,6 @@ window.TOOLS = [
     sources: [{ label: "תמחור רשמי", url: "https://www.researchrabbit.ai/pricing" }, { label: "מדריך המסלול החינמי", url: "https://learn.researchrabbit.ai/en/articles/12865509-researchrabbit-free-tier" }]
   },
   {
-    slug: "whiteboard", name: "Whiteboard", mark: "W", category: "development", subcategories: ["ארכיטקטורה", "סקירת קוד", "Desktop"],
-    tagline: "קנבס מקומי לתכנון תוכנה ולסקירת קוד עם סוכני פיתוח.",
-    solves: "מציג מבנה, החלטות ו־diffs על קנבס משותף כדי להבין שינויי קוד לפני ואחרי ביצועם.",
-    uses: ["פיתוח", "סקירת קוד", "תכנון"], audience: "מפתחים וצוותים שרוצים שכבה חזותית מעל עבודת סוכני קוד.",
-    free: "יישום Desktop מקומי וחינמי בקוד פתוח תחת MIT; אין מסלול שימוש בתשלום לתוכנה עצמה.",
-    limits: "עדיין אינו עורך קבצים, עבודה עם כמה מאגרים מוגבלת, וסוכן הקוד המחובר עשוי לעלות כסף.",
-    pros: ["מקומי וקוד פתוח", "diff סמנטי ותיעוד החלטות", "קנבס חזותי לתכנון"], cons: ["לא עורך קבצים", "תמיכה חלשה בכמה מאגרים"],
-    alternatives: ["Kilo Code", "Diagram Design"], url: "https://dev.fast/", added: "2026-10-01", verified: "2026-10-01",
-    sources: [{ label: "המאגר הרשמי", url: "https://github.com/devdotfast/whiteboard" }, { label: "האתר הרשמי", url: "https://dev.fast/" }]
-  },
-  {
     slug: "hindsight", name: "Hindsight", mark: "H", category: "research", subcategories: ["זיכרון לסוכנים", "MCP", "קוד פתוח"],
     tagline: "זיכרון ארוך טווח לסוכני AI עם retain, recall ו־reflect.",
     solves: "מוסיף לסוכנים שכבת זיכרון מבנית שמאחסנת חוויות, מאחזרת הקשר ומסיקה דפוסים לאורך זמן.",
@@ -251,17 +240,6 @@ window.TOOLS = [
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/PaperclipAI/paperclip" }, { label: "אודות", url: "https://paperclip.app/about/" }]
   },
   {
-    slug: "paper2agent", name: "Paper2Agent", mark: "P2", category: "research", subcategories: ["מאמרים", "MCP", "קוד פתוח"],
-    tagline: "הופך מאמרים וקוד נלווה לכלי MCP בדוקים לשימוש סוכנים.",
-    solves: "מתרגם שיטות ממאמר מחקר לממשק תפעולי שסוכן יכול להפעיל, לבדוק ולשחזר.",
-    uses: ["מחקר", "AI", "פיתוח"], audience: "חוקרים ומפתחים שרוצים להפוך פרסום מדעי לכלי שימושי לסוכן.",
-    free: "הפרויקט חינמי וקוד פתוח תחת MIT וניתן להרצה מקומית.",
-    limits: "הסוכן המארח, קריאות API, מודלים ומשאבי חישוב אינם כלולים ועלולים לעלות כסף.",
-    pros: ["מגשר בין מאמר לקוד", "בדיקות וכלי MCP", "MIT"], cons: ["דורש יכולת טכנית", "עלויות מודל וחישוב נפרדות"],
-    alternatives: ["OpenResearch", "Hindsight"], url: "https://github.com/jmiao24/Paper2Agent", added: "2026-09-29", verified: "2026-10-01",
-    sources: [{ label: "המאגר הרשמי", url: "https://github.com/jmiao24/Paper2Agent" }]
-  },
-  {
     slug: "chit", name: "Chit", mark: "Ch", category: "productivity", subcategories: ["Claude Code", "סיכום עבודה", "macOS"],
     tagline: "סיכום יומי מקומי של העבודה שנעשתה ב־Claude Code.",
     solves: "קורא את היסטוריית Claude Code המקומית ומפיק קבלה יומית שמסכמת משימות ושינויים.",
@@ -315,17 +293,6 @@ window.TOOLS = [
     pros: ["Local-first", "lineage ורפרודוצביליות", "תמיכה במודלים מקומיים"], cons: ["שירותים מנוהלים עשויים לעלות", "תמיכת Windows עדיין מוקדמת"],
     alternatives: ["Paper2Agent", "Hindsight"], url: "https://openresearch.sh/", added: "2026-09-29", verified: "2026-10-01",
     sources: [{ label: "המאגר הרשמי", url: "https://github.com/alphaXiv/OpenResearch" }, { label: "האתר הרשמי", url: "https://openresearch.sh/" }]
-  },
-  {
-    slug: "concat", name: "Concat", mark: "Co", category: "design", subcategories: ["עריכת וידאו", "AI מקומי", "Desktop"],
-    tagline: "עורך וידאו מקומי וחוצה פלטפורמות כחלופה פתוחה ל-CapCut.",
-    solves: "מרכז חיתוך רב-ערוצי, כתוביות אוטומטיות, הסרת רקע, אפקטים וייצוא 4K ללא העלאת חומר לענן.",
-    uses: ["וידאו", "עריכת תוכן", "AI"], audience: "יוצרי סרטונים, מדריכים ותוכן לרשתות שרוצים עורך מקומי ללא מנוי.",
-    free: "האפליקציה כולה חינמית וקוד פתוח תחת AGPL-3.0-or-later, ללא חשבון, סימן מים, מנוי או העלאה; מודלי AI יורדים למחשב ופועלים מקומית.",
-    limits: "המוצר עדיין בגרסת beta; חלק מהמתקינים אינם חתומים ועלולים לדרוש אישור ידני, ויכולות AI מקומיות צורכות אחסון ומשאבי GPU/CPU.",
-    pros: ["ללא סימן מים", "כתוביות והסרת רקע מקומיות", "Windows, macOS, Linux ו-Android"], cons: ["עדיין beta", "התקנה לא חתומה בחלק מהמערכות"],
-    alternatives: ["Cavalry", "Canva"], url: "https://concatenate.pages.dev/", added: "2026-10-02", verified: "2026-10-02",
-    sources: [{ label: "האתר הרשמי", url: "https://concatenate.pages.dev/" }, { label: "המאגר והרישיון", url: "https://github.com/jub0t/Concat" }, { label: "גרסאות", url: "https://github.com/jub0t/Concat/releases" }]
   },
   {
     slug: "workscribe", name: "Workscribe", mark: "W", category: "productivity", subcategories: ["יומן עבודה", "טרמינל", "Local-first"],
@@ -483,28 +450,6 @@ window.TOOLS = [
     sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/earthtojake/text-to-cad" }, { label: "התיעוד הרשמי", url: "https://www.texttocad.dev/" }]
   },
   {
-    slug: "open-cad-studio", name: "Open CAD Studio", mark: "OC", category: "design", subcategories: ["CAD", "שרטוט טכני", "תלת-ממד"],
-    tagline: "יישום CAD חינמי לדפדפן ולמחשב עם עריכת DWG ו-DXF מקומית.",
-    solves: "מספק שרטוט דו-ממדי, מידול מוצקים, שכבות, מידות, בלוקים, הדפסה והמרה בלי להעלות קבצים לשירות המרה.",
-    uses: ["שרטוט טכני", "מידול תלת-ממד", "המרת קבצים"], audience: "מהנדסים, אדריכלים, יצרנים וסטודנטים שצריכים CAD חוצה-פלטפורמות.",
-    free: "כל היישום מופץ תחת GPL-3.0. גרסת הווב פועלת ללא התקנה ושומרת קבצים כהורדות מקומיות; גרסאות Desktop זמינות ל-Windows, Linux ו-Mac עם Apple Silicon.",
-    limits: "הפרויקט עדיין בפיתוח פעיל וממליץ לגבות שרטוטי ייצור. חבילת macOS חתומה ad-hoc אך אינה notarized, ויכולות כמו PDF, plugins ואוטומציה מלאה זמינות בעיקר ב-Desktop.",
-    pros: ["קריאה וכתיבה של DWG ו-DXF", "עובד בדפדפן ובמחשב", "2D, 3D ו-API לאוטומציה"], cons: ["צעיר יחסית לשימושי ייצור קריטיים", "חבילת Mac אינה מאומתת על ידי Apple"],
-    alternatives: ["text-to-cad"], url: "https://www.opencadstudio.com/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, מגבלות ורישיון GPL-3.0", url: "https://github.com/HakanSeven12/OpenCADStudio" }, { label: "יישום הווב הרשמי", url: "https://www.opencadstudio.com/" }]
-  },
-  {
-    slug: "crisp-display", name: "Crisp", mark: "Cr", category: "productivity", subcategories: ["macOS", "מסכים", "כלי מערכת"],
-    tagline: "כלי שורת תפריטים חינמי לשליטה מתקדמת במסכים חיצוניים ב-macOS.",
-    solves: "מוסיף קנה מידה HiDPI, בהירות ועוצמה דרך DDC, פרופילים, מסכים וירטואליים, סידור מסכים וקיצורי אוטומציה שחסרים ב-macOS.",
-    uses: ["ניהול מסכים", "אוטומציה", "נגישות"], audience: "משתמשי Mac עם מסך חיצוני שרוצים שליטה חדה ונוחה ללא רישיון Pro.",
-    free: "כל היכולות חינמיות ללא מסלול Pro או מפתח רישיון, והקוד תחת MIT. ההורדות חתומות ומאומתות על ידי Apple וניתן להתקין גם דרך Homebrew.",
-    limits: "דורש macOS 14 ומעלה. שינוי smooth scaling מבקש סיסמת מנהל פעם אחת לכל מסך, ומקשי בהירות מותאמים דורשים הרשאת Accessibility; תמיכת DDC תלויה במסך ובחיבור.",
-    pros: ["כל הפיצ'רים פתוחים ללא תשלום", "חבילה חתומה ו-notarized", "CLI ופעולות Shortcuts לאוטומציה"], cons: ["Mac בלבד", "חלק מהיכולות דורשות הרשאות מערכת"],
-    alternatives: ["BetterWispr"], url: "https://crispmac.app/", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, התחייבות החינמיות ורישיון MIT", url: "https://github.com/didriksg/Crisp" }, { label: "האתר הרשמי", url: "https://crispmac.app/" }]
-  },
-  {
     slug: "claude-mem", name: "Claude-Mem", mark: "CM", category: "development", subcategories: ["זיכרון לסוכנים", "MCP", "כלי פיתוח"],
     tagline: "זיכרון מתמשך לסוכני קוד ששומר, מכווץ ומחזיר הקשר בין מפגשים.",
     solves: "לוכד תצפיות משימוש בכלים, מסכם אותן ומחזיר הקשר רלוונטי למפגשים עתידיים כדי לצמצם אובדן החלטות וידע לאחר סגירת שיחה או דחיסת הקשר.",
@@ -514,17 +459,6 @@ window.TOOLS = [
     pros: ["כ-99,883 כוכבי GitHub ופעילות שוטפת", "תמיכה במספר רב של סוכנים", "נתיב מקומי חינמי עם שליטה בספק המודל"], cons: ["לכידת הקשר דורשת הגדרות פרטיות זהירות", "השירות המאוחסן אינו חינמי לאחר תקופת הניסיון"],
     alternatives: ["Hindsight", "Context Mode"], url: "https://claude-mem.ai/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/thedotmack/claude-mem" }, { label: "מודלים מקומיים ושיקולי אבטחה", url: "https://github.com/thedotmack/claude-mem/blob/main/SECURITY.md" }, { label: "גרסאות רשמיות", url: "https://github.com/thedotmack/claude-mem/releases" }]
-  },
-  {
-    slug: "open-cowork", name: "Open Cowork", mark: "OC", category: "productivity", subcategories: ["סוכן שולחני", "אוטומציה", "יצירת מסמכים"],
-    tagline: "אפליקציית Desktop פתוחה שמפעילה סוכן AI על קבצים, מסמכים ואפליקציות.",
-    solves: "מרכזת צ'אט עם מודלים, ניהול קבצים, יצירת PPTX, DOCX, XLSX ו-PDF, חיבורי MCP ושליטה מרחוק בסביבת עבודה מקומית.",
-    uses: ["אוטומציה", "יצירת מסמכים", "סוכני AI"], audience: "משתמשי Windows ו-Mac שרוצים סביבת Cowork מקומית עם ממשק גרפי והרשאות עבודה מוגדרות.",
-    free: "האפליקציה חינמית וקוד פתוח תחת MIT, ללא חשבון או שירות אירוח של Open Cowork. אפשר להוריד מתקינים ל-Windows ול-Mac או לבנות מהמקור.",
-    limits: "נדרש מודל או ספק API נפרד שעשוי לעלות כסף. בידוד VM מלא דורש WSL2 ב-Windows או Lima ב-Mac; ללא זאת פקודות רצות במארח עם הגבלת נתיבים בלבד. אין מתקין Linux רשמי, וגרסת Mac מיועדת ל-Apple silicon.",
-    pros: ["Skills מובנים למסמכים", "חיבורי MCP ושליטה באפליקציות", "בידוד VM אופציונלי"], cons: ["עלויות מודל אינן כלולות", "יש לאשר בזהירות פעולות קבצים וממשק"],
-    alternatives: ["OpenClaw", "Velozity"], url: "https://github.com/OpenCoworkAI/open-cowork", added: "2026-10-12", verified: "2026-10-12",
-    sources: [{ label: "המאגר, רישיון והתקנה", url: "https://github.com/OpenCoworkAI/open-cowork" }, { label: "גרסאות רשמיות", url: "https://github.com/OpenCoworkAI/open-cowork/releases" }]
   },
   {
     slug: "open-codesign", name: "Open CoDesign", mark: "OD", category: "design", subcategories: ["עיצוב ממשקים", "מצגות", "AI מקומי"],
@@ -547,6 +481,50 @@ window.TOOLS = [
     pros: ["תהליכי סקירה, audit ו-replication מובנים", "קובצי provenance לבדיקת המקורות", "חבילות חתומות בחותמות SHA-256 לחמש פלטפורמות"], cons: ["עלויות מודל ומחשוב אינן כלולות", "דורש היכרות עם CLI ובדיקת מקורות אנושית"],
     alternatives: ["OpenResearch", "Lune Research", "Gemini Notebook"], url: "https://feynman.is/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/Companion-Inc/feynman" }, { label: "גרסאות רשמיות", url: "https://github.com/Companion-Inc/feynman/releases" }, { label: "תיעוד רשמי", url: "https://feynman.is/docs" }]
+  },
+  {
+    slug: "artcraft", name: "ArtCraft", mark: "AC", category: "design", subcategories: ["יצירת תמונה", "וידאו AI", "2D ו-3D"],
+    tagline: "סביבת יצירה חזותית שמשלבת קומפוזיציה דו-ממדית, סצנות תלת-ממד ומודלי AI.",
+    solves: "מאפשרת להציב דמויות ומצלמה, לשלב שכבות ונכסי תלת-ממד ולכוון קומפוזיציה לפני יצירת תמונה או וידאו.",
+    uses: ["עיצוב", "וידאו", "קונספט ארט"], audience: "אמנים, מעצבים ויוצרי סרטים שרוצים שליטה חזותית מעבר לפרומפט.",
+    free: "קוד היישום זמין לבנייה עצמית בחינם ברישיון MIT או Apache-2.0; קיימות הורדות ל-Windows ול-macOS ובנייה ל-Linux.",
+    limits: "שימוש ב-62 המודלים והשירותים המשולבים עשוי לדרוש קרדיטים או מנוי נפרד. יש לבדוק את רישיון המודל והתוצר בכל ספק.",
+    pros: ["קומפוזיציה 2D ו-3D", "רישיון כפול פתוח", "כ-18.9 אלף כוכבים"], cons: ["עלויות מודלים נפרדות", "המאגר צעיר יחסית"],
+    alternatives: ["Compositor", "OpenDesign"], url: "https://getartcraft.com/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, יכולות ורישיונות", url: "https://github.com/storytold/artcraft" }, { label: "הורדות רשמיות", url: "https://getartcraft.com/" }, { label: "גרסאות", url: "https://github.com/storytold/artcraft/releases" }]
+  },
+  {
+    slug: "ppt-master", name: "PPT Master", mark: "PM", category: "design", subcategories: ["מצגות", "Agent Skills", "PowerPoint"],
+    tagline: "Skill מקומי שמייצר מצגות PowerPoint מקוריות וניתנות לעריכה ממסמך או נושא.",
+    solves: "הופך PDF, DOCX או טקסט למצגת עם צורות, תרשימים, טבלאות, תבניות, מעברים, אנימציות והערות קריינות.",
+    uses: ["מצגות", "עיצוב", "אוטומציה"], audience: "אנשי ידע וצוותים שרוצים PPTX שניתן להמשיך לערוך ב-PowerPoint.",
+    free: "הפרויקט חינמי תחת MIT ללא מנוי PPT נוסף, רץ במחשב וניתן להתקנה כ-Skill ב-Codex, Claude Code, Cursor וסוכנים תואמים.",
+    limits: "נדרש Python וסוכן AI ועלות המודל נפרדת. יצירת תמונות אופציונלית עשויה לדרוש כלי של הסוכן או מפתח API.",
+    pros: ["אובייקטי PowerPoint מקוריים", "תמיכה בתבניות משתמש", "כ-60.6 אלף כוכבים"], cons: ["תלוי בסוכן ובמודל", "דורש התקנה מקומית"],
+    alternatives: ["Napkin AI", "Canva"], url: "https://github.com/hugohe3/ppt-master", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/hugohe3/ppt-master" }, { label: "דוגמאות רשמיות", url: "https://hugohe3.github.io/ppt-master-examples/" }, { label: "גרסאות", url: "https://github.com/hugohe3/ppt-master/releases" }]
+  },
+  {
+    slug: "voicestudio", name: "VoiceStudio", mark: "VS", category: "design", subcategories: ["אודיו", "שיבוט קול", "תמלול מקומי"],
+    tagline: "סטודיו קול מקומי לשיבוט ועיצוב קולות, דיבוב, תמלול וספרי שמע.",
+    solves: "מרכז יצירת קול, דיבוב וידאו, הכתבה, תמלול, עבודות batch, API מקומי ו-MCP באפליקציה אחת.",
+    uses: ["יצירת קול", "דיבוב", "תמלול"], audience: "יוצרי תוכן ומפתחים שצריכים תהליכי אודיו מקומיים.",
+    free: "האפליקציה חינמית תחת AGPL-3.0 וה-workflows המקומיים רצים על חומרת המשתמש; שירותים מרוחקים אופציונליים.",
+    limits: "מודלים, קולות ותוצרים כפופים לרישיונות נפרדים ויש לשבט קול רק בהסכמה. CPU נתמך אך איטי ודורש כ-5GB פנויים; Intel Mac זקוק ל-backend מרוחק.",
+    pros: ["646 שפות", "API מקומי ו-MCP", "כ-59 אלף כוכבים"], cons: ["דרישות חומרה ואחסון", "רישוי מודלים נפרד"],
+    alternatives: ["BetterWispr", "Circleback"], url: "https://voicestudio.sh/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, דרישות ורישיון", url: "https://github.com/debpalash/VoiceStudio" }, { label: "האתר וההורדות", url: "https://voicestudio.sh/" }, { label: "גרסאות", url: "https://github.com/debpalash/VoiceStudio/releases" }]
+  },
+  {
+    slug: "weknora", name: "WeKnora", mark: "WK", category: "research", subcategories: ["RAG", "בסיס ידע", "Wiki"],
+    tagline: "פלטפורמת ידע באירוח עצמי שמשלבת RAG, סוכן מחקר ו-Wiki מתעדכן.",
+    solves: "קולטת מסמכים ומקורות ארגוניים, מחפשת ומצטטת מהם, מבצעת משימות מרובות שלבים ומארגנת ידע ל-Wiki.",
+    uses: ["מחקר", "ניהול ידע", "RAG"], audience: "צוותים שרוצים בסיס ידע פרטי עם מודלים ואחסון לבחירתם.",
+    free: "הקוד חינמי תחת MIT וניתן לפריסה עצמית ב-Docker, Kubernetes או מצב Lite; אפשר להשתמש ב-Ollama מקומי.",
+    limits: "הפריסה המלאה דורשת משאבי שרת ותחזוקה. ספקי ענן ואחסון מנוהל מחויבים בנפרד; אפליקציית Desktop עדיין דורשת בנייה מהמקור.",
+    pros: ["RAG, סוכן ו-Wiki יחד", "רכיבים ניתנים להחלפה", "כ-33.3 אלף כוכבים"], cons: ["הקמה מלאה מורכבת", "אין installer ל-Desktop"],
+    alternatives: ["NotebookLM", "Hindsight"], url: "https://github.com/Tencent/WeKnora", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, פריסה ורישיון MIT", url: "https://github.com/Tencent/WeKnora" }, { label: "התיעוד הרשמי", url: "https://weknora.weixin.qq.com/" }, { label: "גרסאות", url: "https://github.com/Tencent/WeKnora/releases" }]
   }
 
 ];
@@ -575,5 +553,12 @@ window.WATCHLIST = [
   { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" },
   { name: "Curie", mark: "Cu", category: "research", signal: "עוזר חדש לספרות מדעית, חילוץ נתונים וסקירות שיטתיות עם 100 נקודות ו-96 עוקבים בהשקת Product Hunt השבוע.", reason: "Product Hunt מסמן את הכלי כחינמי, אך באתר הרשמי לא נמצא מחירון נגיש שמגדיר מכסה מתחדשת, מספר מסמכים או גבולות שימוש; אין לפרסם כפעיל עד לאימות תנאי Free ממקור ראשון.", url: "https://curieai.tech/", checked: "2026-10-11" },
   { name: "Task Monki", mark: "TM", category: "development", signal: "אפליקציית desktop מקומית לניהול כמה סוכני קוד מלוח קנבן עד preview, review ו-pull request; הושקה השבוע ב-Product Hunt.", reason: "הרישיון MIT והחינמיות מאומתים, אך המאגר עצמו מזהיר שמדובר בתוכנה ניסיונית שמריצה תהליכים ופעולות Git אמיתיים; עם 8 כוכבים בלבד ותמיכת Windows/Linux ניסיונית, נדרש עוד זמן בשלות.", url: "https://github.com/RojhatToptamus/task-monki", checked: "2026-10-11" },
-  { name: "OldRoll Web", mark: "OR", category: "design", signal: "עורך תמונות וינטג' חדש בדפדפן עם 16 נקודות באות Show HN, עריכת Digicam/Film/VHS, ייצוא ברזולוציה המקורית וללא חשבון.", reason: "האתר הרשמי אומר שכל יכולות ה-Web חינמיות כעת, אך מגדיר זאת במפורש כהצעת ההשקה הנוכחית ולא כמסלול חינמי מתמשך. חלק מהעיבוד מתבצע בשרת ותמונות עשויות להישמר עד 30 יום; נדרש אימות מחדש לאחר תקופת ההשקה.", url: "https://www.oldroll.io/", checked: "2026-10-12" }
+  { name: "OldRoll Web", mark: "OR", category: "design", signal: "עורך תמונות וינטג' חדש בדפדפן עם 16 נקודות באות Show HN, עריכת Digicam/Film/VHS, ייצוא ברזולוציה המקורית וללא חשבון.", reason: "האתר הרשמי אומר שכל יכולות ה-Web חינמיות כעת, אך מגדיר זאת במפורש כהצעת ההשקה הנוכחית ולא כמסלול חינמי מתמשך. חלק מהעיבוד מתבצע בשרת ותמונות עשויות להישמר עד 30 יום; נדרש אימות מחדש לאחר תקופת ההשקה.", url: "https://www.oldroll.io/", checked: "2026-10-12" },
+  { name: "Whiteboard", mark: "W", category: "development", signal: "מאגר פעיל עם 3,138 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/devdotfast/whiteboard", checked: "2026-10-12" },
+  { name: "Paper2Agent", mark: "P2", category: "research", signal: "מאגר פעיל עם 3,766 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/jmiao24/Paper2Agent", checked: "2026-10-12" },
+  { name: "Concat", mark: "Co", category: "design", signal: "מאגר פעיל עם 4,951 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/jub0t/Concat", checked: "2026-10-12" },
+  { name: "Open CAD Studio", mark: "OC", category: "design", signal: "מאגר פעיל עם 2,856 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/HakanSeven12/OpenCADStudio", checked: "2026-10-12" },
+  { name: "Crisp", mark: "Cr", category: "productivity", signal: "מאגר פעיל עם 2,068 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/didriksg/Crisp", checked: "2026-10-12" },
+  { name: "Open Cowork", mark: "OC", category: "productivity", signal: "מאגר פעיל עם 2,201 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/OpenCoworkAI/open-cowork", checked: "2026-10-12" },
+  { name: "Open Intelligent UI", mark: "OI", category: "development", signal: "מסגרת Generative UI תחת MIT עם כ-2,649 כוכבים ואות GitHub Trending יומי.", reason: "הרישיון והליבה החינמית אומתו, אך המאגר מתחת לרף 5,000 הכוכבים ודורש מודל ו-visualization router חיצוניים; נשאר במעקב.", url: "https://github.com/CopilotKit/OpenIntelligentUI", checked: "2026-10-12" }
 ];
