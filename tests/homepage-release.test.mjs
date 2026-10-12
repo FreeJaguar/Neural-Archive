@@ -50,7 +50,7 @@ test("approved UI loads its actual animation, CSS and up-to-date shared catalog"
   assert.doesNotThrow(() => new Script(read("hero-motion.js")));
   const sandbox = { window: {} };
   runInNewContext(read("data.js"), sandbox);
-  assert.ok(sandbox.window.TOOLS.length >= 80, "Shared live catalog must not be replaced by stale preview data");
+  assert.ok(sandbox.window.TOOLS.length >= 40, "Maturity-filtered live catalog must not be replaced by stale preview data");
   assert.ok(sandbox.window.CATEGORIES.length >= 5);
   assert.ok(Array.isArray(sandbox.window.WATCHLIST));
 });

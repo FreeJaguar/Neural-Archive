@@ -49,7 +49,7 @@ window.TOOLS = [
     free: "AI לסיכומים ומשימות, פגישות מקוונות ופיזיות, תמלול, API/MCP/CLI ועד 2 צוותים ב־$0 למשתמש.",
     limits: "היסטוריית פגישות והקלטות נשמרת 30 יום בלבד; האוטומציות מוגבלות.",
     pros: ["כולל פגישות פיזיות", "גישה דרך API ו־MCP", "תמלול עם דוברים"], cons: ["שמירה ל־30 יום", "אינטגרציות מלאות בתשלום"],
-    alternatives: ["Make", "NotebookLM"], url: "https://circleback.ai/", added: "2026-09-28", verified: "2026-10-01",
+    alternatives: ["Make", "Gemini Notebook"], url: "https://circleback.ai/", added: "2026-09-28", verified: "2026-10-12",
     sources: [{ label: "תמחור רשמי", url: "https://run.circleback.ai/pricing" }, { label: "מגבלות API", url: "https://circleback.ai/docs/api" }]
   },
   {
@@ -115,7 +115,7 @@ window.TOOLS = [
     free: "Free Forever עם 500 קרדיטי AI בשבוע, עריכה וייבוא ללא הגבלה וייצוא PNG/PDF ללא הגבלה.",
     limits: "ויזואלים נושאים מיתוג Napkin; סגנונות והתאמות מתקדמות בתשלום. יצירת שקף עולה 100 קרדיטים.",
     pros: ["מתחיל מטקסט", "תוצרים ניתנים לעריכה", "מכסה שבועית מתחדשת"], cons: ["מיתוג בתוצר החינמי", "קרדיטים נגמרים מהר ביצירת שקפים"],
-    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", added: "2026-09-23", verified: "2026-10-01",
+    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", added: "2026-09-23", verified: "2026-10-12",
     sources: [{ label: "תמחור רשמי", url: "https://www.napkin.ai/pricing/" }, { label: "הסבר קרדיטים", url: "https://help.napkin.ai/en/articles/15955724-credits-plans" }]
   },
   {
@@ -141,15 +141,15 @@ window.TOOLS = [
     sources: [{ label: "האתר הרשמי", url: "https://cavalry.studio/en/" }, { label: "הודעת גרסה 2.7", url: "https://cavalry.studio/docs/tech-info/release-notes/2.7/2-7-0-release-notes/" }]
   },
   {
-    slug: "notebooklm", name: "NotebookLM", mark: "NL", category: "research", subcategories: ["מחקר", "AI", "סיכום מקורות"],
-    tagline: "סביבת מחקר של Google שעונה מתוך המקורות שהעליתם.",
-    solves: "מסכמת מסמכים, מפיקה שאלות ותוצרים קוליים ועונה עם הפניות למקור.",
+    slug: "notebooklm", name: "Gemini Notebook", mark: "GN", category: "research", subcategories: ["מחקר", "AI", "סיכום מקורות"],
+    tagline: "סביבת המחקר של Google שעונה מתוך המקורות שהעליתם.",
+    solves: "מסכמת מסמכים, מפיקה דוחות, כרטיסיות, מצגות ותוצרים קוליים וחזותיים, ועונה עם הפניות למקור.",
     uses: ["מחקר", "למידה", "AI"], audience: "סטודנטים, חוקרים ואנשי ידע שעובדים עם אוסף מקורות מוגדר.",
-    free: "גישה רגילה כוללת 100 מחברות, עד 50 מקורות למחברת, 50 שאילתות צ'אט ביום ו־3 יצירות אודיו ביום.",
-    limits: "המגבלות עשויות להשתנות לפי חשבון או אזור; יכולות Premium ומכסות גבוהות יותר דורשות שדרוג.",
-    pros: ["תשובות עם ציטוטים", "מגוון סוגי מקורות", "תוצרי אודיו וסיכום"], cons: ["מכסות יומיות", "תלוי בחשבון Google ובזמינות אזורית"],
-    alternatives: ["Zotero", "ResearchRabbit"], url: "https://notebooklm.google.com/", added: "2026-09-23", verified: "2026-10-01",
-    sources: [{ label: "מגבלות רשמיות", url: "https://support.google.com/notebooklm/answer/16206866?hl=iw" }]
+    free: "Gemini Notebook Standard זמין בחינם עם חשבון Google וכולל 100 מחברות ועד 50 מקורות למחברת, לצד גישה רגילה לצ'אט וליצירת תוצרים.",
+    limits: "השימוש ב-AI מבוסס מכסת חישוב ולא מספר קבוע של שאילתות: המכסה מתחדשת כל 5 שעות עד גבול שבועי, עשויה להשתנות לפי עומס וזמינות, ומסלולים בתשלום מציעים מכסות גבוהות יותר. שיתוף מתקדם והסרת סימני מים מסוימים אינם כלולים בחינם.",
+    pros: ["תשובות עם ציטוטים", "מגוון סוגי מקורות", "תוצרי אודיו, וידאו, מצגות וסיכום"], cons: ["אין מכסה מספרית קבועה ושקופה", "תלוי בחשבון Google ובזמינות אזורית"],
+    alternatives: ["Zotero", "ResearchRabbit"], url: "https://notebook.google.com/", added: "2026-09-23", verified: "2026-10-12",
+    sources: [{ label: "תוכניות ומגבלות רשמיות", url: "https://support.google.com/gemininotebook/answer/16213268" }, { label: "ניהול מכסת השימוש", url: "https://support.google.com/gemininotebook/answer/17670842" }]
   },
   {
     slug: "zotero", name: "Zotero", mark: "Z", category: "research", subcategories: ["ביבליוגרפיה", "ציטוטים", "קוד פתוח"],
@@ -159,7 +159,7 @@ window.TOOLS = [
     free: "היישום פתוח וחינמי; ספריית הפריטים המקומית אינה מוגבלת. סנכרון הקבצים הרשמי כולל 300MB בחינם.",
     limits: "אחסון קבצים מעבר ל־300MB בתשלום; אפשר להשתמש ב־WebDAV לסנכרון קבצים בספרייה האישית.",
     pros: ["ציטוטים באלפי סגנונות", "קוד פתוח", "תוספים לדפדפן ולמעבדי תמלילים"], cons: ["רק 300MB בענן הרשמי", "ניהול קבצים גדול דורש פתרון נוסף"],
-    alternatives: ["ResearchRabbit", "NotebookLM"], url: "https://www.zotero.org/", added: "2026-09-23", verified: "2026-10-01",
+    alternatives: ["ResearchRabbit", "Gemini Notebook"], url: "https://www.zotero.org/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "האתר הרשמי", url: "https://www.zotero.org/" }, { label: "אחסון קבצים", url: "https://www.zotero.org/support/individual_storage" }]
   },
   {
@@ -170,7 +170,7 @@ window.TOOLS = [
     free: "יישום הליבה חינם ללא מגבלות לשימוש אישי, מסחרי, חינוכי וארגוני, ללא הרשמה נדרשת.",
     limits: "שירותי Sync ו־Publish הרשמיים בתשלום; שיתוף בזמן אמת אינו חלק מליבת השימוש המקומית.",
     pros: ["קבצים מקומיים ופתוחים", "ללא מגבלת שימוש", "אקוסיסטם תוספים גדול"], cons: ["סנכרון רשמי בתשלום", "הגמישות עלולה להכביד בתחילת הדרך"],
-    alternatives: ["Zotero", "NotebookLM"], url: "https://obsidian.md/", added: "2026-09-23", verified: "2026-10-01",
+    alternatives: ["Zotero", "Gemini Notebook"], url: "https://obsidian.md/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://obsidian.md/pricing" }, { label: "חינם לעבודה", url: "https://obsidian.md/blog/free-for-work/" }]
   },
   {
@@ -181,7 +181,7 @@ window.TOOLS = [
     free: "Free Forever עם חיפושים, ספרייה ואוספים ללא הגבלה, שיתוף אוספים ועד 50 מאמרי seed לחיפוש.",
     limits: "חיפוש מ־300 מאמרי seed, בקרות חיפוש מתקדמות ומספר פרויקטים זמינים ב־RR+.",
     pros: ["מיפוי ציטוט חזותי", "חיפוש ואוספים ללא הגבלה", "ייבוא Zotero ו־BibTeX"], cons: ["רק 50 מאמרי seed בחינם", "מסננים מתקדמים בתשלום"],
-    alternatives: ["Zotero", "NotebookLM"], url: "https://www.researchrabbit.ai/", added: "2026-09-23", verified: "2026-10-01",
+    alternatives: ["Zotero", "Gemini Notebook"], url: "https://www.researchrabbit.ai/", added: "2026-09-23", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://www.researchrabbit.ai/pricing" }, { label: "מדריך המסלול החינמי", url: "https://learn.researchrabbit.ai/en/articles/12865509-researchrabbit-free-tier" }]
   },
   {
@@ -203,7 +203,7 @@ window.TOOLS = [
     free: "אירוח עצמי מלא וחינמי תחת MIT, ללא מגבלת שימוש או טלמטריה; כולל MCP ו־PostgreSQL משובץ.",
     limits: "הענן המנוהל מציע קרדיטי התחלה בלבד וממשיך בתמחור לפי שימוש; מודלים ותשתית באירוח עצמי עשויים לעלות כסף.",
     pros: ["MIT ללא מגבלות", "MCP ויותר מ־60 אינטגרציות", "אפשר לעבוד עם מודלים מקומיים"], cons: ["דורש תשתית לאירוח עצמי", "הענן אינו מסלול חינמי מתמשך"],
-    alternatives: ["OpenResearch", "NotebookLM"], url: "https://hindsight.vectorize.io/", added: "2026-10-01", verified: "2026-10-01",
+    alternatives: ["OpenResearch", "Gemini Notebook"], url: "https://hindsight.vectorize.io/", added: "2026-10-01", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://vectorize.io/pricing" }, { label: "המאגר הרשמי", url: "https://github.com/vectorize-io/hindsight" }]
   },
   {
@@ -236,7 +236,7 @@ window.TOOLS = [
     free: "יישום הליבה אינו פג וכולל כרטיסיות וחזרות יומיות ללא הגבלה, מדיה, חפיסות ציבוריות, שיתוף וסנכרון iCloud.",
     limits: "אין אפליקציית Android; גרסת הווב המוקדמת חסרה סנכרון, AI והפעלה לא מקוונת.",
     pros: ["כרטיסיות ללא הגבלה", "סנכרון iCloud", "חזרות מרווחות"], cons: ["Apple בלבד", "גרסת ווב מוגבלת"],
-    alternatives: ["Obsidian", "NotebookLM"], url: "https://memormore.app/", added: "2026-09-30", verified: "2026-10-01",
+    alternatives: ["Obsidian", "Gemini Notebook"], url: "https://memormore.app/", added: "2026-09-30", verified: "2026-10-01",
     sources: [{ label: "תמחור רשמי", url: "https://memormore.app/pricing" }, { label: "אודות", url: "https://memormore.app/about" }]
   },
   {
@@ -410,10 +410,10 @@ window.TOOLS = [
     tagline: "משרד דיגיטלי משותף שבו צוותים וסוכני AI עובדים באותו הקשר.",
     solves: "מאחד צ'אט, שיחות, תמלול, משימות, לוחות שנה וסוכנים במרחב אחד כדי לצמצם מעבר בין אפליקציות והסברים חוזרים.",
     uses: ["שיתוף", "פגישות", "אוטומציה"], audience: "צוותים מרוחקים ויחידים שרוצים לרכז עבודה אנושית וסוכני AI באותו workspace.",
-    free: "Workspace חינמי לתמיד לכל הצוות; AI Space כולל 15 משימות פעולה בשבוע ו-200 דקות תמלול אישיות בחודש, ו-Co-Worker כולל 150 קרדיטי AI ומשימת AI אחת בחודש.",
-    limits: "מקורות מחוברים חוזרים, תדריכים אוטומטיים, תמלול ומשימות ללא הגבלה ומודלים מתקדמים דורשים שדרוג; חיבור Claude Code או Codex עשוי לדרוש מנוי נפרד.",
-    pros: ["מסלול צוות חינמי מפורש", "צ'אט, וידאו, משימות וסוכנים יחד", "אפשר להביא מנוי AI קיים"], cons: ["מוצר חדש עם מעט היסטוריית שימוש", "מכסות AI ותמלול מוגבלות"],
-    alternatives: ["Trello", "Make", "Circleback"], url: "https://www.velozity.ai/", added: "2026-10-08", verified: "2026-10-08",
+    free: "AI Space Free כולל 15 משימות אישיות בשבוע, 200 דקות תמלול, 7 ימי היסטוריה ממקורות מחוברים ועד 10 משימות שנוצרות אוטומטית משיחות ופגישות. Co-Worker Free כולל 150 קרדיטי AI שמתחדשים מדי חודש.",
+    limits: "משימות ותמלול ללא הגבלה, רענון אוטומטי של מקורות, לוח שנה מחובר, יותר קרדיטים ובחירת מודל דורשים שדרוג; חיבור Claude Code או Codex עשוי לדרוש מנוי נפרד.",
+    pros: ["מסלול חינמי מפורש", "צ'אט, פגישות, משימות וסוכנים יחד", "קרדיטי AI מתחדשים מדי חודש"], cons: ["היסטוריית מקורות מוגבלת לשבוע", "מכסות AI ותמלול מוגבלות"],
+    alternatives: ["Trello", "Make", "Circleback"], url: "https://www.velozity.ai/", added: "2026-10-08", verified: "2026-10-12",
     sources: [{ label: "תמחור ומכסות רשמיים", url: "https://www.velozity.ai/pricing-us" }, { label: "אתר ההשקה הרשמי", url: "https://getvelozity.com/" }, { label: "אות השקה ב-Product Hunt", url: "https://www.producthunt.com/leaderboard/weekly/2026/41" }]
   },
   {
@@ -446,7 +446,7 @@ window.TOOLS = [
     free: "מסלול Free קבוע כולל 10 בקשות ביום ואת כל היכולות, דרך MCP מרוחק, CLI או סביבת הסוכן; אין צורך בכרטיס אשראי כדי להתחיל.",
     limits: "הכיסוי ממוקד בכנסי מדעי המחשב בדירוג CORE/CCF משנת 2016 ואילך ולא בכל הספרות המדעית. נדרש חשבון, והבקשות מעבר למכסה היומית עולות כסף.",
     pros: ["טקסט מלא ושרשראות ציטוטים", "מתחבר לעשרות לקוחות MCP", "מקורות נפתחים לצד התשובה"], cons: ["10 בקשות ביום", "כיסוי תחומי צר יחסית"],
-    alternatives: ["ResearchRabbit", "NotebookLM", "AstaBrief"], url: "https://luneresearch.com/", added: "2026-10-11", verified: "2026-10-11",
+    alternatives: ["ResearchRabbit", "Gemini Notebook", "AstaBrief"], url: "https://luneresearch.com/", added: "2026-10-11", verified: "2026-10-12",
     sources: [{ label: "שאלות נפוצות ותמחור רשמי", url: "https://luneresearch.com/docs/faq" }, { label: "תנאי השירות והמכסות", url: "https://luneresearch.com/legal/terms" }, { label: "אות ההשקה ב-Product Hunt", url: "https://www.producthunt.com/products/lune-research" }]
   },
   {
@@ -514,11 +514,45 @@ window.TOOLS = [
     pros: ["כ-99,883 כוכבי GitHub ופעילות שוטפת", "תמיכה במספר רב של סוכנים", "נתיב מקומי חינמי עם שליטה בספק המודל"], cons: ["לכידת הקשר דורשת הגדרות פרטיות זהירות", "השירות המאוחסן אינו חינמי לאחר תקופת הניסיון"],
     alternatives: ["Hindsight", "Context Mode"], url: "https://claude-mem.ai/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/thedotmack/claude-mem" }, { label: "מודלים מקומיים ושיקולי אבטחה", url: "https://github.com/thedotmack/claude-mem/blob/main/SECURITY.md" }, { label: "גרסאות רשמיות", url: "https://github.com/thedotmack/claude-mem/releases" }]
+  },
+  {
+    slug: "open-cowork", name: "Open Cowork", mark: "OC", category: "productivity", subcategories: ["סוכן שולחני", "אוטומציה", "יצירת מסמכים"],
+    tagline: "אפליקציית Desktop פתוחה שמפעילה סוכן AI על קבצים, מסמכים ואפליקציות.",
+    solves: "מרכזת צ'אט עם מודלים, ניהול קבצים, יצירת PPTX, DOCX, XLSX ו-PDF, חיבורי MCP ושליטה מרחוק בסביבת עבודה מקומית.",
+    uses: ["אוטומציה", "יצירת מסמכים", "סוכני AI"], audience: "משתמשי Windows ו-Mac שרוצים סביבת Cowork מקומית עם ממשק גרפי והרשאות עבודה מוגדרות.",
+    free: "האפליקציה חינמית וקוד פתוח תחת MIT, ללא חשבון או שירות אירוח של Open Cowork. אפשר להוריד מתקינים ל-Windows ול-Mac או לבנות מהמקור.",
+    limits: "נדרש מודל או ספק API נפרד שעשוי לעלות כסף. בידוד VM מלא דורש WSL2 ב-Windows או Lima ב-Mac; ללא זאת פקודות רצות במארח עם הגבלת נתיבים בלבד. אין מתקין Linux רשמי, וגרסת Mac מיועדת ל-Apple silicon.",
+    pros: ["Skills מובנים למסמכים", "חיבורי MCP ושליטה באפליקציות", "בידוד VM אופציונלי"], cons: ["עלויות מודל אינן כלולות", "יש לאשר בזהירות פעולות קבצים וממשק"],
+    alternatives: ["OpenClaw", "Velozity"], url: "https://github.com/OpenCoworkAI/open-cowork", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, רישיון והתקנה", url: "https://github.com/OpenCoworkAI/open-cowork" }, { label: "גרסאות רשמיות", url: "https://github.com/OpenCoworkAI/open-cowork/releases" }]
+  },
+  {
+    slug: "open-codesign", name: "Open CoDesign", mark: "OD", category: "design", subcategories: ["עיצוב ממשקים", "מצגות", "AI מקומי"],
+    tagline: "סטודיו מקומי שממיר פרומפטים לאבות-טיפוס, מצגות ונכסים ניתנים לעריכה.",
+    solves: "יוצר ומעדכן HTML או React, מצגות וקובצי עיצוב במרחב עבודה מקומי, עם תצוגה חיה, היסטוריית גרסאות וייצוא לחמישה פורמטים.",
+    uses: ["עיצוב ממשקים", "אב-טיפוס", "מצגות"], audience: "מעצבים, אנשי מוצר ומפתחים שרוצים כלי prompt-to-design פתוח שאינו נעול לספק מודל יחיד.",
+    free: "אפליקציית ה-Desktop חינמית וקוד פתוח תחת MIT. אפשר לעבוד מקומית עם Ollama או לחבר חשבון או מפתח של ספק קיים; מצב האפליקציה והקבצים נשמרים במחשב.",
+    limits: "האפליקציה אינה כוללת עלויות מודל או יצירת תמונות. המתקינים אינם חתומים או notarized עדיין, הממשק זמין באנגלית ובסינית, וייצוא דינמי מורכב עשוי לדרוש בדיקה ידנית.",
+    pros: ["תומך ביותר מ-20 ספקים וב-Ollama", "ייצוא HTML, PDF, PPTX, ZIP ו-Markdown", "כלי סוכן מקומיים עם אישור הרשאות"], cons: ["מתקינים לא חתומים", "איכות ותמחור תלויים במודל שנבחר"],
+    alternatives: ["OpenDesign", "Canva", "Napkin AI"], url: "https://github.com/OpenCoworkAI/open-codesign", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, החינמיות ורישיון MIT", url: "https://github.com/OpenCoworkAI/open-codesign" }, { label: "גרסאות וקובצי התקנה", url: "https://github.com/OpenCoworkAI/open-codesign/releases" }]
+  },
+  {
+    slug: "feynman-research", name: "Feynman", mark: "Fy", category: "research", subcategories: ["סקירת ספרות", "סוכן מחקר", "CLI"],
+    tagline: "סוכן מחקר פתוח לסקירת ספרות, ביקורת מאמרים ובדיקת טענות מול מקורות.",
+    solves: "מתכנן מחקר, מחפש במאגרי מאמרים, משווה מקורות, בודק ציטוטים ושומר דוחות וקובצי provenance שניתנים לביקורת.",
+    uses: ["סקירת ספרות", "מחקר עומק", "ביקורת מאמרים"], audience: "חוקרים, סטודנטים ומהנדסי ML שרוצים תהליך מחקר מקומי ושקוף דרך CLI.",
+    free: "ה-CLI חינמי וקוד פתוח תחת MIT. מקורות כמו OpenAlex ו-Semantic Scholar מציעים מפתחות חינמיים, וניתן להגדיר מודלים מקומיים; אין תשלום לפלטפורמת Feynman עצמה.",
+    limits: "נדרש Node.js 22.22 ומעלה וספק מודל או מודל מקומי. שימוש במודלי ענן, Firecrawl או מחשוב Modal ו-RunPod עשוי לעלות כסף. טלמטריית שימוש אנונימית פעילה כברירת מחדל וניתנת לכיבוי.",
+    pros: ["תהליכי סקירה, audit ו-replication מובנים", "קובצי provenance לבדיקת המקורות", "חבילות חתומות בחותמות SHA-256 לחמש פלטפורמות"], cons: ["עלויות מודל ומחשוב אינן כלולות", "דורש היכרות עם CLI ובדיקת מקורות אנושית"],
+    alternatives: ["OpenResearch", "Lune Research", "Gemini Notebook"], url: "https://feynman.is/", added: "2026-10-12", verified: "2026-10-12",
+    sources: [{ label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/Companion-Inc/feynman" }, { label: "גרסאות רשמיות", url: "https://github.com/Companion-Inc/feynman/releases" }, { label: "תיעוד רשמי", url: "https://feynman.is/docs" }]
   }
 
 ];
 
 window.WATCHLIST = [
+  { name: "MT Code", mark: "MT", category: "development", signal: "אפליקציית Desktop חינמית תחת Apache-2.0 לניהול Claude Code, Codex, Cursor, Grok, OpenCode וסוכנים נוספים, עם גרסאות עדכניות ל-macOS, Windows ו-Linux.", reason: "החינמיות והגרסאות מאומתות, אך המאגר צבר רק 8 כוכבים בזמן הבדיקה והוא fork צעיר של T3 Code. נדרש עוד אימוץ ובדיקת אבטחה לפני פרסום פעיל; מנויי הסוכנים והמודלים נפרדים.", url: "https://github.com/munimtechnologies/mtcode", checked: "2026-10-12" },
   { name: "YuE2 Studio", mark: "Y2", category: "design", signal: "מאגר פעיל עם 551 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/timoncool/YuE2-Studio", checked: "2026-10-12" },
   { name: "Minutes", mark: "Mi", category: "productivity", signal: "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/silverstein/minutes", checked: "2026-10-12" },
   { name: "TAKT", mark: "Ta", category: "development", signal: "מאגר פעיל עם 1,403 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/nrslib/takt", checked: "2026-10-12" },
