@@ -66,30 +66,41 @@ try {
     assert.equal(background.height, 636);
   });
 
-  await run("Desktop hero is immersive, not a small thumbnail", async () => {
+  await run("Compact desktop hero reveals the next sections without losing full-bleed art", async () => {
     const geometry = await page.evaluate(() => {
       const bounds = selector => {
         const e = document.querySelector(selector);
         const b = e.getBoundingClientRect();
-        return { x:b.x, y:b.y, width:b.width, height:b.height };
+        return { x:b.x, y:b.y, width:b.width, height:b.height, right:b.right, bottom:b.bottom };
       };
       return {
         hero:bounds(".hero"),
+        header:bounds(".site-header"),
         visual:bounds("#portalVisual"),
         photograph:bounds("#cinematicPhotograph"),
+        copy:bounds(".hero-copy"),
         heading:bounds("#heroHeading"),
-        news:bounds("#news")
+        search:bounds("#heroSearchForm"),
+        cta:bounds(".hero-cta-row"),
+        news:bounds("#news"),
+        categories:bounds("#categories"),
+        tools:bounds("#tools"),
+        scrollWidth:document.documentElement.scrollWidth,
+        viewport:window.innerWidth
       };
     });
-    assert.ok(geometry.hero.height >= 900, JSON.stringify(geometry));
-    assert.ok(geometry.news.y >= 899, "Next section must be hidden until scroll: "+JSON.stringify(geometry));
-    assert.ok(geometry.visual.width >= 1598, "Scene must span the entire viewport: "+JSON.stringify(geometry));
-    assert.ok(geometry.visual.height >= 650, JSON.stringify(geometry));
-    assert.ok(geometry.photograph.width >= 950, JSON.stringify(geometry));
-    assert.ok(geometry.photograph.height >= 900, JSON.stringify(geometry));
-    assert.ok(geometry.photograph.y+geometry.photograph.height >= geometry.hero.y+geometry.hero.height-30,
-      "Photograph leaves a bottom seam: "+JSON.stringify(geometry));
-    assert.ok(geometry.heading.width > 420, JSON.stringify(geometry));
+    assert.ok(geometry.hero.height >= 360 && geometry.hero.height <= 490, JSON.stringify(geometry));
+    assert.ok(Math.abs(geometry.news.y - geometry.hero.bottom) <= 2, JSON.stringify(geometry));
+    assert.ok(geometry.news.y < 500, "News should appear in the opening viewport: "+JSON.stringify(geometry));
+    assert.ok(geometry.visual.width >= 1598, "Full-bleed art must span both columns: "+JSON.stringify(geometry));
+    assert.ok(geometry.visual.height >= 360 && geometry.visual.height <= 490, JSON.stringify(geometry));
+    assert.ok(geometry.photograph.width >= 540, JSON.stringify(geometry));
+    assert.ok(geometry.photograph.bottom >= geometry.hero.bottom - 30, JSON.stringify(geometry));
+    assert.ok(geometry.heading.width > 400, JSON.stringify(geometry));
+    assert.ok(geometry.copy.y >= geometry.header.bottom - 8, "Heading overlaps navigation: "+JSON.stringify(geometry));
+    assert.ok(geometry.cta.bottom <= geometry.hero.bottom - 6, "Hero CTA was clipped: "+JSON.stringify(geometry));
+    assert.ok(geometry.scrollWidth <= geometry.viewport + 2, "Unexpected horizontal scroll: "+JSON.stringify(geometry));
+    assert.ok(geometry.categories.y < 850, "Compact news strip should reveal categories: "+JSON.stringify(geometry));
     fs.writeFileSync(path.join(output, "desktop-geometry.json"), JSON.stringify(geometry,null,2));
   });
 
@@ -140,6 +151,35 @@ try {
     assert.equal(await toggle.getAttribute("aria-pressed"),"false");
   });
   await context.close();
+
+  const {page:laptop,context:laptopContext} = await newPage(1366,768);
+  await run("Laptop-size first fold matches compact mockup without clipped controls", async () => {
+    const metric = await laptop.evaluate(() => {
+      const rect = selector => {
+        const b = document.querySelector(selector).getBoundingClientRect();
+        return { x:b.x, y:b.y, width:b.width, height:b.height, bottom:b.bottom };
+      };
+      return {
+        hero:rect(".hero"),
+        header:rect(".site-header"),
+        title:rect("#heroHeading"),
+        search:rect("#heroSearchForm"),
+        cta:rect(".hero-cta-row"),
+        news:rect("#news"),
+        categories:rect("#categories"),
+        scrollWidth:document.documentElement.scrollWidth
+      };
+    });
+    assert.ok(metric.hero.height >= 350 && metric.hero.height <= 395, JSON.stringify(metric));
+    assert.ok(metric.news.y < 420, "The news strip should be above the fold: "+JSON.stringify(metric));
+    assert.ok(metric.cta.bottom <= metric.hero.bottom - 5, "Laptop actions are clipped: "+JSON.stringify(metric));
+    assert.ok(metric.title.y >= metric.header.bottom - 3, "Headline collides with navbar: "+JSON.stringify(metric));
+    assert.ok(metric.scrollWidth <= 1368, "Horizontal page overflow: "+JSON.stringify(metric));
+    assert.ok(metric.categories.y < 768, "Category heading should appear in opening laptop viewport: "+JSON.stringify(metric));
+    fs.writeFileSync(path.join(output, "laptop-geometry.json"), JSON.stringify(metric,null,2));
+  });
+  await laptop.screenshot({path:path.join(output,"hero-laptop.png"),fullPage:false});
+  await laptopContext.close();
 
   const {page:mobile,context:mobileContext} = await newPage(390,844);
   await run("Mobile visual remains large and no sideways overflow", async () => {
