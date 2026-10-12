@@ -35,7 +35,7 @@ test("production page is publicly indexable and has correct metadata", () => {
 
 test("approved UI loads its actual animation, CSS and up-to-date shared catalog", () => {
   const paths = [
-    "design.css", "compact-sections.css", "hero-motion.css", "compact-hero.css",
+    "design.css", "compact-sections.css", "category-spacing.css", "hero-motion.css", "compact-hero.css",
     "data.js", "design.js", "hero-motion.js",
     "assets/cinematic-scene-backdrop-hq.webp",
     "assets/cinematic-cube-hq.webp", "assets/cinematic-panel-woman.webp"
