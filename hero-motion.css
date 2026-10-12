@@ -492,3 +492,239 @@
 @media (max-width: 390px) {
   .hero h1 {font-size: 38px}
 }
+
+
+/* NEURAL FULL-BLEED HERO V3 — grounded in the approved cinematic mockup
+   The photo and editorial overlay are siblings now. This removes the
+   52/48 grid positioning bug that left a hard seam at mid-screen.
+   The person is never transformed; only already-extracted holograms move.
+*/
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding-top: 76px;
+  overflow: clip;
+  background: #081224;
+}
+.hero-inner {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  direction: rtl;
+  width: 100%;
+  max-width: 1680px;
+  min-height: calc(100svh - 76px);
+  margin: 0 auto;
+  padding: clamp(36px, 5vh, 72px) clamp(35px, 5vw, 92px) clamp(42px, 7vh, 95px);
+}
+.hero-copy {
+  position: relative;
+  z-index: 8;
+  grid-column: auto;
+  flex: 0 0 auto;
+  width: min(700px, 45.5vw);
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
+  padding-inline-end: 0;
+}
+.hero-visual#portalVisual {
+  position: absolute;
+  z-index: 2;
+  grid-column: auto;
+  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  transform: none;
+  align-self: auto;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+.cinematic-scene { inset: 0; }
+
+/* A dark, scenic right-third crop carries REAL landscape texture under
+   the title without duplicating the fixed figure or its holograms. */
+.hero-visual#portalVisual::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -2%;
+  background-image: url("/assets/cinematic-scene-backdrop-hq.webp");
+  background-size: 250% auto;
+  background-position: right center;
+  background-repeat: no-repeat;
+  opacity: .66;
+  filter: blur(10px) brightness(.83) saturate(.94);
+  -webkit-mask-image: linear-gradient(90deg, transparent 27%, rgba(0,0,0,.45) 48%, #000 70%);
+  mask-image: linear-gradient(90deg, transparent 27%, rgba(0,0,0,.45) 48%, #000 70%);
+}
+.hero-visual#portalVisual::after {
+  content: "";
+  position: absolute;
+  z-index: 11;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(5,12,25,.08) 0%,
+      transparent 17%,
+      transparent 70%,
+      rgba(5,13,28,.29) 91%,
+      #081224 100%),
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(6,13,28,.02) 29%,
+      rgba(6,13,28,.19) 44%,
+      rgba(6,13,28,.49) 63%,
+      rgba(6,13,28,.76) 80%,
+      rgba(6,13,28,.86) 100%);
+}
+.cinematic-photograph {
+  position: absolute;
+  top: 49%;
+  left: 26%;
+  width: auto;
+  height: 112%;
+  aspect-ratio: 910 / 636;
+  max-width: none;
+  opacity: 1;
+  overflow: visible;
+  isolation: isolate;
+  transform: translate(-50%, -50%);
+  -webkit-mask-image: linear-gradient(90deg,
+    #000 0%, #000 57%, rgba(0,0,0,.98) 67%,
+    rgba(0,0,0,.74) 81%, rgba(0,0,0,.32) 92%, transparent 100%);
+  mask-image: linear-gradient(90deg,
+    #000 0%, #000 57%, rgba(0,0,0,.98) 67%,
+    rgba(0,0,0,.74) 81%, rgba(0,0,0,.32) 92%, transparent 100%);
+}
+.cinematic-backdrop { object-fit: fill; }
+.hero-meta {
+  z-index: 14;
+  top: 22%;
+  left: clamp(19px, 4vw, 72px);
+}
+.hero-down { z-index: 15; }
+.portal-motion-toggle {
+  position: absolute;
+  z-index: 16;
+  bottom: clamp(18px, 4vw, 56px);
+  left: clamp(17px, 3vw, 48px);
+  right: auto;
+}
+
+/* Avoid the visual stealing clicks from search and nav; the pause button
+   intentionally remains interactive. */
+.hero-inner, .hero-copy { pointer-events: auto; }
+.hero-visual#portalVisual { pointer-events: none; }
+.hero-visual#portalVisual .portal-motion-toggle { pointer-events: auto; }
+
+@media (max-width: 1200px) and (min-width: 921px) {
+  .hero-copy { width: min(620px, 51vw); }
+  .cinematic-photograph { left: 26%; height: 110%; }
+}
+@media (max-width: 920px) and (min-width: 691px) {
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100svh - 76px);
+    padding-inline: 30px;
+  }
+  .hero-copy {
+    width: min(600px, 65vw);
+    max-width: 600px;
+    padding: 0;
+  }
+  .hero-visual#portalVisual { width: 100%; }
+  .cinematic-photograph { left: 27%; height: 110%; }
+  .hero-visual#portalVisual::after {
+    background: linear-gradient(90deg,
+      rgba(5,13,28,.05) 0%, rgba(5,13,28,.2) 35%,
+      rgba(5,13,28,.68) 73%,rgba(5,13,28,.9) 100%),
+      linear-gradient(180deg, transparent 78%, #081224 100%);
+  }
+}
+@media (max-width: 690px) {
+  .hero {
+    min-height: 100svh;
+    padding-top: 64px;
+    overflow: clip;
+  }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: calc(100svh - 64px);
+    padding: clamp(30px, 5svh, 56px) 20px 46px;
+  }
+  .hero-copy {
+    order: initial;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+  .hero-visual#portalVisual {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    order: initial;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    min-height: 0;
+    margin: 0;
+    transform: none;
+    align-self: auto;
+    overflow: hidden;
+  }
+  .hero-visual#portalVisual::before { display: none; }
+  .hero-visual#portalVisual::after {
+    display: block;
+    background:
+      linear-gradient(180deg,
+        #081224 0%, rgba(8,18,36,.97) 32%,
+        rgba(8,18,36,.85) 49%,
+        rgba(8,18,36,.27) 70%,
+        rgba(8,18,36,.1) 81%,
+        #081224 100%);
+  }
+  .cinematic-photograph {
+    height: min(65svh, 570px);
+    width: auto;
+    top: 78%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%);
+    -webkit-mask-image: linear-gradient(180deg,
+      transparent 0%, #000 19%, #000 83%, transparent 100%);
+    mask-image: linear-gradient(180deg,
+      transparent 0%, #000 19%, #000 83%, transparent 100%);
+  }
+  .hero-meta { display:none; }
+  .hero-down { bottom: 8px; }
+  .portal-motion-toggle { bottom: 34px; left: 14px; right: auto; }
+  .hero-copy .hero-cta-row { justify-content: center; }
+}
+@media (max-width: 390px) {
+  .hero-inner { padding-inline: 15px; }
+  .cinematic-photograph { height: min(62svh, 500px); left: 50%; top: 79%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-photograph { transform: translate(-50%,-50%) !important; opacity: 1 !important; }
+}
