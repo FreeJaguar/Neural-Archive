@@ -319,7 +319,8 @@ try {
     await live.locator("#heroSearchForm button[type=submit]").click();
     await live.waitForTimeout(120);
     const found = Number(await live.locator("#visibleCount").innerText());
-    const total = await live.evaluate(() => window.TOOLS.length);\n    assert.ok(found > 0 && found < total,"Search should filter to Claude tools: "+found);
+    const total = await live.evaluate(() => window.TOOLS.length);
+    assert.ok(found > 0 && found < total,"Search should filter to Claude tools: "+found);
     await live.locator(".tool-open").first().click();
     assert.ok(await live.locator("#detailDialog").evaluate(dialog=>dialog.open),"Tool detail modal must open");
     await live.locator("#closeDetail").click();
