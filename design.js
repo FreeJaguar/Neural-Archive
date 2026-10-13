@@ -261,6 +261,16 @@
     "<li>" + html(value) + "</li>").join("");
   const toolDetail = tool => {
     const cat = categoryMap.get(tool.category) || { name: "כלי AI" };
+    const focuses = (tool.subcategories || []).filter(Boolean).join(" · ");
+    const uses = (tool.uses || []).filter(Boolean).join(" · ");
+    const highlights = (tool.pros || []).filter(Boolean).slice(0, 3).join(" · ");
+    const overview = tool.description || ("הכלי " + tool.name + " משתייך לקטגוריית " + cat.name +
+      (focuses ? " ומתמקד ב" + focuses : "") +
+      (uses ? ". אפשר להשתמש בו בעיקר עבור " + uses : "") + ".");
+    const problem = tool.problem || (tool.solves +
+      (uses ? " השימושים המרכזיים בהקשר הזה הם " + uses + "." : ""));
+    const audience = tool.audienceDetails || (tool.audience +
+      (highlights ? " עבור קהל זה בולטים במיוחד היתרונות הבאים: " + highlights + "." : ""));
     const sources = (tool.sources || []).filter(s => isUrl(s.url)).map(s => link(s.url,s.label)).join("");
     const alternatives = (tool.alternatives || []).map(name =>
       '<button type="button" data-alternative="' + html(name) + '">' + html(name) + "</button>"
@@ -270,8 +280,9 @@
       '<div class="detail-art"><div class="detail-mark">' + logo(tool,true).replace('class="tool-logo large"', 'class="tool-logo large"') +
       "</div></div>" +
       '<div class="detail-pills">' + (tool.subcategories || []).map(tag => '<span>' + html(tag) + '</span>').join("") + "</div>" +
-      '<p class="detail-label">מה הכלי פותר</p><p class="detail-summary">' + html(tool.solves) + "</p>" +
-      '<p class="detail-label">למי זה מתאים</p><p class="detail-summary">' + html(tool.audience) + "</p>" +
+      '<p class="detail-label">תיאור כללי</p><p class="detail-summary">' + html(overview) + "</p>" +
+      '<p class="detail-label">מה הכלי פותר</p><p class="detail-summary">' + html(problem) + "</p>" +
+      '<p class="detail-label">למי זה מתאים</p><p class="detail-summary">' + html(audience) + "</p>" +
       '<section class="detail-copy-block free"><strong>✓ מה מקבלים בחינם</strong>' + html(tool.free) + "</section>" +
       '<section class="detail-copy-block"><strong>המגבלות שכדאי להכיר</strong>' + html(tool.limits) + "</section>" +
       '<section class="detail-copy-block"><strong>יתרונות</strong><ul>' + list(tool.pros) + "</ul></section>" +
