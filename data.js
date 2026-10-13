@@ -635,47 +635,400 @@ window.TOOLS = [
     pros: ["וידאו וטלמטריית דפדפן", "מתאים לסוכני קוד נפוצים", "תוכנית חינם קבועה"], cons: ["מעלה הקלטות לשירות", "משימות ענן מחויבות בנפרד"],
     alternatives: ["Open Code Review", "Workscribe"], url: "https://userill.dev/", added: "2026-10-12", verified: "2026-10-12",
     sources: [{ label: "עמוד המוצר", url: "https://userill.dev/" }, { label: "תוכנית Free", url: "https://userill.dev/pricing" }]
+  },
+  {
+    "slug": "concat-video-editor",
+    "name": "Concat",
+    "mark": "Co",
+    "category": "design",
+    "subcategories": [
+      "עריכת וידאו",
+      "כתוביות",
+      "יצירה מקומית"
+    ],
+    "tagline": "עורך וידאו מקומי וחוצה פלטפורמות עם כתוביות, אפקטים, עריכה רב-ערוצית וייצוא 4K.",
+    "solves": "מספק חלופה חינמית ל-CapCut לעריכת סרטונים קצרים, הדרכות ופודקאסטים בלי חשבון, סימן מים או העלאת חומרי הגלם.",
+    "uses": [
+      "עריכת וידאו",
+      "כתוביות אוטומטיות",
+      "תוכן לרשתות"
+    ],
+    "audience": "יוצרי תוכן, עורכי וידאו ומפתחים שרוצים עריכה מקומית או API לסקריפטים ולסוכנים.",
+    "free": "היישום וקוד המקור חינמיים תחת AGPL-3.0-or-later; כל העיבוד מקומי, אין חשבון, מנוי או סימן מים, ומודלי AI אופציונליים יורדים למחשב ועובדים אחר כך ללא חיבור.",
+    "limits": "הפרויקט עדיין בבטא; חלק מהמתקינים אינם חתומים, iOS דורש sideload, מודלי AI צורכים אחסון ומשאבים, ושיבוט קול מחייב הרשאה מהדובר.",
+    "pros": [
+      "עריכה מקומית ופרטית",
+      "בניות לכל מערכות ההפעלה העיקריות",
+      "API ו-MCP לאוטומציה"
+    ],
+    "cons": [
+      "גרסת בטא",
+      "חלק מהבניות אינן חתומות"
+    ],
+    "alternatives": [
+      "Compositor",
+      "VoiceStudio",
+      "Cavalry"
+    ],
+    "url": "https://concatenate.pages.dev/",
+    "added": "2026-10-13",
+    "verified": "2026-10-13",
+    "sources": [
+      {
+        "label": "המאגר והרישיון",
+        "url": "https://github.com/jub0t/Concat"
+      },
+      {
+        "label": "גרסאות והתקנה",
+        "url": "https://github.com/jub0t/Concat/releases"
+      },
+      {
+        "label": "דרישות מערכת",
+        "url": "https://concatenate.pages.dev/guides/system-requirements"
+      }
+    ]
+  },
+  {
+    "slug": "pi-agent-harness",
+    "name": "Pi",
+    "mark": "Pi",
+    "category": "development",
+    "subcategories": [
+      "סוכן קוד",
+      "CLI",
+      "SDK"
+    ],
+    "tagline": "רתמת סוכן קוד מינימלית וניתנת להרחבה עם CLI, SDK, RPC, סקילים וחבילות.",
+    "solves": "מאפשרת להתאים סוכן קוד לתהליכי עבודה אישיים דרך הרחבות, תבניות וסקילים במקום להינעל על זרימת עבודה קבועה.",
+    "uses": [
+      "פיתוח עם סוכנים",
+      "אוטומציית קוד",
+      "בניית כלי AI"
+    ],
+    "audience": "מפתחים שרוצים סוכן טרמינל פתוח, ניתן לתכנות ורב-ספקי.",
+    "free": "הקוד וה-CLI חינמיים תחת MIT, עם התקנה ל-Windows, macOS ו-Linux דרך סקריפט רשמי, npm או Nix.",
+    "limits": "מודלים, מפתחות API או מנויי ספקים נפרדים; ברירת המחדל רצה עם כל הרשאות המשתמש וללא מערכת הרשאות מובנית, ולכן יש להשתמש ב-container או sandbox למשימות לא מהימנות.",
+    "pros": [
+      "MIT וניתן להרחבה",
+      "בניות עם SHA256SUMS",
+      "CLI, RPC ו-TypeScript SDK"
+    ],
+    "cons": [
+      "אין sandbox מובנה",
+      "עלות המודל נפרדת"
+    ],
+    "alternatives": [
+      "Kilo Code",
+      "OpenClaw",
+      "DeepSeek Harness"
+    ],
+    "url": "https://pi.dev/",
+    "added": "2026-10-13",
+    "verified": "2026-10-13",
+    "sources": [
+      {
+        "label": "המאגר והוראות ההתקנה",
+        "url": "https://github.com/earendil-works/pi"
+      },
+      {
+        "label": "גרסאות חתוכות ובדיקות סכום",
+        "url": "https://github.com/earendil-works/pi/releases"
+      },
+      {
+        "label": "תיעוד רשמי",
+        "url": "https://pi.dev/docs/latest"
+      }
+    ]
+  },
+  {
+    "slug": "addy-agent-skills",
+    "name": "Addy Osmani Agent Skills",
+    "mark": "AS",
+    "category": "skills",
+    "subcategories": [
+      "Agent Skills",
+      "איכות קוד",
+      "תהליך פיתוח"
+    ],
+    "tagline": "חבילת 25 סקילים הנדסיים לסוכני קוד, משלב הגדרת הדרישות ועד בדיקות, סקירה ופריסה.",
+    "solves": "מקודדת תהליכי עבודה ושערי איכות חוזרים כדי שסוכני קוד יתכננו, יממשו ויאמתו שינויים בצורה עקבית.",
+    "uses": [
+      "תכנון תוכנה",
+      "TDD וסקירת קוד",
+      "פריסה"
+    ],
+    "audience": "צוותי פיתוח ומשתמשי Codex, Claude Code, Cursor, Copilot וסוכנים תואמי Agent Skills.",
+    "free": "כל הסקילים והפקודות חינמיים תחת MIT; אפשר להתקין את כל החבילה או סקילים בודדים באמצעות CLI פתוח או שילובי המארחים המתועדים.",
+    "limits": "אלה הוראות לסוכן ולא מנגנון אבטחה; יש לקרוא את הסקילים לפני התקנה, עלויות המודל והמארח נפרדות, ובהתקנת סקיל בודד חלק מקישורי ה-reference המשותפים אינם מועתקים.",
+    "pros": [
+      "25 תהליכים מוכנים",
+      "תמיכה רחבה במארחים",
+      "גרסאות ותחזוקה פעילה"
+    ],
+    "cons": [
+      "דורש סוכן מארח",
+      "הוראות עשויות להפעיל פעולות רחבות"
+    ],
+    "alternatives": [
+      "Anthropic Skills",
+      "Vercel Agent Skills",
+      "Superpowers"
+    ],
+    "url": "https://github.com/addyosmani/agent-skills",
+    "added": "2026-10-13",
+    "verified": "2026-10-13",
+    "sources": [
+      {
+        "label": "המאגר והתקנה",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "label": "גרסאות",
+        "url": "https://github.com/addyosmani/agent-skills/releases"
+      },
+      {
+        "label": "רישיון MIT",
+        "url": "https://github.com/addyosmani/agent-skills/blob/main/LICENSE"
+      }
+    ]
   }
+
 
 ];
 
 window.WATCHLIST = [
-
-  { name: "IrisGo", mark: "IG", category: "productivity", signal: "מקור: Product Hunt והאתר הרשמי", reason: "האפליקציה פעילה, אך לא פורסמו תנאי תוכנית חינמית קבועה או מכסות שאפשר לאמת.", url: "https://irisgo.ai/", checked: "2026-10-12" },
-  { name: "FastRouter.ai", mark: "FR", category: "development", signal: "מקור: Product Hunt והארגון הרשמי ב-GitHub", reason: "ההרשמה כוללת קרדיטים חינמיים, אך לא נמצא מסלול חינמי מתמשך עם מכסה מחזורית ברורה.", url: "https://fastrouter.ai/", checked: "2026-10-12" },
-  { name: "ReadySetGo", mark: "RS", category: "development", signal: "מקור: הבלוג הרשמי של thoughtbot", reason: "הבטא פתוחה בחינם לזמן מוגבל בלבד ובכפוף למכסת משתמשים יומית, ולכן אינה עומדת עדיין בתנאי הקטלוג.", url: "https://thoughtbot.com/blog/we-built-an-ai-product-consultant-and-the-free-beta-is-now-open", checked: "2026-10-12" },
-  { name: "MT Code", mark: "MT", category: "development", signal: "אפליקציית Desktop חינמית תחת Apache-2.0 לניהול Claude Code, Codex, Cursor, Grok, OpenCode וסוכנים נוספים, עם גרסאות עדכניות ל-macOS, Windows ו-Linux.", reason: "החינמיות והגרסאות מאומתות, אך המאגר צבר רק 8 כוכבים בזמן הבדיקה והוא fork צעיר של T3 Code. נדרש עוד אימוץ ובדיקת אבטחה לפני פרסום פעיל; מנויי הסוכנים והמודלים נפרדים.", url: "https://github.com/munimtechnologies/mtcode", checked: "2026-10-12" },
-  { name: "YuE2 Studio", mark: "Y2", category: "design", signal: "מאגר פעיל עם 551 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/timoncool/YuE2-Studio", checked: "2026-10-12" },
-  { name: "Minutes", mark: "Mi", category: "productivity", signal: "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/silverstein/minutes", checked: "2026-10-12" },
-  { name: "TAKT", mark: "Ta", category: "development", signal: "מאגר פעיל עם 1,403 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/nrslib/takt", checked: "2026-10-12" },
-  { name: "nanoMuse", mark: "nM", category: "design", signal: "מאגר פעיל עם 923 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/nano-muse/nanoMuse", checked: "2026-10-12" },
-  { name: "OpenQodex", mark: "OQ", category: "development", signal: "מאגר פעיל עם 615 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/openqodex/openqodex", checked: "2026-10-12" },
-  { name: "Big Arrow on the Screen", mark: "BA", category: "development", signal: "מאגר פעיל עם 638 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/franzenzenhofer/big-arrow-on-the-screen", checked: "2026-10-12" },
-  { name: "ManimGX", mark: "MX", category: "design", signal: "מאגר פעיל עם 716 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/academa-labs/manimgx", checked: "2026-10-12" },
-  { name: "Skills Hub", mark: "SH", category: "skills", signal: "מאגר פעיל עם 1,760 כוכבי GitHub בזמן הבדיקה.", reason: "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.", url: "https://github.com/qufei1993/skills-hub", checked: "2026-10-12" },
-  { name: "hob", mark: "hob", category: "development", signal: "סביבת עבודה מקומית לסוכני קוד עם 73 עוקבים ו-90 נקודות בהשקת Product Hunt, ותמיכה ב-macOS, Windows ו-Linux.", reason: "המחירון הרשמי מאשר חודש ראשון חינם בלבד ולאחריו מסלול Personal Pro בתשלום; אין מסלול חינמי מתמשך ולכן הכלי נשאר מחוץ לקטלוג הפעיל.", url: "https://hob.dev/", checked: "2026-10-05" },
-  { name: "Bracket", mark: "Br", category: "productivity", signal: "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.", reason: "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.", url: "https://www.use-bracket.com/", checked: "2026-10-04" },
-  { name: "Janus", mark: "J", category: "development", signal: "שרת LLM מקומי בקובץ Go יחיד עם Vulkan ו-API תואם OpenAI; הגיע ל-106 נקודות ו-19 תגובות ב-Show HN.", reason: "הפרויקט עדיין צעיר מאוד, והדיון הטכני מצביע על חפיפה משמעותית עם llama-server ללא בנצ’מרקים שמבססים ערך מוסף; נדרש להמתין לגרסאות, אימוץ ובדיקות ביצועים.", url: "https://github.com/Vibra-Ingenn/Janus", checked: "2026-10-06" },
-  { name: "Rhun", mark: "R", category: "development", signal: "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.", reason: "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.", url: "https://rhun.app/", checked: "2026-10-03" },
-  { name: "Breadcrumb", mark: "B", category: "productivity", signal: "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.", reason: "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.", url: "https://innerloop.works/", checked: "2026-10-03" },
-  { name: "Hacker Atlas", mark: "HA", category: "research", signal: "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.", reason: "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.", url: "https://hackeratlas.com/", checked: "2026-10-03" },
-  { name: "Jotbus", mark: "JB", category: "development", signal: "scratchpad מוצפן מקצה לקצה להעברת הקשר וקבצים בין Codex, Claude Code וסוכנים נוספים; 22 נקודות ו-13 תגובות ב-Show HN.", reason: "המסלול החינמי הוא workspace זמני של 60 דקות וקבצים עד 2MB; היסטוריה מתמשכת דורשת $7 לחודש, ולכן אינו עומד כרגע ברף שימוש חינמי מתמשך לקטלוג הפעיל.", url: "https://jotbus.com/", checked: "2026-10-07" },
-  { name: "TAP Runtime", mark: "TAP", category: "development", signal: "runtime מקומי תחת MIT לכלים שסוכני קוד בונים ומשתפים, עם release חתום ותמיכה ב-Linux וב-WSL.", reason: "הפרויקט חדש מאוד וטרם הצטברו אימוץ, תיעוד שימוש עצמאי ובדיקות קהילה שמצדיקים רשומה פעילה; החינמיות מאומתת אך הבשלות תיבדק שוב.", url: "https://github.com/Telara-Labs/TAP-Runtime", checked: "2026-10-07" },
-  { name: "OpenChart", mark: "OC", category: "research", signal: "חלופת TradingView מקומית עם סוכן AI, 95 כוכבים וגרסאות desktop פעילות בתוך יומיים מההשקה.", reason: "GitHub מסמן את הרישיון כ-NOASSERTION והגרסה מציגה נעילות ל-OpenChart Cloud בחלק מבחירות הנתונים; תנאי השימוש החינמי והרישיון דורשים אימות נוסף.", url: "https://github.com/longsurf-ai/openchart", checked: "2026-10-07" },
-  { name: "SVG Spark", mark: "SS", category: "design", signal: "אוסף חדש של עשרה כלי דפדפן מקומיים ל-SVG, PDF, תמונות, JSON, כתוביות, SQL, נגישות ו-Markdown; צבר 35 נקודות בתוך שעות ב-Show HN.", reason: "האתר פעיל, חינמי וללא העלאת קבצים, אך לא נמצא מאגר מקור, רישיון שימוש מפורש או זהות מתחזקת מספקת; נדרש אימות לפני כניסה לקטלוג הפעיל.", url: "https://svg-spark.vercel.app/", checked: "2026-10-09" },
-  { name: "Pocketty", mark: "Po", category: "development", signal: "מסוף SSH ל-iPhone ול-iPad ששולח התראה כאשר סוכן קוד ממתין לקלט; 27 נקודות ו-12 תגובות בתוך שעות ב-Show HN.", reason: "האתר הרשמי מציג את המוצר ואת פרטיותו, אך מחיר קבוע, מגבלות המסלול החינמי ורישיון לא אומתו ממקור רשמי ברור בזמן הסריקה.", url: "https://pocketty.app/", checked: "2026-10-09" },
-  { name: "Upfling.host", mark: "Up", category: "development", signal: "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.", reason: "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.", url: "https://upfling.host/", checked: "2026-10-09" },
-  { name: "Curie", mark: "Cu", category: "research", signal: "עוזר חדש לספרות מדעית, חילוץ נתונים וסקירות שיטתיות עם 100 נקודות ו-96 עוקבים בהשקת Product Hunt השבוע.", reason: "Product Hunt מסמן את הכלי כחינמי, אך באתר הרשמי לא נמצא מחירון נגיש שמגדיר מכסה מתחדשת, מספר מסמכים או גבולות שימוש; אין לפרסם כפעיל עד לאימות תנאי Free ממקור ראשון.", url: "https://curieai.tech/", checked: "2026-10-11" },
-  { name: "Task Monki", mark: "TM", category: "development", signal: "אפליקציית desktop מקומית לניהול כמה סוכני קוד מלוח קנבן עד preview, review ו-pull request; הושקה השבוע ב-Product Hunt.", reason: "הרישיון MIT והחינמיות מאומתים, אך המאגר עצמו מזהיר שמדובר בתוכנה ניסיונית שמריצה תהליכים ופעולות Git אמיתיים; עם 8 כוכבים בלבד ותמיכת Windows/Linux ניסיונית, נדרש עוד זמן בשלות.", url: "https://github.com/RojhatToptamus/task-monki", checked: "2026-10-11" },
-  { name: "OldRoll Web", mark: "OR", category: "design", signal: "עורך תמונות וינטג' חדש בדפדפן עם 16 נקודות באות Show HN, עריכת Digicam/Film/VHS, ייצוא ברזולוציה המקורית וללא חשבון.", reason: "האתר הרשמי אומר שכל יכולות ה-Web חינמיות כעת, אך מגדיר זאת במפורש כהצעת ההשקה הנוכחית ולא כמסלול חינמי מתמשך. חלק מהעיבוד מתבצע בשרת ותמונות עשויות להישמר עד 30 יום; נדרש אימות מחדש לאחר תקופת ההשקה.", url: "https://www.oldroll.io/", checked: "2026-10-12" },
-  { name: "Whiteboard", mark: "W", category: "development", signal: "מאגר פעיל עם 3,138 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/devdotfast/whiteboard", checked: "2026-10-12" },
-  { name: "Paper2Agent", mark: "P2", category: "research", signal: "מאגר פעיל עם 3,766 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/jmiao24/Paper2Agent", checked: "2026-10-12" },
-  { name: "Concat", mark: "Co", category: "design", signal: "מאגר פעיל עם 4,951 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/jub0t/Concat", checked: "2026-10-12" },
-  { name: "Open CAD Studio", mark: "OC", category: "design", signal: "מאגר פעיל עם 2,856 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/HakanSeven12/OpenCADStudio", checked: "2026-10-12" },
-  { name: "Crisp", mark: "Cr", category: "productivity", signal: "מאגר פעיל עם 2,068 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/didriksg/Crisp", checked: "2026-10-12" },
-  { name: "Open Cowork", mark: "OC", category: "productivity", signal: "מאגר פעיל עם 2,201 כוכבי GitHub בזמן הבדיקה.", reason: "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.", url: "https://github.com/OpenCoworkAI/open-cowork", checked: "2026-10-12" },
-  { name: "Open Intelligent UI", mark: "OI", category: "development", signal: "מסגרת Generative UI תחת MIT עם כ-2,649 כוכבים ואות GitHub Trending יומי.", reason: "הרישיון והליבה החינמית אומתו, אך המאגר מתחת לרף 5,000 הכוכבים ודורש מודל ו-visualization router חיצוניים; נשאר במעקב.", url: "https://github.com/CopilotKit/OpenIntelligentUI", checked: "2026-10-12" },
-  { name: "OpenRig", mark: "OR", category: "development", signal: "רשת צוותי סוכנים מתמשכים עם 6,958 כוכבים ואות GitHub Trending שבועי.", reason: "עבר את רף הכוכבים, אך טרם הושלמו בדיקות רישיון, בידוד תהליכים, הרשאות, releases ונתיב שימוש חינמי מלא; נשאר במעקב עד לאימות עומק.", url: "https://github.com/mvschwarz/openrig", checked: "2026-10-12" },
-  { name: "NVIDIA OpenShell", mark: "NO", category: "development", signal: "runtime פרטי לסוכנים אוטונומיים עם 15,839 כוכבים ואות GitHub Trending חודשי.", reason: "האות והבעלות של NVIDIA חזקים, אך לפני פרסום פעיל נדרשת בדיקה מלאה של רישיון, מודל האיום, גבולות ה-sandbox, דרישות חומרה ויציבות releases.", url: "https://github.com/NVIDIA/OpenShell", checked: "2026-10-12" },
-  { name: "FreeLLMAPI", mark: "FL", category: "development", signal: "שער אחוד שמצהיר על 34 ספקי LLM חינמיים, עם 33,310 כוכבים ואות Trending שבועי וחודשי.", reason: "למרות מספר הכוכבים, ההבטחה ל-7.4 מיליארד טוקנים בחודש מוגבלת לניסוי אישי ותלויה בספקים חיצוניים. תנאי שימוש, יציבות המכסות, פרטיות ואבטחת המפתחות דורשים אימות לפני פרסום פעיל.", url: "https://github.com/tashfeenahmed/freellmapi", checked: "2026-10-12" }
+  {
+    "name": "IrisGo",
+    "mark": "IG",
+    "category": "productivity",
+    "signal": "מקור: Product Hunt והאתר הרשמי",
+    "reason": "האפליקציה פעילה, אך לא פורסמו תנאי תוכנית חינמית קבועה או מכסות שאפשר לאמת.",
+    "url": "https://irisgo.ai/",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "FastRouter.ai",
+    "mark": "FR",
+    "category": "development",
+    "signal": "מקור: Product Hunt והארגון הרשמי ב-GitHub",
+    "reason": "ההרשמה כוללת קרדיטים חינמיים, אך לא נמצא מסלול חינמי מתמשך עם מכסה מחזורית ברורה.",
+    "url": "https://fastrouter.ai/",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "ReadySetGo",
+    "mark": "RS",
+    "category": "development",
+    "signal": "מקור: הבלוג הרשמי של thoughtbot",
+    "reason": "הבטא פתוחה בחינם לזמן מוגבל בלבד ובכפוף למכסת משתמשים יומית, ולכן אינה עומדת עדיין בתנאי הקטלוג.",
+    "url": "https://thoughtbot.com/blog/we-built-an-ai-product-consultant-and-the-free-beta-is-now-open",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Minutes",
+    "mark": "Mi",
+    "category": "productivity",
+    "signal": "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/silverstein/minutes",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "TAKT",
+    "mark": "Ta",
+    "category": "development",
+    "signal": "מאגר פעיל עם 1,403 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/nrslib/takt",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Skills Hub",
+    "mark": "SH",
+    "category": "skills",
+    "signal": "מאגר פעיל עם 1,760 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/qufei1993/skills-hub",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "hob",
+    "mark": "hob",
+    "category": "development",
+    "signal": "סביבת עבודה מקומית לסוכני קוד עם 73 עוקבים ו-90 נקודות בהשקת Product Hunt, ותמיכה ב-macOS, Windows ו-Linux.",
+    "reason": "המחירון הרשמי מאשר חודש ראשון חינם בלבד ולאחריו מסלול Personal Pro בתשלום; אין מסלול חינמי מתמשך ולכן הכלי נשאר מחוץ לקטלוג הפעיל.",
+    "url": "https://hob.dev/",
+    "checked": "2026-10-05"
+  },
+  {
+    "name": "Bracket",
+    "mark": "Br",
+    "category": "productivity",
+    "signal": "שכבת זיכרון עסקית שמחברת Gmail, Slack, Figma ו-GitHub; 108 עוקבים ו-109 נקודות בהשקת Product Hunt.",
+    "reason": "Product Hunt מסמן 14 ימי ניסיון בלבד, והצהרות המפתחים ש\"חינם כרגע\" אינן מגדירות מסלול חינמי מתמשך או מכסות מגבלות; נשאר מחוץ לקטלוג הפעיל.",
+    "url": "https://www.use-bracket.com/",
+    "checked": "2026-10-04"
+  },
+  {
+    "name": "Rhun",
+    "mark": "R",
+    "category": "development",
+    "signal": "עורך קוד חדש שנכתב ב-assembly וזכה למומנטום ב-Hacker News.",
+    "reason": "לא אותרו בבדיקה מקור רשמי ורישיון שניתנים לאימות מספק, ולכן לא ניתן לקבוע נתיב שימוש חינמי מתמשך.",
+    "url": "https://rhun.app/",
+    "checked": "2026-10-03"
+  },
+  {
+    "name": "Breadcrumb",
+    "mark": "B",
+    "category": "productivity",
+    "signal": "הקלטת הקשר רציפה ב-Mac וניהול הקשר לעוזרי AI.",
+    "reason": "האתר הפעיל לא סיפק בזמן הבדיקה מקור ברור למחיר, מגבלות, פרטיות ורישיון; נשאר מחוץ לקטלוג הפעיל.",
+    "url": "https://innerloop.works/",
+    "checked": "2026-10-03"
+  },
+  {
+    "name": "Hacker Atlas",
+    "mark": "HA",
+    "category": "research",
+    "signal": "מפה אינטראקטיבית של נושאי Hacker News והמגמות שלהם.",
+    "reason": "המוצר פעיל וזכה לעניין, אך לא נמצא מקור רשמי ברור לתמחור, מגבלות שימוש או רישיון.",
+    "url": "https://hackeratlas.com/",
+    "checked": "2026-10-03"
+  },
+  {
+    "name": "Jotbus",
+    "mark": "JB",
+    "category": "development",
+    "signal": "scratchpad מוצפן מקצה לקצה להעברת הקשר וקבצים בין Codex, Claude Code וסוכנים נוספים; 22 נקודות ו-13 תגובות ב-Show HN.",
+    "reason": "המסלול החינמי הוא workspace זמני של 60 דקות וקבצים עד 2MB; היסטוריה מתמשכת דורשת $7 לחודש, ולכן אינו עומד כרגע ברף שימוש חינמי מתמשך לקטלוג הפעיל.",
+    "url": "https://jotbus.com/",
+    "checked": "2026-10-07"
+  },
+  {
+    "name": "SVG Spark",
+    "mark": "SS",
+    "category": "design",
+    "signal": "אוסף חדש של עשרה כלי דפדפן מקומיים ל-SVG, PDF, תמונות, JSON, כתוביות, SQL, נגישות ו-Markdown; צבר 35 נקודות בתוך שעות ב-Show HN.",
+    "reason": "האתר פעיל, חינמי וללא העלאת קבצים, אך לא נמצא מאגר מקור, רישיון שימוש מפורש או זהות מתחזקת מספקת; נדרש אימות לפני כניסה לקטלוג הפעיל.",
+    "url": "https://svg-spark.vercel.app/",
+    "checked": "2026-10-09"
+  },
+  {
+    "name": "Pocketty",
+    "mark": "Po",
+    "category": "development",
+    "signal": "מסוף SSH ל-iPhone ול-iPad ששולח התראה כאשר סוכן קוד ממתין לקלט; 27 נקודות ו-12 תגובות בתוך שעות ב-Show HN.",
+    "reason": "האתר הרשמי מציג את המוצר ואת פרטיותו, אך מחיר קבוע, מגבלות המסלול החינמי ורישיון לא אומתו ממקור רשמי ברור בזמן הסריקה.",
+    "url": "https://pocketty.app/",
+    "checked": "2026-10-09"
+  },
+  {
+    "name": "Upfling.host",
+    "mark": "Up",
+    "category": "development",
+    "signal": "שירות חדש לפרסום אתרי HTML, CSS ו-JavaScript סטטיים, שממותג כאירוח חינמי וזכה לאות ראשון ב-Show HN.",
+    "reason": "לא אותרו עדיין מחירון רשמי, מכסות תעבורה ואחסון, מדיניות שימוש או התחייבות למסלול חינמי מתמשך; נשאר במעקב עד לפרסום תנאים מלאים.",
+    "url": "https://upfling.host/",
+    "checked": "2026-10-09"
+  },
+  {
+    "name": "Curie",
+    "mark": "Cu",
+    "category": "research",
+    "signal": "עוזר חדש לספרות מדעית, חילוץ נתונים וסקירות שיטתיות עם 100 נקודות ו-96 עוקבים בהשקת Product Hunt השבוע.",
+    "reason": "Product Hunt מסמן את הכלי כחינמי, אך באתר הרשמי לא נמצא מחירון נגיש שמגדיר מכסה מתחדשת, מספר מסמכים או גבולות שימוש; אין לפרסם כפעיל עד לאימות תנאי Free ממקור ראשון.",
+    "url": "https://curieai.tech/",
+    "checked": "2026-10-11"
+  },
+  {
+    "name": "OldRoll Web",
+    "mark": "OR",
+    "category": "design",
+    "signal": "עורך תמונות וינטג' חדש בדפדפן עם 16 נקודות באות Show HN, עריכת Digicam/Film/VHS, ייצוא ברזולוציה המקורית וללא חשבון.",
+    "reason": "האתר הרשמי אומר שכל יכולות ה-Web חינמיות כעת, אך מגדיר זאת במפורש כהצעת ההשקה הנוכחית ולא כמסלול חינמי מתמשך. חלק מהעיבוד מתבצע בשרת ותמונות עשויות להישמר עד 30 יום; נדרש אימות מחדש לאחר תקופת ההשקה.",
+    "url": "https://www.oldroll.io/",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Whiteboard",
+    "mark": "W",
+    "category": "development",
+    "signal": "מאגר פעיל עם 3,138 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/devdotfast/whiteboard",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Paper2Agent",
+    "mark": "P2",
+    "category": "research",
+    "signal": "מאגר פעיל עם 3,766 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/jmiao24/Paper2Agent",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Open CAD Studio",
+    "mark": "OC",
+    "category": "design",
+    "signal": "מאגר פעיל עם 2,856 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/HakanSeven12/OpenCADStudio",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Crisp",
+    "mark": "Cr",
+    "category": "productivity",
+    "signal": "מאגר פעיל עם 2,068 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/didriksg/Crisp",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Open Cowork",
+    "mark": "OC",
+    "category": "productivity",
+    "signal": "מאגר פעיל עם 2,201 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
+    "url": "https://github.com/OpenCoworkAI/open-cowork",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "Open Intelligent UI",
+    "mark": "OI",
+    "category": "development",
+    "signal": "מסגרת Generative UI תחת MIT עם כ-2,649 כוכבים ואות GitHub Trending יומי.",
+    "reason": "הרישיון והליבה החינמית אומתו, אך המאגר מתחת לרף 5,000 הכוכבים ודורש מודל ו-visualization router חיצוניים; נשאר במעקב.",
+    "url": "https://github.com/CopilotKit/OpenIntelligentUI",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "OpenRig",
+    "mark": "OR",
+    "category": "development",
+    "signal": "רשת צוותי סוכנים מתמשכים עם 6,958 כוכבים ואות GitHub Trending שבועי.",
+    "reason": "עבר את רף הכוכבים, אך טרם הושלמו בדיקות רישיון, בידוד תהליכים, הרשאות, releases ונתיב שימוש חינמי מלא; נשאר במעקב עד לאימות עומק.",
+    "url": "https://github.com/mvschwarz/openrig",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "NVIDIA OpenShell",
+    "mark": "NO",
+    "category": "development",
+    "signal": "runtime פרטי לסוכנים אוטונומיים עם 15,839 כוכבים ואות GitHub Trending חודשי.",
+    "reason": "האות והבעלות של NVIDIA חזקים, אך לפני פרסום פעיל נדרשת בדיקה מלאה של רישיון, מודל האיום, גבולות ה-sandbox, דרישות חומרה ויציבות releases.",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "checked": "2026-10-12"
+  },
+  {
+    "name": "FreeLLMAPI",
+    "mark": "FL",
+    "category": "development",
+    "signal": "שער אחוד שמצהיר על 34 ספקי LLM חינמיים, עם 33,310 כוכבים ואות Trending שבועי וחודשי.",
+    "reason": "למרות מספר הכוכבים, ההבטחה ל-7.4 מיליארד טוקנים בחודש מוגבלת לניסוי אישי ותלויה בספקים חיצוניים. תנאי שימוש, יציבות המכסות, פרטיות ואבטחת המפתחות דורשים אימות לפני פרסום פעיל.",
+    "url": "https://github.com/tashfeenahmed/freellmapi",
+    "checked": "2026-10-12"
+  }
 ];
