@@ -791,6 +791,116 @@ window.TOOLS = [
         "url": "https://github.com/addyosmani/agent-skills/blob/main/LICENSE"
       }
     ]
+  },
+  {
+    "slug": "matt-pocock-skills",
+    "name": "Matt Pocock Skills",
+    "mark": "MP",
+    "category": "skills",
+    "subcategories": [
+      "סקילים לסוכנים",
+      "הנדסת תוכנה",
+      "פרודוקטיביות"
+    ],
+    "tagline": "אוסף תהליכי עבודה מודולריים שמכניס משמעת הנדסית לסוכני קוד.",
+    "solves": "עוזר לנסח דרישות, לפרק עבודה, לעבוד ב־TDD, לאבחן תקלות, לסקור קוד ולשמר שפה משותפת בפרויקט במקום להסתמך על פרומפט חד־פעמי.",
+    "uses": [
+      "תכנון ומפרטים",
+      "TDD ואבחון תקלות",
+      "סקירת קוד",
+      "תיעוד והעברת הקשר"
+    ],
+    "audience": "מפתחים וצוותים שעובדים עם Codex, Claude Code, GitHub Copilot, Gemini CLI, Cursor וסוכנים תואמי Agent Skills.",
+    "free": "כל האוסף חינמי תחת MIT. יש התקנת plugin מתעדכנת ל־Codex, Claude Code ו־Copilot, התקנה ידנית ל־Gemini CLI ונתיב npx לסוכנים נוספים.",
+    "limits": "הסקילים הם הוראות שמרחיבות את יכולת הפעולה של הסוכן ואינם שכבת אבטחה. יש לבדוק את הקבצים לפני התקנה, לאשר הרשאות וכלי shell בזהירות, ועלויות המודל והמארח אינן כלולות.",
+    "pros": [
+      "תהליכים קטנים וניתנים לשילוב",
+      "תמיכה רשמית במארחים רבים",
+      "תחזוקה וגרסאות פעילות"
+    ],
+    "cons": [
+      "דורש סוכן מארח",
+      "חלק מהתהליכים יכולים לערוך קוד ולהריץ פקודות"
+    ],
+    "alternatives": [
+      "Addy Osmani Agent Skills",
+      "Anthropic Skills",
+      "Superpowers"
+    ],
+    "url": "https://github.com/mattpocock/skills",
+    "added": "2026-10-14",
+    "verified": "2026-10-14",
+    "sources": [
+      {
+        "label": "המאגר והוראות התקנה",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "label": "גרסה v1.3.1",
+        "url": "https://github.com/mattpocock/skills/releases/tag/v1.3.1"
+      },
+      {
+        "label": "רישיון MIT",
+        "url": "https://github.com/mattpocock/skills/blob/main/LICENSE"
+      }
+    ]
+  },
+  {
+    "slug": "project-nomad",
+    "name": "Project NOMAD",
+    "mark": "PN",
+    "category": "research",
+    "subcategories": [
+      "ידע לא מקוון",
+      "למידה",
+      "אירוח עצמי"
+    ],
+    "tagline": "שרת ידע ולמידה מקומי שממשיך לעבוד גם בלי חיבור לאינטרנט.",
+    "solves": "מרכז Wikipedia ותכני Kiwix, קורסי Kolibri, מפות, הערות וכלי נתונים בממשק אחד, עם אפשרות לצ'אט מקומי ולחיפוש RAG במסמכים.",
+    "uses": [
+      "ספריית ידע לא מקוונת",
+      "למידה עצמית וכיתתית",
+      "חיפוש במסמכים",
+      "מפות וכלי עזר מקומיים"
+    ],
+    "audience": "בתי ספר, מעבדות שטח, קהילות, מטיילים ומשתמשים שרוצים מאגר ידע פרטי שאינו תלוי בענן.",
+    "free": "הקוד חינמי תחת Apache-2.0 ומופעל באירוח עצמי. הליבה עובדת מקומית ללא חשבון או טלמטריה; גם נתיב ה־AI יכול להיות חינמי עם Ollama או שרת מודל מקומי תואם OpenAI.",
+    "limits": "דורש Linux מבוסס Debian, Docker והרשאות sudo. אין אימות משתמשים מובנה: יש להפעיל רק ברשת מקומית מהימנה ולא לחשוף לאינטרנט. תכנים ומודלים צורכים נפח אחסון רב, ו־AI מקומי עשוי לדרוש 32GB RAM ו־GPU.",
+    "pros": [
+      "עובד ללא אינטרנט אחרי ההתקנה",
+      "ללא טלמטריה מובנית",
+      "מאגד כלי ידע ולמידה מוכחים"
+    ],
+    "cons": [
+      "אין אימות משתמשים",
+      "התקנה ותוכן מלא דורשים חומרה ואחסון"
+    ],
+    "alternatives": [
+      "Gemini Notebook",
+      "Zotero",
+      "WeKnora"
+    ],
+    "url": "https://www.projectnomad.us/",
+    "added": "2026-10-14",
+    "verified": "2026-10-14",
+    "sources": [
+      {
+        "label": "המאגר והתקנה",
+        "url": "https://github.com/Crosstalk-Solutions/project-nomad"
+      },
+      {
+        "label": "גרסה v1.35.1",
+        "url": "https://github.com/Crosstalk-Solutions/project-nomad/releases/tag/v1.35.1"
+      },
+      {
+        "label": "מדיניות אבטחה",
+        "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/main/SECURITY.md"
+      },
+      {
+        "label": "רישיון Apache-2.0",
+        "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/main/LICENSE"
+      }
+    ]
   }
 
 
@@ -828,28 +938,28 @@ window.WATCHLIST = [
     "name": "Minutes",
     "mark": "Mi",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 1,543 כוכבי GitHub בזמן הבדיקה.",
-    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "signal": "מאגר פעיל עם 1,546 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/silverstein/minutes",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "TAKT",
     "mark": "Ta",
     "category": "development",
-    "signal": "מאגר פעיל עם 1,403 כוכבי GitHub בזמן הבדיקה.",
-    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "signal": "מאגר פעיל עם 1,404 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/nrslib/takt",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Skills Hub",
     "mark": "SH",
     "category": "skills",
-    "signal": "מאגר פעיל עם 1,760 כוכבי GitHub בזמן הבדיקה.",
-    "reason": "הוסר מהקטלוג הפעיל והועבר למעקב לפי מדיניות הסף החדשה: כלי GitHub עם 500 עד 1,999 כוכבים אינם מתפרסמים כפעילים עד שיעברו את רף 2,000 הכוכבים ובדיקת איכות חוזרת.",
+    "signal": "מאגר פעיל עם 1,801 כוכבי GitHub בזמן הבדיקה.",
+    "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/qufei1993/skills-hub",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "hob",
@@ -954,81 +1064,81 @@ window.WATCHLIST = [
     "name": "Whiteboard",
     "mark": "W",
     "category": "development",
-    "signal": "מאגר פעיל עם 3,138 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 3,171 כוכבי GitHub בזמן הבדיקה.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/devdotfast/whiteboard",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Paper2Agent",
     "mark": "P2",
     "category": "research",
-    "signal": "מאגר פעיל עם 3,766 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 3,792 כוכבי GitHub בזמן הבדיקה.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/jmiao24/Paper2Agent",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Open CAD Studio",
     "mark": "OC",
     "category": "design",
-    "signal": "מאגר פעיל עם 2,856 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 2,991 כוכבי GitHub בזמן הבדיקה.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/HakanSeven12/OpenCADStudio",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Crisp",
     "mark": "Cr",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 2,068 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 2,080 כוכבי GitHub בזמן הבדיקה.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/didriksg/Crisp",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Open Cowork",
     "mark": "OC",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 2,201 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 2,208 כוכבי GitHub בזמן הבדיקה.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/OpenCoworkAI/open-cowork",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "Open Intelligent UI",
     "mark": "OI",
     "category": "development",
-    "signal": "מסגרת Generative UI תחת MIT עם כ-2,649 כוכבים ואות GitHub Trending יומי.",
+    "signal": "מסגרת Generative UI תחת MIT עם 3,077 כוכבים ואות GitHub Trending יומי.",
     "reason": "הרישיון והליבה החינמית אומתו, אך המאגר מתחת לרף 5,000 הכוכבים ודורש מודל ו-visualization router חיצוניים; נשאר במעקב.",
     "url": "https://github.com/CopilotKit/OpenIntelligentUI",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "OpenRig",
     "mark": "OR",
     "category": "development",
-    "signal": "רשת צוותי סוכנים מתמשכים עם 6,958 כוכבים ואות GitHub Trending שבועי.",
+    "signal": "רשת צוותי סוכנים מתמשכים עם 7,410 כוכבים ואות GitHub Trending שבועי.",
     "reason": "עבר את רף הכוכבים, אך טרם הושלמו בדיקות רישיון, בידוד תהליכים, הרשאות, releases ונתיב שימוש חינמי מלא; נשאר במעקב עד לאימות עומק.",
     "url": "https://github.com/mvschwarz/openrig",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "NVIDIA OpenShell",
     "mark": "NO",
     "category": "development",
-    "signal": "runtime פרטי לסוכנים אוטונומיים עם 15,839 כוכבים ואות GitHub Trending חודשי.",
+    "signal": "runtime פרטי לסוכנים אוטונומיים עם 16,135 כוכבים ואות GitHub Trending חודשי.",
     "reason": "האות והבעלות של NVIDIA חזקים, אך לפני פרסום פעיל נדרשת בדיקה מלאה של רישיון, מודל האיום, גבולות ה-sandbox, דרישות חומרה ויציבות releases.",
     "url": "https://github.com/NVIDIA/OpenShell",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   },
   {
     "name": "FreeLLMAPI",
     "mark": "FL",
     "category": "development",
-    "signal": "שער אחוד שמצהיר על 34 ספקי LLM חינמיים, עם 33,310 כוכבים ואות Trending שבועי וחודשי.",
+    "signal": "שער אחוד שמצהיר על 34 ספקי LLM חינמיים, עם 34,803 כוכבים ואות Trending יומי, שבועי וחודשי.",
     "reason": "למרות מספר הכוכבים, ההבטחה ל-7.4 מיליארד טוקנים בחודש מוגבלת לניסוי אישי ותלויה בספקים חיצוניים. תנאי שימוש, יציבות המכסות, פרטיות ואבטחת המפתחות דורשים אימות לפני פרסום פעיל.",
     "url": "https://github.com/tashfeenahmed/freellmapi",
-    "checked": "2026-10-12"
+    "checked": "2026-10-14"
   }
 ];
