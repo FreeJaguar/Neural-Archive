@@ -901,8 +901,29 @@ window.TOOLS = [
         "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/main/LICENSE"
       }
     ]
+  },
+  {
+    slug: "activitywatch", name: "ActivityWatch", mark: "AW", category: "productivity", subcategories: ["מעקב זמן", "פרטיות", "קוד פתוח"],
+    tagline: "מעקב זמן אוטומטי ומקומי שמראה באילו אפליקציות ואתרים השתמשתם.",
+    solves: "אוסף ציר זמן מפורט של חלונות, זמן לא פעיל וגלישה כדי להבין הרגלי עבודה בלי לשלוח את היסטוריית הפעילות לענן.",
+    uses: ["מעקב זמן", "ניתוח הרגלים", "פרטיות"], audience: "עצמאים, מפתחים וחוקרים שרוצים תמונת שימוש מדויקת בבעלותם המלאה.",
+    free: "חינמי וקוד פתוח ללא שערי תכונות, מגבלות שימוש או פרסומות. הנתונים נשמרים מקומית; מנוי AW Pro הוא תמיכה אופציונלית בלבד.",
+    limits: "האיסוף מפורט ורגיש מטבעו ודורש ניהול זהיר של המחשב והגיבויים. הרחבות דפדפן מוסיפות כתובות עמודים, והפיתוח הקהילתי עשוי להתקדם בקצב משתנה.",
+    pros: ["נתונים נשארים במכשיר", "פירוט גולמי לניתוח ארוך טווח", "Windows, macOS, Linux ו-Android"], cons: ["דורש התקנה והרשאות מעקב", "אין סנכרון ענן מנוהל כברירת מחדל", "דף ההורדות עשוי להתעדכן אחרי GitHub Releases"],
+    alternatives: ["Super Productivity", "Todoist"], url: "https://activitywatch.net/", added: "2026-10-17", verified: "2026-10-17",
+    sources: [{ label: "האתר הרשמי והפרטיות", url: "https://activitywatch.net/" }, { label: "מהדורה v0.14.1", url: "https://github.com/ActivityWatch/activitywatch/releases/tag/v0.14.1" }, { label: "רישיון ופעילות", url: "https://github.com/ActivityWatch/activitywatch" }, { label: "מבוא ותפיסת הנתונים", url: "https://docs.activitywatch.net/en/latest/introduction.html" }]
+  },
+  {
+    slug: "super-productivity", name: "Super Productivity", mark: "SP", category: "productivity", subcategories: ["ניהול משימות", "מעקב זמן", "קוד פתוח"],
+    tagline: "מתכנן יום מקומי שמשלב משימות, הערכות זמן, פוקוס ואינטגרציות עבודה.",
+    solves: "מחבר רשימת משימות לתכנון יומי ולמדידת הזמן בפועל, עם לוחות ואינטגרציות ל-GitHub, GitLab ו-Jira.",
+    uses: ["ניהול משימות", "תכנון יומי", "פוקוס", "מעקב זמן"], audience: "מפתחים, פרילנסרים ואנשים שרוצים סביבת משימות עשירה שעובדת גם ללא חשבון או אינטרנט.",
+    free: "כל היישום חינמי וקוד פתוח ברישיון MIT, ללא ניסיון, שכבות פרימיום או פרסומות. האחסון מקומי והסנכרון האופציונלי יכול להשתמש בספק של המשתמש.",
+    limits: "קובצי יצוא וגיבוי הם JSON לא מוצפן ועלולים לכלול תוכן ומפתחות. תוספים אינם מבודדים היטב, ולכן יש להתקין רק ממקור מהימן; סנכרון ואינטגרציות חיצוניות כפופים לספקים שלהם.",
+    pros: ["חינמי ללא upsell", "עובד אופליין וללא חשבון", "תכנון, זמן ואינטגרציות במקום אחד"], cons: ["תוספים דורשים אמון בקוד", "גיבויים רגילים אינם מוצפנים", "הגדרות הסנכרון עשויות להיות מורכבות"],
+    alternatives: ["ActivityWatch", "Todoist", "Trello"], url: "https://super-productivity.com/", added: "2026-10-17", verified: "2026-10-17",
+    sources: [{ label: "תמחור רשמי", url: "https://super-productivity.com/pricing/" }, { label: "הורדות ופרטיות", url: "https://super-productivity.com/download/" }, { label: "מהדורה v19.2.0", url: "https://github.com/super-productivity/super-productivity/releases/tag/v19.2.0" }, { label: "מדיניות אבטחה", url: "https://github.com/super-productivity/super-productivity/security" }]
   }
-
 
 ];
 
