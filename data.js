@@ -923,6 +923,28 @@ window.TOOLS = [
     pros: ["חינמי ללא upsell", "עובד אופליין וללא חשבון", "תכנון, זמן ואינטגרציות במקום אחד"], cons: ["תוספים דורשים אמון בקוד", "גיבויים רגילים אינם מוצפנים", "הגדרות הסנכרון עשויות להיות מורכבות"],
     alternatives: ["ActivityWatch", "Todoist", "Trello"], url: "https://super-productivity.com/", added: "2026-10-17", verified: "2026-10-17",
     sources: [{ label: "תמחור רשמי", url: "https://super-productivity.com/pricing/" }, { label: "הורדות ופרטיות", url: "https://super-productivity.com/download/" }, { label: "מהדורה v19.2.0", url: "https://github.com/super-productivity/super-productivity/releases/tag/v19.2.0" }, { label: "מדיניות אבטחה", url: "https://github.com/super-productivity/super-productivity/security" }]
+  },
+  {
+    slug: "aipoch-open-science", name: "AIPOCH Open-Science", mark: "OS", category: "research", subcategories: ["מחקר מדעי", "מחברות קוד", "עבודה מקומית"],
+    tagline: "סביבת מחקר מקומית שמחברת ספרות, נתונים, קוד וסוכני AI עם תיעוד מקורות.",
+    solves: "מרכזת פרויקטים מדעיים, חיפוש מאמרים, Python ו-R, חיבורי נתונים ותוצרים הניתנים למעקב במקום לפצל את העבודה בין צ'אט, מחברות וקבצים.",
+    uses: ["סקירת ספרות", "ניתוח נתונים", "מחברות Python ו-R", "מחקר ניתן לשחזור"], audience: "חוקרים, סטודנטים ומעבדות שרוצים סביבת מחקר מקומית ומודל-אגנוסטית עם תיעוד תהליכים.",
+    free: "חינמי וקוד פתוח תחת Apache-2.0. היישום, ה-CLI והאחסון המקומי זמינים ללא מנוי; אפשר לחבר מודלים מקומיים או חשבונות וספקי מודלים של המשתמש.",
+    limits: "השימוש ב-AI דורש runtime וספק מודל, חשבון קיים או חומרה מקומית ועלול לעלות כסף. סוכנים, קוד, מחברים ו-MCP יכולים לגשת לקבצים או לשירותים, ולכן יש לבדוק הרשאות; תעבורה לספק חיצוני כפופה למדיניות שלו.",
+    pros: ["עובד ב-macOS, Windows ו-Linux", "גרסה 1.0 עם מתקינים, checksums ו-attestation", "תוצרים וגרסאות עם provenance מקומי"], cons: ["אינו כולל מודל חינמי מובטח", "הרצת קוד וסוכנים דורשת ניהול הרשאות", "תוצאות AI אינן תחליף לאימות מדעי"],
+    alternatives: ["Gemini Notebook", "Prism", "Zotero"], url: "https://aipoch.com/open-science", added: "2026-10-18", verified: "2026-10-18",
+    sources: [{ label: "המאגר והתקנה", url: "https://github.com/aipoch/open-science" }, { label: "מהדורה v1.0.0", url: "https://github.com/aipoch/open-science/releases/tag/v1.0.0" }, { label: "מדיניות אבטחה", url: "https://github.com/aipoch/open-science/blob/main/SECURITY.md" }, { label: "רישיון Apache-2.0", url: "https://github.com/aipoch/open-science/blob/main/LICENSE" }]
+  },
+  {
+    slug: "genoffice", name: "GenOffice", mark: "GO", category: "design", subcategories: ["מסמכים", "מצגות", "גיליונות"],
+    tagline: "חבילת Office מקומית וקוד פתוח למסמכים, גיליונות, מצגות ו-PDF עם כלי AI אופציונליים.",
+    solves: "פותחת ושומרת DOCX, XLSX ו-PPTX במחשב ומאפשרת יצירה, המרה ואוטומציה דרך ממשק, CLI, Agent Skill ו-MCP.",
+    uses: ["עריכת מסמכים", "בניית מצגות", "עבודה בגיליונות", "אוטומציית Office"], audience: "יחידים וצוותים שרוצים חלופת Office חינמית, מקומית וניתנת לאוטומציה ב-macOS, Windows ו-Linux.",
+    free: "חינמי וקוד פתוח תחת Apache-2.0 ללא שכבת Pro. עריכה, שמירה והמרה מתבצעות מקומית; AI הוא אופציונלי ויכול להשתמש במודל מקומי או במפתח ובחשבון של המשתמש.",
+    limits: "שימוש בספק AI חיצוני עשוי לעלות כסף ולשלוח אליו הקשר. בבנייה הרשמית אנליטיקה אנונימית פעילה כברירת מחדל כבר מההפעלה הראשונה אך ניתנת לכיבוי; קטעי חיפוש נשלחים רק אם מפעילים reranking חיצוני.",
+    pros: ["תמיכה בקובצי Office מקוריים", "מתקינים חתומים עם SHA-256", "CLI, Skill ו-MCP לאוטומציה"], cons: ["עדיין לפני 1.0", "אנליטיקה מופעלת כברירת מחדל בבנייה הרשמית", "תאימות מלאה למסמכי Office מורכבים אינה מובטחת"],
+    alternatives: ["Canva", "PPT Master", "LibreOffice"], url: "https://genoffice.ai/", added: "2026-10-18", verified: "2026-10-18",
+    sources: [{ label: "המאגר והורדות", url: "https://github.com/genspark-ai/genoffice" }, { label: "מהדורה v0.11.829", url: "https://github.com/genspark-ai/genoffice/releases/tag/v0.11.829" }, { label: "פרטיות רשמית", url: "https://github.com/genspark-ai/genoffice/blob/main/PRIVACY.md" }, { label: "מדיניות אבטחה", url: "https://github.com/genspark-ai/genoffice/blob/main/SECURITY.md" }, { label: "רישיון Apache-2.0", url: "https://github.com/genspark-ai/genoffice/blob/main/LICENSE" }]
   }
 
 ];
@@ -959,28 +981,28 @@ window.WATCHLIST = [
     "name": "Minutes",
     "mark": "Mi",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 1,546 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 1,557 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/silverstein/minutes",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "TAKT",
     "mark": "Ta",
     "category": "development",
-    "signal": "מאגר פעיל עם 1,404 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 1,410 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/nrslib/takt",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Skills Hub",
     "mark": "SH",
     "category": "skills",
-    "signal": "מאגר פעיל עם 1,801 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 1,818 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "נשאר במעקב לפי המדיניות הנוכחית: כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/qufei1993/skills-hub",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "hob",
@@ -1085,81 +1107,81 @@ window.WATCHLIST = [
     "name": "Whiteboard",
     "mark": "W",
     "category": "development",
-    "signal": "מאגר פעיל עם 3,171 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 3,237 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/devdotfast/whiteboard",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Paper2Agent",
     "mark": "P2",
     "category": "research",
-    "signal": "מאגר פעיל עם 3,792 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 3,832 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/jmiao24/Paper2Agent",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Open CAD Studio",
     "mark": "OC",
     "category": "design",
-    "signal": "מאגר פעיל עם 2,991 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 3,211 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/HakanSeven12/OpenCADStudio",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Crisp",
     "mark": "Cr",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 2,080 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 2,118 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/didriksg/Crisp",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Open Cowork",
     "mark": "OC",
     "category": "productivity",
-    "signal": "מאגר פעיל עם 2,208 כוכבי GitHub בזמן הבדיקה.",
+    "signal": "מאגר פעיל עם 2,218 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הועבר מהקטלוג הפעיל למעקב: לפי רף האיכות החדש, כלי GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל עד שיעבור 5,000 כוכבים ובדיקת איכות חוזרת.",
     "url": "https://github.com/OpenCoworkAI/open-cowork",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "Open Intelligent UI",
     "mark": "OI",
     "category": "development",
-    "signal": "מסגרת Generative UI תחת MIT עם 3,077 כוכבים ואות GitHub Trending יומי.",
+    "signal": "מאגר פעיל עם 3,397 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "הרישיון והליבה החינמית אומתו, אך המאגר מתחת לרף 5,000 הכוכבים ודורש מודל ו-visualization router חיצוניים; נשאר במעקב.",
     "url": "https://github.com/CopilotKit/OpenIntelligentUI",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "OpenRig",
     "mark": "OR",
     "category": "development",
-    "signal": "רשת צוותי סוכנים מתמשכים עם 7,410 כוכבים ואות GitHub Trending שבועי.",
+    "signal": "מאגר פעיל עם 7,720 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "עבר את רף הכוכבים, אך טרם הושלמו בדיקות רישיון, בידוד תהליכים, הרשאות, releases ונתיב שימוש חינמי מלא; נשאר במעקב עד לאימות עומק.",
     "url": "https://github.com/mvschwarz/openrig",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "NVIDIA OpenShell",
     "mark": "NO",
     "category": "development",
-    "signal": "runtime פרטי לסוכנים אוטונומיים עם 16,135 כוכבים ואות GitHub Trending חודשי.",
+    "signal": "מאגר פעיל עם 16,554 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "האות והבעלות של NVIDIA חזקים, אך לפני פרסום פעיל נדרשת בדיקה מלאה של רישיון, מודל האיום, גבולות ה-sandbox, דרישות חומרה ויציבות releases.",
     "url": "https://github.com/NVIDIA/OpenShell",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   },
   {
     "name": "FreeLLMAPI",
     "mark": "FL",
     "category": "development",
-    "signal": "שער אחוד שמצהיר על 34 ספקי LLM חינמיים, עם 34,803 כוכבים ואות Trending יומי, שבועי וחודשי.",
+    "signal": "מאגר פעיל עם 36,687 כוכבי GitHub בזמן ביקורת הסף.",
     "reason": "למרות מספר הכוכבים, ההבטחה ל-7.4 מיליארד טוקנים בחודש מוגבלת לניסוי אישי ותלויה בספקים חיצוניים. תנאי שימוש, יציבות המכסות, פרטיות ואבטחת המפתחות דורשים אימות לפני פרסום פעיל.",
     "url": "https://github.com/tashfeenahmed/freellmapi",
-    "checked": "2026-10-14"
+    "checked": "2026-10-18"
   }
 ];
