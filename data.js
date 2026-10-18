@@ -951,6 +951,15 @@ window.TOOLS = [
 
 window.WATCHLIST = [
   {
+    "name": "Dayflow",
+    "mark": "DF",
+    "category": "productivity",
+    "signal": "מאגר MIT פעיל עם 7,277 כוכבים, 445 forks ומהדורה v2.7.1 מ-15 באוקטובר 2026.",
+    "reason": "עבר את רף הכוכבים ומציע מעקב זמן מקומי, אך הוא מקליט מסך ושמע בהרשאות רגישות ולא פורסמה מדיניות אבטחה ייעודית במאגר. נשאר במעקב עד לבדיקת מודל האיום, החתימה והטיפול בתוכן רגיש.",
+    "url": "https://github.com/JerryZLiu/Dayflow",
+    "checked": "2026-10-18"
+  },
+  {
     "name": "IrisGo",
     "mark": "IG",
     "category": "productivity",
