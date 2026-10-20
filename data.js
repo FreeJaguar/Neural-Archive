@@ -946,7 +946,30 @@ window.TOOLS = [
     alternatives: ["Canva", "PPT Master", "LibreOffice"], url: "https://genoffice.ai/", added: "2026-10-18", verified: "2026-10-18",
     sources: [{ label: "המאגר והורדות", url: "https://github.com/genspark-ai/genoffice" }, { label: "מהדורה v0.11.829", url: "https://github.com/genspark-ai/genoffice/releases/tag/v0.11.829" }, { label: "פרטיות רשמית", url: "https://github.com/genspark-ai/genoffice/blob/main/PRIVACY.md" }, { label: "מדיניות אבטחה", url: "https://github.com/genspark-ai/genoffice/blob/main/SECURITY.md" }, { label: "רישיון Apache-2.0", url: "https://github.com/genspark-ai/genoffice/blob/main/LICENSE" }]
   }
+,
 
+  {
+    slug: "google-workspace-cli", name: "Google Workspace CLI", mark: "GWS", category: "productivity", subcategories: ["אוטומציה", "CLI", "Google Workspace"],
+    tagline: "שורת פקודה מאוחדת ל־Drive, Gmail, Calendar, Docs, Sheets ושירותי Workspace נוספים.",
+    solves: "מחליף קריאות API ידניות בממשק CLI עם JSON מובנה, גילוי פקודות דינמי וסקילים מוכנים לסוכני AI.",
+    uses: ["אוטומציה", "Google Workspace", "סוכני AI"], audience: "מפתחים, אנשי תפעול ומשתמשים טכניים שרוצים לאוטומט שירותי Google Workspace.",
+    free: "ה־CLI פתוח וחינמי תחת Apache-2.0, עם קבצים בינאריים ל־macOS, Linux ו־Windows, התקנה ב־npm, Homebrew, Nix או בנייה מ־Rust.",
+    limits: "נדרשים חשבון Google, פרויקט Google Cloud והרשאות OAuth; מכסות ועלויות API תלויות בשירותי Google. הפרויקט אינו מוצר Google נתמך רשמית ועדיין לפני גרסה 1.0.",
+    pros: ["פלט JSON עקבי לאוטומציה", "יותר מ־100 סקילים ומתכונים לסוכנים", "קבצים בינאריים עם SHA-256"], cons: ["הגדרת OAuth מורכבת יחסית", "הרשאות רחבות דורשות בחירה זהירה", "שינויים שוברים עדיין אפשריים"],
+    alternatives: ["Make", "OpenClaw"], url: "https://github.com/googleworkspace/cli", added: "2026-10-20", verified: "2026-10-20",
+    sources: [{ label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/googleworkspace/cli" }, { label: "גרסה v0.22.5 וקובצי SHA-256", url: "https://github.com/googleworkspace/cli/releases/tag/v0.22.5" }, { label: "מדיניות אבטחה", url: "https://github.com/googleworkspace/cli/blob/main/SECURITY.md" }]
+  },
+  {
+    slug: "openlogi", name: "OpenLogi", mark: "OL", category: "productivity", subcategories: ["כלי מערכת", "פרטיות", "קוד פתוח"],
+    tagline: "תחליף מקומי ל־Logitech Options+ לשליטה בעכברים, מקלדות ומצלמות Logitech.",
+    solves: "מרכז מיפוי כפתורים, DPI, SmartShift, פרופילים, תאורה והגדרות מצלמה בלי חשבון או שירות ענן.",
+    uses: ["התאמת חומרה", "אוטומציה מקומית", "פרטיות"], audience: "משתמשי Logitech ב־macOS, Linux ו־Windows שרוצים שליטה מקומית וכלי CLI.",
+    free: "היישום מקומי וחינמי תחת MIT או Apache-2.0, ללא חשבון וללא טלמטריה. קיימות חבילות חתומות או מאומתות ומסלולי Homebrew, Linux, Flatpak, Nix ו־Windows.",
+    limits: "הפרויקט עדיין בפיתוח פעיל; היכולות תלויות בדגם ובמערכת ההפעלה. נדרשות הרשאות גישה להתקני קלט, וחלק מחבילות macOS בפיתוח עשויות להיות self-signed.",
+    pros: ["ללא חשבון או טלמטריה", "תמיכה בשלוש מערכות הפעלה", "אימות חבילות Linux עם Minisign ו־SHA-256"], cons: ["עדיין לא יציב", "הרשאות מערכת רגישות", "לא כל התקן או פעולה נתמכים בכל מערכת"],
+    alternatives: ["Tinycast", "ActivityWatch"], url: "https://openlogi.org/", added: "2026-10-20", verified: "2026-10-20",
+    sources: [{ label: "המאגר, התקנה ורישיון כפול", url: "https://github.com/AprilNEA/OpenLogi" }, { label: "גרסאות והורדות", url: "https://github.com/AprilNEA/OpenLogi/releases" }, { label: "אתר רשמי", url: "https://openlogi.org/" }]
+  },
 ];
 
 window.WATCHLIST = [
