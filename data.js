@@ -970,6 +970,17 @@ window.TOOLS = [
     alternatives: ["Tinycast", "ActivityWatch"], url: "https://openlogi.org/", added: "2026-10-20", verified: "2026-10-20",
     sources: [{ label: "המאגר, התקנה ורישיון כפול", url: "https://github.com/AprilNEA/OpenLogi" }, { label: "גרסאות והורדות", url: "https://github.com/AprilNEA/OpenLogi/releases" }, { label: "אתר רשמי", url: "https://openlogi.org/" }]
   },
+  {
+    slug: "ai-memory", name: "ai-memory", mark: "AM", category: "development", subcategories: ["זיכרון לסוכנים", "עבודה מקומית", "קוד פתוח"],
+    tagline: "שכבת זיכרון מקומית שמאפשרת לסוכני קוד שונים לשמור הקשר ולהעביר עבודה ביניהם.",
+    solves: "לוכד החלטות, תצפיות והקשר ממפגשי פיתוח, הופך אותם לזיכרון ניתן לחיפוש ומאפשר להמשיך עבודה בין Codex, Claude Code וסוכנים תואמים נוספים.",
+    uses: ["פיתוח", "זיכרון לסוכנים", "העברת הקשר", "עבודה מקומית"], audience: "מפתחים וצוותים שעובדים עם כמה סוכני קוד ורוצים לשמור החלטות והקשר בין מפגשים.",
+    free: "הליבה המקומית חינמית וקוד פתוח ברישיון MIT, ללא חשבון, טלמטריה או קריאת מודל כברירת מחדל. קיימים קבצים בינאריים עם SHA-256, מתקיני Linux, macOS ו-Windows, Docker ובנייה מהמקור.",
+    limits: "ה-hooks אוספים הקשר פיתוח שעלול להיות רגיש; סינון סודות הוא הגנה מיטבית ולא הבטחה, ואין הצפנה במנוחה. חיבור מודלי LLM או embeddings מרוחקים הוא אופציונלי, עשוי לעלות כסף ולשלוח תוכן לספק חיצוני. שרת משותף הוא תחום אמון אחד.",
+    pros: ["ברירת מחדל מקומית וללא טלמטריה", "תומך במספר סוכני קוד", "התקנות עם בדיקת checksum"], cons: ["אין הצפנה במנוחה", "דורש אמון ב-hooks ובהרשאות שלהם", "ספקי מודלים חיצוניים כרוכים בעלות ובחשיפת נתונים אפשרית"],
+    alternatives: ["Claude-Mem", "Hindsight", "Context Mode"], url: "https://github.com/akitaonrails/ai-memory", added: "2026-10-21", verified: "2026-10-21",
+    sources: [{ label: "המאגר והתקנה", url: "https://github.com/akitaonrails/ai-memory" }, { label: "מהדורה v3.1.2", url: "https://github.com/akitaonrails/ai-memory/releases/tag/v3.1.2" }, { label: "פרטיות ומודל אבטחה", url: "https://aimemory.sh/security/" }, { label: "מדיניות אבטחה", url: "https://github.com/akitaonrails/ai-memory/blob/main/SECURITY.md" }, { label: "רישיון MIT", url: "https://github.com/akitaonrails/ai-memory/blob/main/LICENSE" }]
+  },
 ];
 
 window.WATCHLIST = [
