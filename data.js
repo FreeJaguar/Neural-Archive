@@ -980,7 +980,7 @@ window.TOOLS = [
     pros: ["ברירת מחדל מקומית וללא טלמטריה", "תומך במספר סוכני קוד", "התקנות עם בדיקת checksum"], cons: ["אין הצפנה במנוחה", "דורש אמון ב-hooks ובהרשאות שלהם", "ספקי מודלים חיצוניים כרוכים בעלות ובחשיפת נתונים אפשרית"],
     alternatives: ["Claude-Mem", "Hindsight", "Context Mode"], url: "https://github.com/akitaonrails/ai-memory", added: "2026-10-21", verified: "2026-10-21",
     sources: [{ label: "המאגר והתקנה", url: "https://github.com/akitaonrails/ai-memory" }, { label: "מהדורה v3.1.2", url: "https://github.com/akitaonrails/ai-memory/releases/tag/v3.1.2" }, { label: "פרטיות ומודל אבטחה", url: "https://aimemory.sh/security/" }, { label: "מדיניות אבטחה", url: "https://github.com/akitaonrails/ai-memory/blob/main/SECURITY.md" }, { label: "רישיון MIT", url: "https://github.com/akitaonrails/ai-memory/blob/main/LICENSE" }]
-  },,
+  },
   {
     slug: "losslesscut", name: "LosslessCut", mark: "LC", category: "design", subcategories: ["עריכת וידאו", "עריכת אודיו", "קוד פתוח"],
     tagline: "חיתוך וחיבור מהירים של וידאו ואודיו בלי קידוד מחדש.",
@@ -991,8 +991,18 @@ window.TOOLS = [
     pros: ["עיבוד מקומי וללא העלאה לענן", "מהיר ושומר על איכות", "תמיכה רחבה בפורמטים דרך FFmpeg"], cons: ["עריכה מדויקת בין keyframes עשויה לדרוש קידוד", "אין מדיניות SECURITY.md ייעודית במאגר"],
     alternatives: ["OpenCut", "HyperFrames"], url: "https://losslesscut.app/", added: "2026-10-22", verified: "2026-10-22",
     sources: [{ label: "האתר והתיעוד הרשמי", url: "https://losslesscut.app/docs" }, { label: "המאגר והורדות חינמיות", url: "https://github.com/mifi/lossless-cut" }, { label: "מהדורה v3.70.1", url: "https://github.com/mifi/lossless-cut/releases/tag/v3.70.1" }, { label: "רישיון GPL-2.0", url: "https://github.com/mifi/lossless-cut/blob/master/LICENSE" }]
-  }
-];
+  },
+  {
+    slug: "shotcut", name: "Shotcut", mark: "SC", category: "design", subcategories: ["עריכת וידאו", "עריכת אודיו", "קוד פתוח"],
+    tagline: "עורך וידאו מקומי מלא וחוצה־פלטפורמות, עם ציר זמן, פילטרים וייצוא מתקדם.",
+    solves: "מרכז עריכה רב־שכבתית של וידאו ואודיו, תיקוני צבע, כתוביות, לכידה וייצוא למגוון פורמטים בלי להעלות חומרי גלם לענן.",
+    uses: ["עריכת וידאו", "פוסט־פרודקשן", "יצירת תוכן"], audience: "יוצרי תוכן, מרצים וצוותים קטנים שצריכים עורך וידאו שולחני חינמי ומלא ל־Windows, macOS או Linux.",
+    free: "התוכנה וההורדות הרשמיות חינמיות לשימוש אישי ומסחרי תחת GPL-3.0; אין חשבון, מנוי, הפעלה מקוונת או טלמטריית שימוש.",
+    limits: "עריכת HD ו־4K דורשת חומרה מתאימה; במחשבים חלשים מומלץ לעבוד עם Proxy ו־Preview Scaling. חנויות והפצות צד שלישי עשויות להחיל מדיניות פרטיות משלהן.",
+    pros: ["עריכה מקומית ורב־שכבתית", "תמיכה רחבה בפורמטים דרך FFmpeg", "הורדות רשמיות עם SHA-256"], cons: ["עקומת למידה גבוהה יותר מכלי חיתוך פשוט", "דרישות חומרה משמעותיות לפרויקטי 4K"],
+    alternatives: ["LosslessCut", "OpenCut", "HyperFrames"], url: "https://www.shotcut.org/", added: "2026-10-23", verified: "2026-10-23",
+    sources: [{ label: "האתר הרשמי", url: "https://www.shotcut.org/" }, { label: "הורדות ו־checksums", url: "https://www.shotcut.org/download/" }, { label: "שאלות נפוצות, פרטיות וחינמיות", url: "https://www.shotcut.org/FAQ/" }, { label: "המאגר והרישיון", url: "https://github.com/mltframework/shotcut" }, { label: "מהדורה v26.9.27", url: "https://github.com/mltframework/shotcut/releases/tag/v26.9.27" }]
+  }];
 
 window.WATCHLIST = [
   {
