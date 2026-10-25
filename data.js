@@ -993,6 +993,17 @@ window.TOOLS = [
     sources: [{ label: "האתר והתיעוד הרשמי", url: "https://losslesscut.app/docs" }, { label: "המאגר והורדות חינמיות", url: "https://github.com/mifi/lossless-cut" }, { label: "מהדורה v3.70.1", url: "https://github.com/mifi/lossless-cut/releases/tag/v3.70.1" }, { label: "רישיון GPL-2.0", url: "https://github.com/mifi/lossless-cut/blob/master/LICENSE" }]
   },
   {
+    slug: "powertoys", name: "Microsoft PowerToys", mark: "PT", category: "productivity", subcategories: ["Windows", "כלי מערכת", "אוטומציה"],
+    tagline: "ערכת כלי קוד פתוח של Microsoft להתאמה אישית ולהאצת העבודה ב-Windows.",
+    solves: "מרכזת יותר מ-30 כלי עזר לניהול חלונות, חיפוש והפעלת פקודות, שינוי שמות מרובה, OCR, מיפוי מקשים, ניהול לוח והפעלת סביבות עבודה.",
+    uses: ["פרודוקטיביות", "Windows", "אוטומציה"], audience: "משתמשי Windows 10 ו-11 שרוצים לקצר פעולות חוזרות ולהתאים את סביבת העבודה בלי לרכוש אוסף יישומים נפרד.",
+    free: "היישום המלא חינמי וקוד פתוח תחת MIT, ללא חשבון או מנוי; מתקינים רשמיים זמינים מ-GitHub, Microsoft Store ו-WinGet. נתוני אבחון אופציונליים וכבויים כברירת מחדל.",
+    limits: "זמין רק ל-Windows 10 מגרסה 2004 ומעלה ול-Windows 11 על x64 או ARM64. פעולות מול יישומים מוגבהים עשויות לדרוש הרשאת מנהל; יכולות AI מקוונות ב-Advanced Paste דורשות מפתח ספק ועלולות לעלות כסף, בעוד הפעולות הרגילות והספקים המקומיים אינם דורשים שירות בתשלום.",
+    pros: ["יותר מ-30 כלי עזר בחבילה אחת", "התקנה ועדכונים בערוצים רשמיים", "טלמטריה אופציונלית וכבויה כברירת מחדל"], cons: ["Windows בלבד", "חלק מהכלים נוגעים בלוח, בקבצים או בהגדרות מערכת ודורשים בחירת הרשאות זהירה"],
+    alternatives: ["Super Productivity", "ActivityWatch"], url: "https://learn.microsoft.com/windows/powertoys/", added: "2026-10-25", verified: "2026-10-25",
+    sources: [{ label: "סקירה רשמית", url: "https://learn.microsoft.com/windows/powertoys/" }, { label: "התקנה ודרישות מערכת", url: "https://learn.microsoft.com/windows/powertoys/install" }, { label: "נתונים ופרטיות", url: "https://github.com/microsoft/PowerToys/blob/main/DATA_AND_PRIVACY.md" }, { label: "המאגר ורישיון MIT", url: "https://github.com/microsoft/PowerToys" }, { label: "מהדורה v0.102.2933.0 ו-hashes", url: "https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" }]
+  },
+  {
     slug: "shotcut", name: "Shotcut", mark: "SC", category: "design", subcategories: ["עריכת וידאו", "עריכת אודיו", "קוד פתוח"],
     tagline: "עורך וידאו מקומי מלא וחוצה־פלטפורמות, עם ציר זמן, פילטרים וייצוא מתקדם.",
     solves: "מרכז עריכה רב־שכבתית של וידאו ואודיו, תיקוני צבע, כתוביות, לכידה וייצוא למגוון פורמטים בלי להעלות חומרי גלם לענן.",
