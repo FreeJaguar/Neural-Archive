@@ -1013,6 +1013,39 @@ window.TOOLS = [
     pros: ["עריכה מקומית ורב־שכבתית", "תמיכה רחבה בפורמטים דרך FFmpeg", "הורדות רשמיות עם SHA-256"], cons: ["עקומת למידה גבוהה יותר מכלי חיתוך פשוט", "דרישות חומרה משמעותיות לפרויקטי 4K"],
     alternatives: ["LosslessCut", "OpenCut", "HyperFrames"], url: "https://www.shotcut.org/", added: "2026-10-23", verified: "2026-10-23",
     sources: [{ label: "האתר הרשמי", url: "https://www.shotcut.org/" }, { label: "הורדות ו־checksums", url: "https://www.shotcut.org/download/" }, { label: "שאלות נפוצות, פרטיות וחינמיות", url: "https://www.shotcut.org/FAQ/" }, { label: "המאגר והרישיון", url: "https://github.com/mltframework/shotcut" }, { label: "מהדורה v26.9.27", url: "https://github.com/mltframework/shotcut/releases/tag/v26.9.27" }]
+  },
+  {
+    slug: "excalidraw", name: "Excalidraw", mark: "EX", category: "design", subcategories: ["לוח דיגיטלי", "דיאגרמות", "שיתוף"],
+    tagline: "לוח אינסופי בסגנון ציור יד לשרטוט דיאגרמות, רעיונות ו-wireframes.",
+    solves: "מאפשר להסביר מערכות ורעיונות במהירות באמצעות צורות, חצים, טקסט וספריות, עם שיתוף פעולה חי וייצוא פתוח.",
+    uses: ["דיאגרמות", "סיעור מוחות", "שיתוף פעולה", "Wireframes"], audience: "מפתחים, מעצבים, מרצים וצוותים שרוצים לוח חזותי מהיר בלי תלות בתוכנת עיצוב כבדה.",
+    free: "העורך המלא חינמי לתמיד: קנבס אינסופי אחד, כל כלי העריכה, משתפי פעולה ללא הגבלה, עבודה מקומית מוצפנת מקצה לקצה וייצוא PNG, SVG וקובץ Excalidraw. הקוד ברישיון MIT וניתן לאירוח עצמי.",
+    limits: "שמירה וסנכרון ענן, תיקיות וסצנות ללא הגבלה, הרשאות צפייה, מצגות, תגובות ויכולות AI מורחבות נמצאים ב-Excalidraw+. במסלול החינמי הספרייה נשמרת בדפדפן; בקשות AI מוגבלות ל-10 ביום.",
+    pros: ["עובד מיד בדפדפן וגם במצב לא מקוון", "שיתוף חי והצפנה מקצה לקצה", "פורמט פתוח וייצוא PNG ו-SVG"], cons: ["אין סנכרון ענן חינמי בין מכשירים", "ניהול תיקיות והרשאות מתקדם בתשלום", "אין SECURITY.md ייעודי במאגר"],
+    alternatives: ["Whiteboard", "Diagram Design", "Napkin AI"], url: "https://excalidraw.com/", added: "2026-10-26", verified: "2026-10-26",
+    sources: [{ label: "העורך הרשמי", url: "https://excalidraw.com/" }, { label: "תמחור ותנאי המסלול החינמי", url: "https://plus.excalidraw.com/pricing" }, { label: "המאגר, התקנה ורישיון MIT", url: "https://github.com/excalidraw/excalidraw" }, { label: "מהדורות", url: "https://github.com/excalidraw/excalidraw/releases" }]
+  },
+  {
+    slug: "screenity", name: "Screenity", mark: "SR", category: "design", subcategories: ["הקלטת מסך", "וידאו", "פרטיות"],
+    tagline: "מקליט מסך חינמי ומקומי ל-Chrome עם מצלמה, הערות, טשטוש ועריכה.",
+    solves: "יוצר הדגמות, מדריכים ומשוב מצולם מתוך הדפדפן בלי חשבון ובלי להעלות את ההקלטה לשירות ענן.",
+    uses: ["הקלטת מסך", "הדרכות", "משוב וידאו", "יצירת תוכן"], audience: "יוצרי תוכן, מורים, אנשי מוצר ותמיכה שרוצים להקליט ולערוך סרטונים מקומית בדפדפן.",
+    free: "תוסף Chrome חינמי ללא מגבלת זמן או אורך הקלטה וללא חשבון, עם מסך, מצלמה ומיקרופון, ציור, טשטוש, הדגשת סמן, חיתוך וייצוא מקומי. הקוד ברישיון GPL-3.0 וניתן לאירוח עצמי.",
+    limits: "אחסון ושיתוף בענן, עריכה מרובת סצנות, כתוביות, תבניות ויכולות Pro דורשים מנוי. שמירה ל-Google Drive דורשת הרשאת Google; התוסף זקוק להרשאות מסך, מצלמה ומיקרופון לפי הבחירה.",
+    pros: ["אין מגבלת הקלטה במסלול החינמי", "עיבוד ואחסון מקומיים ללא אנליטיקה", "מהדורות תכופות עם SHA-256"], cons: ["Chrome ותואמיו בלבד", "שיתוף בקישור ועריכת ענן בתשלום", "אין SECURITY.md ייעודי במאגר"],
+    alternatives: ["Tinycast", "LosslessCut", "Shotcut"], url: "https://screenity.io/", added: "2026-10-26", verified: "2026-10-26",
+    sources: [{ label: "אתר רשמי והגבולות בין חינם ל-Pro", url: "https://screenity.io/" }, { label: "אימות חינמיות ללא הגבלות", url: "https://help.screenity.io/get-started/is-screenity-free-to-use" }, { label: "פרטיות התוסף", url: "https://screenity.io/privacy-policy" }, { label: "המאגר, התקנה ורישיון GPL-3.0", url: "https://github.com/alyssaxuu/screenity" }, { label: "מהדורה v4.7.2 ו-SHA-256", url: "https://github.com/alyssaxuu/screenity/releases/tag/v4.7.2" }]
+  },
+  {
+    slug: "harper", name: "Harper", mark: "H", category: "design", subcategories: ["כתיבה", "בדיקת דקדוק", "פרטיות"],
+    tagline: "בודק דקדוק ואיות באנגלית שפועל מקומית, במהירות וללא העלאת הטקסט לענן.",
+    solves: "מאתר שגיאות כתיב, דקדוק וניסוח בתוך דפדפנים, עורכים ואפליקציות בלי לשלוח את הכתיבה לשרת חיצוני.",
+    uses: ["כתיבה באנגלית", "עריכה לשונית", "תיעוד", "בדיקת טקסט"], audience: "כותבים, מפתחים וצוותי תוכן שעובדים באנגלית ומעדיפים חלופה פרטית ומהירה לכלי בדיקה מבוססי ענן.",
+    free: "כל גרסאות Harper חינמיות וקוד פתוח תחת Apache-2.0, ללא חשבון, כרטיס אשראי, טלמטריה או ענן. קיימים תוספים ל-Chrome, Edge ו-Firefox, שילובים ל-VS Code, Obsidian ועורכים נוספים, CLI, LSP ויישום macOS.",
+    limits: "נכון לבדיקה, מנוע הדקדוק תומך באנגלית בלבד; היישום המערכתי השולחני דורש macOS 14 ומעלה, בעוד Windows ו-Linux מקבלים CLI, LSP ותוספי עורכים. הצעות אוטומטיות עדיין דורשות בדיקה אנושית.",
+    pros: ["הטקסט נשאר במכשיר", "מבחר רחב של תוספים ואינטגרציות", "מהדורות חתומות ועם SHA-256"], cons: ["אנגלית בלבד", "יישום מערכתי מלא זמין כרגע רק ל-macOS", "אין SECURITY.md ייעודי במאגר"],
+    alternatives: ["LanguageTool", "Obsidian", "GIMP"], url: "https://writewithharper.com/", added: "2026-10-26", verified: "2026-10-26",
+    sources: [{ label: "חינמיות ופרטיות רשמיות", url: "https://writewithharper.com/" }, { label: "כל האינטגרציות והתקנה", url: "https://writewithharper.com/get" }, { label: "Harper Desktop והמגבלות", url: "https://writewithharper.com/desktop" }, { label: "המאגר ורישיון Apache-2.0", url: "https://github.com/Automattic/harper" }, { label: "מהדורות, חתימות ו-SHA-256", url: "https://github.com/Automattic/harper/releases" }]
   }];
 
 window.WATCHLIST = [
