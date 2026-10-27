@@ -1046,6 +1046,17 @@ window.TOOLS = [
     pros: ["הטקסט נשאר במכשיר", "מבחר רחב של תוספים ואינטגרציות", "מהדורות חתומות ועם SHA-256"], cons: ["אנגלית בלבד", "יישום מערכתי מלא זמין כרגע רק ל-macOS", "אין SECURITY.md ייעודי במאגר"],
     alternatives: ["LanguageTool", "Obsidian", "GIMP"], url: "https://writewithharper.com/", added: "2026-10-26", verified: "2026-10-26",
     sources: [{ label: "חינמיות ופרטיות רשמיות", url: "https://writewithharper.com/" }, { label: "כל האינטגרציות והתקנה", url: "https://writewithharper.com/get" }, { label: "Harper Desktop והמגבלות", url: "https://writewithharper.com/desktop" }, { label: "המאגר ורישיון Apache-2.0", url: "https://github.com/Automattic/harper" }, { label: "מהדורות, חתימות ו-SHA-256", url: "https://github.com/Automattic/harper/releases" }]
+  },
+  {
+    slug: "sharex", name: "ShareX", mark: "SX", category: "design", subcategories: ["צילום מסך", "הקלטת מסך", "אוטומציה"],
+    tagline: "כלי Windows מקומי לצילום, הקלטה, עריכה ואוטומציה של שיתוף קבצים.",
+    solves: "מרכז צילום מסך, הקלטת וידאו, עריכה, OCR, המרת מדיה וזרימות עבודה אוטומטיות במקום שרשרת של יישומים נפרדים.",
+    uses: ["צילום מסך", "הקלטת מסך", "עריכת תמונה", "OCR", "אוטומציית שיתוף"], audience: "יוצרי תוכן, אנשי תמיכה, מפתחים ומשתמשי Windows שרוצים כלי צילום ואוטומציה מקומי וגמיש.",
+    free: "היישום המלא חינמי וקוד פתוח תחת GPL-3.0, ללא חשבון או מנוי. אפשר להתקין מתקין רגיל או גרסה ניידת, והורדות המהדורה היציבה כוללות ערכי SHA-256.",
+    limits: "מיועד ל-Windows 10 ב-64 ביט ומעלה. העלאה לענן אינה חובה ומושבתת כברירת מחדל בהתקנות חדשות, אך הפעלת יעדי העלאה שולחת קבצים לשירותים שהמשתמש בוחר ולפי תנאיהם; חלק מפעולות הווידאו דורשות FFmpeg או קודקים מתאימים. גרסה 22.0.0 עדיין מסומנת כקדם-מהדורה, ולכן ההמלצה היא על 21.0.0 היציבה.",
+    pros: ["ללא איסוף נתונים מצד היישום", "כלי צילום, עריכה ואוטומציה עשירים", "גרסה ניידת והורדות עם SHA-256"], cons: ["Windows בלבד", "ממשק עמוס למשתמשים חדשים", "יעדי ענן חיצוניים כפופים לפרטיות ולעלויות של צד שלישי"],
+    alternatives: ["Screenity", "Shotcut", "LosslessCut"], url: "https://getsharex.com/", added: "2026-10-27", verified: "2026-10-27",
+    sources: [{ label: "האתר והורדות הרשמיות", url: "https://getsharex.com/" }, { label: "מדיניות פרטיות", url: "https://getsharex.com/privacy-policy" }, { label: "המאגר, התקנה ורישיון GPL-3.0", url: "https://github.com/ShareX/ShareX" }, { label: "מהדורה יציבה v21.0.0 ו-SHA-256", url: "https://github.com/ShareX/ShareX/releases/tag/v21.0.0" }, { label: "מדיניות אבטחה", url: "https://github.com/ShareX/ShareX/security/policy" }, { label: "יומן שינויים רשמי", url: "https://getsharex.com/changelog" }]
   }];
 
 window.WATCHLIST = [
