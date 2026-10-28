@@ -1057,7 +1057,19 @@ window.TOOLS = [
     pros: ["ללא איסוף נתונים מצד היישום", "כלי צילום, עריכה ואוטומציה עשירים", "גרסה ניידת והורדות עם SHA-256"], cons: ["Windows בלבד", "ממשק עמוס למשתמשים חדשים", "יעדי ענן חיצוניים כפופים לפרטיות ולעלויות של צד שלישי"],
     alternatives: ["Screenity", "Shotcut", "LosslessCut"], url: "https://getsharex.com/", added: "2026-10-27", verified: "2026-10-27",
     sources: [{ label: "האתר והורדות הרשמיות", url: "https://getsharex.com/" }, { label: "מדיניות פרטיות", url: "https://getsharex.com/privacy-policy" }, { label: "המאגר, התקנה ורישיון GPL-3.0", url: "https://github.com/ShareX/ShareX" }, { label: "מהדורה יציבה v21.0.0 ו-SHA-256", url: "https://github.com/ShareX/ShareX/releases/tag/v21.0.0" }, { label: "מדיניות אבטחה", url: "https://github.com/ShareX/ShareX/security/policy" }, { label: "יומן שינויים רשמי", url: "https://getsharex.com/changelog" }]
-  }];
+  },
+  {
+    slug: "maccy", name: "Maccy", mark: "Mc", category: "productivity", subcategories: ["לוח גזירים", "macOS", "קוד פתוח"],
+    tagline: "מנהל לוח גזירים מקומי, מהיר וממוקד־מקלדת ל־macOS.",
+    solves: "שומר היסטוריה של טקסט ותמונות שהועתקו ומאפשר לחפש, להצמיד ולהדביק פריטים קודמים בלי שירות ענן או מנוי.",
+    uses: ["פרודוקטיביות", "לוח גזירים", "חיפוש"], audience: "משתמשי Mac שמעתיקים טקסט, קישורים ותמונות ורוצים לשחזר אותם במהירות.",
+    free: "האפליקציה המלאה חינמית וקוד פתוח תחת MIT. ההתקנה הרשמית זמינה מ־GitHub Releases או Homebrew ללא חשבון, מנוי או מכסת שימוש.",
+    limits: "דורשת macOS Sonoma 14 ומעלה. היסטוריית לוח גזירים רגישה מטבעה; Maccy מסננת כברירת מחדל סוגי העתקה סודיים וזמניים ומאפשרת החרגת אפליקציות, אך מומלץ לבדוק את ההגדרות. הדבקה אוטומטית דורשת הרשאת Accessibility.",
+    pros: ["מהירה ומקומית", "חיפוש והצמדת פריטים", "סינון סוגי מידע רגישים"], cons: ["macOS בלבד", "הרשאת נגישות להדבקה אוטומטית", "לוח גזירים דורש זהירות עם מידע סודי"],
+    alternatives: ["PowerToys", "ActivityWatch"], url: "https://maccy.app/", added: "2026-10-28", verified: "2026-10-28",
+    sources: [{ label: "האתר הרשמי", url: "https://maccy.app/" }, { label: "המאגר ורישיון MIT", url: "https://github.com/p0deje/Maccy" }, { label: "מהדורה יציבה 2.8.0", url: "https://github.com/p0deje/Maccy/releases/tag/2.8.0" }, { label: "התקנה, פרטיות ומגבלות", url: "https://github.com/p0deje/Maccy/blob/master/README.md" }]
+  }
+];
 
 window.WATCHLIST = [
   {
