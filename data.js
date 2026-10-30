@@ -1068,6 +1068,17 @@ window.TOOLS = [
     pros: ["מהירה ומקומית", "חיפוש והצמדת פריטים", "סינון סוגי מידע רגישים"], cons: ["macOS בלבד", "הרשאת נגישות להדבקה אוטומטית", "לוח גזירים דורש זהירות עם מידע סודי"],
     alternatives: ["PowerToys", "ActivityWatch"], url: "https://maccy.app/", added: "2026-10-28", verified: "2026-10-28",
     sources: [{ label: "האתר הרשמי", url: "https://maccy.app/" }, { label: "המאגר ורישיון MIT", url: "https://github.com/p0deje/Maccy" }, { label: "מהדורה יציבה 2.8.0", url: "https://github.com/p0deje/Maccy/releases/tag/2.8.0" }, { label: "התקנה, פרטיות ומגבלות", url: "https://github.com/p0deje/Maccy/blob/master/README.md" }]
+  },
+  {
+    slug: "skillspector", name: "SkillSpector", mark: "Sk", category: "development", subcategories: ["אבטחת AI", "סוכנים", "CLI"],
+    tagline: "סורק אבטחה לכישורי סוכני AI לפני התקנה.",
+    solves: "בודק קובצי skill, מאגרים וארכיונים לאיתור הזרקת הנחיות, דליפת מידע, הסלמת הרשאות, שרשרת אספקה, קוד מסוכן וסיכוני MCP.",
+    uses: ["אבטחה", "בדיקת skills", "CI/CD"], audience: "מפתחים וצוותים שמתקינים או מפיצים skills ל-Codex, Claude Code, Gemini CLI וסוכנים דומים.",
+    free: "הליבה כולה חינמית וקוד פתוח תחת Apache-2.0. סריקה סטטית מקומית פועלת ללא חשבון, מנוי או מכסת שימוש; אפשר להתקין מ-GitHub, wheel רשמי או לבנות Docker מקומית.",
+    limits: "דורש Python 3.12 ומעלה. ניתוח סמנטי ב-LLM הוא אופציונלי ודורש ספק מקומי או מפתח API; ספק מתארח עשוי לגבות תשלום ולקבל את תוכן ה-skill. בדיקת OSV חיה פונה לשירות חיצוני אך חוזרת למצב offline. הכלי מסווג Alpha, מפעיל גבולות גודל וזמן, ותוצאה נקייה אינה הוכחת בטיחות מלאה.",
+    pros: ["71 דפוסי חולשה ב-17 קטגוריות", "פלט Terminal, JSON, Markdown ו-SARIF", "גבולות משאבים וסריקה סטטית ללא ענן"], cons: ["עדיין מסווג Alpha", "ניתוח LLM מלא תלוי בספק חיצוני או מודל מקומי", "סריקות גדולות עלולות להסתיים בכיסוי חלקי"],
+    alternatives: ["Harper", "PentAGI", "GitHub"], url: "https://github.com/NVIDIA/SkillSpector", added: "2026-10-30", verified: "2026-10-30",
+    sources: [{ label: "תיעוד רשמי", url: "https://docs.nvidia.com/skills/scanning-agent-skills" }, { label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/NVIDIA/SkillSpector" }, { label: "מהדורה יציבה v2.13.2 ו-SHA-256", url: "https://github.com/NVIDIA/SkillSpector/releases/tag/v2.13.2" }, { label: "מדיניות אבטחה", url: "https://github.com/NVIDIA/SkillSpector/security/policy" }]
   }
 ];
 
