@@ -1095,6 +1095,15 @@ window.TOOLS = [
 
 window.WATCHLIST = [
   {
+    "name": "OpenUsage",
+    "mark": "OU",
+    "category": "productivity",
+    "signal": "מאגר MIT פעיל עם 4,493 כוכבים, 521 forks ומהדורה יציבה v0.7.16 מ-26 באוקטובר 2026.",
+    "reason": "נשאר במעקב לפי מדיניות הסף: מוצר GitHub עם 1,000 עד 4,999 כוכבים אינו מתפרסם כפעיל. בנוסף נדרשת בדיקה מעמיקה של גישה לנתוני חשבונות, מפתחות וספקי AI לפני קידום עתידי.",
+    "url": "https://github.com/robinebers/openusage",
+    "checked": "2026-10-31"
+  },
+  {
     "name": "Dayflow",
     "mark": "DF",
     "category": "productivity",
