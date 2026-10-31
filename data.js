@@ -1079,6 +1079,17 @@ window.TOOLS = [
     pros: ["71 דפוסי חולשה ב-17 קטגוריות", "פלט Terminal, JSON, Markdown ו-SARIF", "גבולות משאבים וסריקה סטטית ללא ענן"], cons: ["עדיין מסווג Alpha", "ניתוח LLM מלא תלוי בספק חיצוני או מודל מקומי", "סריקות גדולות עלולות להסתיים בכיסוי חלקי"],
     alternatives: ["Harper", "PentAGI", "GitHub"], url: "https://github.com/NVIDIA/SkillSpector", added: "2026-10-30", verified: "2026-10-30",
     sources: [{ label: "תיעוד רשמי", url: "https://docs.nvidia.com/skills/scanning-agent-skills" }, { label: "המאגר, התקנה ורישיון Apache-2.0", url: "https://github.com/NVIDIA/SkillSpector" }, { label: "מהדורה יציבה v2.13.2 ו-SHA-256", url: "https://github.com/NVIDIA/SkillSpector/releases/tag/v2.13.2" }, { label: "מדיניות אבטחה", url: "https://github.com/NVIDIA/SkillSpector/security/policy" }]
+  },
+  {
+    slug: "lazygit", name: "LazyGit", mark: "LG", category: "development", subcategories: ["Git", "Terminal", "קוד פתוח"],
+    tagline: "ממשק Terminal מהיר וחזותי לפעולות Git יומיומיות ומתקדמות.",
+    solves: "מרכז staging, commits, branches, rebases, cherry-pick, bisect ו-worktrees בממשק מקלדת אחד, בלי לזכור כל פקודת Git.",
+    uses: ["ניהול Git", "סקירת שינויים", "rebase", "worktrees"], audience: "מפתחים שעובדים ב-Terminal ורוצים לבצע ולבדוק פעולות Git במהירות.",
+    free: "היישום המלא חינמי וקוד פתוח תחת MIT, פועל מקומית ללא חשבון, מנוי או מכסת שימוש. קיימים קבצים בינאריים רשמיים עם SHA-256 ומנהלי חבילות ל-macOS, Windows, Linux ו-FreeBSD.",
+    limits: "דורש Git ו-Terminal. הכלי מסוגל לבצע reset, rebase, מחיקה ופקודות מותאמות שעלולות לשנות או למחוק עבודה; יש לבדוק את הפעולה וה-repository לפני אישור ולהריץ רק קובצי תצורה מהימנים. גישה לרשת מתרחשת רק דרך פעולות Git מול remotes שהמשתמש הגדיר. אין SECURITY.md ייעודי במאגר.",
+    pros: ["ממשק מהיר לפעולות Git מורכבות", "פועל מקומית ורב-פלטפורמי", "מהדורות יציבות עם checksums ו-SHA-256"], cons: ["דורש היכרות בסיסית עם Git", "פעולות הרסניות עדיין אפשריות", "פקודות מותאמות וקובצי תצורה דורשים אמון"],
+    alternatives: ["GitHub", "Kilo Code"], url: "https://github.com/jesseduffield/lazygit", added: "2026-10-31", verified: "2026-10-31",
+    sources: [{ label: "המאגר, תכונות והתקנה", url: "https://github.com/jesseduffield/lazygit" }, { label: "מהדורה יציבה v0.66.2 ו-SHA-256", url: "https://github.com/jesseduffield/lazygit/releases/tag/v0.66.2" }, { label: "רישיון MIT", url: "https://github.com/jesseduffield/lazygit/blob/master/LICENSE" }, { label: "פקודות מותאמות", url: "https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md" }]
   }
 ];
 
