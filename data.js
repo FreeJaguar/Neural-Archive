@@ -1090,10 +1090,31 @@ window.TOOLS = [
     pros: ["ממשק מהיר לפעולות Git מורכבות", "פועל מקומית ורב-פלטפורמי", "מהדורות יציבות עם checksums ו-SHA-256"], cons: ["דורש היכרות בסיסית עם Git", "פעולות הרסניות עדיין אפשריות", "פקודות מותאמות וקובצי תצורה דורשים אמון"],
     alternatives: ["GitHub", "Kilo Code"], url: "https://github.com/jesseduffield/lazygit", added: "2026-10-31", verified: "2026-10-31",
     sources: [{ label: "המאגר, תכונות והתקנה", url: "https://github.com/jesseduffield/lazygit" }, { label: "מהדורה יציבה v0.66.2 ו-SHA-256", url: "https://github.com/jesseduffield/lazygit/releases/tag/v0.66.2" }, { label: "רישיון MIT", url: "https://github.com/jesseduffield/lazygit/blob/master/LICENSE" }, { label: "פקודות מותאמות", url: "https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md" }]
+  },
+  {
+    slug: "wails", name: "Wails", mark: "W", category: "development", subcategories: ["Go", "אפליקציות Desktop", "קוד פתוח"],
+    tagline: "מסגרת לבניית אפליקציות Desktop ב-Go עם ממשק Web ומנוע התצוגה המקומי של מערכת ההפעלה.",
+    solves: "מאפשרת לארוז backend ב-Go וממשק HTML, CSS ו-JavaScript ליישום מקומי יחיד, עם חלונות, תפריטים, דיאלוגים, bindings וכלי build והפצה.",
+    uses: ["פיתוח Desktop", "Go", "ממשקי Web", "אריזה והפצה"], audience: "מפתחי Go שרוצים לבנות יישומי Windows, macOS ו-Linux עם frontend מודרני בלי לכלול דפדפן מלא בחבילה.",
+    free: "המסגרת, ה-CLI וה-runtime חינמיים וקוד פתוח תחת MIT, ללא חשבון, מנוי או מכסת שימוש. v3.0.0 היציבה מותקנת ישירות באמצעות Go, והיישום שנבנה פועל מקומית.",
+    limits: "Wails v3 דורשת Go 1.26 ומעלה וכלי מערכת מתאימים לכל יעד; מומלצות גרסאות Go הכוללות תיקון crypto/x509. התמיכה ב-iOS וב-Android ניסיונית, והתנהגות WebView עשויה להשתנות בין מערכות. אבטחת הקוד, ה-bindings, ההרשאות, העדכונים והחתימה של אפליקציה שנבנתה עם Wails נשארת באחריות המפתח.",
+    pros: ["backend רגיל ב-Go ו-frontend לבחירה", "תמיכה ב-Windows, macOS ו-Linux", "מדיניות אבטחה ותהליך דיווח ברורים"], cons: ["דורשת toolchain ותלויות מערכת", "מובייל עדיין ניסיוני", "אפליקציות שנבנו אינן מכוסות במדיניות האבטחה של המסגרת"],
+    alternatives: ["Tauri", "Electron"], url: "https://wails.io/", added: "2026-11-01", verified: "2026-11-01",
+    sources: [{ label: "האתר והתיעוד הרשמיים", url: "https://wails.io/" }, { label: "המאגר ורישיון MIT", url: "https://github.com/wailsapp/wails" }, { label: "מהדורה יציבה v3.0.0 והתקנה", url: "https://github.com/wailsapp/wails/releases/tag/v3.0.0" }, { label: "מדיניות אבטחה", url: "https://github.com/wailsapp/wails/security/policy" }]
   }
+
 ];
 
 window.WATCHLIST = [
+  {
+    "name": "act",
+    "mark": "AC",
+    "category": "development",
+    "signal": "כלי MIT פעיל להרצת GitHub Actions מקומית: 72,505 כוכבים, 2,095 forks ומהדורה יציבה v0.2.94 עם 12 נכסים, SHA-256 ו-provenance חתום.",
+    "reason": "נשאר במעקב למרות מעבר סף הכוכבים: v0.2.93 ו-v0.2.94 פורסמו ב-31 באוקטובר לאחר תיקוני נתיבי action ו-Docker build context לשתי התראות GHSA. מדיניות האבטחה מבהירה שהכלי מריץ workflows עם Docker daemon והרשאות המשתמש, ושמצב self-hosted פועל ישירות על המארח ללא גבול container. נדרשת תקופת התייצבות ובדיקה חוזרת של ההתראות; מי שבוחן חייב להשתמש ב-v0.2.94 ומעלה ולהריץ רק workflows ו-actions מהימנים.",
+    "url": "https://github.com/nektos/act",
+    "checked": "2026-11-01"
+  },
   {
     "name": "OpenUsage",
     "mark": "OU",
