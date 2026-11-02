@@ -113,10 +113,10 @@ window.TOOLS = [
     solves: "מקצר יצירת איורים, תרשימי תהליך ושקפים מטקסט למצגות ומסמכים.",
     uses: ["עיצוב", "מצגות", "AI"], audience: "מציגים, מרצים, כותבים ואנשי מוצר שצריכים להמחיש רעיון מהר.",
     free: "Free Forever עם 500 קרדיטי AI בשבוע, עריכה וייבוא ללא הגבלה וייצוא PNG/PDF ללא הגבלה.",
-    limits: "ויזואלים נושאים מיתוג Napkin; סגנונות והתאמות מתקדמות בתשלום. יצירת שקף עולה 100 קרדיטים.",
+    limits: "ויזואלים נושאים מיתוג Napkin. יצירת שקף עולה 100 קרדיטים, אך יצירת או חידוש המצגת הראשונה, עד 20 שקפים, אינה צורכת קרדיטים כל עוד זו המצגת היחידה. PNG/PDF ללא הגבלה; ייצוא PPT/SVG מוגבל במסלול החינמי, ומיתוג מותאם ומודלי תמונה מתקדמים דורשים שדרוג.",
     pros: ["מתחיל מטקסט", "תוצרים ניתנים לעריכה", "מכסה שבועית מתחדשת"], cons: ["מיתוג בתוצר החינמי", "קרדיטים נגמרים מהר ביצירת שקפים"],
-    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", added: "2026-09-23", verified: "2026-10-12",
-    sources: [{ label: "תמחור רשמי", url: "https://www.napkin.ai/pricing/" }, { label: "הסבר קרדיטים", url: "https://help.napkin.ai/en/articles/15955724-credits-plans" }]
+    alternatives: ["Canva", "Cavalry"], url: "https://www.napkin.ai/", added: "2026-09-23", verified: "2026-11-02",
+    sources: [{ label: "תמחור רשמי", url: "https://www.napkin.ai/pricing.html" }, { label: "הסבר קרדיטים", url: "https://help.napkin.ai/en/articles/15955724-credits-plans" }]
   },
   {
     slug: "gimp", name: "GIMP", mark: "G", category: "design", subcategories: ["עריכת תמונה", "קוד פתוח", "Desktop"],
@@ -377,10 +377,10 @@ window.TOOLS = [
     tagline: "משרד דיגיטלי משותף שבו צוותים וסוכני AI עובדים באותו הקשר.",
     solves: "מאחד צ'אט, שיחות, תמלול, משימות, לוחות שנה וסוכנים במרחב אחד כדי לצמצם מעבר בין אפליקציות והסברים חוזרים.",
     uses: ["שיתוף", "פגישות", "אוטומציה"], audience: "צוותים מרוחקים ויחידים שרוצים לרכז עבודה אנושית וסוכני AI באותו workspace.",
-    free: "AI Space Free כולל 15 משימות אישיות בשבוע, 200 דקות תמלול, 7 ימי היסטוריה ממקורות מחוברים ועד 10 משימות שנוצרות אוטומטית משיחות ופגישות. Co-Worker Free כולל 150 קרדיטי AI שמתחדשים מדי חודש.",
-    limits: "משימות ותמלול ללא הגבלה, רענון אוטומטי של מקורות, לוח שנה מחובר, יותר קרדיטים ובחירת מודל דורשים שדרוג; חיבור Claude Code או Codex עשוי לדרוש מנוי נפרד.",
-    pros: ["מסלול חינמי מפורש", "צ'אט, פגישות, משימות וסוכנים יחד", "קרדיטי AI מתחדשים מדי חודש"], cons: ["היסטוריית מקורות מוגבלת לשבוע", "מכסות AI ותמלול מוגבלות"],
-    alternatives: ["Trello", "Make", "Circleback"], url: "https://www.velozity.ai/", added: "2026-10-08", verified: "2026-10-12",
+    free: "ליחידים: AI Space Free כולל 15 Actionables בשבוע ו־200 דקות תמלול אישיות בחודש; Co-Worker Free כולל 150 קרדיטי AI בחודש, משימת AI אחת בחודש ועד 5 שעות לכל סשן. לצוות: Workspace Free חינמי לכל הצוות וכולל 300 דקות תמלול משותפות בחודש, 15 Actionables בשבוע ומנהל אחד.",
+    limits: "ב־AI Space החינמי אין מקורות מחוברים מחזוריים או תדריכים יומיים, והתמלולים ויצירת המשימות מוגבלים. יותר קרדיטים, מודלים, משימות וסשנים ללא הגבלה דורשים שדרוג; חיבור Claude Code, Codex או ספק אחר עשוי לדרוש מנוי או מפתח נפרד.",
+    pros: ["מסלול חינמי מפורש", "צ'אט, פגישות, משימות וסוכנים יחד", "קרדיטי AI מתחדשים מדי חודש"], cons: ["אין מקורות מחוברים מחזוריים במסלול החינמי", "מכסות AI, משימות ותמלול מוגבלות"],
+    alternatives: ["Trello", "Make", "Circleback"], url: "https://www.velozity.ai/", added: "2026-10-08", verified: "2026-11-02",
     sources: [{ label: "תמחור ומכסות רשמיים", url: "https://www.velozity.ai/pricing-us" }, { label: "אתר ההשקה הרשמי", url: "https://getvelozity.com/" }, { label: "אות השקה ב-Product Hunt", url: "https://www.producthunt.com/leaderboard/weekly/2026/41" }]
   },
   {
@@ -1127,6 +1127,59 @@ window.TOOLS = [
       { label: "שימוש וגבולות OCR מרוחק", url: "https://docs.paperless-ngx.com/usage/" },
       { label: "מהדורה יציבה v3.4.1", url: "https://github.com/paperless-ngx/paperless-ngx/releases/tag/v3.4.1" },
       { label: "מדיניות אבטחה", url: "https://github.com/paperless-ngx/paperless-ngx/security/policy" }
+    ]
+  },
+  {
+    slug: "bruno",
+    name: "Bruno",
+    mark: "Br",
+    category: "development",
+    subcategories: ["בדיקות API", "פיתוח", "קוד פתוח"],
+    tagline: "לקוח API מקומי ו־Git-native לבדיקת REST, GraphQL, gRPC ו־WebSocket.",
+    solves: "מרכז בקשות, סביבות, בדיקות, סקריפטים ותיעוד API בקבצים מקומיים שניתנים לניהול ב־Git, בלי חשבון או ענן חובה.",
+    uses: ["בדיקות API", "אוטומציה", "תיעוד", "CI/CD"],
+    audience: "מפתחים וצוותי QA שרוצים חלופה מקומית ל־Postman או Insomnia.",
+    free: "מהדורת Open Source חינמית ב־$0 תחת MIT כוללת את לקוח ה־API, REST/GraphQL/gRPC, בדיקות, סקריפטים, ניהול סודות, יצירת קוד, CLI והרצות אוסף ללא הגבלה. אין צורך בחשבון, וניתן לעבוד ב־Windows, macOS ו־Linux.",
+    limits: "המסלול החינמי מוגבל לשני workspaces ולחמישה OpenAPI syncs בחודש. פעולות Git מתקדמות מתוך הממשק, חיבור ספקי Git פרטיים, דוחות ויכולות ניהול ארגוניות דורשים Pro או Ultimate; אפשר לבצע Git רגיל מהמסוף. אוספים ומפתחות נשמרים מקומית, ולכן אין להכניס סודות לקבצים שעולים למאגר.",
+    pros: ["מקומי וללא חשבון", "אוספים כקבצי טקסט נוחים ל־Git", "CLI ובדיקות אוטומטיות ללא מכסת הרצות"],
+    cons: ["רק שני workspaces בחינם", "חלק מפעולות Git בממשק בתשלום", "נדרש טיפול זהיר במפתחות וסביבות"],
+    alternatives: ["Postman", "Insomnia", "Hoppscotch"],
+    url: "https://www.usebruno.com/",
+    added: "2026-11-02",
+    verified: "2026-11-02",
+    sources: [
+      { label: "מוצר וחינמיות רשמיים", url: "https://www.usebruno.com/product" },
+      { label: "תמחור והבדלי מסלולים", url: "https://www.usebruno.com/pricing" },
+      { label: "המאגר ורישיון MIT", url: "https://github.com/usebruno/bruno" },
+      { label: "מהדורה v4.3.0 וקובצי SHA-256", url: "https://github.com/usebruno/bruno/releases/tag/v4.3.0" },
+      { label: "מדיניות אבטחה", url: "https://github.com/usebruno/bruno/security/policy" }
+    ]
+  },
+  {
+    slug: "marimo",
+    name: "marimo",
+    mark: "mo",
+    category: "research",
+    subcategories: ["מחברות Python", "נתונים", "למידה"],
+    tagline: "מחברת Python תגובתית שנשמרת כקוד, רצה כסקריפט וניתנת לפריסה כאפליקציה.",
+    solves: "מצמצמת מצב נסתר ותוצאות לא עקביות במחברות באמצעות גרף תלויות תגובתי, ומשלבת Python, SQL, רכיבי UI, בדיקות וייצוא בקובץ Python רגיל.",
+    uses: ["מחקר נתונים", "למידת Python", "ניסויים", "אפליקציות נתונים"],
+    audience: "חוקרים, אנליסטים, מרצים ומפתחים שרוצים מחברות ניתנות לשחזור ולניהול ב־Git.",
+    free: "העורך וה־runtime המקומיים חינמיים וקוד פתוח תחת Apache-2.0, ללא חשבון או מכסת שימוש. מתקינים עם pip, uv, Pixi או Conda; מחברות פועלות מקומית, ניתנות להרצה כסקריפט ולפריסה כאפליקציה.",
+    limits: "תכונות AI דורשות ספק מודל ומפתח שעשויים לעלות כסף, וחבילות Python או תשתית פריסה הן באחריות המשתמש. מדיניות האבטחה תומכת רק במהדורה היציבה האחרונה: יש להשתמש ב־0.23.0 ומעלה עקב חולשת RCE שתוקנה, ועדיף במהדורה הנוכחית 0.25.2; אין לחשוף עורך מחברות לאינטרנט בלי אימות והקשחה.",
+    pros: ["קובצי Python נקיים ל־Git", "ביצוע תגובתי ללא מצב נסתר", "SQL, רכיבי UI ופריסה כאפליקציה"],
+    cons: ["דורש סביבת Python", "תוספי AI וספקי מודלים נפרדים", "פריסה ציבורית דורשת הקשחת אבטחה"],
+    alternatives: ["Jupyter", "Gemini Notebook", "Streamlit"],
+    url: "https://marimo.io/",
+    added: "2026-11-02",
+    verified: "2026-11-02",
+    sources: [
+      { label: "התקנה רשמית", url: "https://docs.marimo.io/getting_started/installation/" },
+      { label: "חינמיות ורישיון", url: "https://docs.marimo.io/faq/" },
+      { label: "המאגר ורישיון Apache-2.0", url: "https://github.com/marimo-team/marimo" },
+      { label: "מהדורה יציבה 0.25.2", url: "https://github.com/marimo-team/marimo/releases/tag/0.25.2" },
+      { label: "מדיניות אבטחה", url: "https://github.com/marimo-team/marimo/security/policy" },
+      { label: "תיקון חולשת RCE ב־0.23.0", url: "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc" }
     ]
   }
 
