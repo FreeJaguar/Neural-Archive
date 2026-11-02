@@ -1101,6 +1101,33 @@ window.TOOLS = [
     pros: ["backend רגיל ב-Go ו-frontend לבחירה", "תמיכה ב-Windows, macOS ו-Linux", "מדיניות אבטחה ותהליך דיווח ברורים"], cons: ["דורשת toolchain ותלויות מערכת", "מובייל עדיין ניסיוני", "אפליקציות שנבנו אינן מכוסות במדיניות האבטחה של המסגרת"],
     alternatives: ["Tauri", "Electron"], url: "https://wails.io/", added: "2026-11-01", verified: "2026-11-01",
     sources: [{ label: "האתר והתיעוד הרשמיים", url: "https://wails.io/" }, { label: "המאגר ורישיון MIT", url: "https://github.com/wailsapp/wails" }, { label: "מהדורה יציבה v3.0.0 והתקנה", url: "https://github.com/wailsapp/wails/releases/tag/v3.0.0" }, { label: "מדיניות אבטחה", url: "https://github.com/wailsapp/wails/security/policy" }]
+  },
+
+  {
+    slug: "paperless-ngx",
+    name: "Paperless-ngx",
+    mark: "Px",
+    category: "productivity",
+    subcategories: ["ניהול מסמכים", "OCR", "קוד פתוח"],
+    tagline: "מערכת מקומית לסריקה, חיפוש וארכוב של מסמכים עם OCR.",
+    solves: "הופכת חשבוניות, מכתבים, מסמכים סרוקים וקובצי PDF לארכיון מסודר וניתן לחיפוש, עם תגיות, סוגי מסמך, correspondents, workflows ו-API.",
+    uses: ["ארכיון מסמכים", "OCR", "חיפוש מלא", "אוטומציה"],
+    audience: "יחידים, משפחות וצוותים שמוכנים להפעיל שרת מקומי ורוצים שליטה בארכיון המסמכים שלהם.",
+    free: "המערכת המלאה חינמית וקוד פתוח תחת GPL-3.0, ללא חשבון, מנוי או מכסת מסמכים. OCR מקומי פועל באמצעות Tesseract, וניתן להתקין עם Docker Compose או על שרת Linux.",
+    limits: "זהו שירות self-hosted: נדרשים Docker ו-Docker Compose או סביבת Linux, אחסון, גיבויים ותחזוקה. המסמכים נשמרים בטקסט גלוי ללא הצפנה מובנית, ולכן יש להריץ רק על מארח מהימן, להגביל גישה ולגבות. OCR מרוחק ב-Azure כבוי כברירת מחדל, אופציונלי, עשוי לעלות כסף ושולח מסמכים לשירות חיצוני.",
+    pros: ["OCR וחיפוש מלא מקומיים", "workflows, דואר נכנס ו-API", "מהדורות יציבות ומדיניות אבטחה פעילה"],
+    cons: ["דורש הפעלה ותחזוקה עצמית", "אין הצפנה מובנית של המסמכים במנוחה", "חשיפה לאינטרנט דורשת הקשחה ו-reverse proxy תקין"],
+    alternatives: ["Docspell", "Mayan EDMS", "Papermerge"],
+    url: "https://docs.paperless-ngx.com/",
+    added: "2026-11-02",
+    verified: "2026-11-02",
+    sources: [
+      { label: "המאגר ורישיון GPL-3.0", url: "https://github.com/paperless-ngx/paperless-ngx" },
+      { label: "התקנה רשמית", url: "https://docs.paperless-ngx.com/setup/" },
+      { label: "שימוש וגבולות OCR מרוחק", url: "https://docs.paperless-ngx.com/usage/" },
+      { label: "מהדורה יציבה v3.4.1", url: "https://github.com/paperless-ngx/paperless-ngx/releases/tag/v3.4.1" },
+      { label: "מדיניות אבטחה", url: "https://github.com/paperless-ngx/paperless-ngx/security/policy" }
+    ]
   }
 
 ];
@@ -1375,5 +1402,16 @@ window.WATCHLIST = [
     "reason": "עבר את סף 5,000 הכוכבים ומציע שימוש מקומי חינמי מתמשך, אך מהדורה v0.11.1 תיקנה שלוש חולשות בחומרה גבוהה בגישה לקבצים, הפעלת תוכניות ממאגר והזרקת פקודות דרך OSC 52. מדיניות האבטחה עדיין מציינת שאין מהדורה יציבה נתמכת; נשאר במעקב עד להבשלת מחזור האבטחה. מי שבודק חייב להשתמש לפחות ב-v0.11.1 ולהפעיל מחדש את ה-daemon לאחר העדכון.",
     "url": "https://github.com/Gaurav-Gosain/tuios",
     "checked": "2026-10-29"
+  },
+
+  {
+    name: "Orkas",
+    mark: "Or",
+    category: "productivity",
+    signal: "סביבת צוות סוכנים מקומית תחת MIT עם 7,670 כוכבים, 474 forks, פעילות יומית ומהדורות Desktop יציבות עם SHA-256.",
+    reason: "עבר את סף 5,000 הכוכבים, אך מפעיל סוכנים, connectors, אוטומציות ומפתחות ספקים בהרשאות רחבות. נדרשת בדיקה נוספת של בידוד, הרשאות, טיפול בסודות, telemetry, גבולות המודלים המובנים ויציבות האבטחה לפני פרסום פעיל.",
+    url: "https://github.com/Orkas-AI/Orkas",
+    checked: "2026-11-02"
   }
+
 ];
