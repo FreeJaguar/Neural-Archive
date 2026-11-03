@@ -1183,6 +1183,25 @@ window.TOOLS = [
     ]
   }
 
+,
+  {
+    slug: "planify", name: "Planify", mark: "Pl", category: "productivity", subcategories: ["ניהול משימות", "Linux", "Local-first"],
+    tagline: "מנהל משימות מקומי ל-GNU/Linux עם עבודה לא מקוונת וסנכרון אופציונלי.",
+    solves: "מרכז משימות, פרויקטים, תזכורות, משימות חוזרות ותצוגת לוח באפליקציית GTK מקומית, בלי לחייב שירות ענן.",
+    uses: ["ניהול משימות", "תכנון", "עבודה לא מקוונת"], audience: "משתמשי GNU/Linux שרוצים מנהל משימות מקומי עם אפשרות לחיבור Todoist, Nextcloud או CalDAV.",
+    free: "האפליקציה כולה חינמית וקוד פתוח תחת GPL-3.0, ללא מנוי, פרסומות או חשבון חובה. ברירת המחדל שומרת את הנתונים מקומית ב-SQLite ועובדת גם ללא אינטרנט.",
+    limits: "זמינה ל-GNU/Linux בלבד ואין אפליקציית מובייל. סנכרון ענן הוא אופציונלי ותלוי בחשבון Todoist או בשרת Nextcloud/CalDAV ובתנאים שלהם; ניתוח תאריכים בשפה טבעית מוגבל לאנגלית ולספרדית.",
+    pros: ["חינמית ללא מכסות", "Local-first ועובדת לא מקוון", "סנכרון אופציונלי עם Todoist ו-CalDAV"], cons: ["GNU/Linux בלבד", "אין אפליקציית מובייל", "שירותי סנכרון חיצוניים כפופים לתנאים נפרדים"],
+    alternatives: ["Todoist", "Super Productivity"], url: "https://useplanify.com/", added: "2026-11-03", verified: "2026-11-03",
+    sources: [
+      { label: "האתר הרשמי והחינמיות", url: "https://useplanify.com/" },
+      { label: "מדיניות פרטיות", url: "https://useplanify.com/privacy-policy/" },
+      { label: "המאגר ורישיון GPL-3.0", url: "https://github.com/alainm23/planify" },
+      { label: "התקנה ומהדורה ב-Flathub", url: "https://flathub.org/apps/io.github.alainm23.planify" },
+      { label: "מהדורה יציבה 4.20.0", url: "https://github.com/alainm23/planify/releases/tag/v4.20.0" }
+    ]
+  }
+
 ];
 
 window.WATCHLIST = [
@@ -1466,5 +1485,16 @@ window.WATCHLIST = [
     url: "https://github.com/Orkas-AI/Orkas",
     checked: "2026-11-02"
   }
+,
+  {
+    name: "Espanso",
+    mark: "Es",
+    category: "productivity",
+    signal: "מרחיב טקסט מקומי ורב-פלטפורמי תחת GPL-3.0 עם 14,708 כוכבים, 490 forks, פעילות עדכנית ומהדורה יציבה v2.4.1 עם חבילות הפצה ו-SHA-256.",
+    reason: "נשאר במעקב למרות מעבר סף הכוכבים: commit מאומת מ-24 באוקטובר תיקן את תחום ה-Windows named pipes לאחר המהדורה היציבה v2.4.1, ולכן התיקון עדיין אינו זמין במהדורה יציבה. בנוסף, מסמך האבטחה הרשמי מציין שהוא מתאר בעיקר את v1 ועדיין ממתין לעדכון עבור ארכיטקטורת v2. נדרשת מהדורה יציבה הכוללת את התיקון ומדיניות אבטחה מעודכנת לפני פרסום פעיל.",
+    url: "https://github.com/espanso/espanso",
+    checked: "2026-11-03"
+  }
+
 
 ];
