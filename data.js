@@ -1201,6 +1201,36 @@ window.TOOLS = [
       { label: "מהדורה יציבה 4.20.0", url: "https://github.com/alainm23/planify/releases/tag/v4.20.0" }
     ]
   }
+,
+  {
+    slug: "jrnl",
+    name: "jrnl",
+    mark: "jr",
+    category: "productivity",
+    subcategories: ["יומן", "שורת הפקודה", "Local-first"],
+    tagline: "יומן מקומי לשורת הפקודה עם חיפוש, תיוג והצפנה אופציונלית.",
+    solves: "מאפשר לכתוב, לחפש ולייצא רשומות יומן בקובץ מקומי, בלי חשבון, ענן או ממשק כבד.",
+    uses: ["יומן אישי", "רפלקציה", "תיעוד", "כתיבה"],
+    audience: "משתמשי שורת פקודה שרוצים יומן מהיר, מקומי וניתן לגיבוי או עיבוד ככלי טקסט.",
+    free: "הכלי כולו חינמי וקוד פתוח תחת GPL-3.0, ללא חשבון, מנוי או מכסת שימוש. הוא פועל מקומית ב-Windows, macOS ו-Linux; ההתקנה הרשמית היא דרך pipx עם Python 3.11 ומעלה.",
+    limits: "ברירת המחדל שומרת רשומות כטקסט קריא. אפשר להצפין, אך אין אכיפת חוזק סיסמה ואין אפשרות שחזור; פקודות עם תוכן עלולות להישמר בהיסטוריית ה-shell, ועורך חיצוני משתמש זמנית בקובץ לא מוצפן שעלול להישאר לאחר קריסה. מהדורה 4.6 תיקנה את GHSA-rhx6-37mm-5q9r, ולכן יש להשתמש ב-4.6 ומעלה.",
+    pros: ["ללא חשבון או ענן", "קבצי טקסט ניידים וחיפוש מהיר", "הצפנה וייצוא אופציונליים"],
+    cons: ["ממשק שורת פקודה בלבד", "ברירת המחדל אינה מוצפנת", "דורש זהירות עם היסטוריית shell וקבצים זמניים"],
+    alternatives: ["Obsidian", "Logseq"],
+    url: "https://jrnl.sh/",
+    added: "2026-11-04",
+    verified: "2026-11-04",
+    sources: [
+      { label: "האתר והתיעוד הרשמיים", url: "https://jrnl.sh/en/stable/overview/" },
+      { label: "התקנה רשמית עם pipx", url: "https://jrnl.sh/en/stable/installation/" },
+      { label: "פרטיות ומגבלות אבטחה", url: "https://jrnl.sh/en/stable/privacy-and-security/" },
+      { label: "פורמט ההצפנה והאזהרות", url: "https://jrnl.sh/en/stable/encryption/" },
+      { label: "המאגר ורישיון GPL-3.0", url: "https://github.com/jrnl-org/jrnl" },
+      { label: "מהדורה יציבה 4.6 ותיקון אבטחה", url: "https://github.com/jrnl-org/jrnl/releases/tag/v4.6" },
+      { label: "חבילת PyPI ובדיקות SHA-256", url: "https://pypi.org/project/jrnl/" }
+    ]
+  }
+
 
 ];
 
@@ -1495,6 +1525,17 @@ window.WATCHLIST = [
     url: "https://github.com/espanso/espanso",
     checked: "2026-11-03"
   }
+,
+  {
+    name: "massCode",
+    mark: "mC",
+    category: "development",
+    signal: "סביבת עבודה מקומית למפתחים תחת AGPL-3.0 עם 7,094 כוכבים, 281 forks, חמישה commits עדכניים שנבדקו ומהדורה יציבה v6.3.1 עם נכסי Windows, macOS ו-Linux ו-SHA-256.",
+    reason: "נשאר במעקב למרות מעבר סף 5,000 הכוכבים: האפליקציה משלבת snippets, notes, HTTP client, terminal, שרת מקומי, MCP וספקי AI, אך לא נמצאה במאגר מדיניות SECURITY ייעודית. נדרשת בדיקת עומק של גבולות השרת המקומי, אחסון סודות, הרשאות terminal/MCP, telemetry וחתימת חבילות לפני פרסום פעיל.",
+    url: "https://github.com/massCodeIO/massCode",
+    checked: "2026-11-04"
+  }
+
 
 
 ];
